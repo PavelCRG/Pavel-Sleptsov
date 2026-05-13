@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #container {
+            margin: auto;
+            width: 80%;
+            height: 100%;
+        }
+
+        #header {
+            border: 5px solid orange;
+            width: 100%;
+            height: 80px;
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 80px;
+            background: white;
+        }
+
+        #sidebar {
+            border: 5px solid red;
+            float: left;
+            width: 20%;
+            min-height: 400px;
+            margin-right: 20px;
+            padding: 10px;
+            background: white;
+        }
+
+        #sidebar ul {
+            padding-left: 20px;
+        }
+
+        #sidebar li {
+            margin: 5px 0;
+        }
+
+        #sidebar a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #content {
+            border: 5px solid green;
+            margin-left: 22%;
+            min-height: 400px;
+            padding: 15px;
+            background: white;
+            overflow: auto;
+        }
+
+        #footer {
+            border: 5px solid aqua;
+            width: 100%;
+            height: 50px;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 50px;
+            clear: both;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header"> header (шапка сайта) </div>
+        
+        <div id="sidebar"> 
+            <h3>левая панель</h3>
+            <ul>
+                <li><a href="zad1.3.html">Главная</a></li>
+                <li><a href="spiski.html">Списки</a></li>
+                <li><a href="ssilki.html">Ссылки</a></li>
+                <li><a href="tablitsi.html">Таблицы</a></li>
+                <li><a href="formi.html">Формы</a></li>
+                <li><a href="formatirovanie.html">Форматирование</a></li>
+            </ul>
+        </div>
+        
+        <div id="content"> 
+            <h2>Добро пожаловать!</h2>
+            <p>Выберите раздел в левом меню.</p>
+        </div>
+        
+        <div id="footer"> footer (подвал) &copy; Слепцов Павел Леонидович </div>
+    </div>
+</body>
+
+</html>

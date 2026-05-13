@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форматирование</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #container {
+            margin: auto;
+            width: 80%;
+            height: 100%;
+        }
+
+        #header {
+            border: 5px solid orange;
+            width: 100%;
+            height: 80px;
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 80px;
+            background: white;
+        }
+
+        #sidebar {
+            border: 5px solid red;
+            float: left;
+            width: 20%;
+            min-height: 400px;
+            margin-right: 20px;
+            padding: 10px;
+            background: white;
+        }
+
+        #sidebar ul {
+            padding-left: 20px;
+        }
+
+        #sidebar li {
+            margin: 5px 0;
+        }
+
+        #sidebar a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #content {
+            border: 5px solid green;
+            margin-left: 22%;
+            min-height: 400px;
+            padding: 15px;
+            background: #ccffcc;
+            overflow: auto;
+        }
+
+        #footer {
+            border: 5px solid aqua;
+            width: 100%;
+            height: 50px;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 50px;
+            clear: both;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header"> header (шапка сайта) </div>
+
+        <div id="sidebar">
+            <h3>левая панель</h3>
+            <ul>
+                <li><a href="zad1.3.html">Главная</a></li>
+                <li><a href="spiski.html">Списки</a></li>
+                <li><a href="ssilki.html">Ссылки</a></li>
+                <li><a href="tablitsi.html">Таблицы</a></li>
+                <li><a href="formi.html">Формы</a></li>
+                <li><a href="formatirovanie.html">Форматирование</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <center>
+                <font size=7 color=red> ФОРМАТИРОВАНИЕ ТЕКСТА</font>
+            </center>
+            <hr align=center size=6 color=orange>
+
+            <h3>1. Жирный текст</h3>
+            <p><b>Это жирный текст</b> и <strong>это тоже жирный (важный) текст</strong></p>
+
+            <hr>
+
+            <h3>2. Курсивный текст</h3>
+            <p><i>Это курсив</i> и <em>это тоже курсив (выделенный) текст</em></p>
+
+            <hr>
+
+            <h3>3. Подчеркнутый текст</h3>
+            <p><u>Это подчеркнутый текст</u></p>
+
+            <hr>
+
+            <h3>4. Зачеркнутый текст</h3>
+            <p><s>Это зачеркнутый текст</s></p>
+
+            <hr>
+
+            <h3>5. Размер шрифта</h3>
+            <p>
+                <font size=1>Размер 1</font>
+            </p>
+            <p>
+                <font size=3>Размер 3</font>
+            </p>
+            <p>
+                <font size=5>Размер 5</font>
+            </p>
+            <p>
+                <font size=7>Размер 7</font>
+            </p>
+
+            <hr>
+
+            <h3>6. Цвет текста</h3>
+            <p>
+                <font color=red>Красный текст</font>
+            </p>
+            <p>
+                <font color=blue>Синий текст</font>
+            </p>
+            <p>
+                <font color=green>Зеленый текст</font>
+            </p>
+
+            <hr>
+        </div>
+
+        <div id="footer"> footer (подвал) &copy; Слепцов Павел Леонидович </div>
+    </div>
+</body>
+
+</html>
