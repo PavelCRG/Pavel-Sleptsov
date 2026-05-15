@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>HOW-TO: Программа на Python, Часть 1</title>
+    <title>HOW-TO: Программа на Python, Часть 1 (Вариант 5 - Master @import)</title>
+
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
+    <img src="../images/Icon-Python.png" alt="Python" title="Python" width="200" align="right" hspace="20" vspace="10">
+
     <h1>HOW-TO: Программа на Python, Часть 1</h1>
 
     <ul>
-        <li><em><a href="python_part1.html">Программа на Python — часть 1</a></em></li>
-        <li><em><a href="python_part2.html">Программа на Python — часть 2</a></em></li>
-        <li><em><a href="python_part3.html">Программа на Python — часть 3</a></em></li>
-        <li><em><a href="../Индивидуальное/table/main.html">Main.html</a></em></li>
+        <li><em><a href="python_01.html">Программа на Python — часть 1</a></em></li>
+        <li><em><a href="python_02.html">Программа на Python — часть 2</a></em></li>
+        <li><em><a href="python_03.html">Программа на Python — часть 3</a></em></li>
     </ul>
 
     <h2 id="top">Содержание</h2>
@@ -30,18 +33,17 @@
         80-х годов XX века, но с тех пор он сильно изменился. Хотя Python входит в состав большинства дистрибутивов
         Linux, на него часто не обращают внимания при выборе языка для изучения. В этой статье мы рассмотрим создание
         консольных приложений, а в следующей — программирование графических интерфейсов (<u>GUI</u>). Давайте создадим
-        простую
-        программу прямо сейчас.</p>
+        простую программу прямо сейчас.</p>
 
     <h2 id="program">Наша первая программа</h2>
-    <p><a href="#top">К Содержанию</a></p>    
+    <p><a href="#top">К Содержанию</a></p>
+
     <p>Наберём код в текстовом редакторе (например, в <strong>gedit</strong>). Потом мы разберёмся, что делает каждая
-        строка и
-        пойдём дальше.</p>
+        строка и пойдём дальше.</p>
 
     <p>Введите эти 4 строки:</p>
 
-<pre>
+    <pre>
 <code>#!/usr/bin/env python
 print 'Hello. I am a python program.'
 name = raw_input("What is your name?")
@@ -53,7 +55,7 @@ print "Hello there, " + name + "!"</code>
         Python. Для запуска программы нужно сделать её файл исполняемым. Для этого введите в терминале
     </p>
 
-    <u><EM><strong>chmod +x hello.py</strong></EM></u>
+    <u><em><strong>chmod +x hello.py</strong></em></u>
 
     <p>в папке, в которой вы сохранили программу. Теперь запустите её.</p>
 
@@ -63,24 +65,42 @@ Hello. I am a python program.
 What is your name? Ferd Burphel
 Hello there, Ferd Burphel!
 qreq@earth:~/python_examples$</code>
-
 </pre>
 
     <p>Вот и всё.</p>
 
     <h2 id="for">Пример цикла For</h2>
     <p><a href="#top">К Содержанию</a></p>
+
     <pre>
 <code>#!/usr/bin/env python
 for cntr in range(0,10):
-print cntr</code>
-
+    print cntr</code>
 </pre>
 
-    <p><CITE>Не забудьте поставить символ табуляции перед строкой «print cntr».</CITE> Это важно. В
+    <p><cite>Не забудьте поставить символ табуляции перед строкой «print cntr».</cite> Это важно. В
         Python для указания на блоки кода используются не круглые «<strong>(</strong>» и фигурные «<strong>{</strong>»
         скобки как в других языках
         программирования, а отступы.</p>
+
+    <p align="left" style="float: left; margin: 0;">
+        <a href="python_03.html" style="text-decoration: none;">
+            <img src="../images/prev.png" alt="Назад" title="Предыдущая часть" width="40" border="0"
+                style="border: none;">
+        </a>
+    </p>
+    <p align="right" style="float: right; margin: 0;">
+        <a href="python_02.html" style="text-decoration: none;">
+            <img src="../images/next.png" alt="Вперёд" title="Следующая часть" width="40" border="0"
+                style="border: none;">
+        </a>
+    </p>
+    <p align="center" style="text-align: center; margin: 0;">
+        <a href="python_01.html" style="text-decoration: none;">
+            <img src="../images/home.png" alt="Главная" title="Содержание" width="40" border="0" style="border: none;">
+        </a>
+    </p>
+    <p style="clear: both; margin: 0;"></p>
 
 </body>
 

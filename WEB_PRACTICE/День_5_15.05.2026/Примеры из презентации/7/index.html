@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Комбинированные стили</title>
+    <style>
+        .menu {
+            color: black;
+        }
+
+        .menu .menuItemDefault {
+            color: gray;
+        }
+
+        .menu .menuItemCurrent {
+            color: red;
+        }
+
+        .menu .menuItemSelected {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <li class="menuItemDefault">
+            <a href="#">Item 01</a>
+        </li>
+        <li class="menuItemDefault menuItemCurrent">
+            <a href="#">Item 02</a>
+        </li>
+        <li class="menuItemDefault menuItemSelected">
+            <a href="#">Item 03</a>
+        </li>
+    </ul>
+</body>
+
+</html>

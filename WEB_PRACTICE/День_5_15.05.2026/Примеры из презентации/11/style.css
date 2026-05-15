@@ -1,0 +1,16 @@
+.redtext {
+    color: #FF0000;
+}
+
+#bigtext {
+    font-size: large;
+}
+
+EM {
+    color: #00FF00;
+    font-weight: bold;
+}
+
+P EM {
+    color: #0000FF;
+}
