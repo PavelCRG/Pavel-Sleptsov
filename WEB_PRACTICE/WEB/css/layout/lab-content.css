@@ -1,0 +1,73 @@
+/* Оригинал лабораторной внутри #content — только вписать, не перекрашивать */
+
+#content .lab-content {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+#content .lab-content.lab-page {
+    width: 100%;
+}
+
+#content .lab-content.lab-page--center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+    max-width: min(100%, 960px);
+}
+
+#content .lab-content.lab-grid {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content .lab-content.lab-layout {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content .lab-content.lab-grid {
+    box-sizing: border-box;
+    max-width: 100%;
+    contain: layout style;
+}
+
+#content .lab-content.lab-grid #lab-inner .lab-panels {
+    width: 100%;
+    min-height: 240px;
+}
+
+#content .lab-content.lab-grid #lab-inner .lab-panels .lab-demo {
+    display: none;
+}
+
+#content .lab-content.lab-grid #lab-inner .lab-panels:not(:has(.lab-demo:target)) .lab-demo:first-child {
+    display: block;
+}
+
+#content .lab-content.lab-grid #lab-inner .lab-panels .lab-demo:target {
+    display: block;
+}
+
+/* Семантическая вёрстка (zad2.2 + 2_29.css) — как отдельная страница */
+#content .lab-content.lab-semantic {
+    width: 100%;
+    min-width: 430px;
+    box-sizing: border-box;
+}
+
+#content .lab-content.lab-semantic table {
+    width: auto;
+    border: none;
+    margin: 0;
+}
+
+#content .lab-content.lab-semantic th,
+#content .lab-content.lab-semantic td {
+    border: none;
+    padding: 4px;
+    text-align: left;
+    background: transparent;
+    font-weight: normal;
+}

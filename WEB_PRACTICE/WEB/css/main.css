@@ -1,0 +1,14 @@
+/* WEB-практика — главный файл стилей (только HTML + CSS) */
+@import "base/reset.css";
+@import "layout/container.css";
+@import "layout/site-chrome.css";
+@import "layout/header.css";
+@import "layout/main-row.css";
+@import "layout/content.css";
+@import "layout/lab-content.css";
+@import "components/sidebar.css";
+@import "components/welcome.css";
+@import "components/about.css";
+@import "components/footer.css";
+@import "components/topbar.css";
+@import "media/mobile.css";

@@ -1,0 +1,13 @@
+/* Ссылка «на главную» на отдельных страницах */
+
+.site-topbar {
+    margin: 0 0 16px;
+    padding: 10px 14px;
+    background: #ebf8ff;
+    border: 1px solid #90cdf4;
+    border-radius: 4px;
+}
+
+.site-topbar a {
+    color: #2b6cb0;
+}

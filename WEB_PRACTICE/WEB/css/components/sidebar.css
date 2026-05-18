@@ -1,0 +1,148 @@
+/* Боковое меню */
+
+#sidebar {
+    width: 22%;
+    min-width: 280px;
+    max-width: 400px;
+    padding: 18px 16px 28px;
+    background: #fff;
+    border-right: 1px solid #e2e8f0;
+    overflow-y: auto;
+    flex-shrink: 0;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.04);
+}
+
+#sidebar h3 {
+    margin: 0 0 14px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #718096;
+    font-weight: 600;
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: #2d3748;
+}
+
+#sidebar a:hover {
+    color: #2b6cb0;
+}
+
+#sidebar a.active {
+    font-weight: 600;
+    color: #c53030;
+}
+
+#sidebar .nav-top {
+    margin: 0 0 10px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#sidebar .nav-top a {
+    color: #1a365d;
+}
+
+#sidebar .nav-day-link {
+    margin: 4px 0;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+#sidebar .nav-day-link a {
+    color: #1a365d;
+    font-weight: 600;
+}
+
+#sidebar .nav-day-link a.active,
+#sidebar .nav-day-link a:hover {
+    color: #2b6cb0;
+}
+
+#sidebar .nav-day-body {
+    padding: 4px 0 10px 2px;
+}
+
+#sidebar .nav-overview {
+    margin: 0 0 10px 10px;
+    font-size: 0.88rem;
+}
+
+#sidebar .nav-flat {
+    margin: 6px 0 10px 10px;
+    padding-left: 16px;
+}
+
+#sidebar .nav-day {
+    margin: 8px 0 4px;
+    border-bottom: 1px solid #f0f4f8;
+}
+
+#sidebar .nav-day>summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #1a365d;
+    padding: 8px 6px;
+    list-style: none;
+    border-radius: 4px;
+}
+
+#sidebar .nav-day>summary:hover {
+    background: #f7fafc;
+}
+
+#sidebar .nav-day>summary::-webkit-details-marker {
+    display: none;
+}
+
+#sidebar .nav-day>summary::before {
+    content: "▸ ";
+    color: #718096;
+}
+
+#sidebar .nav-day[open]>summary::before {
+    content: "▾ ";
+}
+
+#sidebar .nav-section {
+    margin: 4px 0 6px 10px;
+    border-left: 2px solid #e2e8f0;
+    padding-left: 10px;
+}
+
+#sidebar .nav-section>summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #4a5568;
+    padding: 5px 0;
+    list-style: none;
+}
+
+#sidebar .nav-section>summary::-webkit-details-marker {
+    display: none;
+}
+
+#sidebar .nav-section>summary::before {
+    content: "+ ";
+    color: #a0aec0;
+}
+
+#sidebar .nav-section[open]>summary::before {
+    content: "− ";
+}
+
+#sidebar ul {
+    margin: 4px 0 8px;
+    padding-left: 16px;
+}
+
+#sidebar li {
+    margin: 4px 0;
+    line-height: 1.4;
+    font-size: 0.88rem;
+    word-break: break-word;
+}

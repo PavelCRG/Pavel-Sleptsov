@@ -1,0 +1,65 @@
+/* Адаптивность */
+
+@media (max-width: 900px) {
+    #main-row {
+        flex-direction: column;
+    }
+    #sidebar {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+    #sidebar .nav-day>summary {
+        padding: 10px 8px;
+        font-size: 0.95rem;
+    }
+    #content {
+        padding: 20px 16px 28px;
+    }
+    #container > #header h1 {
+        font-size: 1.25rem;
+        letter-spacing: 0.03em;
+        white-space: normal;
+    }
+    .welcome-table {
+        font-size: 0.85rem;
+    }
+    .welcome-table th,
+    .welcome-table td {
+        padding: 8px 10px;
+    }
+    #content .welcome-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .welcome-table--days {
+        max-width: 100%;
+    }
+
+    #content .about-dev {
+        max-width: none;
+        padding: 18px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    #container > #header {
+        padding: 16px 12px;
+    }
+    #footer {
+        padding: 20px 12px;
+    }
+    .footer-brand {
+        font-size: 1rem;
+    }
+    .footer-group-code {
+        font-size: 1.2rem;
+    }
+}

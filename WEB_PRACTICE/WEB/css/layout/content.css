@@ -1,0 +1,34 @@
+/* Область контента сайта */
+
+#content {
+    flex: 1;
+    min-width: 0;
+    padding: 28px 36px 36px;
+    background: #fff;
+    overflow: auto;
+}
+
+/* Таблицы только главной / обзора — не трогать таблицы в лабораторных */
+#content .welcome-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0;
+}
+
+#content .welcome-table th,
+#content .welcome-table td {
+    border: 1px solid #4a5568;
+    padding: 8px 12px;
+    text-align: center;
+}
+
+#content .welcome-table th {
+    background: #e2e8f0;
+    font-weight: 600;
+}
+
+#content .lab-content img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,14 @@
+/* Единый стиль шапки и подвала сайта (не lab-footer внутри работ) */
+#container > #header,
+#container > #footer {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    color: #fff;
+}
+
+#container > #footer {
+    display: block;
+    grid-area: unset;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: auto;
+}

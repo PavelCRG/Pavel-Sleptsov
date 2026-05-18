@@ -1,0 +1,97 @@
+/* Главная страница */
+.welcome {
+    max-width: 900px;
+}
+
+.welcome h2 {
+    margin: 0 0 16px;
+    font-size: 1.5rem;
+    color: #1a365d;
+}
+
+.welcome-lead {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #4a5568;
+    margin: 0 0 20px;
+}
+
+.welcome-table {
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-table th {
+    background: #1a365d;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid #2c5282;
+    padding: 8px 14px;
+}
+
+.welcome-table td {
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    padding: 8px 14px;
+    text-align: center;
+}
+
+.welcome-table tr:nth-child(even) td {
+    background: #f7fafc;
+}
+
+.welcome-table a {
+    color: #2b6cb0;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.welcome-table a:hover {
+    text-decoration: underline;
+}
+
+.welcome-table--days {
+    width: auto;
+    max-width: 11em;
+}
+
+.day-files {
+    margin: 12px 0 0;
+    padding-left: 22px;
+    line-height: 1.7;
+}
+
+.day-files a {
+    color: #2b6cb0;
+    text-decoration: none;
+}
+
+.day-files a:hover {
+    text-decoration: underline;
+}
+
+.day-overview .day-desc {
+    color: #4a5568;
+    line-height: 1.55;
+    margin: 0 0 16px;
+}
+
+.day-overview h3 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    color: #1a365d;
+}
+
+.day-overview .day-hint {
+    margin: 20px 0 0;
+    padding: 12px 14px;
+    background: #ebf8ff;
+    border: 1px solid #bee3f8;
+    border-radius: 4px;
+    font-size: 0.92rem;
+    color: #2c5282;
+    line-height: 1.5;
+}
