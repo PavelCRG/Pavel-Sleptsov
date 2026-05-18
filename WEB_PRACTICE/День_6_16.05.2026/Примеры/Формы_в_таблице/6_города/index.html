@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Форма 6 — Города</title>
+</head>
+
+<body>
+    <b>Выпадающий и мульти списки:</b><br><br>
+    <form name="cities_form" method="post" action="cities.php">
+        <fieldset>
+            <legend>Города РБ</legend>
+            <select name="city" id="city">
+                <option value="brest" selected>Брест</option>
+                <option value="minsk">Минск</option>
+                <option value="vitebsk">Витебск</option>
+            </select><br>
+            <select name="cities[]" id="cities" size="7" multiple>
+                <optgroup label="Города РБ">
+                    <option value="brest">Брест</option>
+                    <option value="minsk">Минск</option>
+                    <option value="vitebsk">Витебск</option>
+                </optgroup>
+                <optgroup label="Города России">
+                    <option value="moscow">Москва</option>
+                    <option value="ryazan">Рязань</option>
+                    <option value="magadan">Магадан</option>
+                </optgroup>
+            </select><br>
+            <input type="submit" value="Ok">
+        </fieldset>
+    </form>
+</body>
+
+</html>

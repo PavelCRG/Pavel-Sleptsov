@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Форма 8 — Валидация HTML5</title>
+</head>
+
+<body>
+    <b>Валидация данных HTML5:</b><br><br>
+    <form name="validation_form" method="post" action="validate.php">
+        <fieldset>
+            <legend>Строка поиска</legend>
+            Только русские буквы<br>
+            <input type="text" name="russian_text" pattern="[А-ЯЁа-яё]+"><br>
+
+            <input type="text" name="phone" placeholder="+375-29-1234567"
+                pattern="\+[0-9]{3}-[0-9]{2}-[0-9]{7}"><br>
+            <input type="submit" value="Проверить">
+        </fieldset>
+    </form>
+</body>
+
+</html>

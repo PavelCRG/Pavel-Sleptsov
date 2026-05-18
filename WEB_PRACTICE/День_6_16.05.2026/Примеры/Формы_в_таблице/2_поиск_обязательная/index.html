@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Форма 2 — Поиск</title>
+</head>
+
+<body>
+    <b>Простая форма поиска с вариантами:</b><br><br>
+    <form name="search_google" method="get" action="search.php">
+        <fieldset>
+            <legend>Строка поиска</legend>
+            <input type="text" name="query" required autofocus>*
+            <input type="submit" value="Искать"><br>
+            <label>
+                <input type="radio" name="where" value="site"> на сайте
+            </label>
+            <label>
+                <input type="radio" name="where" value="google" checked> в google
+            </label>
+        </fieldset>
+    </form>
+</body>
+
+</html>

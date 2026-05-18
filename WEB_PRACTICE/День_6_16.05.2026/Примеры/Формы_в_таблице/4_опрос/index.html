@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Форма 4 — Опрос</title>
+</head>
+
+<body>
+    <b>Опрос (голосование):</b><br><br>
+    <form name="poll_form" method="post" action="vote.php">
+        <fieldset>
+            <legend>Как вам?</legend>
+            <input type="hidden" name="date_voite" value="2013.12.31">
+            <label>
+                <input type="radio" name="rating" value="nothing" checked> ничего
+            </label><br>
+            <label>
+                <input type="radio" name="rating" value="not_bad"> неплохо
+            </label><br>
+            <label>
+                <input type="radio" name="rating" value="good"> хорошо
+            </label><br>
+            <label>
+                <input type="radio" name="rating" value="super"> супер
+            </label><br>
+            <input type="submit" value="Отправить">
+        </fieldset>
+    </form>
+</body>
+
+</html>

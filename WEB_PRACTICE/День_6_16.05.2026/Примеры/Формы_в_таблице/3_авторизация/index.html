@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Форма 3 — Авторизация</title>
+</head>
+
+<body>
+    <b>Простая форма авторизации:</b><br><br>
+    <form name="login_form" method="post" action="login.php">
+        <fieldset>
+            <legend>Авторизируйтесь</legend>
+            <input type="text" id="login_user" name="login" required>*
+            <label for="login_user">Логин</label><br>
+            <input type="password" id="login_pass" name="password" required>*
+            <label for="login_pass">Пароль</label><br>
+            <label>
+                <input type="checkbox" name="remember" value="1"> Оставаться в системе
+            </label><br>
+            <input type="submit" value="Войти">
+        </fieldset>
+    </form>
+</body>
+
+</html>
