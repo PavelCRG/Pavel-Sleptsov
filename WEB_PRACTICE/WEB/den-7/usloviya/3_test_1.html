@@ -1,0 +1,50 @@
+<HTML>
+
+<HEAD>
+     <TITLE>test</TITLE>
+     <SCRIPT>
+          function res() {
+               var N = 0;
+               if (document.test.q11.checked) N = N + 1;
+               if (document.test.q12.checked) N = N + 2;
+               if (document.test.q22.checked) N = N + 3;
+
+               if (document.test.q3.options[2].selected) N = N + 3;
+               document.test.result.value = " Ваш результат " + N + " баллов"
+          }
+
+     </SCRIPT>
+</HEAD>
+
+<BODY>
+
+     <FORM name=test>
+          <P>Первый вопрос. Выберите <STRONG>правильные</STRONG> варианты ответа
+          </P>
+          <INPUT id=q11 type=checkbox value=q11 name=q1> ответ №1 <BR>
+          <INPUT id=q12 type=checkbox value=q12 name=q1> ответ №2 <BR>
+          <!-- Ответ1= +1 
+     Ответ2= +2
+-->
+          <P>Второй вопрос. Выберите <STRONG>один правильный</STRONG> вариант</P>
+          <INPUT id=q21 type=radio value=q21 name=q2> ответ №1 <BR>
+          <INPUT id=q22 type=radio value=q22 name=q2> ответ №2 <BR>
+          <!-- Ответ1=  0 
+     Ответ2= +3
+-->
+          <P>Третий вопрос. Выберите <STRONG>один правильный</STRONG> вариант из списка</P>
+          <SELECT name=q3>
+               <OPTION>Вариант №1</OPTION>
+               <OPTION>Вариант №2</OPTION>
+               <OPTION>Вариант №3</OPTION>
+               <OPTION>Вариант №4</OPTION>
+          </SELECT>
+          <P><!-- Ответ1,2,4=  0 
+     Ответ3    = +3
+--><INPUT onclick=res() type=button value=РЕЗУЛЬТАТ><BR>
+               <TEXTAREA name=result rows=5 cols=60></TEXTAREA>
+          </P>
+     </FORM>
+</BODY>
+
+</HTML>

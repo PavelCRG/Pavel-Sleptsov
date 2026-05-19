@@ -1,31 +1,67 @@
-/* Шапка сайта (не путать с #lab-header внутри работ) */
+/* Шапка: личный логотип | название | логотип колледжа */
 
 #container > #header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 12px;
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: 20px 16px;
+    padding: 12px 20px;
+    min-height: 100px;
     flex-shrink: 0;
     float: none;
     border: none;
     height: auto;
     min-height: 0;
     line-height: normal;
-    text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 #container > #header h1 {
+    flex: 1;
     margin: 0;
-    padding: 0;
-    width: 100%;
+    padding: 0 8px;
     text-align: center;
-    font-size: 1.65rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    line-height: 1.25;
+    line-height: 1.2;
     letter-spacing: 0.04em;
     white-space: nowrap;
+}
+
+.header-logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    line-height: 0;
+}
+
+.header-logo img {
+    display: block;
+    height: 56px;
+    width: auto;
+    max-width: 72px;
+    object-fit: contain;
+}
+
+.header-logo--college img {
+    max-width: 52px;
+    max-height: 56px;
+}
+
+.header-logo--personal img {
+    width: 96px;
+    height: 96px;
+    max-width: 104px;
+    min-width: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.header-logo:hover {
+    opacity: 0.9;
 }

@@ -1,0 +1,245 @@
+/* Правая колонка — реклама (в стиле шапки сайта) */
+
+
+
+#ad-panel.site-ad {
+
+    width: 18%;
+
+    min-width: 168px;
+
+    max-width: 240px;
+
+    flex: 0 0 auto;
+
+    flex-shrink: 0;
+
+    align-self: stretch;
+
+    min-height: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background: #edf2f7;
+
+    border-left: 1px solid #cbd5e0;
+
+    box-shadow: -2px 0 6px rgba(26, 54, 93, 0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+
+.site-ad__title {
+
+    margin: 0;
+
+    padding: 10px 12px;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.14em;
+
+    color: #fff;
+
+    text-align: center;
+
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+
+    flex-shrink: 0;
+
+}
+
+
+
+.site-ad__slot {
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding: 12px 10px 16px;
+
+    background: #fff;
+
+    display: block;
+
+    text-align: center;
+
+    overflow-y: auto;
+
+}
+
+
+
+.site-ad__banner {
+
+    display: block;
+
+    padding: 0;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    text-decoration: none;
+
+    color: #1a202c;
+
+    transition: opacity 0.15s ease;
+
+}
+
+
+
+.site-ad__banner:hover {
+
+    opacity: 0.92;
+
+}
+
+
+
+.site-ad__logo {
+
+    display: block;
+
+    width: 68px;
+
+    height: 68px;
+
+    margin: 0 auto 8px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+}
+
+
+
+.site-ad__brand {
+
+    display: block;
+
+    font-size: 1.12rem;
+
+    font-weight: 700;
+
+    color: #1a365d;
+
+    margin-bottom: 6px;
+
+}
+
+
+
+.site-ad__tagline {
+
+    margin: 0 0 8px;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    color: #2c5282;
+
+    line-height: 1.35;
+
+}
+
+
+
+.site-ad__desc {
+
+    margin: 0 0 8px;
+
+    font-size: 0.7rem;
+
+    line-height: 1.48;
+
+    color: #4a5568;
+
+    text-align: left;
+
+}
+
+
+
+.site-ad__desc:last-of-type {
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.site-ad__desc strong {
+
+    color: #1a365d;
+
+    font-weight: 600;
+
+}
+
+
+
+.site-ad__qr {
+
+    display: block;
+
+    width: 88px;
+
+    height: 88px;
+
+    margin: 8px auto 8px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 6px;
+
+    padding: 4px;
+
+    background: #fff;
+
+}
+
+
+
+.site-ad__cta {
+
+    display: inline-block;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    color: #2b6cb0;
+
+    word-break: break-all;
+
+}
+
+
+
+.site-ad__banner:hover .site-ad__cta {
+
+    text-decoration: underline;
+
+}
+
+

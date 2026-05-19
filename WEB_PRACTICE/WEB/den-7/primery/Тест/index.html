@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нумерология дома и квартиры — WEB-практика</title>
+    <link rel="stylesheet" href="../../../css/main.css">
+<script>
+        // перевод буквы в число
+        function letterToNumber(letter) {
+            var up = letter.toUpperCase();
+            if (up == 'А' || up == 'І' || up == 'I') return 1;
+            if (up == 'Б' || up == 'Т') return 2;
+            if (up == 'В' || up == 'К') return 3;
+            if (up == 'Г' || up == 'Л') return 4;
+            if (up == 'Д' || up == 'М') return 5;
+            if (up == 'Е' || up == 'Н') return 6;
+            if (up == 'О') return 7;
+            if (up == 'Ж' || up == 'П') return 8;
+            if (up == 'З' || up == 'Р') return 9;
+            return 0;
+        }
+
+        // сумма цифр и букв в строке
+        function stringToSum(str) {
+            if (str == "") return 0;
+            var sum = 0;
+            for (var i = 0; i < str.length; i++) {
+                var ch = str.charAt(i);
+                if (ch >= '0' && ch <= '9') {
+                    sum = sum + parseInt(ch);
+                }
+                else if ((ch >= 'А' && ch <= 'Я') || (ch >= 'а' && ch <= 'я')) {
+                    sum = sum + letterToNumber(ch);
+                }
+            }
+            return sum;
+        }
+
+        // сведение к простому числу 1-9
+        function reduceToSimple(num) {
+            if (num == 0) return 0;
+            while (num > 9) {
+                var s = 0;
+                while (num > 0) {
+                    s = s + (num % 10);
+                    num = Math.floor(num / 10);
+                }
+                num = s;
+            }
+            return num;
+        }
+
+        function getInterpretation(num) {
+            if (num == 1) {
+                return "АДЗІН. Такая лічба падыходзіць да чалавека, які хоча адкрыць уласнае прадпрыемства. Жыхары ў «доме Адзінкі» добра вучацца на ўласным вопыце, а не на памылках іншых. Ён добра падыходзіць для тых, хто жадае жыць у адпаведнасці са сваімі схільнасцямі, незалежна ад усіх. У доме гэтага чалавека заўсёды чыста. Калі ваша праца звязана з клопатам аб іншых або вы займаеце значнае месца ў жыцці (дырэктар, узначальваеце фірму), тады вам трэба жыць у «доме Адзінкі». Тут вы будзеце адчуваць сябе ўпэўнена. Але такі дом не падыходзіць людзям, якія імкнуцца да адзіноты.";
+            }
+            else if (num == 2) {
+                return "ДВА. Усе прэтэнзіі тут вырашаюцца мірным шляхам. Дом найлепш падыходзіць для вучоных, спартсменаў. Двойка дапаможа вырашыць свае праблемы стрыманым людзям, бо садзейнічае развіццю адчувальнасці. Аднак жыць пад гэтай лічбай не рэкамендуецца празмерна эмацыянальным і нервовым людзям.";
+            }
+            else if (num == 3) {
+                return "ТРЫ. У гэтым доме ўтульна ўсім. Добра падыходзіць для вечарынак і ўцех. Тут духоўная і сэксуальная энергія будзе павялічвацца. Не падыходзіць толькі тым, хто прывык раскідвацца грашыма.";
+            }
+            else if (num == 4) {
+                return "ЧАТЫРЫ. Гэта лічба валодае ахоўнай і стабільнай энергіяй. Гэты дом — спрыяльнае месца для няўпэўненых у жыцці, разгубленых людзей. Чацвёрка дапаможа такім людзям выправіць сітуацыю, знайсці стабільнасць, практычнасць. Вельмі падыходзіць для групы людзей, што працуюць для дасягнення адзінай мэты. Наогул лічба 4 аб'ядноўвае ўсе стыхіі: агонь, паветра, ваду, зямлю. Не падыходзіць чацвёрка толькі для працаголікаў, бо апошнія будуць працаваць яшчэ больш.";
+            }
+            else if (num == 5) {
+                return "ПЯЦЬ. У гэтым доме ўсё круціцца, як кола. Жыццё тут — няспынная мітусня сустрэч, вечарынак, паходаў, выездаў за горад. Дом спрыяльны для вучоных, журналістаў, бо робіць іх яшчэ больш актыўнымі. У «доме Пяцёркі» павялічваецца сэксуальная прывабнасць. Проціпаказаны людзям, што імкнуцца да спакойнага, размеркаванага жыцця, якія стаміліся ад будзённай мітусні.";
+            }
+            else if (num == 6) {
+                return "ШЭСЦЬ. Дом гармоніі і раўнавагі. Утульны для сям'і з дзецьмі і для жадаючых удасканаліць артыстычныя здольнасці, для адвакатаў. Шасцёрка абуджае сяброўскія і любоўныя пачуцці. Тут могуць знайсці другі подых пары, што даўно жывуць разам.";
+            }
+            else if (num == 7) {
+                return "СЕМ. «Храм» адзіноты і назірання, дзе можна прааналізаваць мінулы вопыт і цяперашнюю сітуацыю. Тут добра тым, хто хоча жыць адзін, займацца медытацыяй, эзатэрыкай, вывучэннем філасофіі, пошукам жыццёвага шляху. Не падыходзіць тым, хто хоча дабіцца матэрыяльнага поспеху, пазбавіцца ад адзіноты. Энергія сямёркі дазваляе засяродзіцца на духоўных каштоўнасцях.";
+            }
+            else if (num == 8) {
+                return "ВОСЕМ. Лічба, якая нясе дабрабыт ва ўсе галіны жыцця, а таксама прырост, новых сяброўскіх адносінаў, ладу ў сям'і і прыбытку. Калі вы імкняцеся палепшыць матэрыяльнае становішча, вам проста неабходна жыць пад лічбай восем. Падыходзіць яна і тым, каму патрэбна высокая пасада, узнагароды, прызнанне ў грамадстве. Васьмёрка азначае цэласнасць, таму поспех прыйдзе не ў адной, а ў розных галінах. Гэта ж адносіцца і да духоўнай сферы. Аднак дом не падыходзіць для людзей, што не ўмеюць разумна і рацыянальна распараджацца фінансавымі сродкамі.";
+            }
+            else if (num == 9) {
+                return "ДЗЕВЯЦЬ. Тут збіраюць плады мінулых намаганняў. У доме заўсёды прысутнічаюць любоў і спагада да людзей. Той, хто тут жыве, лёгка аддае ўсё іншым. У «доме Дзевяткі» можна дасягнуць глыбіні мудрасці. Таму ён добра падыходзіць да апошняга этапу жыццёвага шляху. «Дом Дзевяткі» проціпаказаны альтруістам, бо ў ім апошнія будуць думаць і жыць праблемамі іншых, забываючыся на свае.";
+            }
+            else {
+                return "Не атрымалася вылічыць лічбу. Калі ласка, увядзіце дом, корпус ці кватэру.";
+            }
+        }
+
+        // главная функция расчёта
+        function calculateNumber() {
+            var form = document.forms.numerologia;
+            if (!form) return;
+            var house = form.house.value;
+            var building = form.building.value;
+            var apartment = form.apartment.value;
+
+            if (house == "" && building == "" && apartment == "") {
+                form.result.value = "Памылка: Калі ласка, увядзіце дом, корпус ці кватэру.";
+                return;
+            }
+
+            var totalSum = stringToSum(house) + stringToSum(building) + stringToSum(apartment);
+            var finalNumber = reduceToSimple(totalSum);
+            var interpretation = getInterpretation(finalNumber);
+
+            form.result.value = "Лічба дома: " + finalNumber + "\n\n" + interpretation;
+        }
+
+        function clearFields() {
+            var form = document.forms.numerologia;
+            if (!form) return;
+            form.house.value = "";
+            form.building.value = "";
+            form.apartment.value = "";
+            form.result.value = "";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var form = document.forms.numerologia;
+            if (!form) return;
+            var btnCalc = document.getElementById("btn-calc");
+            var btnClear = document.getElementById("btn-clear");
+            if (btnCalc) btnCalc.addEventListener("click", calculateNumber);
+            if (btnClear) btnClear.addEventListener("click", clearFields);
+        });
+    </script>
+
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="../../../index.html" class="header-logo header-logo--personal" title="На главную">
+                <img src="../../../images/Logo.png" alt="Логотип — Слепцов П.Л.">
+            </a>
+            <h1>WEB-ПРАКТИКА</h1>
+            <span class="header-logo header-logo--college" title="Минский филиал БТЭУ ПК">
+                <img src="../../../images/college-logo.png" alt="Логотип Минского филиала БТЭУ ПК">
+            </span>
+        </div>
+        <div id="main-row">
+            <div id="sidebar">
+<h3>Меню</h3>
+<p class="nav-top"><a href="../../../index.html">Главная</a></p>
+<details class="nav-day">
+<summary>День 1</summary>
+<div class="nav-day-body">
+<p class="nav-overview"><a href="../../../den-1/index.html">Обзор дня</a></p>
+<details class="nav-section">
+<summary>Примеры</summary><ul>
+<li><a href="../../../den-1/primery/python_part1.html">python_part1.html</a></li>
+<li><a href="../../../den-1/primery/python_part2.html">python_part2.html</a></li>
+<li><a href="../../../den-1/primery/python_part3.html">python_part3.html</a></li>
+<li><a href="../../../den-1/primery/add.html">add.html</a></li>
+</ul></details>
+</div></details>
+<details class="nav-day">
+<summary>День 2</summary>
+<div class="nav-day-body">
+<p class="nav-overview"><a href="../../../den-2/index.html">Обзор дня</a></p>
+<details class="nav-section">
+<summary>zad1/zad1.3</summary><ul>
+<li><a href="../../../den-2/zad1/zad1.3.html">zad1.3.html</a></li>
+<li><a href="../../../den-2/zad1/spiski.html">spiski.html</a></li>
+<li><a href="../../../den-2/zad1/ssilki.html">ssilki.html</a></li>
+<li><a href="../../../den-2/zad1/tablitsi.html">tablitsi.html</a></li>
+<li><a href="../../../den-2/zad1/formi.html">formi.html</a></li>
+<li><a href="../../../den-2/zad1/formatirovanie.html">formatirovanie.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>zad2/zad2.3</summary><ul>
+<li><a href="../../../den-2/zad2/zad2.3/index1.html">index1.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index2.html">index2.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index3.html">index3.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index4.html">index4.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index5.html">index5.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index6.html">index6.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index7.html">index7.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index8.html">index8.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index9.html">index9.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index10.html">index10.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index11.html">index11.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index12.html">index12.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index13.html">index13.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index14.html">index14.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/index15.html">index15.html</a></li>
+<li><a href="../../../den-2/zad2/zad2.3/zad3_p211-213.html">zad3_p211-213.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>zad3</summary><ul>
+<li><a href="../../../den-2/zad3/index1.html">index1.html</a></li>
+<li><a href="../../../den-2/zad3/index2.html">index2.html</a></li>
+<li><a href="../../../den-2/zad3/index3.html">index3.html</a></li>
+<li><a href="../../../den-2/zad3/index4.html">index4.html</a></li>
+<li><a href="../../../den-2/zad3/index5.html">index5.html</a></li>
+<li><a href="../../../den-2/zad3/index6.html">index6.html</a></li>
+<li><a href="../../../den-2/zad3/index7.html">index7.html</a></li>
+<li><a href="../../../den-2/zad3/index8.html">index8.html</a></li>
+<li><a href="../../../den-2/zad3/index9.html">index9.html</a></li>
+<li><a href="../../../den-2/zad3/index10.html">index10.html</a></li>
+<li><a href="../../../den-2/zad3/index11.html">index11.html</a></li>
+<li><a href="../../../den-2/zad3/zad3_p211-213.html">zad3_p211-213.html</a></li>
+</ul></details>
+<ul class="nav-flat">
+<li><a href="../../../den-2/zad2/zad2.2_p176-177.html">zad2/zad2.2_p176-177.html</a></li>
+<li><a href="../../../den-2/zad1/zad1.2_p164-165.html">zad1/zad1.2_p164-165.html</a></li>
+</ul>
+</div></details>
+<details class="nav-day">
+<summary>День 3</summary>
+<div class="nav-day-body">
+<p class="nav-overview"><a href="../../../den-3/index.html">Обзор дня</a></p>
+<details class="nav-section">
+<summary>Примеры</summary><ul>
+<li><a href="../../../den-3/primery/python_part1.html">python_part1.html</a></li>
+<li><a href="../../../den-3/primery/python_part2.html">python_part2.html</a></li>
+<li><a href="../../../den-3/primery/python_part3.html">python_part3.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>Индивидуальное/table</summary><ul>
+<li><a href="../../../den-3/tablitsa/main.html">main.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>moto</summary><ul>
+<li><a href="../../../den-3/tablitsa/moto/moto.html">moto.html</a></li>
+<li><a href="../../../den-3/tablitsa/moto/sub_section/Tourist.html">Tourist.html</a></li>
+<li><a href="../../../den-3/tablitsa/moto/sub_section/Enduro.html">Enduro.html</a></li>
+<li><a href="../../../den-3/tablitsa/moto/sub_section/Chopper.html">Chopper.html</a></li>
+<li><a href="../../../den-3/tablitsa/moto/sub_section/Sport.html">Sport.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>ship</summary><ul>
+<li><a href="../../../den-3/tablitsa/ship/ship.html">ship.html</a></li>
+<li><a href="../../../den-3/tablitsa/ship/sub_section/Boat.html">Boat.html</a></li>
+<li><a href="../../../den-3/tablitsa/ship/sub_section/Yacht.html">Yacht.html</a></li>
+</ul></details>
+</div></details>
+<details class="nav-day">
+<summary>День 4</summary>
+<div class="nav-day-body">
+<p class="nav-overview"><a href="../../../den-4/index.html">Обзор дня</a></p>
+<details class="nav-section">
+<summary>Примеры</summary><ul>
+<li><a href="../../../den-4/primery/python_01_link_img.html">python_01_link_img.html</a></li>
+<li><a href="../../../den-4/primery/python_02_link_img.html">python_02_link_img.html</a></li>
+<li><a href="../../../den-4/primery/python_03_link_img.html">python_03_link_img.html</a></li>
+</ul></details>
+</div></details>
+<details class="nav-day">
+<summary>День 5</summary>
+<div class="nav-day-body">
+<p class="nav-overview"><a href="../../../den-5/index.html">Обзор дня</a></p>
+<details class="nav-section">
+<summary>Примеры</summary><ul>
+<li><a href="../../../den-5/primery/python_01_link_img.html">python_01_link_img.html</a></li>
+<li><a href="../../../den-5/primery/python_02_link_img.html">python_02_link_img.html</a></li>
+<li><a href="../../../den-5/primery/python_03_link_img.html">python_03_link_img.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>Примеры/import_style</summary><ul>
+<li><a href="../../../den-5/primery/import_style/python_01.html">python_01.html</a></li>
+<li><a href="../../../den-5/primery/import_style/python_02.html">python_02.html</a></li>
+<li><a href="../../../den-5/primery/import_style/python_03.html">python_03.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>Примеры/link_style</summary><ul>
+<li><a href="../../../den-5/primery/link_style/python_01.html">python_01.html</a></li>
+<li><a href="../../../den-5/primery/link_style/python_02.html">python_02.html</a></li>
+<li><a href="../../../den-5/primery/link_style/python_03.html">python_03.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>Примеры/style_media</summary><ul>
+<li><a href="../../../den-5/primery/style_media/python_01.html">python_01.html</a></li>
+<li><a href="../../../den-5/primery/style_media/python_02.html">python_02.html</a></li>
+<li><a href="../../../den-5/primery/style_media/python_03.html">python_03.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>Примеры/master_import</summary><ul>
+<li><a href="../../../den-5/primery/master_import/python_01.html">python_01.html</a></li>
+<li><a href="../../../den-5/primery/master_import/python_02.html">python_02.html</a></li>
+<li><a href="../../../den-5/primery/master_import/python_03.html">python_03.html</a></li>
+</ul></details>
+<details class="nav-section">
+<summary>Примеры из презентации</summary><ul>
+<li><a href="../../../den-5/prezentaciya/1/index.html">1/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/2/index.html">2/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/3/index.html">3/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/4/index.html">4/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/5/index.html">5/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/6/index.html">6/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/7/index.html">7/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/8/index.html">8/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/9/index.html">9/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/10/index.html">10/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/11/index.html">11/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/12/index.html">12/index.html</a></li>
+<li><a href="../../../den-5/prezentaciya/13/index.html">13/index.html</a></li>
+</ul></details>
+<ul class="nav-flat">
+<li><a href="../../../den-5/individualnoe/index.html">Индивидуальное/index.html</a></li>
+</ul>
+</div></details>
+<details class="nav-day">
+<summary>День 6</summary>
+<div class="nav-day-body">
+<p class="nav-overview"><a href="../../../den-6/index.html">Обзор дня</a></p>
+<details class="nav-section">
+<summary>Формы_в_таблице</summary><ul>
+<li><a href="../../../den-6/formy/1_поиск/index.html">1_поиск/index.html</a></li>
+<li><a href="../../../den-6/formy/2_поиск_обязательная/index.html">2_поиск_обязательная/index.html</a></li>
+<li><a href="../../../den-6/formy/3_авторизация/index.html">3_авторизация/index.html</a></li>
+<li><a href="../../../den-6/formy/4_опрос/index.html">4_опрос/index.html</a></li>
+<li><a href="../../../den-6/formy/5_отзыв/index.html">5_отзыв/index.html</a></li>
+<li><a href="../../../den-6/formy/6_города/index.html">6_города/index.html</a></li>
+<li><a href="../../../den-6/formy/7_загрузка/index.html">7_загрузка/index.html</a></li>
+<li><a href="../../../den-6/formy/8_валидация/index.html">8_валидация/index.html</a></li>
+</ul></details>
+<ul class="nav-flat">
+<li><a href="../../../den-6/anketa/index.html">Анкета_регистрации/index.html</a></li>
+</ul>
+</div></details>
+<details class="nav-day">
+<summary>День 7</summary>
+<div class="nav-day-body">
+<p class="nav-overview"><a href="../../../den-7/index.html">Обзор дня</a></p>
+<ul class="nav-flat">
+<li><a href="../../../den-7/primery/Тест/index.html" class="active">Тест — нумерология дома</a></li>
+</ul>
+</div></details>
+            
+            </div>
+            <div id="content">
+<div class="lab-content lab-page">
+<h2>Нумерология дома и квартиры</h2>
+
+    <p>Метод парапсихолога Алены Тимошенко</p>
+
+    <p>Чтобы найти «число дома», нужно сложить все цифры номера дома, корпуса и квартиры. Например: дом 27, корпус 2,
+        квартира 348 → 2+7+2+3+4+8=26, затем 2+6=8.</p>
+
+    <p>Если в номере есть буквы, они переводятся в числа:</p>
+
+    <p>1 — А, І | 2 — Б, Т | 3 — В, К | 4 — Г, Л | 5 — Д, М | 6 — Е, Н | 7 — О | 8 — Ж, П | 9 — З, Р</p>
+
+    <form name="numerologia" id="numerologia-form">
+        <p>Номер дома:<br>
+            <input type="text" name="house" size="30">
+        </p>
+
+        <p>Корпус (если есть):<br>
+            <input type="text" name="building" size="30">
+        </p>
+
+        <p>Номер квартиры (если есть):<br>
+            <input type="text" name="apartment" size="30">
+        </p>
+
+        <p>
+            <input type="button" id="btn-calc" value="РАССЧИТАТЬ">
+            <input type="button" id="btn-clear" value="ОЧИСТИТЬ">
+        </p>
+
+        <p>Результат:<br>
+            <textarea name="result" rows="12" cols="75" readonly></textarea>
+        </p>
+    </form>
+</div>
+            </div>
+            <aside id="ad-panel" class="site-ad" aria-label="Рекламный блок">
+                <p class="site-ad__title">Реклама</p>
+                <div class="site-ad__slot">
+<a class="site-ad__banner" href="https://voxivaai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        <img class="site-ad__logo" src="../../../images/voxiva-logo.svg" alt="Логотип Voxiva" width="68" height="68">
+                        <strong class="site-ad__brand">Voxiva</strong>
+                        <p class="site-ad__tagline">Voice-first платформа для работы</p>
+                        <p class="site-ad__desc">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке. Вы говорите намерение — система помогает оформить задачи, черновики и следующие шаги, не разрывая контекст между приложениями.</p>
+                        <p class="site-ad__desc"><strong>Сейчас (Windows, бета):</strong><br>Voxiva Voice — диктовка в любое поле (IDE, терминал, браузер), локальное распознавание речи, горячая клавиша.<br>Voxiva Space — рабочее пространство: доска задач, voice inbox, терминалы PowerShell и сессии с агентами в одном окне.</p>
+                        <p class="site-ad__desc"><strong>В разработке:</strong> Voxiva MCP (общий контекст для Cursor, Claude, Codex), Voxiva CLI (команды из терминала по намерению). Поддержка 99+ языков и полный облачный режим — в roadmap.</p>
+                        <img class="site-ad__qr" src="../../../images/voxiva-qr.png" alt="QR-код — сайт Voxiva" width="88" height="88">
+                        <span class="site-ad__cta">voxivaai.vercel.app</span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+        <div id="footer">
+            <div class="footer-inner">
+                <p class="footer-brand">WEB-ПРАКТИКА</p>
+                <p class="footer-group">Группа <span class="footer-group-code">31ИБ</span></p>
+                <p class="footer-copy"><span class="copy-sign">&copy;</span> Слепцов Павел Леонидович</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

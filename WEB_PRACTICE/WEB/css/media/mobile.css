@@ -4,62 +4,236 @@
     #main-row {
         flex-direction: column;
     }
+
     #sidebar {
         width: 100%;
         max-width: none;
         min-width: 0;
+        max-height: 42vh;
         border-right: none;
         border-bottom: 1px solid #e2e8f0;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-    }
-    #sidebar .nav-day>summary {
-        padding: 10px 8px;
-        font-size: 0.95rem;
-    }
-    #content {
-        padding: 20px 16px 28px;
-    }
-    #container > #header h1 {
-        font-size: 1.25rem;
-        letter-spacing: 0.03em;
-        white-space: normal;
-    }
-    .welcome-table {
-        font-size: 0.85rem;
-    }
-    .welcome-table th,
-    .welcome-table td {
-        padding: 8px 10px;
-    }
-    #content .welcome-table {
-        display: block;
-        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
+
+    #sidebar .nav-day > summary {
+        padding: 12px 10px;
+        font-size: 1rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    #sidebar a {
+        padding: 4px 0;
+        display: inline-block;
+    }
+
+    #content {
+        padding: 18px 14px 24px;
+        width: 100%;
+    }
+
+    #ad-panel.site-ad {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        border-left: none;
+        border-top: none;
+        box-shadow: 0 -2px 6px rgba(26, 54, 93, 0.08);
+    }
+
+    .site-ad__slot {
+        min-height: 0;
+        max-height: none;
+    }
+
+    .site-ad__banner {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .site-ad__desc {
+        text-align: center;
+    }
+
+    #container > #header {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    #container > #header h1 {
+        font-size: 1.05rem;
+        letter-spacing: 0.02em;
+        white-space: normal;
+        line-height: 1.3;
+        padding: 0 4px;
+    }
+
+    .header-logo img {
+        height: 40px;
+        max-width: 44px;
+    }
+
+    .header-logo--personal img {
+        width: 72px;
+        height: 72px;
+        max-width: 80px;
+        min-width: 64px;
+    }
+
+    .header-logo--college img {
+        max-width: 36px;
+    }
+
     .welcome-table--days {
         max-width: 100%;
     }
 
-    #content .about-dev {
+    .welcome-table th,
+    .welcome-table td {
+        padding: 12px 14px;
+    }
+
+    .day-overview h2 {
+        font-size: 1.4rem;
+    }
+
+    .day-summary {
+        font-size: 0.98rem;
+    }
+
+    .day-conditions-pdf {
+        padding: 10px 12px 8px;
+    }
+
+    .day-pdf-intro {
+        font-size: 0.9rem;
+    }
+
+    .day-pdf-list {
+        padding-left: 18px;
+    }
+
+    .day-files {
+        padding-left: 18px;
+    }
+
+    .day-files a {
+        line-height: 1.8;
+    }
+
+    .welcome {
         max-width: none;
-        padding: 18px 16px;
+    }
+
+    .welcome-dev {
+        padding: 14px 16px;
+    }
+
+    .welcome-dev__text {
+        text-align: left;
+    }
+
+    .welcome-table--days {
+        max-width: none;
+    }
+
+    #content .lab-content {
+        padding: 14px !important;
+        min-height: 0 !important;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 14px;
+        font-size: 15px;
     }
+
     #container > #header {
-        padding: 16px 12px;
+        padding: 14px 10px;
     }
+
+    #sidebar {
+        max-height: 38vh;
+        padding: 12px 10px 16px;
+    }
+
+    #content {
+        padding: 14px 10px 20px;
+    }
+
     #footer {
-        padding: 20px 12px;
+        padding: 18px 10px;
     }
+
     .footer-brand {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
+
     .footer-group-code {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
+
+    .welcome h2 {
+        font-size: 1.25rem;
+    }
+
+    .welcome-lead {
+        font-size: 0.95rem;
+    }
+
+    .welcome-table {
+        font-size: 0.9rem;
+        display: block;
+        width: 100%;
+    }
+
+    .welcome-table thead {
+        display: none;
+    }
+
+    .welcome-table tbody,
+    .welcome-table tr,
+    .welcome-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .welcome-table tr {
+        margin-bottom: 8px;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    .welcome-table td {
+        border-bottom: none;
+        padding: 10px 14px;
+        text-align: left;
+    }
+
+    .welcome-table td:first-child {
+        font-size: 1rem;
+        padding-bottom: 4px;
+    }
+
+    .welcome-table td:last-child {
+        padding-top: 0;
+        font-size: 0.85rem;
+        color: #718096;
+    }
+
+    .welcome-table td:last-child::before {
+        content: "Дата: ";
+        font-weight: 600;
+        color: #4a5568;
+    }
+
+    .site-ad__slot {
+        min-height: 80px;
+        padding: 14px 10px;
+    }
+
 }

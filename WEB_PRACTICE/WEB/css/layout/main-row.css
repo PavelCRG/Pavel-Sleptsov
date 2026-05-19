@@ -1,8 +1,26 @@
-/* Строка: меню + контент */
-
-#main-row {
-    display: flex;
-    flex: 1;
-    width: 100%;
-    align-items: stretch;
-}
+/* Строка: меню | контент | реклама */
+
+#main-row {
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    align-items: stretch;
+}
+
+#main-row > #sidebar {
+    order: 1;
+}
+
+#main-row > #content {
+    order: 2;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+#main-row > .site-ad,
+#main-row > #ad-panel {
+    order: 3;
+    flex: 0 0 auto;
+}
+

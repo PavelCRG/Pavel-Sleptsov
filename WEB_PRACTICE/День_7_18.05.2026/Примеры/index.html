@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document this</title>
+    <script>
+        function validate(obj, lowval, hival) {
+            if ((obj.value < lowval) || (obj.value > hival))
+                alert("Invalid Value!")
+        } 
+    </script>
+</head>
+
+<body>
+    <b> Enter a number between 18 and 99:</b>
+    <input type=text NAME=age SIZE=3 onChange=validate(this,18,99)>
+</body>
+</bhtml>

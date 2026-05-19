@@ -8,6 +8,9 @@
 @import "layout/lab-content.css";
 @import "components/sidebar.css";
 @import "components/welcome.css";
+@import "components/site-frame.css";
+@import "components/day-overview.css";
+@import "components/ad-panel.css";
 @import "components/about.css";
 @import "components/footer.css";
 @import "components/topbar.css";

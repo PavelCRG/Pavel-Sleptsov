@@ -1,0 +1,22 @@
+/* Простая рамка для блоков (без цветных полос и заливок) */
+
+.site-frame {
+    margin: 0 0 20px;
+    padding: 14px 16px;
+    border: 2px solid #2d3748;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.site-frame h2,
+.site-frame h3 {
+    margin-top: 0;
+}
+
+.site-frame h3 {
+    margin-bottom: 10px;
+}
+
+.site-frame ul {
+    margin: 0;
+}

@@ -4,6 +4,8 @@
     box-sizing: border-box;
     max-width: 100%;
     overflow-x: auto;
+    overflow-y: visible;
+    min-height: 0;
 }
 
 #content .lab-content.lab-page {
@@ -50,10 +52,11 @@
     display: block;
 }
 
-/* Семантическая вёрстка (zad2.2 + 2_29.css) — как отдельная страница */
+/* Семантическая вёрстка (zad2.2) — макет в den-2/zad2/2_29.css */
 #content .lab-content.lab-semantic {
     width: 100%;
-    min-width: 430px;
+    max-width: 100%;
+    min-width: 0;
     box-sizing: border-box;
 }
 

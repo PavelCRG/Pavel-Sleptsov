@@ -7,8 +7,12 @@
     padding: 18px 16px 28px;
     background: #fff;
     border-right: 1px solid #e2e8f0;
+    overflow-x: hidden;
     overflow-y: auto;
     flex-shrink: 0;
+    align-self: stretch;
+    min-height: 0;
+    max-height: none;
     box-shadow: 2px 0 6px rgba(0, 0, 0, 0.04);
 }
 
@@ -79,6 +83,12 @@
 #sidebar .nav-day {
     margin: 8px 0 4px;
     border-bottom: 1px solid #f0f4f8;
+}
+
+#sidebar details,
+#sidebar .nav-day-body,
+#sidebar .nav-section {
+    overflow: visible;
 }
 
 #sidebar .nav-day>summary {

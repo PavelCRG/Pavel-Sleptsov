@@ -1,16 +1,16 @@
-.redtext {
+#content .lab-content .redtext {
     color: #FF0000;
 }
 
-#bigtext {
+#content .lab-content #bigtext {
     font-size: large;
 }
 
-EM {
+#content .lab-content em {
     color: #00FF00;
     font-weight: bold;
 }
 
-P EM {
+#content .lab-content p em {
     color: #0000FF;
 }
