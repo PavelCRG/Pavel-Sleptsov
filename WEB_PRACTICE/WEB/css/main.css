@@ -6,6 +6,8 @@
 @import "layout/main-row.css";
 @import "layout/content.css";
 @import "layout/lab-content.css";
+@import "layout/lab-flex-grid.css";
+@import "layout/lab-bootstrap.css";
 @import "components/sidebar.css";
 @import "components/welcome.css";
 @import "components/site-frame.css";

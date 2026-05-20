@@ -1,0 +1,49 @@
+/* Flex/Grid — учебные демо дня 2: подписи AAA–FFF внутри ячеек */
+
+#content .lab-content [style*="display: grid"] {
+    width: fit-content;
+    max-width: 100%;
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+#content .lab-content [style*="display: grid"] > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 2px 6px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.15;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* В учебнике вторая строка 20px — на сайте текст не влезает */
+#content .lab-content [style*="grid-template-rows: 30px  20px"],
+#content .lab-content [style*="grid-template-rows: 30px 20px"] {
+    grid-template-rows: 30px 30px !important;
+}
+
+#content .lab-content [style*="display: flex"] {
+    width: fit-content;
+    max-width: 100%;
+}
+
+#content .lab-content [style*="display: flex"] > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 2px 6px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.15;
+    flex-shrink: 0;
+}
+
+#content .lab-content [style*="display: flex"][style*="height:"] > div {
+    align-self: stretch;
+    min-height: 100%;
+}
