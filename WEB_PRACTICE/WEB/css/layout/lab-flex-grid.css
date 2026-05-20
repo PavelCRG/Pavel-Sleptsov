@@ -1,49 +1,74 @@
-/* Flex/Grid — учебные демо дня 2: подписи AAA–FFF внутри ячеек */
+/* День 2 — flex/grid демо как в оригинале (внутри #content) */
 
-#content .lab-content [style*="display: grid"] {
+#content .lab-content.lab-page {
+    width: 100%;
+}
+
+/* Учебные блоки с красной рамкой — zad2.3 и zad3 */
+#content .lab-content [style*="display: flex"][style*="border: solid red"],
+#content .lab-content [style*="display: flex"][style*="border: solid red 1px"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#content .lab-content [style*="display: grid"][style*="border: solid red"],
+#content .lab-content [style*="display: grid"][style*="border: solid red 1px"] {
     width: fit-content;
     max-width: 100%;
+    box-sizing: border-box;
     align-items: stretch;
     justify-items: stretch;
 }
 
-#content .lab-content [style*="display: grid"] > div {
+/* Ячейки grid — на всю площадь клетки, текст по центру */
+#content .lab-content [style*="display: grid"][style*="border: solid red"] > div,
+#content .lab-content [style*="display: grid"][style*="border: solid red 1px"] > div {
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
     padding: 2px 6px;
     font-size: 13px;
     font-weight: 600;
-    line-height: 1.15;
-    min-height: 0;
+    line-height: 1.2;
     overflow: hidden;
 }
 
-/* В учебнике вторая строка 20px — на сайте текст не влезает */
+/* Вторая строка 20px — на сайте подписи не вылезают */
 #content .lab-content [style*="grid-template-rows: 30px  20px"],
 #content .lab-content [style*="grid-template-rows: 30px 20px"] {
     grid-template-rows: 30px 30px !important;
 }
 
-#content .lab-content [style*="display: flex"] {
-    width: fit-content;
-    max-width: 100%;
-}
-
-#content .lab-content [style*="display: flex"] > div {
+/* Элементы flex — flex-grow/basis из HTML, растягивание по строке */
+#content .lab-content [style*="display: flex"][style*="border: solid red"] > div,
+#content .lab-content [style*="display: flex"][style*="border: solid red 1px"] > div {
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    min-width: 0;
     padding: 2px 6px;
     font-size: 13px;
     font-weight: 600;
-    line-height: 1.15;
-    flex-shrink: 0;
+    line-height: 1.2;
+    flex-shrink: 1;
 }
 
-#content .lab-content [style*="display: flex"][style*="height:"] > div {
+/* Колонка flex-direction: column — блоки на всю ширину */
+#content .lab-content [style*="flex-direction: column"][style*="border: solid red"] > div,
+#content .lab-content [style*="flex-direction: column"][style*="border: solid red 1px"] > div {
+    width: 100%;
     align-self: stretch;
-    min-height: 100%;
+}
+
+/* Ряд с фиксированной высотой (align-items) */
+#content .lab-content [style*="display: flex"][style*="height:"][style*="border: solid red"] > div,
+#content .lab-content [style*="display: flex"][style*="height:"][style*="border: solid red 1px"] > div {
+    align-self: stretch;
+    min-height: 0;
 }
