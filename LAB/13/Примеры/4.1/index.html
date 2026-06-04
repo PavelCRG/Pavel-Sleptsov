@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var scrtxt = "Мы на многае не адважваемся не таму, што яно складанае;" +
+            " яно складанае менавіта таму, што мы на яго не адважваемся." +
+            " (Сенека (4 да н.э. – 65 н.э.), рымскі палітічны дзеяч, філосаф і пісьменнік)" +
+            " Недастаткова, каб выхаванне толькі не псавала нас," + " трэба, каб яно мяняла нас у лепшы бок. " +
+            "(Мішэль дэ Мантэнь (1533-1592), французскі філосаф)";
+
+        var _length = scrtxt.length;
+        var _width = 60;
+        var pos = -(_width + 2);
+
+        function scroll() {
+            pos++;
+            var scroller = "";
+            if (pos == _length) {
+                pos = -(_width + 2);
+            }
+            if (pos < 0) {
+                for (var i = 1; i <= Math.abs(pos); i++) {
+                    scroller = " " + scroller;
+                }
+                scroller = scrtxt.substring(0, _width - i + 1) + scroller;
+            }
+            else {
+                scroller = scrtxt.substring(pos, _width + pos) + scroller;
+            }
+            document.getElementById("scrollbox").innerHTML = scroller;
+            setTimeout("scroll()", 100);
+        }
+    </script>
+</head>
+
+<body onLoad="scroll()">
+    <pre id="scrollbox"></pre>
+</body>
+
+</html>

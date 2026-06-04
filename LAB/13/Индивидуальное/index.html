@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант 1</title>
+    <script>
+        function sumRyad(n) {
+            var s = 0
+            for (var i = 1; i <= n; i++) {
+                s = s + i
+            }
+            return s
+        }
+
+        function sumFormula(n) {
+            return n * (n + 1) / 2
+        }
+
+        function showResult() {
+            var n = parseInt(document.getElementById("n").value)
+            if (isNaN(n) || n < 1) {
+                alert("Введите целое число n больше 0")
+                return
+            }
+            var left = sumRyad(n)
+            var right = sumFormula(n)
+            var ok = left == right
+
+            document.getElementById("left").innerHTML = left
+            document.getElementById("right").innerHTML = right
+            document.getElementById("count").innerHTML = n
+            document.getElementById("check").innerHTML = ok ? "совпадают" : "не совпадают"
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Вариант 1</h1>
+    <p>Сумма ряда: <b>1 + 2 + 3 + … + n = n(n + 1) / 2</b></p>
+
+    <p>
+        <label for="n">Количество слагаемых n:</label>
+        <input type="number" id="n" value="100" min="1">
+        <button type="button" onclick="showResult()">Вычислить</button>
+    </p>
+
+    <table border="1">
+        <tr>
+            <td>Значение выражения слева (сумма в цикле)</td>
+            <td id="left"></td>
+        </tr>
+        <tr>
+            <td>Значение выражения справа (по формуле)</td>
+            <td id="right"></td>
+        </tr>
+        <tr>
+            <td>Количество просуммированных членов ряда</td>
+            <td id="count"></td>
+        </tr>
+        <tr>
+            <td>Проверка</td>
+            <td id="check"></td>
+        </tr>
+    </table>
+
+    <script>
+        showResult()
+    </script>
+</body>
+</html>

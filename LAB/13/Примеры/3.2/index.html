@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Округлением результата до сотых</title>
+    <meta charset="UTF-8">
+    <script>
+        var k = 3
+
+        function square2(n) {
+            return n * n
+        }
+
+        function roundK(n) {
+            var p = Math.pow(10, k)
+            return Math.round(n * p) / p
+        }
+    </script>
+</head>
+<body>
+<script>
+    document.write("<table border='1' width='600'><tr><th>число</th><th>площадь круга</th></tr>")
+    for (var i = 0; i < 100; i++) {
+        document.write("<tr><th>", i, "</th><th>", roundK(square2(i) * Math.PI), "</th></tr>")
+    }
+    document.write("</table>")
+</script>
+</body>
+</html>

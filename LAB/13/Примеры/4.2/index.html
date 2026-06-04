@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Замена</title>
+    <script>
+        var myString = "Поиск заданной буквы в заданном  тексте"
+
+        function findLetter(txt, letter) {
+            var pos = 0
+            var num = 0
+            var i = 0
+            while ((pos = txt.indexOf(letter, i)) != -1) {
+                num = num + 1
+                i = pos + 1
+            }
+            return num
+        }
+    </script>
+</head>
+<body>
+<script>
+    document.write("<br>", findLetter(myString, "y"))
+</script>
+</body>
+</html>

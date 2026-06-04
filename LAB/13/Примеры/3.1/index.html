@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Вычисление площади круга без округления</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script>
+        function square(n) {
+            var result = 0
+            result = n * n
+        }
+
+        function square1(n) {
+            var result = 0
+            result = n * n
+            return result
+        }
+
+        function square2(n) {
+            return n * n
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        document.write(square(3))
+        document.write("<br>")
+        document.write(square1(5))
+        document.write("<br>")
+        document.write(square2(7))
+        document.write("<br>")
+        document.write("<table border='1' width='600'><tr><th>число</th><th>площадь круга</th></tr>")
+        for (var i = 0; i < 100; i++) {
+            document.write("<tr><th>", i, "</th><th>", square1(i) * Math.PI, "</th></tr>")
+        }
+        document.write("</table>")
+    </script>
+</body>
+
+</html>

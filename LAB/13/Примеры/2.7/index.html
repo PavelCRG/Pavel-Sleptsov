@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Планер</title>
+</head>
+<body>
+<script>
+    plan = new Array()
+    plan[0] = "1 июня"
+    plan[1] = "5 июня"
+    plan[2] = "10 июня"
+    plan[3] = "15 июня"
+    plan[4] = "20 июня"
+    plan[5] = "25 июня"
+    plan[6] = "30 июня"
+
+    document.write("<table border='1'>")
+    for (i = 0; i < plan.length; i++) {
+        document.write("<tr><td>", plan[i], "</td></tr>")
+    }
+    document.write("</table>")
+</script>
+</body>
+</html>

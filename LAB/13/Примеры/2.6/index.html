@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Поры года</title>
+</head>
+<body>
+<script>
+    month = new Date().getMonth()
+
+    if (month == 11 || month == 0 || month == 1) {
+        document.write("<table width='400' height='250' bgcolor='#B0C4DE'><tr><td></td></tr></table>")
+    }
+    else if (month >= 2 && month <= 4) {
+        document.write("<table width='400' height='250' bgcolor='#98FB98'><tr><td></td></tr></table>")
+    }
+    else if (month >= 5 && month <= 7) {
+        document.write("<table width='400' height='250' bgcolor='#FFD700'><tr><td></td></tr></table>")
+    }
+    else {
+        document.write("<table width='400' height='250' bgcolor='#DEB887'><tr><td></td></tr></table>")
+    }
+</script>
+</body>
+</html>
