@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <script type='text/javascript'>
+        let arr = ['Colosseo1_cr.jpg', 'paris.jpg', 'york.jpg'];
+        let n = 1; 
+
+        function r_image() {
+            ++n;
+            if (n >= arr.length) n = 0;
+            document.images[0].src = arr[n]; 
+        }
+        function l_image() {
+            --n;
+            if (n < 0) n = arr.length - 1;
+            document.images[0].src = arr[n]; 
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        
+        <img id='pict' src="paris.jpg" height=200> <br><br>
+        <input type=button OnClick='l_image();' value='←'>
+    
+        <input type=button OnClick='r_image();' value='→'>
+    </center>
+</body>
+
+</html>
