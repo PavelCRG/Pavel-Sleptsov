@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне — Средства создания приложений</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="site-app">
+    <div class="site-grid">
+        <header class="site-header">
+            <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <a class="site-header__logo site-header__logo--personal" href="../portal.html" title="На главную">
+                <img src="../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
+            </a>
+            <h1 class="site-header__title">Сайт по курсу · Средства создания приложений</h1>
+            <span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
+                <img src="../assets/images/college-logo.png" alt="Логотип колледжа">
+            </span>
+        </header>
+        <div class="nav-backdrop"></div>
+
+        <nav class="site-sidebar" aria-label="Меню">
+            <h2>Разделы</h2>
+            <ul class="site-nav">
+                <li><a href="../portal.html">Главная</a></li>
+                <li><a href="lab.html">Лабораторные</a></li>
+                <li><a href="lection.html">Лекции</a></li>
+                <li><a href="practice.html">WEB-практика</a></li>
+                <li><a href="about.html" class="is-active">Обо мне</a></li>
+            </ul>
+        </nav>
+
+        <main class="site-main page">
+            <h1>Обо мне</h1>
+            <div class="about-block">
+                <p><strong>Слепцов Павел Леонидович</strong></p>
+                <p>
+                    Учащийся группы <strong>31ИБ</strong>,
+                    <a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a>, г.&nbsp;Минск.
+                </p>
+                <p>
+                    На этом сайте — лабораторные и лекции по курсу «Средства создания приложений».
+                    Учебная практика — на <a href="practice.html">отдельном сайте</a> по практике.
+                </p>
+            </div>
+
+            <h2>Ссылки</h2>
+            <ul class="about-links">
+                <li class="about-links__item">
+                    <span class="about-links__label">GitHub</span>
+                    <a href="https://github.com/PavelCRG" target="_blank" rel="noopener">github.com/PavelCRG</a>
+                </li>
+                <li class="about-links__item">
+                    <span class="about-links__label">WEB-практика</span>
+                    <a href="practice.html">Раздел на портале</a>
+                </li>
+            </ul>
+        </main>
+
+        <aside class="site-aside" aria-label="Проекты">
+            <p class="site-aside__title">Проекты</p>
+            <a class="ad-card" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../assets/images/github.svg" alt="GitHub" width="56" height="56">
+                    <strong class="ad-card__brand">GitHub</strong>
+                </div>
+                <p class="ad-card__text">Профиль разработчика. Здесь есть задания по курсу, но также можно посмотреть другие репозитории и проекты автора.</p>
+                <span class="ad-card__url">github.com/PavelCRG</span>
+            </a>
+            <a class="ad-card" href="https://voxivaai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../assets/images/voxiva-logo.svg" alt="Voxiva" width="56" height="56">
+                    <strong class="ad-card__brand">Voxiva</strong>
+                </div>
+                <p class="ad-card__text">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке. Вы говорите намерение — система помогает оформить задачи и следующие шаги.</p>
+                <p class="ad-card__text ad-card__text--note">Личный проект автора: Voxiva Voice (диктовка) и Voxiva Space (рабочее пространство).</p>
+                <span class="ad-card__url">voxivaai.vercel.app</span>
+            </a>
+        </aside>
+
+        <footer class="site-footer">
+            <p class="site-footer__brand">Средства создания приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
+    </div>
+    <script src="../js/mobile-nav.js"></script>
+</body>
+</html>

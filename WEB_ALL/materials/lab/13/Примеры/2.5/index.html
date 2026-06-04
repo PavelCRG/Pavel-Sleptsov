@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>идущиечасы</title>
+    <script>
+        var ch = 1, m = 2, s = 3
+
+        function dveCifry(x) {
+            if (x < 10) {
+                return "0" + x
+            }
+            return "" + x
+        }
+
+        function clock() {
+            now = new Date()
+            ch = now.getHours()
+            m = now.getMinutes()
+            s = now.getSeconds()
+            window.document.forms[0].elements[0].value = dveCifry(ch) + ":" + dveCifry(m) + ":" + dveCifry(s)
+            setTimeout("clock()", 1000)
+        }
+    </script>
+</head>
+<body onLoad="clock()">
+    <form name="form1">
+        <input type="text">
+    </form>
+</body>
+</html>

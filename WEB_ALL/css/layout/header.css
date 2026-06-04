@@ -1,0 +1,78 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 20px;
+    min-height: 88px;
+    background: var(--bg-header);
+    color: var(--text-light);
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 100;
+}
+
+.site-header__title {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+}
+
+.site-header__logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 0;
+}
+
+.site-header__logo img {
+    display: block;
+    object-fit: contain;
+}
+
+.site-header__logo--personal img {
+    width: 84px;
+    height: 84px;
+    border-radius: 0;
+}
+
+.site-header__logo--college img {
+    height: 58px;
+    max-width: 72px;
+    width: auto;
+}
+
+.site-header__logo:hover {
+    opacity: 0.88;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    background: #fff;
+    border-radius: 1px;
+}
+
+.nav-backdrop {
+    display: none;
+}

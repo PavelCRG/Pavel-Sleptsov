@@ -1,0 +1,119 @@
+/* Портал — синяя учебная тема */
+
+body.site-app {
+    --bg-page: #eef3f9;
+    --bg-panel: #ffffff;
+    --bg-header: #1e4d8c;
+    --bg-footer: #153e70;
+    --bg-sidebar: #f0f5fb;
+    --bg-ad: #e8eff8;
+    --accent: #1e4d8c;
+    --accent-dark: #1a2332;
+    --link: #1e4d8c;
+    --link-hover: #153e70;
+    --border: #c5d4e8;
+    --shadow: 0 4px 16px rgba(30, 77, 140, 0.12);
+    --ad-w: 248px;
+    background: var(--bg-page);
+}
+
+body.site-app .site-header {
+    background: var(--bg-header);
+    color: #fff;
+    border-bottom: none;
+    box-shadow: 0 2px 12px rgba(21, 62, 112, 0.35);
+}
+
+body.site-app .site-header__title {
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(0.72rem, 1.8vw, 1.05rem);
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+}
+
+body.site-app .site-header__logo--personal img {
+    width: 84px;
+    height: 84px;
+    border-radius: 0;
+}
+
+body.site-app .site-header__logo--college img {
+    height: 58px;
+    max-width: 72px;
+    width: auto;
+}
+
+body.site-app .nav-toggle {
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(0, 0, 0, 0.12);
+}
+
+body.site-app .nav-toggle span {
+    background: #fff;
+}
+
+body.site-app .site-sidebar {
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+}
+
+body.site-app .site-main {
+    background: var(--bg-panel);
+    border-left: 1px solid var(--border);
+}
+
+body.site-app .page h1 {
+    color: var(--accent-dark);
+}
+
+body.site-app .page h2 {
+    color: var(--accent);
+    border-bottom-color: var(--border);
+}
+
+body.site-app .page-card {
+    background: var(--bg-sidebar);
+    border-color: var(--border);
+}
+
+body.site-app .page-card:hover {
+    border-color: var(--accent);
+    background: #fff;
+}
+
+body.site-app .page-note {
+    background: #e8f0fa;
+    border-left-color: var(--accent);
+}
+
+body.site-app .site-nav a.is-active {
+    background: var(--accent);
+    color: #fff;
+}
+
+body.site-app .welcome-section__item {
+    border-color: var(--border);
+    background: var(--bg-sidebar);
+}
+
+body.site-app .site-footer {
+    background: var(--bg-footer);
+}
+
+body.site-app .site-footer__brand {
+    color: #fff;
+}
+
+body.site-app .site-footer a {
+    color: #93c5fd;
+}
+
+body.site-app .site-footer a:hover {
+    color: #fff;
+}
+
+body.site-app .site-footer__copy {
+    border-top-color: rgba(255, 255, 255, 0.2);
+    color: #cbd5e0;
+}

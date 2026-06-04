@@ -1,0 +1,305 @@
+/* Приветствие — левый hero, крупный текст, логотип слева (паттерн education landing) */
+
+.splash {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: #0a1628;
+    color: #e8edf4;
+    overflow-x: hidden;
+}
+
+.splash__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.splash__hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: clamp(32px, 6vh, 64px) clamp(24px, 6vw, 80px);
+    position: relative;
+}
+
+.splash__hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 55% at 0% 20%, rgba(56, 189, 248, 0.14), transparent 50%),
+        radial-gradient(ellipse 50% 40% at 100% 80%, rgba(30, 77, 140, 0.12), transparent 45%);
+    pointer-events: none;
+}
+
+.splash__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 720px;
+    text-align: left;
+    padding-left: clamp(12px, 2vw, 20px);
+    border-left: 3px solid #38bdf8;
+}
+
+.splash__brand {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(20px, 3vw, 32px);
+    margin-bottom: clamp(28px, 4vh, 40px);
+}
+
+.splash__logo {
+    flex-shrink: 0;
+    display: block;
+    width: clamp(108px, 14vw, 140px);
+    height: clamp(108px, 14vw, 140px);
+    object-fit: contain;
+}
+
+.splash__intro {
+    flex: 1;
+    min-width: 0;
+    padding-top: 4px;
+}
+
+.splash__eyebrow {
+    margin: 0 0 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #38bdf8;
+}
+
+.splash h1 {
+    margin: 0 0 16px;
+    font-size: clamp(1.85rem, 4.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #f8fafc;
+}
+
+.splash__lead {
+    margin: 0;
+    font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    line-height: 1.65;
+    color: #94a3b8;
+    max-width: 32em;
+}
+
+.splash__body {
+    padding-left: 0;
+}
+
+.splash__points {
+    list-style: none;
+    margin: 0 0 clamp(28px, 4vh, 36px);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.splash__points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 18px;
+    font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+    line-height: 1.55;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.splash__points li:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(56, 189, 248, 0.25);
+}
+
+.splash__point-num {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #38bdf8;
+    padding-top: 2px;
+}
+
+.splash__point-text {
+    flex: 1;
+}
+
+.splash__points strong {
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+.splash__points a {
+    color: #7dd3fc;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+}
+
+.splash__points a:hover {
+    color: #bae6fd;
+    border-bottom-color: #bae6fd;
+}
+
+.splash__actions {
+    display: block;
+}
+
+.splash__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 44px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #f8fafc;
+    background: #1e4d8c;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.splash__btn:hover {
+    color: #fff;
+    background: #2563a8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Декор справа — логотип колледжа, только на широком экране */
+.splash__decor {
+    position: absolute;
+    right: clamp(24px, 8vw, 120px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.12;
+}
+
+.splash__decor-logo {
+    width: clamp(180px, 22vw, 280px);
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(1) brightness(1.4);
+}
+
+.splash__bar {
+    width: 100%;
+    padding: 20px clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.splash__bar-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 24px);
+    text-align: center;
+}
+
+.splash__bar-copy {
+    margin: 0;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    line-height: 1.45;
+    color: #94a3b8;
+}
+
+.splash__bar-college {
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+.splash__bar-college a {
+    color: #64748b;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.splash__bar-college a:hover {
+    color: #94a3b8;
+    border-bottom-color: rgba(148, 163, 184, 0.5);
+}
+
+@media (max-width: 640px) {
+    .splash__hero {
+        padding: 24px 16px 28px;
+        align-items: flex-start;
+    }
+
+    .splash__inner {
+        border-left-width: 2px;
+        padding-left: 12px;
+        max-width: 100%;
+    }
+
+    .splash__brand {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .splash__logo {
+        width: 96px;
+        height: 96px;
+    }
+
+    .splash h1 {
+        font-size: 1.65rem;
+        line-height: 1.2;
+    }
+
+    .splash__lead {
+        font-size: 1rem;
+    }
+
+    .splash__points li {
+        padding: 14px 14px 14px 16px;
+        gap: 12px;
+    }
+
+    .splash__actions {
+        text-align: center;
+    }
+
+    .splash__btn {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px 24px;
+        box-sizing: border-box;
+    }
+
+    .splash__decor {
+        display: none;
+    }
+
+    .splash__bar {
+        padding: 18px 16px 22px;
+    }
+
+    .splash__bar-inner {
+        max-width: 100%;
+    }
+}

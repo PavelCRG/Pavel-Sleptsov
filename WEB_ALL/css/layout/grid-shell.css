@@ -1,0 +1,33 @@
+/* CSS Grid: шапка | меню + контент + реклама | подвал */
+
+.site-grid {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: var(--sidebar-w) 1fr var(--ad-w);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header header"
+        "sidebar main aside"
+        "footer footer footer";
+}
+
+.site-header {
+    grid-area: header;
+}
+
+.site-sidebar {
+    grid-area: sidebar;
+}
+
+.site-main {
+    grid-area: main;
+    min-width: 0;
+}
+
+.site-aside {
+    grid-area: aside;
+}
+
+.site-footer {
+    grid-area: footer;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB-практика — Средства создания приложений</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="site-app">
+    <div class="site-grid">
+        <header class="site-header">
+            <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <a class="site-header__logo site-header__logo--personal" href="../portal.html" title="На главную">
+                <img src="../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
+            </a>
+            <h1 class="site-header__title">Сайт по курсу · Средства создания приложений</h1>
+            <span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
+                <img src="../assets/images/college-logo.png" alt="Логотип колледжа">
+            </span>
+        </header>
+        <div class="nav-backdrop"></div>
+
+        <nav class="site-sidebar" aria-label="Меню">
+            <h2>Разделы</h2>
+            <ul class="site-nav">
+                <li><a href="../portal.html">Главная</a></li>
+                <li><a href="lab.html">Лабораторные</a></li>
+                <li><a href="lection.html">Лекции</a></li>
+                <li><a href="practice.html" class="is-active">WEB-практика</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+            </ul>
+        </nav>
+
+        <main class="site-main page">
+            <h1>WEB-практика</h1>
+            <p class="page__lead">
+                Учебная практика — на отдельном сайте. Ниже описание и кнопка перехода; дни занятий — в блоке «Занятия по дням».
+            </p>
+
+            <section class="practice-hero" aria-labelledby="practice-go">
+                <p class="practice-hero__badge">Отдельный сайт</p>
+                <h2 id="practice-go">Портал WEB-практики</h2>
+                <p class="practice-hero__text">
+                    Занятия по WEB-практике: HTML, CSS, формы, JavaScript, адаптивный макет, Bootstrap.
+                    На сайте — такое же оформление, как вы делали на практике: шапка, меню слева, материалы по центру.
+                </p>
+                <a class="practice-hero__btn" href="https://sleptsov-web-practice.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    Перейти на сайт практики
+                </a>
+            </section>
+
+            <h2>Занятия по дням</h2>
+            <p class="practice-aside-note">Ссылки открывают обзоры дней на сайте практики (новая вкладка).</p>
+            <div class="practice-days">
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-1/index.html" target="_blank" rel="noopener noreferrer"><strong>День 1</strong><span>11.05.2026 · HTML, теги</span></a>
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-2/index.html" target="_blank" rel="noopener noreferrer"><strong>День 2</strong><span>12.05.2026 · Вёрстка</span></a>
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-3/index.html" target="_blank" rel="noopener noreferrer"><strong>День 3</strong><span>13.05.2026 · Таблицы</span></a>
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-4/index.html" target="_blank" rel="noopener noreferrer"><strong>День 4</strong><span>14.05.2026 · Мультимедиа</span></a>
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-5/index.html" target="_blank" rel="noopener noreferrer"><strong>День 5</strong><span>15.05.2026 · CSS</span></a>
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-6/index.html" target="_blank" rel="noopener noreferrer"><strong>День 6</strong><span>16.05.2026 · Формы</span></a>
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-7/index.html" target="_blank" rel="noopener noreferrer"><strong>День 7</strong><span>18.05.2026 · JavaScript</span></a>
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-8/index.html" target="_blank" rel="noopener noreferrer"><strong>День 8</strong><span>19.05.2026 · Адаптив</span></a>
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-9/index.html" target="_blank" rel="noopener noreferrer"><strong>День 9</strong><span>20.05.2026 · Bootstrap</span></a>
+                <a class="practice-day" href="https://sleptsov-web-practice.netlify.app/den-10/index.html" target="_blank" rel="noopener noreferrer"><strong>День 10</strong><span>21.05.2026 · Итоги</span></a>
+            </div>
+        </main>
+
+        <aside class="site-aside" aria-label="Проекты">
+            <p class="site-aside__title">Проекты</p>
+            <a class="ad-card" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../assets/images/github.svg" alt="GitHub" width="56" height="56">
+                    <strong class="ad-card__brand">GitHub</strong>
+                </div>
+                <p class="ad-card__text">Профиль разработчика. Здесь есть задания по курсу, но также можно посмотреть другие репозитории и проекты автора.</p>
+                <span class="ad-card__url">github.com/PavelCRG</span>
+            </a>
+            <a class="ad-card" href="https://voxivaai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../assets/images/voxiva-logo.svg" alt="Voxiva" width="56" height="56">
+                    <strong class="ad-card__brand">Voxiva</strong>
+                </div>
+                <p class="ad-card__text">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке. Вы говорите намерение — система помогает оформить задачи и следующие шаги.</p>
+                <p class="ad-card__text ad-card__text--note">Личный проект автора: Voxiva Voice (диктовка) и Voxiva Space (рабочее пространство).</p>
+                <span class="ad-card__url">voxivaai.vercel.app</span>
+            </a>
+        </aside>
+
+        <footer class="site-footer">
+            <p class="site-footer__brand">Средства создания приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
+    </div>
+    <script src="../js/mobile-nav.js"></script>
+</body>
+</html>

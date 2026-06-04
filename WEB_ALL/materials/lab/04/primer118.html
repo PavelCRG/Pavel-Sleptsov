@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Параметр scoped в элементе style</title>
+</head>
+<body>
+    <p>Обычный текст.</p>
+    <div> <!-- Начало области видимости -->
+        <style scoped=scoped> p { font-size: 18pt; color: red;} 
+        </style>
+        <p>Текст, отформатированный с помощью таблицы стилей, расположенной в техническом заголовке документа и элементе "div".</p>
+    </div> <!-- Конец области видимости -->
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* WEB-практика: главная кнопка сплошная, дни — outline */
+
+.practice-hero {
+    max-width: 100%;
+    padding: clamp(24px, 4vw, 36px);
+    margin-bottom: 28px;
+    border-radius: var(--radius);
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.practice-hero__badge {
+    display: inline-block;
+    margin: 0 0 10px;
+    padding: 4px 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: #e8f0fa;
+    border-radius: 4px;
+}
+
+.practice-hero h2 {
+    margin: 0 0 10px;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    color: var(--accent-dark);
+    border: none;
+    padding: 0;
+}
+
+.practice-hero__text {
+    margin: 0 0 20px;
+    max-width: 560px;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.practice-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background: var(--accent-dark);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(26, 35, 50, 0.2);
+    transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.practice-hero__btn:hover {
+    color: #fff;
+    background: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(30, 77, 140, 0.3);
+}
+
+.practice-hero__btn::after {
+    content: "\2197";
+    font-size: 1.05em;
+}
+
+.practice-days {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    max-width: 900px;
+    margin-bottom: 24px;
+}
+
+.practice-day {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.practice-day:hover {
+    border-color: var(--accent);
+    background: #e8f0fa;
+    color: inherit;
+}
+
+.practice-day strong {
+    display: block;
+    color: var(--accent-dark);
+    margin-bottom: 4px;
+}
+
+.practice-day span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.practice-aside-note {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    max-width: 520px;
+}

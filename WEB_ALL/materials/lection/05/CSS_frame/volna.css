@@ -1,0 +1,17 @@
+/* CSS Document */
+p {
+margin:0;
+}
+body {
+color:#FFFFFF;
+background-color:#6600cc;
+
+}
+a:link {color:#ffffff;
+}
+a:visited {color:red;
+}
+a:active {color: #CCCCCC;
+}
+a:hover {color:3333cc;
+}

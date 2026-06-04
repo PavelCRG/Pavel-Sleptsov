@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body bgcolor="blue">
+    <center>
+        <font size="6" color="red"><i>ПРИМЕР ФОРМЫ</i></font>
+    </center>
+    <hr color="red" />
+    <table border="3" bgcolor="white" align="center">
+        <form action="mailto:name@server.domen" method="post">
+            <tr>
+                <td><label for="imya1">Имя:</label></td>
+                <td><input type="text" id="imya1" name="imya"></td>
+            </tr>
+            <tr>
+                <td><label for="familiya1">Фамилия:</label></td>
+                <td><input type="text" id="familiya1" name="familiya"></td>
+            </tr>
+            <tr>
+                <td><label for="email1">E-mail:</label></td>
+                <td><input type="text" id="email1" name="email"></td>
+            </tr>
+            <tr>
+                <td>Где Вы учитесь:</td>
+                <td>
+                    <select name="education">
+                        <option>Школа</option>
+                        <option>Лицей</option>
+                        <option>Техникум</option>
+                        <option>Колледж</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Являетесь ли Вы выпускником:</td>
+                <td>
+                    <input type="checkbox" name="f1" value="Да">Да
+                    <input type="checkbox" name="f1" value="Нет">Нет
+                </td>
+            </tr>
+            <tr>
+                <td>Пол:</td>
+                <td>
+                    <input type="radio" name="pol1" value="Мужской">М
+                    <input type="radio" name="pol1" value="Женский">Ж
+                </td>
+            </tr>
+            <tr>
+                <td>Дополнительная информация:</td>
+                <td><textarea rows="5" cols="30" name="additional_info"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Отправить" />
+                    <input type="reset" value="Сбросить" />
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>

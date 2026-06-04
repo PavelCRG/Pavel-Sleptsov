@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Замена</title>
+</head>
+<body>
+<script>
+    var text = "мама мыла раму"
+    var result = ""
+
+    for (var i = 0; i < text.length; i++) {
+        if (text.charAt(i) == "а") {
+            result = result + "б"
+        }
+        else if (text.charAt(i) == "А") {
+            result = result + "Б"
+        }
+        else {
+            result = result + text.charAt(i)
+        }
+    }
+
+    document.write(text, "<br>", result)
+</script>
+</body>
+</html>
