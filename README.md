@@ -31,6 +31,6 @@ Pavel-Sleptsov/
 ## Ссылки (онлайн)
 
 - **WEB-практика** — https://sleptsov-web-practice.netlify.app/
-- **Сайт-портал (WEB_ALL)** — *добавить ссылку*
+- **Сайт-портал (WEB_ALL)** — https://sleptsov-sca.netlify.app/
 
 Профиль на GitHub: https://github.com/PavelCRG
