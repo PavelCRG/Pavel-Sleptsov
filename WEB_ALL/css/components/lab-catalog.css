@@ -223,14 +223,29 @@
     cursor: pointer;
     list-style: none;
     background: #eef4fb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
 .lab-sub > summary::-webkit-details-marker {
     display: none;
 }
 
+.lab-sub > summary::after {
+    content: "▼";
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    transition: transform 0.2s;
+}
+
 .lab-sub[open] > summary {
     border-bottom: 1px dashed var(--border);
+}
+
+.lab-sub[open] > summary::after {
+    transform: rotate(180deg);
 }
 
 .lab-sub .lab-files {
@@ -249,7 +264,8 @@
     font-style: italic;
 }
 
-/* Просмотр работы */
+/* Просмотр материала внутри страницы — без iframe, только блок контента */
+.material-viewer,
 .lab-viewer {
     display: flex;
     flex-direction: column;
@@ -258,6 +274,7 @@
     padding: 16px 18px 18px;
 }
 
+.material-viewer__bar,
 .lab-viewer__bar {
     display: flex;
     flex-wrap: wrap;
@@ -267,50 +284,81 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
+.material-viewer__title,
 .lab-viewer__title {
     margin: 0;
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--accent-dark);
+    word-break: break-word;
 }
 
+.material-viewer__open,
 .lab-viewer__open-new {
     font-size: 0.82rem;
     font-weight: 600;
     white-space: nowrap;
 }
 
+.material-viewer__panel,
+.material-viewer__frame-wrap,
 .lab-viewer__frame-wrap {
     flex: 1;
     position: relative;
-    min-height: 360px;
+    min-height: min(60vh, 560px);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: #fff;
-    overflow: hidden;
+    overflow: auto;
 }
 
-.lab-viewer__frame {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+.material-viewer__content {
     display: none;
+    padding: 16px 18px 24px;
+    min-height: 100%;
+    box-sizing: border-box;
 }
 
-.lab-viewer__frame.is-active {
+.material-viewer__content.is-active {
     display: block;
 }
 
+.material-viewer__injected {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.material-viewer__pdf {
+    display: block;
+    width: 100%;
+    min-height: min(58vh, 520px);
+    border: 0;
+}
+
+.material-viewer__pdf-fallback,
+.material-viewer__error {
+    margin: 16px 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.material-viewer__loading {
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.material-viewer__loading[hidden] {
+    display: none;
+}
+
+.material-viewer__placeholder,
 .lab-viewer__placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 0;
     padding: 24px;
     text-align: center;
@@ -318,10 +366,22 @@
     line-height: 1.5;
     color: var(--text-muted);
     background: #f8fafc;
+    min-height: min(50vh, 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.material-viewer__placeholder[hidden],
 .lab-viewer__placeholder[hidden] {
     display: none;
+}
+
+.lab-files__link--pdf::after {
+    content: " PDF";
+    font-size: 0.78em;
+    font-weight: 700;
+    color: var(--accent);
 }
 
 @media (max-width: 900px) {
@@ -338,20 +398,51 @@
         border-bottom: 2px solid var(--border);
     }
 
+    .material-viewer,
     .lab-viewer {
         padding: 14px 0 0;
     }
 
+    .material-viewer__panel,
+    .material-viewer__frame-wrap,
     .lab-viewer__frame-wrap {
         min-height: 50vh;
     }
 }
 
 @media (max-width: 560px) {
-    .lab-group > summary {
-        padding: 10px 12px;
+    .lab-layout__catalog {
+        padding: 12px 10px 16px;
     }
 
+    .lab-group > summary {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+
+    .lab-group__num {
+        min-width: 2.2em;
+        padding: 4px 6px;
+        font-size: 0.7rem;
+    }
+
+    .lab-group__name {
+        font-size: 0.88rem;
+    }
+
+    .lab-files a {
+        padding: 12px 10px;
+        font-size: 0.88rem;
+    }
+
+    .material-viewer__bar,
+    .lab-viewer__bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .material-viewer__panel,
+    .material-viewer__frame-wrap,
     .lab-viewer__frame-wrap {
         min-height: 45vh;
     }

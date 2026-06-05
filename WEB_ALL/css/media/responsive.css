@@ -1,7 +1,70 @@
 @media (max-width: 960px) {
     .nav-toggle {
         display: flex;
-        order: -1;
+        position: fixed;
+        left: max(16px, env(safe-area-inset-left, 16px));
+        bottom: max(16px, env(safe-area-inset-bottom, 16px));
+        z-index: 300;
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        touch-action: manipulation;
+    }
+
+    .nav-toggle:active {
+        transform: scale(0.92);
+    }
+
+    .site-header {
+        display: grid;
+        grid-template-columns: 56px 1fr 56px;
+        align-items: center;
+        column-gap: 8px;
+        padding: 10px 12px;
+        min-height: 76px;
+    }
+
+    .site-header__logo--personal {
+        grid-column: 1;
+        justify-self: start;
+        width: 56px;
+        height: 56px;
+    }
+
+    .site-header__title {
+        grid-column: 2;
+        flex: none;
+        gap: 3px;
+        min-width: 0;
+        padding: 0 2px;
+    }
+
+    .site-header__title-top {
+        font-size: clamp(0.72rem, 2.8vw, 0.84rem);
+        letter-spacing: 0.08em;
+        line-height: 1.15;
+    }
+
+    .site-header__title-sub {
+        font-size: clamp(0.66rem, 2.5vw, 0.78rem);
+        letter-spacing: 0.02em;
+        line-height: 1.2;
+        color: #b8c5d6;
+    }
+
+    .site-header__logo--college {
+        grid-column: 3;
+        justify-self: end;
+        width: 56px;
+        height: 56px;
+    }
+
+    .site-main {
+        padding-bottom: calc(24px + 48px + max(16px, env(safe-area-inset-bottom, 16px)));
+    }
+
+    .site-footer {
+        padding-bottom: calc(16px + 48px + max(16px, env(safe-area-inset-bottom, 16px)));
     }
 
     .site-grid {
@@ -17,7 +80,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 200;
+        z-index: 280;
         width: min(300px, 88vw);
         height: 100vh;
         height: 100dvh;
@@ -73,22 +136,30 @@
 
 @media (max-width: 560px) {
     .site-header {
-        padding: 10px 12px;
-        min-height: 72px;
+        grid-template-columns: 50px 1fr 50px;
+        padding: 8px 10px;
+        min-height: 70px;
+        column-gap: 6px;
     }
 
-    .site-header__title {
-        font-size: 0.95rem;
+    .site-header__logo--personal,
+    .site-header__logo--college {
+        width: 50px;
+        height: 50px;
     }
 
-    .site-header__logo--personal img {
-        width: 64px;
-        height: 64px;
+    .site-header__title-top {
+        font-size: 0.7rem;
     }
 
-    body.site-app .site-header__logo--college img {
-        height: 48px;
-        max-width: 56px;
+    .site-header__title-sub {
+        font-size: 0.64rem;
+    }
+
+    .nav-toggle {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
     }
 
     .site-main {
@@ -119,5 +190,24 @@
 
     .page--catalog .lab-layout {
         border-radius: 0;
+    }
+
+    .practice-days {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-hero__btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .welcome-section--compact {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+    .splash__decor-logo {
+        width: clamp(140px, 18vw, 200px);
     }
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+      }
+      .overlay {
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        z-index: index 100;
+        animation-name: overlay;
+        animation-duration: 20s;  
+      }
+      .sky {
+        height: 70vh;
+        width:100%;
+        background-color: lightskyblue;
+      }
+      .ground {
+        height: 30vh;
+        width:100%;
+        background: green url(images/tie.png) repeat-x;
+        position: relative;
+      }
+      .car {
+        height:100%;
+        width:100%;
+        position:absolute;
+        top: 675px;
+        animation-name: car;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+    }
+      
+    
+
+      @keyframes overlay {
+        0% {
+          opacity: 1;
+        }
+        20%{
+          opacity: 0;
+        }
+        80%{
+          opacity: 0;
+        }
+        100%{
+          opacity: 1;
+        }
+      }
+
+      @keyframes car {
+
+0% {
+  transform: translateX(-200px);
+}
+100%{
+    transform: translateX(100vw);
+}
+}
+    </style>
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <div class="overlay"></div>
+      <div class="sky"></div>
+      <div class="ground"></div>
+      <div class="car"> <img src="images/car.png" alt="car"/></div>
+      
+        
+     
+      
+    </div>
+   
+    
+
+    </div>
+
+    </div>
+  </body>
+</html>

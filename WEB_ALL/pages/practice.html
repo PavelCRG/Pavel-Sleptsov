@@ -9,18 +9,25 @@
 <body class="site-app">
     <div class="site-grid">
         <header class="site-header">
-            <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
             <a class="site-header__logo site-header__logo--personal" href="../portal.html" title="На главную">
                 <img src="../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
             </a>
-            <h1 class="site-header__title">Сайт по курсу · Средства создания приложений</h1>
+            <h1 class="site-header__title">
+                <span class="site-header__title-top">Сайт по курсу</span>
+                <span class="site-header__title-sub">Средства создания приложений</span>
+            </h1>
             <span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
                 <img src="../assets/images/college-logo.png" alt="Логотип колледжа">
             </span>
         </header>
         <div class="nav-backdrop"></div>
+        <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+            <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path class="nav-toggle__path nav-toggle__path--1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+            </svg>
+        </button>
 
         <nav class="site-sidebar" aria-label="Меню">
             <h2>Разделы</h2>
@@ -28,6 +35,7 @@
                 <li><a href="../portal.html">Главная</a></li>
                 <li><a href="lab.html">Лабораторные</a></li>
                 <li><a href="lection.html">Лекции</a></li>
+                <li><a href="control.html">Контроль</a></li>
                 <li><a href="practice.html" class="is-active">WEB-практика</a></li>
                 <li><a href="about.html">Обо мне</a></li>
             </ul>
@@ -67,8 +75,8 @@
             </div>
         </main>
 
-        <aside class="site-aside" aria-label="Проекты">
-            <p class="site-aside__title">Проекты</p>
+        <aside class="site-aside" aria-label="Реклама">
+            <p class="site-aside__title">Реклама</p>
             <a class="ad-card" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
                 <div class="ad-card__head">
                     <img class="ad-card__logo" src="../assets/images/github.svg" alt="GitHub" width="56" height="56">

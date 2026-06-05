@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+        margin: 0;
+        padding: 0;
+        }
+
+        .cloud{
+            height:100%;
+            width:100%;
+            position:absolute;
+            top: -70px;
+            animation-name: cloud;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-direction: reverse;
+            animation-iteration-count: 1;
+        } 
+    
+        @keyframes cloud {
+            0% {
+            transform: translateX(-170px);
+            }
+            100%{
+                transform: translateX(100vw);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+        <div class="cloud"><img src="images/cloud.png" alt="cloud"></div>  
+      </body>
+</body>
+</html>

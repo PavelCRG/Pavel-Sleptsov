@@ -6,11 +6,14 @@
 
     function setOpen(open) {
         grid.classList.toggle("site-grid--nav-open", open);
+        toggle.classList.toggle("is-open", open);
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
         document.body.style.overflow = open ? "hidden" : "";
     }
 
-    toggle.addEventListener("click", function () {
+    toggle.addEventListener("click", function (e) {
+        e.stopPropagation();
         setOpen(!grid.classList.contains("site-grid--nav-open"));
     });
 
@@ -26,5 +29,11 @@
                 setOpen(false);
             }
         });
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && grid.classList.contains("site-grid--nav-open")) {
+            setOpen(false);
+        }
     });
 })();

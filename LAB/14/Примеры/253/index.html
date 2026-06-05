@@ -7,18 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
     <script type='text/javascript'>
-        let arr = ['Colosseo1_cr.jpg', 'paris.jpg', 'york.jpg'];
-        let n = 1; 
+        const arr = ['Colosseo1_cr.jpg', 'paris.jpg', 'york.jpg'];
+        let n = 1;
+        const pict = document.getElementById('pict');
+
+        function showImage() {
+            pict.src = arr[n];
+        }
 
         function r_image() {
-            ++n;
-            if (n >= arr.length) n = 0;
-            document.images[0].src = arr[n]; 
+            n = (n + 1) % arr.length;
+            showImage();
         }
         function l_image() {
-            --n;
-            if (n < 0) n = arr.length - 1;
-            document.images[0].src = arr[n]; 
+            n = (n - 1 + arr.length) % arr.length;
+            showImage();
         }
     </script>
 </head>

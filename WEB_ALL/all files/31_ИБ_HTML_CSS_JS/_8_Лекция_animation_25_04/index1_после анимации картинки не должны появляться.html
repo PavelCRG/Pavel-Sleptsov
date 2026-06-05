@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .cloud_w_rain {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        animation-name: cloud_w_rain;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-direction: reverse;
+        animation-iteration-count: 1;
+      }
+
+      .cloud_behind {
+        height: 80%;
+        width: 80%;
+        position: absolute;
+        top: 25px;
+        animation-name: cloud_behind;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-direction: reverse;
+        animation-iteration-count: 1;
+      }
+
+      @keyframes cloud_w_rain {
+        0% {
+          transform: translateX(-170px);
+        }
+        100% {
+          transform: translateX(100vw);
+        }
+      }
+
+      @keyframes cloud_behind {
+        0% {
+          transform: translateX(-170px);
+          transition-timing-function: ease-in;
+        }
+        100% {
+          transform: translateX(100vw);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cloud_behind">
+      <img src="images/cloud_behind.png" alt="cloud" />
+      <div class="cloud_w_rain">
+        <img src="images/cloud_w_rain.png" alt="cloud" />
+      </div>
+    </div>
+  </body>
+</html>

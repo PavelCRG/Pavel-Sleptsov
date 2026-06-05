@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+      body {
+        margin: 0;
+        padding: 0;
+    }
+
+      .car {
+        height:100%;
+        width:100%;
+        position:absolute;
+        top: 500px;
+        animation-name: car;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+    }
+
+        @keyframes car {
+
+        0% {
+          transform: translateX(-200px);
+        }
+        100%{
+            transform: translateX(100vw);
+        }
+        }
+    </style>
+
+    </style>
+  </head>
+  <body>
+    <div class="car"> <img src="images/car.png" alt="car" srcset="" /></div>
+       
+  </body>
+</html>

@@ -24,33 +24,12 @@ body.site-app .site-header {
     box-shadow: 0 2px 12px rgba(21, 62, 112, 0.35);
 }
 
-body.site-app .site-header__title {
-    color: #fff;
-    font-weight: 700;
-    font-size: clamp(0.72rem, 1.8vw, 1.05rem);
-    letter-spacing: 0.02em;
-    line-height: 1.3;
+body.site-app .site-header__title-top {
+    color: #f8fafc;
 }
 
-body.site-app .site-header__logo--personal img {
-    width: 84px;
-    height: 84px;
-    border-radius: 0;
-}
-
-body.site-app .site-header__logo--college img {
-    height: 58px;
-    max-width: 72px;
-    width: auto;
-}
-
-body.site-app .nav-toggle {
-    border-color: rgba(255, 255, 255, 0.45);
-    background: rgba(0, 0, 0, 0.12);
-}
-
-body.site-app .nav-toggle span {
-    background: #fff;
+body.site-app .site-header__title-sub {
+    color: #cbd5e1;
 }
 
 body.site-app .site-sidebar {

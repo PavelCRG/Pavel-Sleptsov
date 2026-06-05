@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вариант 9 - Блочный сайт</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      height: 60px; 
+      background: #dce9d4;
+      padding: 5px 20px;
+    }
+
+    .header img {
+      float: left;
+      height: 50px; 
+      margin-right: 15px;
+    }
+
+    .header h1 {
+      margin: 0;
+      line-height: 60px;
+      font-size: 20px;
+    }
+
+    .menu {
+      width: 180px;
+      min-height: 500px;
+      background: #fbe6a0;
+      float: left;
+      padding: 10px;
+    }
+
+    .menu ul {
+      padding-left: 20px;
+    }
+
+    .menu a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      padding: 5px 0;
+    }
+
+    .menu a:hover {
+      color: red;
+    }
+
+    .baner {
+      width: 180px;
+      min-height: 500px;
+      background: #e6d2dc;
+      float: right;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .content {
+      background: #ccd9f6;
+      min-height: 500px;
+      padding: 20px;
+      margin-left: 200px;
+      margin-right: 200px;
+      overflow: auto;
+    }
+
+    .footer {
+      height: 50px;
+      background: #779de7;
+      clear: both;
+      text-align: center;
+      line-height: 50px; 
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .wrap {
+      background-color: #f0f0f0;
+      min-height: 500px;
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 500px;
+      border: none;
+      background: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Вариант 9</h1>
+  </div>
+
+  <div class="wrap">
+    <div class="menu">
+      <strong>Меню</strong>
+      <ul>
+        <li><a href="zadanie1.html" target="content-frame">Задание 1</a></li>
+        <li><a href="zadanie2.html" target="content-frame">Задание 2a и 2b</a></li>
+        <li><a href="zadanie3.html" target="content-frame">Задание 3a-3f</a></li>
+        <li><a href="animation.html" target="content-frame">Задание II - Анимация</a></li>
+      </ul>
+    </div>
+    <div class="baner">
+      <strong>Баннер</strong>
+      <p>Родственные селекторы</p>
+      <p>CSS анимация</p>
+    </div>
+    <div class="content">
+      <iframe name="content-frame" src="zadanie1.html"></iframe>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 Слепцов Павел Леонидович 
+  </div>
+</body>
+
+</html>

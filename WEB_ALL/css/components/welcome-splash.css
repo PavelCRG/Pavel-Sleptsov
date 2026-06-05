@@ -69,12 +69,19 @@
 }
 
 .splash__eyebrow {
-    margin: 0 0 12px;
+    margin: 0 0 8px;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #38bdf8;
+}
+
+.splash__subject {
+    margin: 0 0 6px;
+    font-size: 0.88rem;
+    color: #64748b;
+    letter-spacing: 0.04em;
 }
 
 .splash h1 {
@@ -185,19 +192,18 @@
 /* Декор справа — логотип колледжа, только на широком экране */
 .splash__decor {
     position: absolute;
-    right: clamp(24px, 8vw, 120px);
+    right: clamp(24px, 6vw, 80px);
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
     pointer-events: none;
-    opacity: 0.12;
 }
 
 .splash__decor-logo {
+    display: block;
     width: clamp(180px, 22vw, 280px);
     height: auto;
     object-fit: contain;
-    filter: grayscale(1) brightness(1.4);
 }
 
 .splash__bar {
@@ -217,6 +223,14 @@
     margin: 0 auto;
     padding: 0 clamp(16px, 4vw, 24px);
     text-align: center;
+}
+
+.splash__bar-logo {
+    display: none;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    opacity: 0.92;
 }
 
 .splash__bar-copy {
@@ -293,6 +307,10 @@
 
     .splash__decor {
         display: none;
+    }
+
+    .splash__bar-logo {
+        display: block;
     }
 
     .splash__bar {

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div.MenuLevel1 { width: 100px }
+    div.MenuLevel1 > div { background-color: yellow; border: solid blue 1px; position: relative; cursor: pointer }
+    div.MenuLevel2 { width: 150px; display: none }
+    div.MenuLevel2 > div { background-color: cyan; border: solid blue 1px; cursor: pointer }
+    div.MenuLevel1 > div:hover div.MenuLevel2 { display: block; position: absolute; left: 80%; top: 90%; z-index: 1 }
+</style>
+</head>
+<body>
+<div class='MenuLevel1'>
+    <div>пункт 1</div>
+    <div>
+        пункт 2
+        <div class='MenuLevel2'>
+            <div>выпадающий пункт 2.1</div>
+            <div>выпадающий пункт 2.2</div>
+            <div>выпадающий пункт 2.3</div>
+        </div>
+    </div>
+    <div>
+        пункт 3
+        <div class='MenuLevel2'>
+            <div>выпадающий пункт 3.1</div>
+            <div>выпадающий пункт 3.2</div>
+        </div>
+    </div>
+    <div>пункт 4</div>
+    <div>пункт 5</div>
+
+</div> 
+</body>
+</html>

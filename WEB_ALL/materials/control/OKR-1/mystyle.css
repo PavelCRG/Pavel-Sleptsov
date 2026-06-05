@@ -1,0 +1,19 @@
+/* Универсальный селектор */
+* {
+    color: fuchsia;
+}
+
+/* Класс 1 */
+.class1 {
+    color: red;
+}
+
+/* Класс 2 */
+.class2 {
+    color: olive;
+}
+
+/* 3e */
+#green {
+    color: green;
+}

@@ -9,151 +9,279 @@
 <body class="site-app">
     <div class="site-grid">
         <header class="site-header">
-            <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
             <a class="site-header__logo site-header__logo--personal" href="../portal.html" title="На главную">
                 <img src="../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
             </a>
-            <h1 class="site-header__title">Сайт по курсу · Средства создания приложений</h1>
+            <h1 class="site-header__title">
+                <span class="site-header__title-top">Сайт по курсу</span>
+                <span class="site-header__title-sub">Средства создания приложений</span>
+            </h1>
             <span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
                 <img src="../assets/images/college-logo.png" alt="Логотип колледжа">
             </span>
         </header>
         <div class="nav-backdrop"></div>
+        <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+            <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path class="nav-toggle__path nav-toggle__path--1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+            </svg>
+        </button>
         <nav class="site-sidebar" aria-label="Меню">
             <h2>Разделы</h2>
             <ul class="site-nav">
-                <li><a href="../portal.html">Главная</a></li>
-                <li><a href="lab.html" class="is-active">Лабораторные</a></li>
-                <li><a href="lection.html">Лекции</a></li>
-                <li><a href="practice.html">WEB-практика</a></li>
-                <li><a href="about.html">Обо мне</a></li>
+<li><a href="../portal.html" class="">Главная</a></li>
+<li><a href="lab.html" class="is-active">Лабораторные</a></li>
+<li><a href="lection.html" class="">Лекции</a></li>
+<li><a href="control.html" class="">Контроль</a></li>
+<li><a href="practice.html" class="">WEB-практика</a></li>
+<li><a href="about.html" class="">Обо мне</a></li>
             </ul>
         </nav>
         <main class="site-main page page--catalog">
             <h1>Лабораторные работы</h1>
-            <p class="page__lead">Слева — список по лабораторным (раскройте блок). Справа — просмотр выбранной работы.</p>
+            <p class="page__lead">Слева — каталог. HTML-работы — в панели справа. PDF-условия — сразу в новой вкладке.</p>
 
             <div class="lab-layout">
                 <div class="lab-layout__catalog">
                     <div class="lab-catalog">
                         <div class="lab-catalog__head">
                             <p class="lab-catalog__title">Список лабораторных</p>
-                            <p class="lab-catalog__hint">Раскройте блок — под ним файлы. Нажатие откроет работу справа.</p>
+                            <p class="lab-catalog__hint">Условие (PDF) открывается в новой вкладке. Примеры и индивидуальное — в панели справа.</p>
                         </div>
                         <details class="lab-group">
                             <summary><span class="lab-group__label"><span class="lab-group__num">01</span><span class="lab-group__name">Лабораторная 01</span></span></summary>
                             <div class="lab-group__body">
-                                <p class="lab-group__desc">Введение в HTML: базовая разметка и задания по страницам.</p>
-                                <p class="lab-files__heading">Файлы</p>
-                                <ul class="lab-files">
-                                    <li><a href="../materials/lab/01/33-35.html" data-material-src="../materials/lab/01/33-35.html">33-35.html</a></li>
-                                    <li><a href="../materials/lab/01/46-47.html" data-material-src="../materials/lab/01/46-47.html">46-47.html</a></li>
-                                </ul>
+                                <p class="lab-group__desc">Семантическая разметка HTML, базовые теги.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/01/Условие/1_lab_format_semantic.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">1_lab_format_semantic</a></li>
+</ul>
+<p class="lab-files__heading">Файлы</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/01/33-35.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/01/33-35.html">33-35.html</a></li>
+    <li><a href="../materials/lab/01/43.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/01/43.html">43.html</a></li>
+    <li><a href="../materials/lab/01/46-47.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/01/46-47.html">46-47.html</a></li>
+</ul>
                             </div>
                         </details>
-
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">02</span><span class="lab-group__name">Лабораторная 02</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">Контент: ссылки, карты, списки, таблицы.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/02/Условие/2_lab_href_karta_list_table.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">2_lab_href_karta_list_table</a></li>
+</ul>
+<p class="lab-files__heading">Примеры</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/02/Примеры/50.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/02/Примеры/50.html">Примеры / 50.html</a></li>
+    <li><a href="../materials/lab/02/Примеры/50_2.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/02/Примеры/50_2.html">Примеры / 50_2.html</a></li>
+    <li><a href="../materials/lab/02/Примеры/foto.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/02/Примеры/foto.html">Примеры / foto.html</a></li>
+    <li><a href="../materials/lab/02/Примеры/pfoto.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/02/Примеры/pfoto.html">Примеры / pfoto.html</a></li>
+</ul>
+                            </div>
+                        </details>
                         <details class="lab-group">
                             <summary><span class="lab-group__label"><span class="lab-group__num">03</span><span class="lab-group__name">Лабораторная 03</span></span></summary>
                             <div class="lab-group__body">
-                                <p class="lab-group__desc">Продолжение HTML: примеры и тренировочные страницы (primer).</p>
-                                <p class="lab-files__heading">Файлы</p>
-                                <ul class="lab-files">
-                                    <li><a href="../materials/lab/03/primer89.html" data-material-src="../materials/lab/03/primer89.html">primer89.html</a></li>
-                                    <li><a href="../materials/lab/03/primer90.html" data-material-src="../materials/lab/03/primer90.html">primer90.html</a></li>
-                                    <li><a href="../materials/lab/03/primer91.html" data-material-src="../materials/lab/03/primer91.html">primer91.html</a></li>
-                                    <li><a href="../materials/lab/03/primer92.html" data-material-src="../materials/lab/03/primer92.html">primer92.html</a></li>
-                                    <li><a href="../materials/lab/03/primer93.html" data-material-src="../materials/lab/03/primer93.html">primer93.html</a></li>
-                                    <li><a href="../materials/lab/03/primer94.html" data-material-src="../materials/lab/03/primer94.html">primer94.html</a></li>
-                                    <li><a href="../materials/lab/03/primer95.html" data-material-src="../materials/lab/03/primer95.html">primer95.html</a></li>
-                                    <li><a href="../materials/lab/03/primer96.html" data-material-src="../materials/lab/03/primer96.html">primer96.html</a></li>
-                                    <li><a href="../materials/lab/03/primer98.html" data-material-src="../materials/lab/03/primer98.html">primer98.html</a></li>
-                                    <li><a href="../materials/lab/03/primer101.html" data-material-src="../materials/lab/03/primer101.html">primer101.html</a></li>
-                                </ul>
+                                <p class="lab-group__desc">Формы и элементы ввода.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/03/Условие/3_lab_form.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">3_lab_form</a></li>
+</ul>
+<p class="lab-files__heading">Файлы</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/03/primer101.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer101.html">primer101.html</a></li>
+    <li><a href="../materials/lab/03/primer89.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer89.html">primer89.html</a></li>
+    <li><a href="../materials/lab/03/primer90.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer90.html">primer90.html</a></li>
+    <li><a href="../materials/lab/03/primer91.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer91.html">primer91.html</a></li>
+    <li><a href="../materials/lab/03/primer92.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer92.html">primer92.html</a></li>
+    <li><a href="../materials/lab/03/primer93.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer93.html">primer93.html</a></li>
+    <li><a href="../materials/lab/03/primer94.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer94.html">primer94.html</a></li>
+    <li><a href="../materials/lab/03/primer95.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer95.html">primer95.html</a></li>
+    <li><a href="../materials/lab/03/primer96.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer96.html">primer96.html</a></li>
+    <li><a href="../materials/lab/03/primer98.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/primer98.html">primer98.html</a></li>
+</ul>
                             </div>
                         </details>
-
                         <details class="lab-group">
                             <summary><span class="lab-group__label"><span class="lab-group__num">04</span><span class="lab-group__name">Лабораторная 04</span></span></summary>
                             <div class="lab-group__body">
-                                <p class="lab-group__desc">CSS: оформление страниц, связанные стили и примеры.</p>
-                                <p class="lab-files__heading">Файлы</p>
-                                <ul class="lab-files">
-                                    <li><a href="../materials/lab/04/primer114.html" data-material-src="../materials/lab/04/primer114.html">primer114.html</a></li>
-                                    <li><a href="../materials/lab/04/primer116.html" data-material-src="../materials/lab/04/primer116.html">primer116.html</a></li>
-                                    <li><a href="../materials/lab/04/primer118.html" data-material-src="../materials/lab/04/primer118.html">primer118.html</a></li>
-                                    <li><a href="../materials/lab/04/primer119/primer119.html" data-material-src="../materials/lab/04/primer119/primer119.html">primer119.html</a></li>
-                                    <li><a href="../materials/lab/04/primer120-121/primer120.html" data-material-src="../materials/lab/04/primer120-121/primer120.html">primer120.html</a></li>
-                                    <li><a href="../materials/lab/04/primer123.html" data-material-src="../materials/lab/04/primer123.html">primer123.html</a></li>
-                                </ul>
+                                <p class="lab-group__desc">Подключение CSS, оформление страниц.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/04/Условие/4_lab_style_podkly4enie.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">4_lab_style_podkly4enie</a></li>
+</ul>
+<p class="lab-files__heading">Файлы</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/04/primer114.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/primer114.html">primer114.html</a></li>
+    <li><a href="../materials/lab/04/primer116.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/primer116.html">primer116.html</a></li>
+    <li><a href="../materials/lab/04/primer118.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/primer118.html">primer118.html</a></li>
+    <li><a href="../materials/lab/04/primer119/primer119.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/primer119/primer119.html">primer119.html</a></li>
+    <li><a href="../materials/lab/04/primer120-121/primer120.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/primer120-121/primer120.html">primer120.html</a></li>
+    <li><a href="../materials/lab/04/primer123.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/primer123.html">primer123.html</a></li>
+</ul>
                             </div>
                         </details>
-
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">13</span><span class="lab-group__name">Лабораторная 13 — JavaScript</span></span></summary>
+                            <summary><span class="lab-group__label"><span class="lab-group__num">05</span><span class="lab-group__name">Лабораторная 05</span></span></summary>
                             <div class="lab-group__body">
-                                <p class="lab-group__desc">JavaScript: массивы, даты, строки; индивидуальное задание и разбор примеров.</p>
-                                <div class="lab-group__conds">
-                                    <strong>Условие задания</strong>
-                                    <a class="lab-link-external" href="../materials/lab/13/Условие/lab_13-14_Math_Array_Date_String.pdf" target="_blank" rel="noopener">lab_13-14_Math_Array_Date_String.pdf</a>
-                                </div>
-                                <p class="lab-files__heading">Работы</p>
-                                <ul class="lab-files">
-                                    <li><a href="../materials/lab/13/Индивидуальное/index.html" data-material-src="../materials/lab/13/Индивидуальное/index.html">Индивидуальное задание</a></li>
-                                </ul>
-                                <details class="lab-sub">
-                                    <summary>Примеры по темам</summary>
-                                    <p class="lab-files__heading">Файлы примеров</p>
-                                    <ul class="lab-files">
-                                        <li><a href="../materials/lab/13/Примеры/1.1/index.html" data-material-src="../materials/lab/13/Примеры/1.1/index.html">Пример 1.1</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/1.2/index.html" data-material-src="../materials/lab/13/Примеры/1.2/index.html">Пример 1.2</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/2.1/index.html" data-material-src="../materials/lab/13/Примеры/2.1/index.html">Пример 2.1</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/2.2/index.html" data-material-src="../materials/lab/13/Примеры/2.2/index.html">Пример 2.2</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/2.3/index.html" data-material-src="../materials/lab/13/Примеры/2.3/index.html">Пример 2.3</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/2.4/index.html" data-material-src="../materials/lab/13/Примеры/2.4/index.html">Пример 2.4</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/2.5/index.html" data-material-src="../materials/lab/13/Примеры/2.5/index.html">Пример 2.5</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/2.6/index.html" data-material-src="../materials/lab/13/Примеры/2.6/index.html">Пример 2.6</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/2.7/index.html" data-material-src="../materials/lab/13/Примеры/2.7/index.html">Пример 2.7</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/3.1/index.html" data-material-src="../materials/lab/13/Примеры/3.1/index.html">Пример 3.1</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/3.2/index.html" data-material-src="../materials/lab/13/Примеры/3.2/index.html">Пример 3.2</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/3.3/index.html" data-material-src="../materials/lab/13/Примеры/3.3/index.html">Пример 3.3</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/4.1/index.html" data-material-src="../materials/lab/13/Примеры/4.1/index.html">Пример 4.1</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/4.2/index.html" data-material-src="../materials/lab/13/Примеры/4.2/index.html">Пример 4.2</a></li>
-                                        <li><a href="../materials/lab/13/Примеры/4.3/index.html" data-material-src="../materials/lab/13/Примеры/4.3/index.html">Пример 4.3</a></li>
-                                    </ul>
-                                </details>
+                                <p class="lab-group__desc">Селекторы и классы в CSS.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/05/Условие/5_1_lab_simple_selectors.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">5_1_lab_simple_selectors</a></li>
+    <li><a href="../materials/lab/05/Условие/5_2_lab_complex_selectors.docx.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">5_2_lab_complex_selectors.docx</a></li>
+</ul>
                             </div>
                         </details>
-
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">06</span><span class="lab-group__name">Лабораторная 06</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">Блочная вёрстка, многостраничный сайт.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/06/Условие/6_lab_block_site.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">6_lab_block_site</a></li>
+</ul>
+                            </div>
+                        </details>
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">07</span><span class="lab-group__name">Лабораторная 07</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">Адаптивная вёрстка и медиазапросы.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/07/Условие/7_lab_adaptiv_media.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">7_lab_adaptiv_media</a></li>
+</ul>
+<p class="lab-files__heading">Примеры</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/07/Примеры/form.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/07/Примеры/form.html">Примеры / form.html</a></li>
+    <li><a href="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/format.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/format.html">Многостраничный блочный сайт_меню / format.html</a></li>
+    <li><a href="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/index.html">Пример Многостраничный блочный сайт_меню</a></li>
+    <li><a href="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/lab_1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/lab_1.html">Многостраничный блочный сайт_меню / lab_1.html</a></li>
+    <li><a href="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/spiski.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/spiski.html">Многостраничный блочный сайт_меню / spiski.html</a></li>
+</ul>
+                            </div>
+                        </details>
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">08</span><span class="lab-group__name">Лабораторная 08</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">CSS transforms и transitions.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/08/Условие/8_lab_TRANSFORMS_TRANSITIONS.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">8_lab_TRANSFORMS_TRANSITIONS</a></li>
+</ul>
+                            </div>
+                        </details>
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">09</span><span class="lab-group__name">Лабораторная 09</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">Внедрение JavaScript на страницу.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/09/Условие/lab_9_JS_vntdrenie_scenariev.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">lab_9_JS_vntdrenie_scenariev</a></li>
+    <li><a href="../materials/lab/09/Условие/подключение_js_файл.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">подключение_js_файл</a></li>
+</ul>
+                            </div>
+                        </details>
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">10</span><span class="lab-group__name">Лабораторная 10</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">alert, prompt, confirm.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/10/Условие/Lab_10_JavaScript_var_const_type.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">Lab_10_JavaScript_var_const_type</a></li>
+    <li><a href="../materials/lab/10/Условие/promt_alert_confirm.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">promt_alert_confirm</a></li>
+</ul>
+                            </div>
+                        </details>
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">11</span><span class="lab-group__name">Лабораторная 11</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">Условия и циклы в JavaScript.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/11/Условие/Lab_11_JS_if_while_for.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">Lab_11_JS_if_while_for</a></li>
+    <li><a href="../materials/lab/11/Условие/Преобразования_типов.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">Преобразования_типов</a></li>
+</ul>
+                            </div>
+                        </details>
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">12</span><span class="lab-group__name">Лабораторная 12</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">Функции в JavaScript.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/12/Условие/lab_12_JS_function.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">lab_12_JS_function</a></li>
+    <li><a href="../materials/lab/12/Условие/функции.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">функции</a></li>
+</ul>
+                            </div>
+                        </details>
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">13</span><span class="lab-group__name">Лабораторная 13</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">Math, Array, Date, String.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/13/Условие/lab_13-14_Math_Array_Date_String.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">lab_13-14_Math_Array_Date_String</a></li>
+</ul>
+<p class="lab-files__heading">Примеры</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/13/Примеры/1.1/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/1.1/index.html">Пример 1.1</a></li>
+    <li><a href="../materials/lab/13/Примеры/1.2/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/1.2/index.html">Пример 1.2</a></li>
+    <li><a href="../materials/lab/13/Примеры/2.1/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/2.1/index.html">Пример 2.1</a></li>
+    <li><a href="../materials/lab/13/Примеры/2.2/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/2.2/index.html">Пример 2.2</a></li>
+    <li><a href="../materials/lab/13/Примеры/2.3/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/2.3/index.html">Пример 2.3</a></li>
+    <li><a href="../materials/lab/13/Примеры/2.4/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/2.4/index.html">Пример 2.4</a></li>
+    <li><a href="../materials/lab/13/Примеры/2.5/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/2.5/index.html">Пример 2.5</a></li>
+    <li><a href="../materials/lab/13/Примеры/2.6/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/2.6/index.html">Пример 2.6</a></li>
+    <li><a href="../materials/lab/13/Примеры/2.7/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/2.7/index.html">Пример 2.7</a></li>
+    <li><a href="../materials/lab/13/Примеры/3.1/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/3.1/index.html">Пример 3.1</a></li>
+    <li><a href="../materials/lab/13/Примеры/3.2/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/3.2/index.html">Пример 3.2</a></li>
+    <li><a href="../materials/lab/13/Примеры/3.3/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/3.3/index.html">Пример 3.3</a></li>
+    <li><a href="../materials/lab/13/Примеры/4.1/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/4.1/index.html">Пример 4.1</a></li>
+    <li><a href="../materials/lab/13/Примеры/4.2/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/4.2/index.html">Пример 4.2</a></li>
+    <li><a href="../materials/lab/13/Примеры/4.3/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/4.3/index.html">Пример 4.3</a></li>
+</ul>
+<p class="lab-files__heading">Индивидуальное</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/13/Индивидуальное/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Индивидуальное/index.html">Индивидуальная работа</a></li>
+</ul>
+                            </div>
+                        </details>
                         <details class="lab-group">
                             <summary><span class="lab-group__label"><span class="lab-group__num">14</span><span class="lab-group__name">Лабораторная 14</span></span></summary>
                             <div class="lab-group__body">
-                                <p class="lab-group__desc">Продолжение по JavaScript. Условие будет добавлено.</p>
-                                <p class="lab-catalog__empty">Условие — добавить позже.</p>
-                                <p class="lab-files__heading">Файлы</p>
-                                <ul class="lab-files">
-                                    <li><a href="../materials/lab/14/Примеры/253/index.html" data-material-src="../materials/lab/14/Примеры/253/index.html">Пример 253</a></li>
-                                </ul>
+                                <p class="lab-group__desc">Самостоятельная работа по JS.</p>
+<p class="lab-files__heading">Условие</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/14/Условие/lab_13-14_JS_function_independent_work.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">lab_13-14_JS_function_independent_work</a></li>
+</ul>
+<p class="lab-files__heading">Примеры</p>
+<ul class="lab-files">
+    <li><a href="../materials/lab/14/Примеры/253/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/14/Примеры/253/index.html">Пример 253</a></li>
+</ul>
                             </div>
                         </details>
                     </div>
                 </div>
-
-                <section class="lab-viewer" aria-label="Просмотр работы">
-                    <div class="lab-viewer__bar">
-                        <p class="lab-viewer__title" id="material-viewer-title">Выберите работу в списке слева</p>
-                        <a class="lab-viewer__open-new" id="material-open-new" href="#" target="_blank" rel="noopener" hidden>Открыть в новой вкладке</a>
+                <div class="lab-layout__viewer material-viewer" aria-label="Просмотр материала">
+                    <div class="material-viewer__bar">
+                        <p class="material-viewer__title" id="material-viewer-title">Выберите файл слева</p>
+                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden>Открыть отдельно</a>
                     </div>
-                    <div class="lab-viewer__frame-wrap">
-                        <iframe class="lab-viewer__frame" id="material-frame" title="Просмотр материала"></iframe>
-                        <p class="lab-viewer__placeholder" id="material-placeholder">Здесь появится выбранная работа. Слева — список по лабораторным.</p>
+                    <div class="material-viewer__panel" id="material-panel">
+                        <p class="material-viewer__placeholder" id="material-placeholder">Здесь открываются HTML-работы. PDF (условия) — сразу в новой вкладке.</p>
+                        <p class="material-viewer__loading" id="material-loading" hidden>Загрузка…</p>
+                        <div class="material-viewer__content" id="material-content" hidden></div>
                     </div>
-                </section>
+                </div>
             </div>
         </main>
-        <aside class="site-aside" aria-label="Проекты">
-            <p class="site-aside__title">Проекты</p>
+
+        <aside class="site-aside" aria-label="Реклама">
+            <p class="site-aside__title">Реклама</p>
             <a class="ad-card" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
                 <div class="ad-card__head">
                     <img class="ad-card__logo" src="../assets/images/github.svg" alt="GitHub" width="56" height="56">
@@ -167,11 +295,11 @@
                     <img class="ad-card__logo" src="../assets/images/voxiva-logo.svg" alt="Voxiva" width="56" height="56">
                     <strong class="ad-card__brand">Voxiva</strong>
                 </div>
-                <p class="ad-card__text">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке. Вы говорите намерение — система помогает оформить задачи и следующие шаги.</p>
-                <p class="ad-card__text ad-card__text--note">Личный проект автора: Voxiva Voice (диктовка) и Voxiva Space (рабочее пространство).</p>
+                <p class="ad-card__text">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке.</p>
                 <span class="ad-card__url">voxivaai.vercel.app</span>
             </a>
         </aside>
+
         <footer class="site-footer">
             <p class="site-footer__brand">Средства создания приложений</p>
             <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>

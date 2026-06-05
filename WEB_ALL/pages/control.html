@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контроль — Средства создания приложений</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="site-app">
+    <div class="site-grid">
+        <header class="site-header">
+            <a class="site-header__logo site-header__logo--personal" href="../portal.html" title="На главную">
+                <img src="../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
+            </a>
+            <h1 class="site-header__title">
+                <span class="site-header__title-top">Сайт по курсу</span>
+                <span class="site-header__title-sub">Средства создания приложений</span>
+            </h1>
+            <span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
+                <img src="../assets/images/college-logo.png" alt="Логотип колледжа">
+            </span>
+        </header>
+        <div class="nav-backdrop"></div>
+        <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+            <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path class="nav-toggle__path nav-toggle__path--1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+            </svg>
+        </button>
+        <nav class="site-sidebar" aria-label="Меню">
+            <h2>Разделы</h2>
+            <ul class="site-nav">
+<li><a href="../portal.html" class="">Главная</a></li>
+<li><a href="lab.html" class="">Лабораторные</a></li>
+<li><a href="lection.html" class="">Лекции</a></li>
+<li><a href="control.html" class="is-active">Контроль</a></li>
+<li><a href="practice.html" class="">WEB-практика</a></li>
+<li><a href="about.html" class="">Обо мне</a></li>
+            </ul>
+        </nav>
+        <main class="site-main page page--catalog">
+            <h1>Контрольные работы</h1>
+            <p class="page__lead">ОКР и другие контрольные задания. Статус: выполнено — материалы доступны для просмотра.</p>
+
+            <div class="lab-layout">
+                <div class="lab-layout__catalog">
+                    <div class="lab-catalog">
+                        <div class="lab-catalog__head">
+                            <p class="lab-catalog__title">Контрольные работы</p>
+                            <p class="lab-catalog__hint">Раскройте блок — HTML-страницы и стили выполненной работы.</p>
+                        </div>
+                        <details class="lab-group">
+                            <summary><span class="lab-group__label"><span class="lab-group__num">✓</span><span class="lab-group__name">OKR 1</span></span></summary>
+                            <div class="lab-group__body">
+                                <p class="lab-group__desc">ОКР №1 — HTML и CSS. Выполнено: задания 1–3, блочный сайт, анимация.</p>
+<p class="lab-files__heading">Файлы</p>
+<ul class="lab-files">
+    <li><a href="../materials/control/OKR-1/animation.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/animation.html">animation.html</a></li>
+    <li><a href="../materials/control/OKR-1/block_site.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/block_site.html">block_site.html</a></li>
+    <li><a href="../materials/control/OKR-1/zadanie1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/zadanie1.html">zadanie1.html</a></li>
+    <li><a href="../materials/control/OKR-1/zadanie2.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/zadanie2.html">zadanie2.html</a></li>
+    <li><a href="../materials/control/OKR-1/zadanie3.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/zadanie3.html">zadanie3.html</a></li>
+</ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="lab-layout__viewer material-viewer" aria-label="Просмотр материала">
+                    <div class="material-viewer__bar">
+                        <p class="material-viewer__title" id="material-viewer-title">Выберите файл слева</p>
+                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden>Открыть отдельно</a>
+                    </div>
+                    <div class="material-viewer__panel" id="material-panel">
+                        <p class="material-viewer__placeholder" id="material-placeholder">Здесь открываются HTML-работы. PDF (условия) — сразу в новой вкладке.</p>
+                        <p class="material-viewer__loading" id="material-loading" hidden>Загрузка…</p>
+                        <div class="material-viewer__content" id="material-content" hidden></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="site-aside" aria-label="Реклама">
+            <p class="site-aside__title">Реклама</p>
+            <a class="ad-card" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../assets/images/github.svg" alt="GitHub" width="56" height="56">
+                    <strong class="ad-card__brand">GitHub</strong>
+                </div>
+                <p class="ad-card__text">Профиль разработчика. Здесь есть задания по курсу, но также можно посмотреть другие репозитории и проекты автора.</p>
+                <span class="ad-card__url">github.com/PavelCRG</span>
+            </a>
+            <a class="ad-card" href="https://voxivaai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../assets/images/voxiva-logo.svg" alt="Voxiva" width="56" height="56">
+                    <strong class="ad-card__brand">Voxiva</strong>
+                </div>
+                <p class="ad-card__text">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке.</p>
+                <span class="ad-card__url">voxivaai.vercel.app</span>
+            </a>
+        </aside>
+
+        <footer class="site-footer">
+            <p class="site-footer__brand">Средства создания приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
+    </div>
+    <script src="../js/mobile-nav.js"></script>
+    <script src="../js/material-viewer.js"></script>
+</body>
+</html>
