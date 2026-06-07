@@ -1,0 +1,10 @@
+@import url("2_04-1.css");
+
+p {
+    font: 20 Garamond;
+}
+
+span {
+    font: 26px Arial;
+    color: blue;
+}

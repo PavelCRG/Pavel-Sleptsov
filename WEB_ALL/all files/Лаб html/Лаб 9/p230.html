@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type='text/javascript'>
+        alert('появилось окно-сообщеие при загрузке веб-документа');
+    </script>
+</head>
+<body>
+    <script type='text/javascript'>
+        
+        function f1() {
+            alert('появилось окно-сообщеие при событии, вызванном пользователем');
+        }
+    </script>
+    
+    <h1 onClick="f1();"> внедрение сценария </h1>
+    <h2 onMouseOver="f1();"> в контейнере &lt;script&gt;</h2>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета пользователя</title>
+</head>
+
+<body>
+    <script>
+        // запрос ФИО отдельно
+        var lastName = prompt("Введите вашу фамилию", "");
+        var firstName = prompt("Введите ваше имя", "");
+        var middleName = prompt("Введите ваше отчество", "");
+
+        // возраст в годах
+        var ageYears = prompt("Сколько вам полных лет?", "");
+
+        // пол через confirm (true - мужской, false - женский)
+        var isMale = confirm("Ваш пол - мужской?");
+        var gender = isMale ? "мужской" : "женский";
+
+        // вычисление возраста в днях (приближённо, 365 дней в году)
+        var ageDays = ageYears * 365;
+
+        // через 5 лет
+        var ageIn5 = Number(ageYears) + 5;
+
+        // проверка на пенсию (мужчины - 65, женщины - 60)
+        var pension = false;
+        if (isMale && ageYears >= 65) pension = true;
+        if (!isMale && ageYears >= 60) pension = true;
+        var pensionStatus = pension ? "да" : "нет";
+
+        // итоговая анкета
+        var fullName = lastName + " " + firstName + " " + middleName;
+        var message = "Ваше ФИО: " + fullName + "\n" +
+            "Ваш возраст в годах: " + ageYears + "\n" +
+            "Ваш возраст в днях: " + ageDays + "\n" +
+            "Через 5 лет вам будет: " + ageIn5 + "\n" +
+            "Ваш пол: " + gender + "\n" +
+            "Вы на пенсии: " + pensionStatus;
+
+        alert(message);
+    </script>
+</body>
+
+</html>

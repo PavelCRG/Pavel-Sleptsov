@@ -320,6 +320,11 @@
     padding: 16px 18px 24px;
     min-height: 100%;
     box-sizing: border-box;
+    font-family: initial;
+    font-size: initial;
+    line-height: initial;
+    color: initial;
+    text-align: initial;
 }
 
 .material-viewer__content.is-active {
@@ -327,8 +332,42 @@
 }
 
 .material-viewer__injected {
+    display: block;
     max-width: 100%;
     overflow-x: auto;
+    isolation: isolate;
+}
+
+/*
+ * Не перекрашивать работы глобальными стилями портала (reset.css: a { color }).
+ * unset — наследовать цвет от родителя; ваши <style> и CSS-файлы по-прежнему главнее.
+ */
+.material-viewer__content .material-viewer__injected a,
+.material-viewer__content .material-viewer__injected a:hover {
+    color: unset;
+    text-decoration: unset;
+}
+
+.material-viewer__content .material-viewer__injected a:not([href]),
+.material-viewer__content .material-viewer__injected a[href=""],
+.material-viewer__content .material-viewer__injected a[href="#"] {
+    color: inherit;
+    text-decoration: none;
+    cursor: default;
+}
+
+.material-viewer__injected img,
+.material-viewer__injected video,
+.material-viewer__injected iframe,
+.material-viewer__injected object,
+.material-viewer__injected embed,
+.material-viewer__injected svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.material-viewer__injected table {
+    max-width: 100%;
 }
 
 .material-viewer__pdf {

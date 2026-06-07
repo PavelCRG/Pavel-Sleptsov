@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Определение по номеру дня его названия</title>
+    <script>
+        function numday(obj) {
+            var m = Number(obj.num1.value);
+            var s;
+
+            switch (m) {
+                case 1: s = "понедельник"; break;
+                case 2: s = "вторник"; break;
+                case 3: s = "среда"; break;
+                case 4: s = "четверг"; break;
+                case 5: s = "пятница"; break;
+                case 6: s = "суббота"; break;
+                case 7: s = "воскресенье"; break;
+                default: s = "ошибка в номере дня";
+            }
+            obj.res.value = s;
+        } 
+    </script>
+</head>
+
+<body>
+    <p>Определение названия дня по его номеру</p>
+    <form name="form1">
+        Введите номер дня: <input type="text" size="7" name="num1">
+        <hr>
+        Название дня:
+        <input type="button" value="Определить" onClick="numday(form1)">
+        <input type="text" size="20" name="res">
+        <hr>
+        <input type="reset">
+    </form>
+</body>
+
+</html>

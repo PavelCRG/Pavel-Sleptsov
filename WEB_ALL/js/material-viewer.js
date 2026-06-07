@@ -1,6 +1,6 @@
 /**
  * Просмотр HTML-работ внутри портала — без iframe.
- * PDF (условия) открываются на отдельной странице view-pdf.html.
+ * PDF (условия) открываются в новой вкладке из каталога.
  */
 (function () {
     var contentEl = document.getElementById("material-content");
@@ -15,9 +15,14 @@
     }
 
     var links = document.querySelectorAll('.lab-files a[data-material-src]');
+    var currentBase = null;
 
     function isHtmlSrc(src) {
         return /\.html?(\?|#|$)/i.test(src);
+    }
+
+    function isPdfSrc(src) {
+        return /\.pdf(\?|#|$)/i.test(src);
     }
 
     function setActiveLink(active) {
@@ -68,6 +73,10 @@
         });
     }
 
+    function adaptInjectedStyles(cssText) {
+        return cssText.replace(/\bbody\b/g, ".material-viewer__injected");
+    }
+
     function runScripts(container, base) {
         container.querySelectorAll("script").forEach(function (oldScript) {
             var script = document.createElement("script");
@@ -100,9 +109,12 @@
     function injectHtml(html, base) {
         var doc = new DOMParser().parseFromString(html, "text/html");
         clearContent();
+        currentBase = base;
 
         doc.querySelectorAll("style").forEach(function (style) {
-            contentEl.appendChild(style.cloneNode(true));
+            var el = document.createElement("style");
+            el.textContent = adaptInjectedStyles(style.textContent);
+            contentEl.appendChild(el);
         });
 
         doc.querySelectorAll('link[rel="stylesheet"]').forEach(function (link) {
@@ -125,6 +137,7 @@
 
     function showError(src, message) {
         clearContent();
+        currentBase = null;
         var err = document.createElement("p");
         err.className = "material-viewer__error";
         err.textContent = message || "Не удалось загрузить материал.";
@@ -150,6 +163,10 @@
         if (openNew) {
             openNew.href = src;
             openNew.hidden = false;
+            openNew.onclick = function (ev) {
+                ev.preventDefault();
+                openWork(src, label || src.split("/").pop(), linkEl || findCatalogLink(src));
+            };
         }
         setActiveLink(linkEl || null);
         if (linkEl) {
@@ -184,6 +201,86 @@
             });
     }
 
+    function findCatalogLink(src) {
+        var found = null;
+        links.forEach(function (a) {
+            var dataSrc = a.getAttribute("data-material-src") || "";
+            if (dataSrc === src || resolveUrl(dataSrc, window.location.href) === src) {
+                found = a;
+            }
+        });
+        return found;
+    }
+
+    function handleInjectedLinkClick(e) {
+        var anchor = e.target.closest("a");
+        if (!anchor || !contentEl.contains(anchor)) {
+            return;
+        }
+
+        var href = anchor.getAttribute("href");
+        if (!href) {
+            e.preventDefault();
+            return;
+        }
+
+        if (
+            href.indexOf("mailto:") === 0 ||
+            href.indexOf("tel:") === 0 ||
+            href.indexOf("skype:") === 0 ||
+            href.indexOf("javascript:") === 0
+        ) {
+            return;
+        }
+
+        if (href === "#") {
+            e.preventDefault();
+            return;
+        }
+
+        if (href.indexOf("#") === 0 && href.length > 1) {
+            return;
+        }
+
+        var path = href;
+        var hash = "";
+        var hashIndex = href.indexOf("#");
+        if (hashIndex !== -1) {
+            path = href.slice(0, hashIndex);
+            hash = href.slice(hashIndex);
+        }
+
+        if (!path) {
+            return;
+        }
+
+        if (isPdfSrc(path)) {
+            anchor.target = "_blank";
+            anchor.rel = "noopener noreferrer";
+            return;
+        }
+
+        if (!isHtmlSrc(path)) {
+            return;
+        }
+
+        e.preventDefault();
+
+        var resolved = resolveUrl(path, currentBase || window.location.href);
+        var catalogLink = findCatalogLink(resolved);
+        var label = anchor.textContent.trim() || resolved.split("/").pop();
+        openWork(resolved, label, catalogLink);
+
+        if (hash) {
+            window.setTimeout(function () {
+                var target = contentEl.querySelector(hash);
+                if (target && target.scrollIntoView) {
+                    target.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                }
+            }, 120);
+        }
+    }
+
     links.forEach(function (a) {
         a.addEventListener("click", function (e) {
             e.preventDefault();
@@ -191,15 +288,17 @@
         });
     });
 
+    contentEl.addEventListener("click", handleInjectedLinkClick);
+
     function openFromHash() {
         var hash = location.hash.replace(/^#/, "");
         if (!hash) {
             return;
         }
-        var path = decodeURIComponent(hash);
-        if (/\.pdf(\?|#|$)/i.test(path)) {
+        if (/\.pdf(\?|#|$)/i.test(hash)) {
             return;
         }
+        var path = decodeURIComponent(hash);
         var found = null;
         links.forEach(function (a) {
             var src = a.getAttribute("data-material-src") || "";

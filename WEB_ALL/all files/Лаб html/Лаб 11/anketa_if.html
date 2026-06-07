@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Проект ANKETA - Вариант IF</title>
+    <script>
+        function startAnketa() {
+            var lastName = prompt("Введите вашу фамилию:");
+            var firstName = prompt("Введите ваше имя:");
+            var middleName = prompt("Введите ваше отчество:");
+            var ageYears = Number(prompt("Введите ваш возраст в годах:"));
+            var isMale = confirm("Ваш пол - мужской?");
+
+            var ageDays = ageYears * 365;
+            var ageIn5Years = ageYears + 5;
+
+            var genderStr;
+            if (isMale) {
+                genderStr = "мужской";
+            } else {
+                genderStr = "женский";
+            }
+
+            var isRetiredStr;
+            if (isMale) {
+                if (ageYears >= 63) {
+                    isRetiredStr = "да";
+                } else {
+                    isRetiredStr = "нет";
+                }
+            } else {
+                if (ageYears >= 58) {
+                    isRetiredStr = "да";
+                } else {
+                    isRetiredStr = "нет";
+                }
+            }
+
+            var result = "ваше ФИО: " + lastName + " " + firstName + " " + middleName + "\n" +
+                "ваш возраст в годах: " + ageYears + "\n" +
+                "ваш возраст в днях: " + ageDays + "\n" +
+                "через 5 лет вам будет: " + ageIn5Years + "\n" +
+                "ваш пол: " + genderStr + "\n" +
+                "вы на пенсии: " + isRetiredStr;
+
+            alert(result);
+        }
+    </script>
+</head>
+
+<body onload="startAnketa()">
+    <div>
+        <span>Вариант IF</span> |
+        <a href="anketa_oper.html">Перейти на вариант OPER (?:)</a>
+    </div>
+    <hr>
+    <h4>Проект ANKETA (реализация через условный оператор if)</h4>
+</body>
+
+</html>

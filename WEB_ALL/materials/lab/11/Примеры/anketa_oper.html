@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Проект ANKETA - Вариант OPER</title>
+    <script>
+        function startAnketa() {
+            var lastName = prompt("Введите вашу фамилию:");
+            var firstName = prompt("Введите ваше имя:");
+            var middleName = prompt("Введите ваше отчество:");
+            var ageYears = Number(prompt("Введите ваш возраст в годах:"));
+            var isMale = confirm("Ваш пол - мужской?");
+
+            var ageDays = ageYears * 365;
+            var ageIn5Years = ageYears + 5;
+
+            var genderStr = isMale ? "мужской" : "женский";
+            var isRetiredStr = isMale ? (ageYears >= 63 ? "да" : "нет") : (ageYears >= 58 ? "да" : "нет");
+
+            var result = "ваше ФИО: " + lastName + " " + firstName + " " + middleName + "\n" +
+                "ваш возраст в годах: " + ageYears + "\n" +
+                "ваш возраст в днях: " + ageDays + "\n" +
+                "через 5 лет вам будет: " + ageIn5Years + "\n" +
+                "ваш пол: " + genderStr + "\n" +
+                "вы на пенсии: " + isRetiredStr;
+
+            alert(result);
+        }
+    </script>
+</head>
+
+<body onload="startAnketa()">
+    <div>
+        <a href="anketa_if.html">Перейти на вариант IF</a> |
+        <span>Вариант OPER (?:)</span>
+    </div>
+    <hr>
+    <h4>Проект ANKETA (реализация через условную операцию ?:)</h4>
+</body>
+
+</html>

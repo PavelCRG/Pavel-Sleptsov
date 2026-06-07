@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа №1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        /* Главный контейнер с серым фоном */
+        .main-container {
+            display: flex;
+            background-color: #cccccc;
+        }
+
+        /* Блок навигации слева */
+        .nav-block {
+            width: 15em;
+            flex-shrink: 0;
+            padding: 10px;
+            border-right: 1px solid #999;
+        }
+
+        .nav-block h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #999;
+        }
+
+        /* Список с точками */
+        .nav-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .nav-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+
+        .nav-description {
+            margin-top: 10px;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        /* Правая часть со статьями */
+        .articles-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Общий класс для статей */
+        .article {
+            padding: 10px;
+            margin-bottom: 2em;
+            line-height: 1.5;
+        }
+
+        .article h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #999;
+        }
+
+        .article p {
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        /* Картинка конверта */
+        .mail-icon {
+            float: right;
+            margin: 0 0 10px 15px;
+        }
+
+        /* Подвал */
+        .footer {
+            background-color: #cccccc;
+            padding: 10px;
+            border-top: 1px solid #999;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Верхняя основная часть -->
+    <div class="main-container">
+
+        <!-- Блок навигации -->
+        <div class="nav-block">
+            <h3>Блок навигации</h3>
+            <ul class="nav-list">
+                <li>Ширина 15em</li>
+                <li>Должен присутствовать цвет фона</li>
+                <li>Располагается слева</li>
+                <li>Блок навигации наполните контентом достаточным, чтобы по высоте он начинал захватывать вторую
+                    статью, как показано в данном примере</li>
+            </ul>
+        </div>
+
+        <!-- Секция статей -->
+        <div class="articles-section">
+
+            <!-- Статья 1 -->
+            <div class="article">
+                <h3>Статья 1</h3>
+                <p>Размер блока:</p>
+                <p>Занимает всю доступную ширину</p>
+                <p>Должен присутствовать цвет фона</p>
+                <p>Во всех "статьях" сделать отступ снизу от соседней равным 2em, при помощи свойства margin-bottom</p>
+            </div>
+
+            <!-- Статья 2 -->
+            <div class="article">
+                <h3>Статья 2</h3>
+                <p>Размер блока:</p>
+                <p>Занимает всю доступную ширину</p>
+                <p>Должен присутствовать цвет фона</p>
+                <p>Во всех "статьях" сделать отступ снизу от соседней равным 2em, при помощи свойства margin-bottom.
+                    Картинка вставляется при помощи тэга img, плавное организуем по правому краю внутри данной статья
+                    для этой картинки.</p>
+
+                <!-- Иконка конверта -->
+                <img class="mail-icon"
+                    src="icon_mail.png"
+                    alt="Конверт">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <div class="footer">
+        Нижний блок, подвал. Занимает всю доступную ширину. Высота определяется помещённым внутрь контентом.
+    </div>
+
+</body>
+
+</html>
