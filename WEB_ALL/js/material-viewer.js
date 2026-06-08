@@ -3,14 +3,20 @@
  * PDF (условия) открываются в новой вкладке из каталога.
  */
 (function () {
+    var scopeApi = window.MaterialViewerScope;
+    if (!scopeApi) {
+        return;
+    }
+
+    var SCOPE = scopeApi.SCOPE;
     var contentEl = document.getElementById("material-content");
-    var placeholder = document.getElementById("material-placeholder");
     var loadingEl = document.getElementById("material-loading");
     var titleEl = document.getElementById("material-viewer-title");
     var openNew = document.getElementById("material-open-new");
     var viewer = document.querySelector(".material-viewer");
+    var barEl = document.querySelector(".material-viewer__bar");
 
-    if (!contentEl || !placeholder) {
+    if (!contentEl) {
         return;
     }
 
@@ -23,6 +29,15 @@
 
     function isPdfSrc(src) {
         return /\.pdf(\?|#|$)/i.test(src);
+    }
+
+    function setBarVisible(visible, label) {
+        if (barEl) {
+            barEl.classList.toggle("is-visible", visible);
+        }
+        if (titleEl) {
+            titleEl.textContent = label || "";
+        }
     }
 
     function setActiveLink(active) {
@@ -41,40 +56,28 @@
         }
     }
 
-    function baseUrlFrom(src) {
-        var url = new URL(src, window.location.href);
-        var path = url.pathname.replace(/\/[^/]*$/, "/");
-        return url.origin + path;
-    }
-
-    function resolveUrl(value, base) {
-        if (!value || value.indexOf("data:") === 0 || value.indexOf("#") === 0) {
-            return value;
-        }
-        try {
-            return new URL(value, base).href;
-        } catch (e) {
-            return value;
-        }
-    }
-
     function fixRelativeUrls(root, base) {
         root.querySelectorAll("[src]").forEach(function (el) {
             var src = el.getAttribute("src");
             if (src) {
-                el.setAttribute("src", resolveUrl(src, base));
+                el.setAttribute("src", scopeApi.resolveUrl(src, base));
             }
         });
         root.querySelectorAll("a[href]").forEach(function (el) {
             var href = el.getAttribute("href");
             if (href && href.indexOf("#") !== 0 && href.indexOf("mailto:") !== 0) {
-                el.setAttribute("href", resolveUrl(href, base));
+                el.setAttribute("href", scopeApi.resolveUrl(href, base));
             }
         });
     }
 
-    function adaptInjectedStyles(cssText) {
-        return cssText.replace(/\bbody\b/g, ".material-viewer__injected");
+    function appendScopedStyle(cssText) {
+        if (!cssText || !cssText.trim()) {
+            return;
+        }
+        var el = document.createElement("style");
+        el.textContent = scopeApi.scopeCss(cssText);
+        contentEl.appendChild(el);
     }
 
     function runScripts(container, base) {
@@ -82,7 +85,7 @@
             var script = document.createElement("script");
             Array.prototype.slice.call(oldScript.attributes).forEach(function (attr) {
                 if (attr.name === "src") {
-                    script.setAttribute("src", resolveUrl(attr.value, base));
+                    script.setAttribute("src", scopeApi.resolveUrl(attr.value, base));
                 } else {
                     script.setAttribute(attr.name, attr.value);
                 }
@@ -111,28 +114,48 @@
         clearContent();
         currentBase = base;
 
+        var stylePromises = [];
+
         doc.querySelectorAll("style").forEach(function (style) {
-            var el = document.createElement("style");
-            el.textContent = adaptInjectedStyles(style.textContent);
-            contentEl.appendChild(el);
+            appendScopedStyle(style.textContent);
         });
 
         doc.querySelectorAll('link[rel="stylesheet"]').forEach(function (link) {
-            var el = document.createElement("link");
-            el.rel = "stylesheet";
-            el.href = resolveUrl(link.getAttribute("href"), base);
-            contentEl.appendChild(el);
+            var href = scopeApi.resolveUrl(link.getAttribute("href"), base);
+            stylePromises.push(
+                fetch(href)
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error("HTTP " + response.status);
+                        }
+                        return response.text();
+                    })
+                    .then(function (cssText) {
+                        appendScopedStyle(cssText);
+                    })
+                    .catch(function () { /* внешний CSS недоступен */ })
+            );
         });
 
         var wrap = document.createElement("div");
-        wrap.className = "material-viewer__injected";
+        wrap.className = SCOPE;
+
+        if (doc.body.getAttribute("style")) {
+            wrap.setAttribute("style", doc.body.getAttribute("style"));
+        }
+        if (doc.body.className) {
+            wrap.className += " " + doc.body.className;
+        }
+
         wrap.innerHTML = doc.body.innerHTML;
         fixRelativeUrls(wrap, base);
         contentEl.appendChild(wrap);
-        runScripts(wrap, base);
 
-        contentEl.hidden = false;
-        contentEl.classList.add("is-active");
+        return Promise.all(stylePromises).then(function () {
+            runScripts(wrap, base);
+            contentEl.hidden = false;
+            contentEl.classList.add("is-active");
+        });
     }
 
     function showError(src, message) {
@@ -153,13 +176,23 @@
         contentEl.classList.add("is-active");
     }
 
+    function findCatalogLink(src) {
+        var found = null;
+        links.forEach(function (a) {
+            var dataSrc = a.getAttribute("data-material-src") || "";
+            if (dataSrc === src || scopeApi.resolveUrl(dataSrc, window.location.href) === src) {
+                found = a;
+            }
+        });
+        return found;
+    }
+
     function openWork(src, label, linkEl) {
         if (!isHtmlSrc(src)) {
             return;
         }
 
-        placeholder.hidden = true;
-        titleEl.textContent = label || src.split("/").pop();
+        setBarVisible(true, label || src.split("/").pop());
         if (openNew) {
             openNew.href = src;
             openNew.hidden = false;
@@ -179,7 +212,7 @@
             viewer.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }
 
-        var base = baseUrlFrom(src);
+        var base = scopeApi.baseUrlFrom(src);
 
         showLoading(true);
         clearContent();
@@ -192,24 +225,15 @@
                 return response.text();
             })
             .then(function (html) {
+                return injectHtml(html, base);
+            })
+            .then(function () {
                 showLoading(false);
-                injectHtml(html, base);
             })
             .catch(function () {
                 showLoading(false);
                 showError(src, "Не удалось загрузить файл. Проверьте, что сайт открыт через веб-сервер (не file://).");
             });
-    }
-
-    function findCatalogLink(src) {
-        var found = null;
-        links.forEach(function (a) {
-            var dataSrc = a.getAttribute("data-material-src") || "";
-            if (dataSrc === src || resolveUrl(dataSrc, window.location.href) === src) {
-                found = a;
-            }
-        });
-        return found;
     }
 
     function handleInjectedLinkClick(e) {
@@ -266,10 +290,10 @@
 
         e.preventDefault();
 
-        var resolved = resolveUrl(path, currentBase || window.location.href);
+        var resolved = scopeApi.resolveUrl(path, currentBase || window.location.href);
         var catalogLink = findCatalogLink(resolved);
-        var label = anchor.textContent.trim() || resolved.split("/").pop();
-        openWork(resolved, label, catalogLink);
+        var linkLabel = anchor.textContent.trim() || resolved.split("/").pop();
+        openWork(resolved, linkLabel, catalogLink);
 
         if (hash) {
             window.setTimeout(function () {
@@ -312,6 +336,7 @@
         }
     }
 
+    setBarVisible(false, "");
     openFromHash();
     window.addEventListener("hashchange", openFromHash);
 })();

@@ -42,11 +42,11 @@ body.site-app .site-main {
     border-left: 1px solid var(--border);
 }
 
-body.site-app .page h1 {
+body.site-app .page > h1 {
     color: var(--accent-dark);
 }
 
-body.site-app .page h2 {
+body.site-app .page > h2 {
     color: var(--accent);
     border-bottom-color: var(--border);
 }

@@ -31,13 +31,19 @@
         <nav class="site-sidebar" aria-label="Меню">
             <h2>Разделы</h2>
             <ul class="site-nav">
-<li><a href="../portal.html" class="">Главная</a></li>
-<li><a href="lab.html" class="">Лабораторные</a></li>
-<li><a href="lection.html" class="">Лекции</a></li>
-<li><a href="control.html" class="is-active">Контроль</a></li>
-<li><a href="practice.html" class="">WEB-практика</a></li>
-<li><a href="about.html" class="">Обо мне</a></li>
+                <li><a href="../portal.html">Главная</a></li>
+                <li><a href="lab.html">Лабораторные</a></li>
+                <li><a href="lection.html">Лекции</a></li>
+                <li><a href="control.html" class="is-active">Контроль</a></li>
+                <li><a href="practice.html">Практика</a></li>
+                <li><a href="about.html">Обо мне</a></li>
             </ul>
+            <div class="site-nav__section">
+                <p class="site-nav__label">Быстрый доступ</p>
+                <ul class="site-nav">
+                    <li><a href="../index.html">Приветствие</a></li>
+                </ul>
+            </div>
         </nav>
         <main class="site-main page page--catalog">
             <h1>Контрольные работы</h1>
@@ -48,7 +54,7 @@
                     <div class="lab-catalog">
                         <div class="lab-catalog__head">
                             <p class="lab-catalog__title">Контрольные работы</p>
-                            <p class="lab-catalog__hint">PDF — в новой вкладке. HTML-работы — в панели справа.</p>
+                            <p class="lab-catalog__hint">PDF — новая вкладка. HTML-работы — в панели просмотра.</p>
                         </div>
                         <details class="lab-group">
                             <summary><span class="lab-group__label"><span class="lab-group__num">✓</span><span class="lab-group__name">OKR 1</span></span></summary>
@@ -68,11 +74,10 @@
                 </div>
                 <div class="lab-layout__viewer material-viewer" aria-label="Просмотр материала">
                     <div class="material-viewer__bar">
-                        <p class="material-viewer__title" id="material-viewer-title">Выберите файл слева</p>
+                        <p class="material-viewer__title" id="material-viewer-title"></p>
                         <a class="material-viewer__open" id="material-open-new" href="#" hidden>Открыть исходный файл</a>
                     </div>
                     <div class="material-viewer__panel" id="material-panel">
-                        <p class="material-viewer__placeholder" id="material-placeholder">Здесь открываются HTML-работы. PDF (условия) — сразу в новой вкладке.</p>
                         <p class="material-viewer__loading" id="material-loading" hidden>Загрузка…</p>
                         <div class="material-viewer__content" id="material-content" hidden></div>
                     </div>
@@ -107,6 +112,7 @@
         </footer>
     </div>
     <script src="../js/mobile-nav.js"></script>
-    <script src="../js/material-viewer.js"></script>
+    <script src="../js/material-viewer-scope.js?v=3"></script>
+    <script src="../js/material-viewer.js?v=3"></script>
 </body>
 </html>

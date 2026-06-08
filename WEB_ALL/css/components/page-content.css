@@ -4,7 +4,7 @@
     overflow-y: auto;
 }
 
-.page h1 {
+.page > h1 {
     margin: 0 0 8px;
     font-size: 1.55rem;
     color: var(--accent-dark);
@@ -16,7 +16,7 @@
     max-width: 720px;
 }
 
-.page h2 {
+.page > h2 {
     margin: 28px 0 12px;
     font-size: 1.12rem;
     color: var(--accent-dark);
@@ -24,7 +24,7 @@
     padding-bottom: 6px;
 }
 
-.page h2:first-of-type {
+.page > h2:first-of-type {
     margin-top: 0;
 }
 

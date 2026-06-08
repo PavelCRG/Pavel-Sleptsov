@@ -276,7 +276,7 @@
 
 .material-viewer__bar,
 .lab-viewer__bar {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -285,6 +285,11 @@
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
     flex-shrink: 0;
+}
+
+.material-viewer__bar.is-visible,
+.lab-viewer__bar.is-visible {
+    display: flex;
 }
 
 .material-viewer__title,
@@ -320,11 +325,6 @@
     padding: 16px 18px 24px;
     min-height: 100%;
     box-sizing: border-box;
-    font-family: initial;
-    font-size: initial;
-    line-height: initial;
-    color: initial;
-    text-align: initial;
 }
 
 .material-viewer__content.is-active {
@@ -335,7 +335,10 @@
     display: block;
     max-width: 100%;
     overflow-x: auto;
-    isolation: isolate;
+    box-sizing: border-box;
+    /* Не наследовать цвет/фон темы портала — только ваши <style> и CSS */
+    color: revert;
+    background-color: transparent;
 }
 
 /*
@@ -368,6 +371,14 @@
 
 .material-viewer__injected table {
     max-width: 100%;
+}
+
+.material-viewer__injected code,
+.material-viewer__injected samp,
+.material-viewer__injected pre,
+.material-viewer__injected kbd {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: inherit;
 }
 
 .material-viewer__pdf {
@@ -445,7 +456,11 @@
     .material-viewer__panel,
     .material-viewer__frame-wrap,
     .lab-viewer__frame-wrap {
-        min-height: 50vh;
+        min-height: 40vh;
+    }
+
+    .material-viewer__panel:not(:has(.material-viewer__content.is-active)) {
+        min-height: 120px;
     }
 }
 

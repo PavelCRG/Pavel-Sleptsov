@@ -104,8 +104,9 @@
 
 .nav-toggle__icon {
     display: block;
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
+    margin: auto;
     pointer-events: none;
 }
 
@@ -115,7 +116,7 @@
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle__path--1 {
-    transform: translateY(6px) rotate(45deg);
+    transform: translateY(5px) rotate(45deg);
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle__path--2 {
@@ -123,7 +124,7 @@
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle__path--3 {
-    transform: translateY(-6px) rotate(-45deg);
+    transform: translateY(-5px) rotate(-45deg);
 }
 
 .nav-backdrop {
