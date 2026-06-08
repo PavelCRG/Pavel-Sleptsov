@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обо мне — Средства создания приложений</title>
+    <title>WEB-практика — Средства создания приложений</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="site-app">
@@ -37,8 +37,8 @@
                 <li><a href="lection.html">Лекции</a></li>
                 <li><a href="control.html">Контроль</a></li>
                 <li><a href="practice.html">Практика</a></li>
-                <li><a href="web-practice.html">WEB-практика</a></li>
-                <li><a href="about.html" class="is-active">Обо мне</a></li>
+                <li><a href="web-practice.html" class="is-active">WEB-практика</a></li>
+                <li><a href="about.html">Обо мне</a></li>
             </ul>
             <div class="site-nav__section">
                 <p class="site-nav__label">Быстрый доступ</p>
@@ -49,31 +49,23 @@
         </nav>
 
         <main class="site-main page">
-            <h1>Обо мне</h1>
-            <div class="about-block">
-                <p><strong>Слепцов Павел Леонидович</strong></p>
-                <p>
-                    Учащийся группы <strong>31ИБ</strong>,
-                    <a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a>, г.&nbsp;Минск.
-                </p>
-                <p>
-                    На этом сайте — лабораторные и лекции по курсу «Средства создания приложений».
-                    Практические работы — в разделах <a href="practice.html">Практика</a> и
-                    <a href="web-practice.html">WEB-практика</a>.
-                </p>
-            </div>
+            <h1>WEB-практика</h1>
+            <p class="page__lead">
+                Отдельный портал с занятиями по дням (1–10): HTML, CSS, формы, JavaScript, адаптив, Bootstrap.
+                Не путать с разделом <a href="practice.html">Практика</a> — там практические работы после лабораторных.
+            </p>
 
-            <h2>Ссылки</h2>
-            <ul class="about-links">
-                <li class="about-links__item">
-                    <span class="about-links__label">GitHub</span>
-                    <a href="https://github.com/PavelCRG" target="_blank" rel="noopener">github.com/PavelCRG</a>
-                </li>
-                <li class="about-links__item">
-                    <span class="about-links__label">WEB-практика</span>
-                    <a href="web-practice.html">Раздел на портале</a>
-                </li>
-            </ul>
+            <section class="practice-hero" aria-labelledby="web-practice-go">
+                <p class="practice-hero__badge">Отдельный сайт</p>
+                <h2 id="web-practice-go">Портал WEB-практики</h2>
+                <p class="practice-hero__text">
+                    На сайте — меню по дням, обзоры занятий, условия в PDF и готовые HTML-работы.
+                    Откроется в этой же вкладке; вернуться на курс можно по ссылке «Портал курса» в меню того сайта.
+                </p>
+                <a class="practice-hero__btn" href="https://sleptsov-web-practice.netlify.app/">
+                    Открыть WEB-практику
+                </a>
+            </section>
         </main>
 
         <aside class="site-aside" aria-label="Реклама">
@@ -91,8 +83,7 @@
                     <img class="ad-card__logo" src="../assets/images/voxiva-logo.svg" alt="Voxiva" width="56" height="56">
                     <strong class="ad-card__brand">Voxiva</strong>
                 </div>
-                <p class="ad-card__text">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке. Вы говорите намерение — система помогает оформить задачи и следующие шаги.</p>
-                <p class="ad-card__text ad-card__text--note">Личный проект автора: Voxiva Voice (диктовка) и Voxiva Space (рабочее пространство).</p>
+                <p class="ad-card__text">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке.</p>
                 <span class="ad-card__url">voxivaai.vercel.app</span>
             </a>
         </aside>
