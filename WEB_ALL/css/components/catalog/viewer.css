@@ -1,0 +1,255 @@
+/* Просмотр HTML-работ в панели (без iframe) */
+
+.material-viewer,
+.lab-viewer {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 360px;
+    padding: 16px 18px 18px;
+}
+
+.material-viewer__bar,
+.lab-viewer__bar {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 16px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.material-viewer__bar.is-visible,
+.lab-viewer__bar.is-visible {
+    display: flex;
+}
+
+.material-viewer__back-catalog {
+    display: none;
+    flex-shrink: 0;
+    order: -1;
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 10px 14px;
+    border: 1px solid #b8cfe8;
+    border-radius: var(--radius);
+    background: #f0f7ff;
+    color: var(--accent-dark);
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.material-viewer__back-catalog:not([hidden]) {
+    display: block;
+}
+
+.material-viewer__back-catalog:active {
+    background: #e2eefb;
+    border-color: var(--accent);
+}
+
+.material-viewer__title,
+.lab-viewer__title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+    word-break: break-word;
+}
+
+.material-viewer__open,
+.lab-viewer__open-new {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.material-viewer__open:hover,
+.lab-viewer__open-new:hover {
+    filter: brightness(1.08);
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.material-viewer__open[hidden] {
+    display: none !important;
+}
+
+.material-viewer__placeholder {
+    margin: auto;
+    padding: 48px 24px;
+    max-width: 280px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+}
+
+.material-viewer__placeholder[hidden] {
+    display: none;
+}
+
+.material-viewer__panel,
+.material-viewer__frame-wrap,
+.lab-viewer__frame-wrap {
+    flex: 1;
+    position: relative;
+    min-height: min(60vh, 560px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    overflow: auto;
+}
+
+.material-viewer__content {
+    display: none;
+    padding: 16px 18px 24px;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+.material-viewer__content.is-active {
+    display: block;
+}
+
+.material-viewer__write-target {
+    display: block;
+}
+
+.material-viewer__injected {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    color: revert;
+    background-color: transparent;
+}
+
+.material-viewer__content .material-viewer__injected a,
+.material-viewer__content .material-viewer__injected a:hover {
+    color: unset;
+    text-decoration: unset;
+}
+
+.material-viewer__content .material-viewer__injected a:not([href]),
+.material-viewer__content .material-viewer__injected a[href=""],
+.material-viewer__content .material-viewer__injected a[href="#"] {
+    color: inherit;
+    text-decoration: none;
+    cursor: default;
+}
+
+.material-viewer__injected img:not([usemap]),
+.material-viewer__injected video,
+.material-viewer__injected object,
+.material-viewer__injected embed,
+.material-viewer__injected svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.material-viewer__injected img[usemap] {
+    max-width: none;
+    height: auto;
+}
+
+.material-viewer__injected iframe {
+    max-width: 100%;
+    border: 0;
+}
+
+.material-viewer__injected table {
+    max-width: 100%;
+}
+
+.material-viewer__injected code,
+.material-viewer__injected samp,
+.material-viewer__injected pre,
+.material-viewer__injected kbd {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: inherit;
+}
+
+.material-viewer__pdf {
+    display: block;
+    width: 100%;
+    min-height: min(58vh, 520px);
+    border: 0;
+}
+
+.material-viewer__pdf-fallback,
+.material-viewer__error {
+    margin: 16px 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.material-viewer__loading {
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.material-viewer__loading[hidden] {
+    display: none;
+}
+
+.material-viewer__placeholder,
+.lab-viewer__placeholder {
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    background: #f8fafc;
+    min-height: min(50vh, 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.material-viewer__placeholder[hidden],
+.lab-viewer__placeholder[hidden] {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .material-viewer__bar.is-visible {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .material-viewer__title {
+        width: 100%;
+        font-size: 0.88rem;
+    }
+}
+
+@media (min-width: 901px) {
+    .material-viewer__back-catalog {
+        display: none !important;
+    }
+}

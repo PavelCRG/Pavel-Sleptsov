@@ -1,0 +1,161 @@
+/* Обзор занятия — карточка описания */
+
+.day-overview {
+    max-width: 100%;
+    margin: 0;
+}
+
+.day-overview__header {
+    margin-bottom: 20px;
+    padding: 18px 20px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, #f0f7ff 0%, #fff 100%);
+    border: 1px solid #c5d9f0;
+}
+
+.day-overview__badge {
+    display: inline-block;
+    margin: 0 0 10px;
+    padding: 5px 12px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 20px;
+}
+
+.day-overview__title {
+    margin: 0 0 8px;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 700;
+    color: var(--accent-dark);
+    line-height: 1.25;
+}
+
+.day-overview__date {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.day-overview__topics {
+    margin: 0 0 18px;
+    padding: 14px 16px 14px 36px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: #f8fafc;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    list-style: disc;
+}
+
+.day-overview__topics li {
+    margin-bottom: 4px;
+}
+
+.day-overview__topics li:last-child {
+    margin-bottom: 0;
+}
+
+.day-overview__summary {
+    margin: 0 0 20px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text);
+    background: #fff;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    box-shadow: 0 1px 3px rgba(30, 77, 140, 0.06);
+}
+
+.day-overview__story {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+/* Блоки на странице обзора */
+.day-overview .site-frame,
+.overview-frame {
+    margin: 0 0 16px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(30, 77, 140, 0.05);
+}
+
+.day-overview .site-frame h3,
+.overview-frame h3 {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    border-bottom: 1px solid #e8eef5;
+}
+
+.day-overview .site-frame--story,
+.overview-frame--story {
+    background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+    border-color: #b8cfe8;
+}
+
+.day-overview .day-files,
+.overview-frame__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.day-overview .day-files a,
+.overview-frame__list a {
+    display: block;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--accent-dark);
+    text-decoration: none;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: background 0.15s, border-color 0.15s;
+    word-break: break-word;
+}
+
+.day-overview .day-files a:hover,
+.overview-frame__list a:hover {
+    background: #f0f7ff;
+    border-color: var(--accent);
+    color: var(--accent-dark);
+}
+
+.day-overview .site-frame--works .day-files a,
+.overview-frame--works .overview-frame__list a {
+    font-weight: 500;
+}
+
+/* В панели просмотра */
+.material-viewer__content .day-overview--embedded {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4px 0 12px;
+}
+
+.material-viewer__content .day-overview--embedded .day-overview__header {
+    padding: 14px 16px;
+}
+
+.material-viewer__content .day-overview--embedded .site-frame {
+    margin-bottom: 12px;
+    padding: 14px 16px;
+}

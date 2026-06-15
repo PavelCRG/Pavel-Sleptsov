@@ -1,3 +1,4 @@
+/* Портал курса — главная таблица стилей */
 @import "base/variables.css";
 @import "base/reset.css";
 @import "layout/grid-shell.css";
@@ -8,6 +9,7 @@
 @import "components/page-content.css";
 @import "components/portal-home.css";
 @import "components/ad-panel.css";
-@import "components/practice-external.css";
-@import "components/lab-catalog.css";
+@import "components/practice/web-practice.css";
+@import "components/catalog/catalog.css";
+@import "pages/day-overview-page.css";
 @import "media/responsive.css";

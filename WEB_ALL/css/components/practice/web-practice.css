@@ -108,3 +108,84 @@
     color: var(--text-muted);
     max-width: 520px;
 }
+
+.practice-days-section {
+    max-width: 900px;
+    margin-bottom: 28px;
+}
+
+.practice-days-section h2 {
+    margin: 0 0 8px;
+    font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+    color: var(--accent-dark);
+    border: none;
+    padding: 0;
+}
+
+.practice-day-details {
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+    transition: border-color 0.15s;
+}
+
+.practice-day-details[open] {
+    border-color: var(--accent);
+}
+
+.practice-day-details > summary {
+    display: block;
+    padding: 14px 16px;
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.15s;
+}
+
+.practice-day-details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.practice-day-details > summary:hover {
+    background: #e8f0fa;
+}
+
+.practice-day-details > summary strong {
+    display: block;
+    color: var(--accent-dark);
+    margin-bottom: 4px;
+}
+
+.practice-day-details > summary span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.practice-day-details__body {
+    padding: 0 16px 14px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--text);
+}
+
+.practice-day-details__body p {
+    margin: 0 0 10px;
+}
+
+.practice-day-details__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent);
+}
+
+.practice-day-details__link:hover {
+    color: var(--accent-dark);
+}
+
+.practice-day-details__link::after {
+    content: "\2197";
+}

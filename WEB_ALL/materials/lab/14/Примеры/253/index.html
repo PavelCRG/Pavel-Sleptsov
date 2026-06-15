@@ -1,39 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array</title>
-    <script type='text/javascript'>
-        const arr = ['Colosseo1_cr.jpg', 'paris.jpg', 'york.jpg'];
-        let n = 1;
-        const pict = document.getElementById('pict');
+    <title>Галерея — пример 253</title>
+</head>
+
+<body>
+    <center>
+        <img id="pict" src="paris.jpg" height="200" alt="">
+        <br><br>
+        <input type="button" onclick="l_image()" value="←">
+        <input type="button" onclick="r_image()" value="→">
+    </center>
+    <script>
+        var arr = ["Colosseo1_cr.jpg", "paris.jpg", "york.jpg"];
+        var n = 1;
+        var pict = document.getElementById("pict");
 
         function showImage() {
-            pict.src = arr[n];
+            if (pict) {
+                pict.src = arr[n];
+            }
         }
 
         function r_image() {
             n = (n + 1) % arr.length;
             showImage();
         }
+
         function l_image() {
             n = (n - 1 + arr.length) % arr.length;
             showImage();
         }
-    </script>
-</head>
 
-<body>
-    <center>
-        
-        <img id='pict' src="paris.jpg" height=200> <br><br>
-        <input type=button OnClick='l_image();' value='←'>
-    
-        <input type=button OnClick='r_image();' value='→'>
-    </center>
+        showImage();
+    </script>
 </body>
 
 </html>

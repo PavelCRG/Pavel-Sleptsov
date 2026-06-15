@@ -6,7 +6,7 @@
     <title>Контроль — Средства создания приложений</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
-<body class="site-app">
+<body class="site-app" data-catalog="control">
     <div class="site-grid">
         <header class="site-header">
             <a class="site-header__logo site-header__logo--personal" href="../portal.html" title="На главную">
@@ -48,27 +48,35 @@
         </nav>
         <main class="site-main page page--catalog">
             <h1>Контрольные работы</h1>
-            <p class="page__lead">ОКР и другие контрольные задания. Статус: выполнено — материалы доступны для просмотра.</p>
+            <p class="page__lead">Контрольный рубеж ОКР №1 по HTML и CSS.</p>
 
             <div class="lab-layout">
                 <div class="lab-layout__catalog">
                     <div class="lab-catalog">
                         <div class="lab-catalog__head">
                             <p class="lab-catalog__title">Контрольные работы</p>
-                            <p class="lab-catalog__hint">PDF — новая вкладка. HTML — в панели справа: ваш код, ссылки, скрипты.</p>
                         </div>
-                        <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">✓</span><span class="lab-group__name">OKR 1</span></span></summary>
+                        <details class="lab-group" data-day-id="control-okr1">
+                            <summary><span class="lab-group__num">✓</span><span class="lab-group__name">OKR 1</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
                             <div class="lab-group__body">
-                                <p class="lab-group__desc">ОКР №1 — HTML и CSS. Выполнено: задания 1–3, блочный сайт, анимация.</p>
-<p class="lab-files__heading">Файлы</p>
-<ul class="lab-files">
-    <li><a href="../materials/control/OKR-1/animation.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/animation.html">animation.html</a></li>
-    <li><a href="../materials/control/OKR-1/block_site.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/block_site.html">block_site.html</a></li>
-    <li><a href="../materials/control/OKR-1/zadanie1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/zadanie1.html">zadanie1.html</a></li>
-    <li><a href="../materials/control/OKR-1/zadanie2.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/zadanie2.html">zadanie2.html</a></li>
-    <li><a href="../materials/control/OKR-1/zadanie3.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/zadanie3.html">zadanie3.html</a></li>
-</ul>
+                                <div class="lab-group__tree">
+                                    <section class="lab-section lab-section--desc">
+                                        <h4 class="lab-section__title">Описание</h4>
+                                        <ul class="lab-files">
+                                            <li><a href="overviews/control-okr1.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/control-okr1.html">Описание занятия</a></li>
+                                        </ul>
+                                    </section>
+                                    <section class="lab-section lab-section--works">
+                                        <h4 class="lab-section__title">Выполненное задание</h4>
+                                        <ul class="lab-files">
+                                            <li><a href="../materials/control/OKR-1/animation.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/animation.html">animation.html</a></li>
+                                            <li><a href="../materials/control/OKR-1/block_site.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/block_site.html">block_site.html</a></li>
+                                            <li><a href="../materials/control/OKR-1/zadanie1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/zadanie1.html">zadanie1.html</a></li>
+                                            <li><a href="../materials/control/OKR-1/zadanie2.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/zadanie2.html">zadanie2.html</a></li>
+                                            <li><a href="../materials/control/OKR-1/zadanie3.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/control/OKR-1/zadanie3.html">zadanie3.html</a></li>
+                                        </ul>
+                                    </section>
+                                </div>
                             </div>
                         </details>
                     </div>
@@ -76,10 +84,10 @@
                 <div class="lab-layout__viewer material-viewer" aria-label="Просмотр материала">
                     <div class="material-viewer__bar">
                         <p class="material-viewer__title" id="material-viewer-title"></p>
-                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden title="Ваш исходный HTML-файл — откроется отдельно, как вы сделали">На отдельной странице ↗</a>
+                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden title="Открыть в новой вкладке">Открыть полностью</a>
                     </div>
                     <div class="material-viewer__panel" id="material-panel">
-                        <p class="material-viewer__placeholder" id="material-placeholder">Выберите работу в каталоге. Смотрите в панели или нажмите «На отдельной странице» — откроется ваш исходный файл.</p>
+                        <p class="material-viewer__placeholder" id="material-placeholder">Выберите работу из списка</p>
                         <p class="material-viewer__loading" id="material-loading" hidden>Загрузка…</p>
                         <div class="material-viewer__content" id="material-content" hidden></div>
                     </div>
@@ -113,8 +121,8 @@
             <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
         </footer>
     </div>
-    <script src="../js/mobile-nav.js"></script>
-    <script src="../js/material-viewer-scope.js?v=9"></script>
-    <script src="../js/material-viewer.js?v=9"></script>
+    <script src="../js/nav/mobile-nav.js"></script>
+    <script src="../js/viewer/material-viewer-scope.js?v=17"></script>
+    <script src="../js/viewer/material-viewer.js?v=17"></script>
 </body>
 </html>

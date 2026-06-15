@@ -21,10 +21,14 @@
         return;
     }
 
-    var links = document.querySelectorAll('.lab-files a[data-material-src]');
+    var links = document.querySelectorAll(".lab-catalog [data-material-src]");
     var currentBase = null;
     var currentSrc = null;
+    var currentActiveLink = null;
     var mediaObserver = null;
+    var catalogEl = document.querySelector(".lab-layout__catalog");
+    var mobileMq = window.matchMedia("(max-width: 900px)");
+    var backBtn = null;
 
     function isHtmlSrc(src) {
         return /\.html?(\?|#|$)/i.test(src) || /\.html?$/i.test(src.split("/").pop() || "");
@@ -230,9 +234,70 @@
     }
 
     function setActiveLink(active) {
+        currentActiveLink = active || null;
         links.forEach(function (a) {
             a.classList.toggle("is-active", a === active);
         });
+        updateBackButton();
+    }
+
+    function getOpenLabGroup() {
+        if (currentActiveLink) {
+            var fromLink = currentActiveLink.closest(".lab-group");
+            if (fromLink) {
+                return fromLink;
+            }
+        }
+        var activeInCatalog = document.querySelector(".lab-catalog .lab-files a.is-active");
+        if (activeInCatalog) {
+            return activeInCatalog.closest(".lab-group");
+        }
+        return document.querySelector(".lab-catalog .lab-group[open]");
+    }
+
+    function updateBackButton() {
+        if (!backBtn) {
+            return;
+        }
+        var hasContent = contentEl && contentEl.classList.contains("is-active");
+        var group = getOpenLabGroup();
+        var show = mobileMq.matches && hasContent && !!group;
+        backBtn.hidden = !show;
+        if (show) {
+            var nameEl = group.querySelector(".lab-group__name");
+            backBtn.textContent = nameEl
+                ? "↑ " + nameEl.textContent.trim()
+                : "↑ К условию";
+        }
+    }
+
+    function scrollToCatalogGroup() {
+        var group = getOpenLabGroup();
+        if (!group || !catalogEl) {
+            return;
+        }
+
+        if (!group.open) {
+            group.open = true;
+        }
+
+        var header = document.querySelector(".site-header");
+        var headerH = header ? header.offsetHeight : 0;
+        var catalogTop = catalogEl.getBoundingClientRect().top + window.scrollY - headerH - 10;
+
+        window.scrollTo({ top: Math.max(0, catalogTop), behavior: "smooth" });
+
+        window.setTimeout(function () {
+            var groupTop = group.offsetTop - catalogEl.offsetTop;
+            catalogEl.scrollTo({
+                top: Math.max(0, groupTop - 8),
+                behavior: "smooth"
+            });
+            group.classList.add("lab-group--flash");
+            window.setTimeout(function () {
+                group.classList.remove("lab-group--flash");
+            }, 1400);
+        }, 380);
     }
 
     function openParentDetails(el) {
@@ -372,11 +437,43 @@
         contentEl.hidden = true;
         contentEl.classList.remove("is-active");
         setPlaceholderVisible(true);
+        updateBackButton();
+    }
+
+    function runBodyInit(doc) {
+        var body = doc && doc.body;
+        if (!body) {
+            return;
+        }
+
+        var onloadAttr = body.getAttribute("onload") || body.getAttribute("onLoad");
+        if (!onloadAttr) {
+            return;
+        }
+
+        try {
+            (new Function(onloadAttr))();
+        } catch (e) { /* onload в атрибуте body */ }
     }
 
     function injectHtml(html, base, doc) {
         if (!doc) {
             doc = new DOMParser().parseFromString(html, "text/html");
+        }
+
+        var overviewArticle = doc.querySelector("article.day-overview");
+        if (overviewArticle) {
+            var overviewDoc = new DOMParser().parseFromString(
+                "<!DOCTYPE html><html><head></head><body></body></html>",
+                "text/html"
+            );
+            doc.querySelectorAll('head link[rel="stylesheet"], head style').forEach(function (node) {
+                overviewDoc.head.appendChild(node.cloneNode(true));
+            });
+            var embedded = overviewArticle.cloneNode(true);
+            embedded.classList.add("day-overview--embedded");
+            overviewDoc.body.appendChild(embedded);
+            doc = overviewDoc;
         }
 
         clearContent();
@@ -425,11 +522,13 @@
         return Promise.all(stylePromises).then(function () {
             return runAllScripts(doc, wrap, documentBase);
         }).then(function () {
+            runBodyInit(doc);
             patchMediaUrls(wrap, documentBase);
             watchMediaUrls(wrap, documentBase);
             setPlaceholderVisible(false);
             contentEl.hidden = false;
             contentEl.classList.add("is-active");
+            updateBackButton();
         });
     }
 
@@ -453,6 +552,7 @@
         contentEl.appendChild(link);
         contentEl.hidden = false;
         contentEl.classList.add("is-active");
+        updateBackButton();
     }
 
     function findCatalogLink(src) {
@@ -487,16 +587,26 @@
         currentSrc = resolvedSrc;
 
         setBarVisible(true, label || fileName(resolvedSrc));
-        setStandaloneLink(resolvedSrc);
+        var isOverview = /\/overviews\//i.test(resolvedSrc);
+        if (isOverview) {
+            if (openNew) {
+                openNew.hidden = true;
+            }
+        } else {
+            setStandaloneLink(resolvedSrc);
+        }
 
-        setActiveLink(linkEl || findCatalogLink(resolvedSrc) || null);
-        if (linkEl) {
-            openParentDetails(linkEl);
+        var activeLink = linkEl || findCatalogLink(resolvedSrc) || null;
+
+        setActiveLink(activeLink);
+        if (activeLink) {
+            openParentDetails(activeLink);
         }
         updateHash(resolvedSrc);
 
         if (viewer && viewer.scrollIntoView) {
-            viewer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            var isMobile = window.matchMedia("(max-width: 900px)").matches;
+            viewer.scrollIntoView({ behavior: "smooth", block: isMobile ? "start" : "nearest" });
         }
 
         var base = scopeApi.baseUrlFrom(resolvedSrc);
@@ -632,6 +742,7 @@
     links.forEach(function (a) {
         a.addEventListener("click", function (e) {
             e.preventDefault();
+            e.stopPropagation();
             openWork(a.getAttribute("data-material-src"), a.textContent.trim(), a);
         });
     });
@@ -666,4 +777,15 @@
     setBarVisible(false, "");
     openFromHash();
     window.addEventListener("hashchange", openFromHash);
+
+    if (catalogEl && barEl) {
+        backBtn = document.createElement("button");
+        backBtn.type = "button";
+        backBtn.className = "material-viewer__back-catalog";
+        backBtn.hidden = true;
+        backBtn.setAttribute("aria-label", "Вернуться к условию в списке");
+        backBtn.addEventListener("click", scrollToCatalogGroup);
+        barEl.insertBefore(backBtn, barEl.firstChild);
+        mobileMq.addEventListener("change", updateBackButton);
+    }
 })();

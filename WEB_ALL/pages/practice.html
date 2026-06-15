@@ -6,7 +6,7 @@
     <title>Практика — Средства создания приложений</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
-<body class="site-app">
+<body class="site-app" data-catalog="practice">
     <div class="site-grid">
         <header class="site-header">
             <a class="site-header__logo site-header__logo--personal" href="../portal.html" title="На главную">
@@ -50,31 +50,40 @@
 
         <main class="site-main page page--catalog">
             <h1>Практика</h1>
-            <p class="page__lead">Практические работы после лабораторных (Flex / Grid) — в каталоге ниже.</p>
+            <p class="page__lead">Практические работы по Flex и Grid — после основных лабораторных.</p>
 
             <div class="lab-layout">
                 <div class="lab-layout__catalog">
                     <div class="lab-catalog">
                         <div class="lab-catalog__head">
                             <p class="lab-catalog__title">Практические работы</p>
-                            <p class="lab-catalog__hint">PDF — новая вкладка. HTML — в панели справа: ваш код, ссылки, скрипты.</p>
                         </div>
-                        <details class="lab-group" open>
-                            <summary><span class="lab-group__label"><span class="lab-group__num">01</span><span class="lab-group__name">Практическая №1 — Flex и Grid</span></span></summary>
+                        <details class="lab-group">
+                            <summary><span class="lab-group__num">01</span><span class="lab-group__name">Практическая №1 — Flex и Grid</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
                             <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Практическая работа №1: flex-модель, grid-модель, макет ind и выполненные задания.</p>
-                                <p class="lab-files__heading">Условие</p>
-                                <ul class="lab-files">
-                                    <li><a href="../materials/practice/01/Условие/ПР_1_flex_model_28_04.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">ПР_1_flex_model_28_04</a></li>
-                                    <li><a href="../materials/practice/01/Условие/ПР_1_grid_model_05_05.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">ПР_1_grid_model_05_05</a></li>
-                                </ul>
-                                <p class="lab-files__heading">Макет</p>
-                                <ul class="lab-files">
-                                    <li><a href="../materials/practice/01/Примеры/ind.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/ind.html">ind.html</a></li>
-                                </ul>
-                                <p class="lab-files__heading">Выполненные задания — Flex</p>
-                                <ul class="lab-files">
+                                <div class="lab-group__tree">
+                                    <section class="lab-section">
+                                        <h4 class="lab-section__title">Условие</h4>
+                                        <ul class="lab-files">
+                                            <li><a href="../materials/practice/01/Условие/ПР_1_flex_model_28_04.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">ПР_1_flex_model_28_04</a></li>
+                                            <li><a href="../materials/practice/01/Условие/ПР_1_grid_model_05_05.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">ПР_1_grid_model_05_05</a></li>
+                                        </ul>
+                                    </section>
+                                    <section class="lab-section lab-section--desc">
+                                        <h4 class="lab-section__title">Описание</h4>
+                                        <ul class="lab-files">
+                                            <li><a href="overviews/practice-01.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/practice-01.html">Описание занятия</a></li>
+                                        </ul>
+                                    </section>
+                                    <section class="lab-section">
+                                        <h4 class="lab-section__title">Макет</h4>
+                                        <ul class="lab-files">
+                                            <li><a href="../materials/practice/01/Примеры/ind.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/ind.html">ind.html</a></li>
+                                        </ul>
+                                    </section>
+                                    <section class="lab-section lab-section--works">
+                                        <h4 class="lab-section__title">Выполненное задание — Flex</h4>
+                                        <ul class="lab-files">
                                     <li><a href="../materials/practice/01/Примеры/primer1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/primer1.html">primer1.html</a></li>
                                     <li><a href="../materials/practice/01/Примеры/primer2.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/primer2.html">primer2.html</a></li>
                                     <li><a href="../materials/practice/01/Примеры/primer3.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/primer3.html">primer3.html</a></li>
@@ -90,13 +99,17 @@
                                     <li><a href="../materials/practice/01/Примеры/primer13.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/primer13.html">primer13.html</a></li>
                                     <li><a href="../materials/practice/01/Примеры/primer14.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/primer14.html">primer14.html</a></li>
                                     <li><a href="../materials/practice/01/Примеры/primer15.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/primer15.html">primer15.html</a></li>
-                                </ul>
-                                <p class="lab-files__heading">Семантическая вёрстка</p>
-                                <ul class="lab-files">
-                                    <li><a href="../materials/practice/01/Примеры/zad2/zad2.2_p176-177.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/zad2/zad2.2_p176-177.html">zad2.2_p176-177.html</a></li>
-                                </ul>
-                                <p class="lab-files__heading">Выполненные задания — Grid</p>
-                                <ul class="lab-files">
+                                        </ul>
+                                    </section>
+                                    <section class="lab-section">
+                                        <h4 class="lab-section__title">Семантическая вёрстка</h4>
+                                        <ul class="lab-files">
+                                            <li><a href="../materials/practice/01/Примеры/zad2/zad2.2_p176-177.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/zad2/zad2.2_p176-177.html">zad2.2_p176-177.html</a></li>
+                                        </ul>
+                                    </section>
+                                    <section class="lab-section lab-section--works">
+                                        <h4 class="lab-section__title">Выполненное задание — Grid</h4>
+                                        <ul class="lab-files">
                                     <li><a href="../materials/practice/01/Примеры/Grid/index1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/Grid/index1.html">index1.html</a></li>
                                     <li><a href="../materials/practice/01/Примеры/Grid/index2.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/Grid/index2.html">index2.html</a></li>
                                     <li><a href="../materials/practice/01/Примеры/Grid/index3.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/Grid/index3.html">index3.html</a></li>
@@ -109,7 +122,9 @@
                                     <li><a href="../materials/practice/01/Примеры/Grid/index10.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/Grid/index10.html">index10.html</a></li>
                                     <li><a href="../materials/practice/01/Примеры/Grid/index11.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/Grid/index11.html">index11.html</a></li>
                                     <li><a href="../materials/practice/01/Примеры/Grid/zad3_p211-213.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/practice/01/Примеры/Grid/zad3_p211-213.html">zad3_p211-213.html</a></li>
-                                </ul>
+                                        </ul>
+                                    </section>
+                                </div>
                             </div>
                         </details>
                     </div>
@@ -117,10 +132,10 @@
                 <div class="lab-layout__viewer material-viewer" aria-label="Просмотр материала">
                     <div class="material-viewer__bar">
                         <p class="material-viewer__title" id="material-viewer-title"></p>
-                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden title="Ваш исходный HTML-файл — откроется отдельно, как вы сделали">На отдельной странице ↗</a>
+                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden title="Открыть в новой вкладке">Открыть полностью</a>
                     </div>
                     <div class="material-viewer__panel" id="material-panel">
-                        <p class="material-viewer__placeholder" id="material-placeholder">Выберите работу в каталоге. Смотрите в панели или нажмите «На отдельной странице» — откроется ваш исходный файл.</p>
+                        <p class="material-viewer__placeholder" id="material-placeholder">Выберите работу из списка</p>
                         <p class="material-viewer__loading" id="material-loading" hidden>Загрузка…</p>
                         <div class="material-viewer__content" id="material-content" hidden></div>
                     </div>
@@ -156,8 +171,8 @@
             <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
         </footer>
     </div>
-    <script src="../js/mobile-nav.js"></script>
-    <script src="../js/material-viewer-scope.js?v=9"></script>
-    <script src="../js/material-viewer.js?v=9"></script>
+    <script src="../js/nav/mobile-nav.js"></script>
+    <script src="../js/viewer/material-viewer-scope.js?v=17"></script>
+    <script src="../js/viewer/material-viewer.js?v=17"></script>
 </body>
 </html>

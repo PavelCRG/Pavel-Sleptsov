@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обзор — ОКР №1 — HTML и CSS — Средства создания приложений</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body class="site-app">
+    <div class="site-grid">
+        <header class="site-header">
+            <a class="site-header__logo site-header__logo--personal" href="../../portal.html" title="На главную">
+                <img src="../../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
+            </a>
+            <h1 class="site-header__title">
+                <span class="site-header__title-top">Сайт по курсу</span>
+                <span class="site-header__title-sub">Средства создания приложений</span>
+            </h1>
+            <span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
+                <img src="../../assets/images/college-logo.png" alt="Логотип колледжа">
+            </span>
+        </header>
+        <div class="nav-backdrop"></div>
+        <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+            <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path class="nav-toggle__path nav-toggle__path--1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+            </svg>
+        </button>
+        <nav class="site-sidebar" aria-label="Меню">
+            <h2>Разделы</h2>
+            <ul class="site-nav">
+                <li><a href="../../portal.html">Главная</a></li>
+                <li><a href="../lab.html" >Лабораторные</a></li>
+                <li><a href="../lection.html" >Лекции</a></li>
+                <li><a href="../control.html" class="is-active">Контроль</a></li>
+                <li><a href="../practice.html" >Практика</a></li>
+                <li><a href="../web-practice.html">WEB-практика</a></li>
+                <li><a href="../about.html">Обо мне</a></li>
+            </ul>
+            <div class="site-nav__section">
+                <p class="site-nav__label">Быстрый доступ</p>
+                <ul class="site-nav">
+                    <li><a href="../../index.html">Приветствие</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main class="site-main page page--overview">
+            <p class="overview-back"><a href="../control.html">← К контрольным работам</a></p>
+            <article class="day-overview">
+        <header class="day-overview__header">
+            <p class="day-overview__badge">Контроль</p>
+            <h2 class="day-overview__title">ОКР №1 — HTML и CSS</h2>
+            <p class="day-overview__date">контрольный рубеж</p>
+        </header>
+        <ul class="day-overview__topics">
+        <li>вариант 9</li>
+        <li>родственные селекторы</li>
+        <li>блочный сайт и анимация</li>
+        </ul>
+        <p class="day-overview__summary">ОКР №1 HTML/CSS, вариант 9: селекторы, блочный сайт, анимация облака.</p>
+        <section class="site-frame site-frame--story">
+            <h3>Что я сделал</h3>
+            <p class="day-overview__story">Контрольная ОКР №1 по HTML и CSS, вариант 9. zadanie1.html — текст про родственные селекторы CSS с тегами strong, i, u, b. zadanie2.html — блок стилей для селектора p (цвет silver, отступ, letter-spacing) и задание 2b. zadanie3.html — внешний mystyle.css: универсальный селектор, классы заголовков, форматирование текста (3a–3f). block_site.html — многостраничный блочный сайт: шапка с логотипом, жёлтое меню слева, контент, подвал. animation.html — облако cloud.png с @keyframes cloud: движение по экрану с opacity.</p>
+        </section>
+        
+        <section class="site-frame site-frame--works">
+        <h3>Выполненные работы</h3>
+        <ul class="day-files">
+            <li><a href="../../materials/control/OKR-1/animation.html">animation.html</a></li>
+            <li><a href="../../materials/control/OKR-1/block_site.html">block_site.html</a></li>
+            <li><a href="../../materials/control/OKR-1/zadanie1.html">zadanie1.html</a></li>
+            <li><a href="../../materials/control/OKR-1/zadanie2.html">zadanie2.html</a></li>
+            <li><a href="../../materials/control/OKR-1/zadanie3.html">zadanie3.html</a></li>
+        </ul>
+    </section>
+</article>
+        </main>
+        <aside class="site-aside" aria-label="Реклама">
+            <p class="site-aside__title">Реклама</p>
+            <a class="ad-card" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../../assets/images/github.svg" alt="GitHub" width="56" height="56">
+                    <strong class="ad-card__brand">GitHub</strong>
+                </div>
+                <p class="ad-card__text">Профиль разработчика. Здесь есть задания по курсу, но также можно посмотреть другие репозитории и проекты автора.</p>
+                <span class="ad-card__url">github.com/PavelCRG</span>
+            </a>
+            <a class="ad-card" href="https://voxivaai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../../assets/images/voxiva-logo.svg" alt="Voxiva" width="56" height="56">
+                    <strong class="ad-card__brand">Voxiva</strong>
+                </div>
+                <p class="ad-card__text">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке.</p>
+                <span class="ad-card__url">voxivaai.vercel.app</span>
+            </a>
+        </aside>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Средства создания приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
+    </div>
+    <script src="../../js/nav/mobile-nav.js"></script>
+</body>
+</html>

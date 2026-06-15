@@ -1,0 +1,6 @@
+/* Каталог материалов — сборка модулей */
+@import "layout.css";
+@import "groups.css";
+@import "day-overview.css";
+@import "viewer.css";
+@import "responsive.css";

@@ -6,7 +6,7 @@
     <title>Лабораторные — Средства создания приложений</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
-<body class="site-app">
+<body class="site-app" data-catalog="lab">
     <div class="site-grid">
         <header class="site-header">
             <a class="site-header__logo site-header__logo--personal" href="../portal.html" title="На главную">
@@ -48,42 +48,57 @@
         </nav>
         <main class="site-main page page--catalog">
             <h1>Лабораторные работы</h1>
-            <p class="page__lead">Выберите работу в каталоге — она откроется в панели просмотра. PDF-условия — в новой вкладке.</p>
+            <p class="page__lead">Лабораторные работы по HTML, CSS и JavaScript — условия, описание занятий и выполненные задания.</p>
 
             <div class="lab-layout">
                 <div class="lab-layout__catalog">
                     <div class="lab-catalog">
                         <div class="lab-catalog__head">
                             <p class="lab-catalog__title">Список лабораторных</p>
-                            <p class="lab-catalog__hint">PDF — новая вкладка. HTML — в панели справа: ваш код, ссылки, скрипты.</p>
                         </div>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">01</span><span class="lab-group__name">Лабораторная 01</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Семантическая разметка HTML, базовые теги.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">01</span><span class="lab-group__name">Лабораторная 01</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/01/Условие/1_lab_format_semantic.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">1_lab_format_semantic</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-01.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-01.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/01/Примеры/33-35.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/01/Примеры/33-35.html">Примеры / 33-35.html</a></li>
     <li><a href="../materials/lab/01/Примеры/43.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/01/Примеры/43.html">Примеры / 43.html</a></li>
     <li><a href="../materials/lab/01/Примеры/46-47.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/01/Примеры/46-47.html">Примеры / 46-47.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">02</span><span class="lab-group__name">Лабораторная 02</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Контент: ссылки, карты, списки, таблицы.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">02</span><span class="lab-group__name">Лабораторная 02</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/02/Условие/2_lab_href_karta_list_table.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">2_lab_href_karta_list_table</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-02.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-02.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/02/Примеры/50.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/02/Примеры/50.html">Примеры / 50.html</a></li>
     <li><a href="../materials/lab/02/Примеры/50_2.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/02/Примеры/50_2.html">Примеры / 50_2.html</a></li>
@@ -91,18 +106,27 @@
     <li><a href="../materials/lab/02/Примеры/pfoto.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/02/Примеры/pfoto.html">Примеры / pfoto.html</a></li>
     <li><a href="../materials/lab/02/Примеры/primer50.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/02/Примеры/primer50.html">Примеры / primer50.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">03</span><span class="lab-group__name">Лабораторная 03</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Формы и элементы ввода.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">03</span><span class="lab-group__name">Лабораторная 03</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/03/Условие/3_lab_form.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">3_lab_form</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-03.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-03.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/03/Примеры/primer101.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/Примеры/primer101.html">Примеры / primer101.html</a></li>
     <li><a href="../materials/lab/03/Примеры/primer89.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/Примеры/primer89.html">Примеры / primer89.html</a></li>
@@ -115,18 +139,27 @@
     <li><a href="../materials/lab/03/Примеры/primer96.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/Примеры/primer96.html">Примеры / primer96.html</a></li>
     <li><a href="../materials/lab/03/Примеры/primer98.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/03/Примеры/primer98.html">Примеры / primer98.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">04</span><span class="lab-group__name">Лабораторная 04</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Подключение CSS, оформление страниц.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">04</span><span class="lab-group__name">Лабораторная 04</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/04/Условие/4_lab_style_podkly4enie.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">4_lab_style_podkly4enie</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-04.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-04.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/04/Примеры/primer114.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/Примеры/primer114.html">Примеры / primer114.html</a></li>
     <li><a href="../materials/lab/04/Примеры/primer116.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/Примеры/primer116.html">Примеры / primer116.html</a></li>
@@ -135,19 +168,28 @@
     <li><a href="../materials/lab/04/Примеры/primer120-121/primer120.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/Примеры/primer120-121/primer120.html">primer120-121 / primer120.html</a></li>
     <li><a href="../materials/lab/04/Примеры/primer123.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/04/Примеры/primer123.html">Примеры / primer123.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">05</span><span class="lab-group__name">Лабораторная 05</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Селекторы и классы в CSS.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">05</span><span class="lab-group__name">Лабораторная 05</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/05/Условие/5_1_lab_simple_selectors.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">5_1_lab_simple_selectors</a></li>
     <li><a href="../materials/lab/05/Условие/5_2_lab_complex_selectors.docx.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">5_2_lab_complex_selectors.docx</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-05.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-05.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/05/Примеры/primer126.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/05/Примеры/primer126.html">Примеры / primer126.html</a></li>
     <li><a href="../materials/lab/05/Примеры/primer127.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/05/Примеры/primer127.html">Примеры / primer127.html</a></li>
@@ -159,33 +201,51 @@
     <li><a href="../materials/lab/05/Примеры/primer138.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/05/Примеры/primer138.html">Примеры / primer138.html</a></li>
     <li><a href="../materials/lab/05/Примеры/primer139.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/05/Примеры/primer139.html">Примеры / primer139.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">06</span><span class="lab-group__name">Лабораторная 06</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Блочная вёрстка, многостраничный сайт.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">06</span><span class="lab-group__name">Лабораторная 06</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/06/Условие/6_lab_block_site.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">6_lab_block_site</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-06.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-06.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/06/Примеры/primer164.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/06/Примеры/primer164.html">Примеры / primer164.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">07</span><span class="lab-group__name">Лабораторная 07</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Адаптивная вёрстка и медиазапросы.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">07</span><span class="lab-group__name">Лабораторная 07</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/07/Условие/7_lab_adaptiv_media.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">7_lab_adaptiv_media</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-07.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-07.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/07/Примеры/form.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/07/Примеры/form.html">Примеры / form.html</a></li>
     <li><a href="../materials/lab/07/Примеры/primer1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/07/Примеры/primer1.html">Примеры / primer1.html</a></li>
@@ -195,55 +255,82 @@
     <li><a href="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/lab_1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/lab_1.html">Многостраничный блочный сайт_меню / lab_1.html</a></li>
     <li><a href="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/spiski.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/07/Примеры/Многостраничный блочный сайт_меню/spiski.html">Многостраничный блочный сайт_меню / spiski.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">08</span><span class="lab-group__name">Лабораторная 08</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">CSS transforms и transitions.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">08</span><span class="lab-group__name">Лабораторная 08</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/08/Условие/8_lab_TRANSFORMS_TRANSITIONS.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">8_lab_TRANSFORMS_TRANSITIONS</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-08.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-08.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/08/Примеры/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/08/Примеры/index.html">index</a></li>
     <li><a href="../materials/lab/08/Примеры/mp4.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/08/Примеры/mp4.html">Примеры / mp4.html</a></li>
     <li><a href="../materials/lab/08/Примеры/hover_эффект.mp4" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">hover_эффект.mp4</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">09</span><span class="lab-group__name">Лабораторная 09</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Внедрение JavaScript на страницу.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">09</span><span class="lab-group__name">Лабораторная 09</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/09/Условие/lab_9_JS_vntdrenie_scenariev.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">lab_9_JS_vntdrenie_scenariev</a></li>
     <li><a href="../materials/lab/09/Условие/подключение_js_файл.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">подключение_js_файл</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-09.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-09.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/09/Примеры/p227.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/09/Примеры/p227.html">Примеры / p227.html</a></li>
     <li><a href="../materials/lab/09/Примеры/p230.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/09/Примеры/p230.html">Примеры / p230.html</a></li>
     <li><a href="../materials/lab/09/Примеры/p233.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/09/Примеры/p233.html">Примеры / p233.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">10</span><span class="lab-group__name">Лабораторная 10</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">JavaScript: переменные, типы данных, диалоговые окна.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">10</span><span class="lab-group__name">Лабораторная 10</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/10/Условие/Lab2_JavaScript_const_var_type (1).pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">Lab2_JavaScript_const_var_type (1)</a></li>
     <li><a href="../materials/lab/10/Условие/Lab_10_JavaScript_var_const_type.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">Lab_10_JavaScript_var_const_type</a></li>
     <li><a href="../materials/lab/10/Условие/promt_alert_confirm.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">promt_alert_confirm</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-10.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-10.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/10/Примеры/Primer2_1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/10/Примеры/Primer2_1.html">Примеры / Primer2_1.html</a></li>
     <li><a href="../materials/lab/10/Примеры/Primer2_2.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/10/Примеры/Primer2_2.html">Примеры / Primer2_2.html</a></li>
@@ -255,19 +342,28 @@
     <li><a href="../materials/lab/10/Примеры/SelfWork.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/10/Примеры/SelfWork.html">Примеры / SelfWork.html</a></li>
     <li><a href="../materials/lab/10/Примеры/Task_Vars.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/10/Примеры/Task_Vars.html">Примеры / Task_Vars.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">11</span><span class="lab-group__name">Лабораторная 11</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Условия и циклы в JavaScript.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">11</span><span class="lab-group__name">Лабораторная 11</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/11/Условие/Lab_11_JS_if_while_for.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">Lab_11_JS_if_while_for</a></li>
     <li><a href="../materials/lab/11/Условие/Преобразования_типов.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">Преобразования_типов</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-11.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-11.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/11/Примеры/anketa_if.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/11/Примеры/anketa_if.html">Примеры / anketa_if.html</a></li>
     <li><a href="../materials/lab/11/Примеры/anketa_oper.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/11/Примеры/anketa_oper.html">Примеры / anketa_oper.html</a></li>
@@ -277,31 +373,47 @@
     <li><a href="../materials/lab/11/Примеры/primer4_1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/11/Примеры/primer4_1.html">Примеры / primer4_1.html</a></li>
     <li><a href="../materials/lab/11/Примеры/primer5_1.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/11/Примеры/primer5_1.html">Примеры / primer5_1.html</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">12</span><span class="lab-group__name">Лабораторная 12</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Функции в JavaScript.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">12</span><span class="lab-group__name">Лабораторная 12</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/12/Условие/lab_12_JS_function.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">lab_12_JS_function</a></li>
     <li><a href="../materials/lab/12/Условие/функции.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">функции</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-12.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-12.html">Описание занятия</a></li>
+</ul>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">13</span><span class="lab-group__name">Лабораторная 13</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Math, Array, Date, String.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">13</span><span class="lab-group__name">Лабораторная 13</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/13/Условие/lab_13-14_Math_Array_Date_String.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">lab_13-14_Math_Array_Date_String</a></li>
     <li><a href="../materials/lab/13/Условие/Слепцов_Павел.docx" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">Слепцов_Павел.docx</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-13.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-13.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/13/Примеры/1.1/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/1.1/index.html">Пример 1.1</a></li>
     <li><a href="../materials/lab/13/Примеры/1.2/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/1.2/index.html">Пример 1.2</a></li>
@@ -319,36 +431,49 @@
     <li><a href="../materials/lab/13/Примеры/4.2/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/4.2/index.html">Пример 4.2</a></li>
     <li><a href="../materials/lab/13/Примеры/4.3/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Примеры/4.3/index.html">Пример 4.3</a></li>
 </ul>
-<p class="lab-files__heading">Индивидуальное</p>
+</section>
+<section class="lab-section">
+<h4 class="lab-section__title">Индивидуальное</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/13/Индивидуальное/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/13/Индивидуальное/index.html">Индивидуальная работа</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                         <details class="lab-group">
-                            <summary><span class="lab-group__label"><span class="lab-group__num">14</span><span class="lab-group__name">Лабораторная 14</span></span></summary>
-                            <div class="lab-group__body">
-                                <p class="lab-files__heading">Описание</p>
-                                <p class="lab-group__desc">Самостоятельная работа по JS.</p>
-<p class="lab-files__heading">Условие</p>
+<summary><span class="lab-group__num">14</span><span class="lab-group__name">Лабораторная 14</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Условие</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/14/Условие/lab_13-14_JS_function_independent_work.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">lab_13-14_JS_function_independent_work</a></li>
 </ul>
-<p class="lab-files__heading">Выполненные задания</p>
+</section>
+<section class="lab-section lab-section--desc">
+<h4 class="lab-section__title">Описание</h4>
+<ul class="lab-files">
+<li><a href="overviews/lab-14.html" class="lab-files__link lab-files__link--overview" data-material-src="overviews/lab-14.html">Описание занятия</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
 <ul class="lab-files">
     <li><a href="../materials/lab/14/Примеры/253/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/14/Примеры/253/index.html">Пример 253</a></li>
 </ul>
-                            </div>
-                        </details>
+</section>
+</div>
+</div>
+</details>
                     </div>
                 </div>
                 <div class="lab-layout__viewer material-viewer" aria-label="Просмотр материала">
                     <div class="material-viewer__bar">
                         <p class="material-viewer__title" id="material-viewer-title"></p>
-                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden title="Ваш исходный HTML-файл — откроется отдельно, как вы сделали">На отдельной странице ↗</a>
+                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden title="Открыть в новой вкладке">Открыть полностью</a>
                     </div>
                     <div class="material-viewer__panel" id="material-panel">
-                        <p class="material-viewer__placeholder" id="material-placeholder">Выберите работу в каталоге. Смотрите в панели или нажмите «На отдельной странице» — откроется ваш исходный файл.</p>
+                        <p class="material-viewer__placeholder" id="material-placeholder">Выберите работу из списка</p>
                         <p class="material-viewer__loading" id="material-loading" hidden>Загрузка…</p>
                         <div class="material-viewer__content" id="material-content" hidden></div>
                     </div>
@@ -382,8 +507,8 @@
             <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
         </footer>
     </div>
-    <script src="../js/mobile-nav.js"></script>
-    <script src="../js/material-viewer-scope.js?v=9"></script>
-    <script src="../js/material-viewer.js?v=9"></script>
+    <script src="../js/nav/mobile-nav.js"></script>
+    <script src="../js/viewer/material-viewer-scope.js?v=17"></script>
+    <script src="../js/viewer/material-viewer.js?v=17"></script>
 </body>
 </html>

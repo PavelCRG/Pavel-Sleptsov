@@ -1,0 +1,289 @@
+/* Аккордеон: кнопка лабораторной → выпадающее дерево */
+
+.lab-group {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(30, 77, 140, 0.06);
+}
+
+/* Кнопка «Лабораторная 01» */
+.lab-group > summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+    cursor: pointer;
+    list-style: none;
+    background: #fff;
+    border: none;
+    transition: background 0.15s, color 0.15s;
+}
+
+.lab-group > summary::-webkit-details-marker {
+    display: none;
+}
+
+.lab-group > summary:hover {
+    background: #f0f7ff;
+}
+
+.lab-group[open] > summary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.lab-group[open] > summary .lab-group__num {
+    background: #fff;
+    color: var(--accent);
+}
+
+.lab-group__num {
+    flex-shrink: 0;
+    min-width: 2.2em;
+    padding: 4px 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 6px;
+    line-height: 1.2;
+}
+
+.lab-group__name {
+    flex: 1;
+    min-width: 0;
+    line-height: 1.35;
+    text-align: left;
+}
+
+/* Стрелка вниз */
+.lab-group__chevron {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    margin-right: 2px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.25s ease;
+    opacity: 0.75;
+}
+
+.lab-group[open] > summary .lab-group__chevron {
+    transform: rotate(-135deg);
+    margin-top: 4px;
+    opacity: 1;
+}
+
+.lab-group--flash {
+    animation: lab-group-flash 0.7s ease 2;
+}
+
+@keyframes lab-group-flash {
+    0%,
+    100% {
+        box-shadow: 0 1px 3px rgba(30, 77, 140, 0.06);
+    }
+    50% {
+        box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.4);
+    }
+}
+
+/* Выпадающее содержимое */
+.lab-group__body {
+    padding: 8px 10px 10px;
+    background: #fafbfc;
+    border-top: 1px solid var(--border);
+}
+
+.lab-group[open] .lab-group__body {
+    animation: lab-panel-open 0.22s ease;
+}
+
+@keyframes lab-panel-open {
+    from {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Секции: подпись сверху, кнопки снизу */
+.lab-group__tree {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 2px 0 0;
+}
+
+.lab-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    margin: 0;
+    padding: 10px 2px;
+    border-bottom: 1px solid #e8eef5;
+}
+
+.lab-section:last-child {
+    border-bottom: none;
+    padding-bottom: 4px;
+}
+
+.lab-section__title {
+    margin: 0;
+    padding: 0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 1.2;
+    text-align: left;
+}
+
+.lab-section--desc .lab-section__title {
+    color: var(--accent-dark);
+}
+
+.lab-section--works .lab-section__title {
+    color: var(--accent-dark);
+}
+
+.lab-files {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.lab-files li {
+    margin: 0;
+    width: 100%;
+}
+
+.lab-files a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 12px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: left;
+    text-decoration: none;
+    color: var(--accent-dark);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.lab-files a:hover {
+    background: #f0f7ff;
+    border-color: #b8cfe8;
+}
+
+.lab-files a.is-active {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.lab-files a.is-active:hover {
+    background: var(--link-hover);
+    border-color: var(--link-hover);
+    color: #fff;
+}
+
+/* Все ссылки одного вида */
+.lab-files__link--overview,
+.lab-files__link--pdf,
+.lab-files__link--html {
+    color: var(--accent-dark);
+    background: #fff;
+    border-color: var(--border);
+    font-weight: 500;
+}
+
+.lab-files__link--overview:hover,
+.lab-files__link--pdf:hover,
+.lab-files__link--html:hover {
+    color: var(--accent-dark);
+    background: #f0f7ff;
+    border-color: #b8cfe8;
+}
+
+.lab-files__ext {
+    display: none !important;
+}
+
+/* Вложенные блоки (индивидуальное и т.п.) */
+.lab-sub {
+    margin-top: 8px;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.lab-sub > summary {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+    background: #f8fafc;
+}
+
+.lab-sub > summary::-webkit-details-marker {
+    display: none;
+}
+
+.lab-sub .lab-files {
+    padding: 8px;
+}
+
+/* Старые классы — совместимость */
+.lab-group__label {
+    display: contents;
+}
+
+.lab-files__heading {
+    display: none;
+}
+
+.lab-overview-btn {
+    display: none;
+}
+
+.lab-group__desc {
+    margin: 0 0 10px;
+    padding: 8px 10px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    background: #f8fafc;
+    border-radius: 6px;
+}
