@@ -303,9 +303,45 @@
 
 .material-viewer__open,
 .lab-viewer__open-new {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff !important;
+    text-decoration: none !important;
     font-size: 0.82rem;
     font-weight: 600;
     white-space: nowrap;
+    cursor: pointer;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.material-viewer__open:hover,
+.lab-viewer__open-new:hover {
+    filter: brightness(1.08);
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.material-viewer__open[hidden] {
+    display: none !important;
+}
+
+.material-viewer__placeholder {
+    margin: 0;
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.material-viewer__placeholder[hidden] {
+    display: none;
 }
 
 .material-viewer__panel,
@@ -328,6 +364,10 @@
 }
 
 .material-viewer__content.is-active {
+    display: block;
+}
+
+.material-viewer__write-target {
     display: block;
 }
 
@@ -359,14 +399,24 @@
     cursor: default;
 }
 
-.material-viewer__injected img,
+.material-viewer__injected img:not([usemap]),
 .material-viewer__injected video,
-.material-viewer__injected iframe,
 .material-viewer__injected object,
 .material-viewer__injected embed,
 .material-viewer__injected svg {
     max-width: 100%;
     height: auto;
+}
+
+/* Карта изображения: не сжимать — иначе coords <area> не совпадут */
+.material-viewer__injected img[usemap] {
+    max-width: none;
+    height: auto;
+}
+
+.material-viewer__injected iframe {
+    max-width: 100%;
+    border: 0;
 }
 
 .material-viewer__injected table {

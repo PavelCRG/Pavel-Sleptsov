@@ -1,0 +1,25 @@
+/* Стили для логического форматирования (лаб. 1) */
+address {
+    font-style: italic;
+}
+
+em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+comment {
+    color: #008000;
+}
+
+code {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+samp {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+q {
+    quotes: "«" "»";
+}

@@ -55,7 +55,7 @@
                     <div class="lab-catalog">
                         <div class="lab-catalog__head">
                             <p class="lab-catalog__title">Контрольные работы</p>
-                            <p class="lab-catalog__hint">PDF — новая вкладка. HTML-работы — в панели просмотра.</p>
+                            <p class="lab-catalog__hint">PDF — новая вкладка. HTML — в панели справа: ваш код, ссылки, скрипты.</p>
                         </div>
                         <details class="lab-group">
                             <summary><span class="lab-group__label"><span class="lab-group__num">✓</span><span class="lab-group__name">OKR 1</span></span></summary>
@@ -76,9 +76,10 @@
                 <div class="lab-layout__viewer material-viewer" aria-label="Просмотр материала">
                     <div class="material-viewer__bar">
                         <p class="material-viewer__title" id="material-viewer-title"></p>
-                        <a class="material-viewer__open" id="material-open-new" href="#" hidden>Открыть исходный файл</a>
+                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden title="Ваш исходный HTML-файл — откроется отдельно, как вы сделали">На отдельной странице ↗</a>
                     </div>
                     <div class="material-viewer__panel" id="material-panel">
+                        <p class="material-viewer__placeholder" id="material-placeholder">Выберите работу в каталоге. Смотрите в панели или нажмите «На отдельной странице» — откроется ваш исходный файл.</p>
                         <p class="material-viewer__loading" id="material-loading" hidden>Загрузка…</p>
                         <div class="material-viewer__content" id="material-content" hidden></div>
                     </div>
@@ -113,7 +114,7 @@
         </footer>
     </div>
     <script src="../js/mobile-nav.js"></script>
-    <script src="../js/material-viewer-scope.js?v=3"></script>
-    <script src="../js/material-viewer.js?v=3"></script>
+    <script src="../js/material-viewer-scope.js?v=9"></script>
+    <script src="../js/material-viewer.js?v=9"></script>
 </body>
 </html>

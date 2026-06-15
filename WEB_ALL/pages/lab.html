@@ -55,7 +55,7 @@
                     <div class="lab-catalog">
                         <div class="lab-catalog__head">
                             <p class="lab-catalog__title">Список лабораторных</p>
-                            <p class="lab-catalog__hint">PDF — новая вкладка. HTML-работы — в панели просмотра, как вы их сделали.</p>
+                            <p class="lab-catalog__hint">PDF — новая вкладка. HTML — в панели справа: ваш код, ссылки, скрипты.</p>
                         </div>
                         <details class="lab-group">
                             <summary><span class="lab-group__label"><span class="lab-group__num">01</span><span class="lab-group__name">Лабораторная 01</span></span></summary>
@@ -210,6 +210,7 @@
 <ul class="lab-files">
     <li><a href="../materials/lab/08/Примеры/index.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/08/Примеры/index.html">index</a></li>
     <li><a href="../materials/lab/08/Примеры/mp4.html" class="lab-files__link lab-files__link--html" data-material-src="../materials/lab/08/Примеры/mp4.html">Примеры / mp4.html</a></li>
+    <li><a href="../materials/lab/08/Примеры/hover_эффект.mp4" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">hover_эффект.mp4</a></li>
 </ul>
                             </div>
                         </details>
@@ -298,6 +299,7 @@
 <p class="lab-files__heading">Условие</p>
 <ul class="lab-files">
     <li><a href="../materials/lab/13/Условие/lab_13-14_Math_Array_Date_String.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">lab_13-14_Math_Array_Date_String</a></li>
+    <li><a href="../materials/lab/13/Условие/Слепцов_Павел.docx" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">Слепцов_Павел.docx</a></li>
 </ul>
 <p class="lab-files__heading">Выполненные задания</p>
 <ul class="lab-files">
@@ -343,9 +345,10 @@
                 <div class="lab-layout__viewer material-viewer" aria-label="Просмотр материала">
                     <div class="material-viewer__bar">
                         <p class="material-viewer__title" id="material-viewer-title"></p>
-                        <a class="material-viewer__open" id="material-open-new" href="#" hidden>Открыть исходный файл</a>
+                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden title="Ваш исходный HTML-файл — откроется отдельно, как вы сделали">На отдельной странице ↗</a>
                     </div>
                     <div class="material-viewer__panel" id="material-panel">
+                        <p class="material-viewer__placeholder" id="material-placeholder">Выберите работу в каталоге. Смотрите в панели или нажмите «На отдельной странице» — откроется ваш исходный файл.</p>
                         <p class="material-viewer__loading" id="material-loading" hidden>Загрузка…</p>
                         <div class="material-viewer__content" id="material-content" hidden></div>
                     </div>
@@ -380,7 +383,7 @@
         </footer>
     </div>
     <script src="../js/mobile-nav.js"></script>
-    <script src="../js/material-viewer-scope.js?v=3"></script>
-    <script src="../js/material-viewer.js?v=3"></script>
+    <script src="../js/material-viewer-scope.js?v=9"></script>
+    <script src="../js/material-viewer.js?v=9"></script>
 </body>
 </html>

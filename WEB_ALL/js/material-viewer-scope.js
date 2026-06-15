@@ -86,16 +86,28 @@
         }
     }
 
+    function rewriteCssUrls(cssText, base) {
+        if (!base || !cssText) {
+            return cssText;
+        }
+        return cssText.replace(/url\(\s*(['"]?)([^'")]+?)\1\s*\)/gi, function (match, quote, url) {
+            url = url.trim();
+            if (/^(data:|https?:|\/\/|#)/i.test(url)) {
+                return match;
+            }
+            return "url(" + quote + resolveUrl(url, base) + quote + ")";
+        });
+    }
+
     function baseUrlFrom(src) {
-        var url = new URL(src, window.location.href);
-        var path = url.pathname.replace(/\/[^/]*$/, "/");
-        return url.origin + path;
+        return new URL("./", new URL(src, window.location.href)).href;
     }
 
     global.MaterialViewerScope = {
         SCOPE: SCOPE,
         SCOPE_SEL: SCOPE_SEL,
         scopeCss: scopeCss,
+        rewriteCssUrls: rewriteCssUrls,
         resolveUrl: resolveUrl,
         baseUrlFrom: baseUrlFrom
     };
