@@ -1,6 +1,6 @@
 # WEB_ALL
 
-Сайт-портал по курсу **«Средства создания приложений»** — лабораторные, лекции, контроль, практика и ссылка на WEB-практику.
+Сайт-портал по двум курсам: **3 курс** («Средства создания приложений») и **4 курс** (JS · PHP · Node).
 
 Стек: HTML, CSS, JavaScript. Без сборщиков, фреймворков и автогенерации.
 
@@ -11,11 +11,11 @@
 ## Навигация по сайту
 
 ```
-index.html          приветствие, первый экран
-    ↓
-portal.html         главная портала, карточки разделов
-    ↓
-pages/lab.html      каталог (лабораторные, лекции, контроль, практика)
+index.html              выбор курса (3 или 4)
+    ├── portal.html     3 курс: карточки разделов
+    │       ↓
+    │   pages/lab.html  каталог (лабораторные, лекции, контроль, практика)
+    └── course-4.html   4 курс: Лекции, ЛР, ОКР
 ```
 
 Работы и описания открываются **в панели справа** — без iframe, через `fetch` и вставку HTML.
@@ -27,8 +27,9 @@ pages/lab.html      каталог (лабораторные, лекции, ко
 ```
 WEB_ALL/
 │
-├── index.html              вход на сайт
-├── portal.html             главная портала
+├── index.html              вход: выбор 3 / 4 курса
+├── portal.html             главная 3 курса
+├── course-4.html           главная 4 курса
 ├── README.md               эта документация
 │
 ├── assets/images/          логотипы и иконки портала
@@ -90,12 +91,13 @@ js/
 
 ```
 pages/
-├── lab.html                14 лабораторных
+├── lab.html                14 лабораторных (3 курс)
 ├── lection.html            8 лекций
 ├── control.html            ОКР 1
 ├── practice.html           Flex и Grid
 ├── web-practice.html       ссылка на WEB-практику
 ├── about.html              обо мне
+├── course-4/               4 курс: Лекции, ЛР, ОКР
 └── overviews/
     ├── lab-01 … lab-14
     ├── lection-01 … lection-08
@@ -113,7 +115,7 @@ pages/
 
 ### materials/
 
-Копии для сайта. Исходники в корне репозитория: `LAB/`, `LECTION/`, `CONTROL/`, `PRACTICE/`.
+Копии для сайта. Исходники 3 курса: `COURSE_3/LAB/`, `COURSE_3/LECTION/`, `COURSE_3/CONTROL/`, `COURSE_3/PRACTICE/`. Исходники 4 курса: `COURSE_4/JS_PHP_NODE/`.
 
 ```
 materials/
@@ -148,7 +150,7 @@ materials/
 1. Файлы → `materials/lab/NN/`  
 2. Блок в `pages/lab.html`  
 3. Страница `pages/overviews/lab-NN.html`  
-4. При необходимости — исходники в `LAB/`  
+4. При необходимости — исходники в `COURSE_3/LAB/`  
 
 ---
 
@@ -169,12 +171,9 @@ npx --yes serve .
 
 ```
 Pavel-Sleptsov/
-├── LAB/              исходники лабораторных
-├── LECTION/          лекции
-├── CONTROL/          контрольные
-├── PRACTICE/         практика
-├── WEB_ALL/          этот портал → Netlify
-└── WEB_PRACTICE/     отдельный сайт WEB-практики
+├── COURSE_3/         материалы 3 курса (LAB, LECTION, CONTROL, PRACTICE, WEB_PRACTICE)
+├── COURSE_4/         JS_PHP_NODE (LECTION, LAB, OKR)
+└── WEB_ALL/          этот портал → Netlify
 ```
 
 **Публикация:** корень Netlify — `WEB_ALL`. После push: https://sleptsov-sca.netlify.app/

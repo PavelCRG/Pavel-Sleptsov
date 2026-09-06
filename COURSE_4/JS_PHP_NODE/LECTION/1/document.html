@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Объект Document</title>
+</head>
+
+<body>
+    <h3>1. Свойства объекта document:</h3>
+    <script>
+        // Выводим свойства при загрузке страницы
+        document.write("Заголовок страницы (title): " + document.title + "<br>");
+        document.write("Дата изменения (lastModified): " + document.lastModified + "<br>");
+    </script>
+
+    <h3>2. Методы объекта document:</h3>
+    <button onclick="newDoc()">Создать новый документ (open, write, close)</button>
+
+    <script>
+        function newDoc() {
+            document.open(); // Открываем поток
+            document.write("<h2>Это совершенно новый документ!</h2>");
+            document.write("Страница была затерта и создана заново методами write и close.<br>");
+            document.write("<button onclick='location.reload()'>Вернуться обратно (reload)</button>");
+            document.close(); // Закрываем поток
+        }
+    </script>
+</body>
+
+</html>

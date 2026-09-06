@@ -41,7 +41,7 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 720px;
+    max-width: 920px;
     text-align: left;
     padding-left: clamp(12px, 2vw, 20px);
     border-left: 3px solid #38bdf8;
@@ -257,6 +257,77 @@
     border-bottom-color: rgba(148, 163, 184, 0.5);
 }
 
+.splash__courses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.splash__course {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100%;
+    padding: 22px 20px 20px;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.splash__course:hover,
+.splash__course:focus-visible {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(56, 189, 248, 0.45);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.splash__course--next {
+    border-color: rgba(56, 189, 248, 0.28);
+    background: rgba(56, 189, 248, 0.06);
+}
+
+.splash__course-year {
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #38bdf8;
+}
+
+.splash__course-title {
+    margin: 0 0 8px;
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #f8fafc;
+}
+
+.splash__course-meta {
+    margin-bottom: 8px;
+    font-size: 0.92rem;
+    color: #7dd3fc;
+}
+
+.splash__course-list {
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #94a3b8;
+}
+
+.splash__course-go {
+    margin-top: auto;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
 @media (max-width: 640px) {
     .splash__hero {
         padding: 24px 16px 28px;
@@ -287,6 +358,10 @@
 
     .splash__lead {
         font-size: 1rem;
+    }
+
+    .splash__courses {
+        grid-template-columns: 1fr;
     }
 
     .splash__points li {

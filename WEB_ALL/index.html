@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Средства создания приложений — Слепцов П.Л.</title>
+    <title>Выбор курса — Слепцов П.Л.</title>
     <link rel="stylesheet" href="css/pages/splash.css">
 </head>
 <body class="splash">
@@ -14,33 +14,31 @@
                 <img class="splash__logo" src="assets/images/Logo.png" alt="Слепцов Павел Леонидович" width="140" height="140">
                 <div class="splash__intro">
                     <p class="splash__eyebrow">Учебный портал</p>
-                    <p class="splash__subject">по предмету</p>
-                    <h1 id="splash-title">Средства создания приложений</h1>
+                    <p class="splash__subject">Слепцов Павел Леонидович</p>
+                    <h1 id="splash-title">Материалы по курсам</h1>
                     <p class="splash__lead">
-                        Лабораторные, лекции и WEB-практика — материалы по курсу в одном месте.
+                        Третий и четвёртый курс лежат отдельно. Сайт один — выберите год обучения.
                     </p>
                 </div>
             </header>
 
             <div class="splash__body">
-                <ul class="splash__points">
-                    <li>
-                        <span class="splash__point-num">01</span>
-                        <span class="splash__point-text"><strong>Лабораторные</strong> — HTML, CSS, JavaScript и задания по темам курса</span>
-                    </li>
-                    <li>
-                        <span class="splash__point-num">02</span>
-                        <span class="splash__point-text"><strong>Лекции</strong> — формы, таблицы, CSS и примеры с занятий</span>
-                    </li>
-                    <li>
-                        <span class="splash__point-num">03</span>
-                        <span class="splash__point-text"><strong>Практика</strong> — работы после лабораторных; <strong>WEB-практика</strong> — <a href="pages/web-practice.html">отдельный портал по дням</a></span>
-                    </li>
-                </ul>
-
-                <div class="splash__actions">
-                    <a class="splash__btn" href="portal.html">Начать</a>
-                </div>
+                <nav class="splash__courses" aria-label="Выбор курса">
+                    <a class="splash__course" href="portal.html">
+                        <span class="splash__course-year">3 курс</span>
+                        <strong class="splash__course-title">Средства создания приложений</strong>
+                        <span class="splash__course-meta">HTML · CSS · JavaScript</span>
+                        <span class="splash__course-list">Лабораторные, лекции, практика, ОКР</span>
+                        <span class="splash__course-go">Открыть курс</span>
+                    </a>
+                    <a class="splash__course splash__course--next" href="course-4.html">
+                        <span class="splash__course-year">4 курс</span>
+                        <strong class="splash__course-title">JS · PHP · Node</strong>
+                        <span class="splash__course-meta">Лекции · ЛР · ОКР</span>
+                        <span class="splash__course-list">Пока занятия 1 и 2 — папки уже готовы</span>
+                        <span class="splash__course-go">Открыть курс</span>
+                    </a>
+                </nav>
             </div>
         </div>
 

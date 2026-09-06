@@ -97,6 +97,15 @@
     color: var(--text-muted);
 }
 
+.page-card--soon {
+    cursor: default;
+}
+
+.page-card--soon:hover {
+    border-color: var(--border);
+    box-shadow: none;
+}
+
 
 .page-note {
     max-width: 720px;
