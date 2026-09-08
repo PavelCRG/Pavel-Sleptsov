@@ -72,59 +72,81 @@
 
 .nav-toggle {
     display: none;
+    position: relative;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.22);
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.92);
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.28);
     color: #fff;
     cursor: pointer;
     flex-shrink: 0;
-    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    transition: background 0.15s ease, border-color 0.15s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
 .nav-toggle:hover {
-    background: rgba(0, 0, 0, 0.32);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(15, 23, 42, 0.98);
+    border-color: rgba(255, 255, 255, 0.55);
 }
 
 .nav-toggle:active {
-    transform: scale(0.94);
+    background: #0f172a;
 }
 
 .nav-toggle[aria-expanded="true"] {
-    background: rgba(0, 0, 0, 0.38);
-    border-color: rgba(255, 255, 255, 0.55);
+    background: #0f172a;
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .nav-toggle__icon {
     display: block;
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     margin: auto;
     pointer-events: none;
+    transition: opacity 0.15s ease;
 }
 
 .nav-toggle__path {
-    transition: transform 0.22s ease, opacity 0.18s ease;
-    transform-origin: 12px 12px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    fill: none;
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle__path--1 {
-    transform: translateY(5px) rotate(45deg);
-}
-
-.nav-toggle[aria-expanded="true"] .nav-toggle__path--2 {
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon {
     opacity: 0;
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle__path--3 {
-    transform: translateY(-5px) rotate(-45deg);
+.nav-toggle::before,
+.nav-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 2px;
+    margin: 0;
+    border-radius: 1px;
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+.nav-toggle[aria-expanded="true"]::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"]::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .nav-backdrop {

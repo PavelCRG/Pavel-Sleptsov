@@ -16,11 +16,11 @@
     }
 
     .nav-toggle:active {
-        transform: scale(0.94);
+        background: #0f172a;
     }
 
     .nav-toggle[aria-expanded="true"]:active {
-        transform: scale(0.94);
+        background: #0f172a;
     }
 
     .site-header {
