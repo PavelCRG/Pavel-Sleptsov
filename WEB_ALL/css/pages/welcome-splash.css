@@ -51,7 +51,7 @@
     display: flex;
     align-items: flex-start;
     gap: clamp(20px, 3vw, 32px);
-    margin-bottom: clamp(28px, 4vh, 40px);
+    margin-bottom: clamp(32px, 5vh, 48px);
 }
 
 .splash__logo {
@@ -69,36 +69,28 @@
 }
 
 .splash__eyebrow {
-    margin: 0 0 8px;
-    font-size: 0.8rem;
+    margin: 0 0 10px;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #38bdf8;
 }
 
-.splash__subject {
-    margin: 0 0 6px;
-    font-size: 0.88rem;
-    color: #64748b;
-    letter-spacing: 0.04em;
+.splash__by {
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #94a3b8;
 }
 
 .splash h1 {
-    margin: 0 0 16px;
+    margin: 0;
     font-size: clamp(1.85rem, 4.5vw, 3rem);
     font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.03em;
     color: #f8fafc;
-}
-
-.splash__lead {
-    margin: 0;
-    font-size: clamp(1.05rem, 2.2vw, 1.28rem);
-    line-height: 1.65;
-    color: #94a3b8;
-    max-width: 32em;
 }
 
 .splash__body {
@@ -107,30 +99,25 @@
 
 .splash__points {
     list-style: none;
-    margin: 0 0 clamp(28px, 4vh, 36px);
+    margin: 0 0 clamp(22px, 3.5vh, 32px);
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
+    max-width: 420px;
 }
 
 .splash__points li {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 16px 18px;
-    font-size: clamp(0.95rem, 1.8vw, 1.08rem);
-    line-height: 1.55;
-    color: #cbd5e1;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    color: #e2e8f0;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    transition: border-color 0.2s, background 0.2s;
-}
-
-.splash__points li:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(56, 189, 248, 0.25);
 }
 
 .splash__point-num {
@@ -139,39 +126,27 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     color: #38bdf8;
-    padding-top: 2px;
 }
 
 .splash__point-text {
-    flex: 1;
-}
-
-.splash__points strong {
-    color: #f1f5f9;
     font-weight: 600;
+    color: #f1f5f9;
 }
 
-.splash__points a {
-    color: #7dd3fc;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+.splash__courses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 340px;
 }
 
-.splash__points a:hover {
-    color: #bae6fd;
-    border-bottom-color: #bae6fd;
-}
-
-.splash__actions {
-    display: block;
-}
-
-.splash__btn {
+.splash__course {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 44px;
-    font-size: 1.1rem;
+    min-height: 52px;
+    padding: 14px 20px;
+    font-size: 1.05rem;
     font-weight: 600;
     text-decoration: none;
     color: #f8fafc;
@@ -182,11 +157,13 @@
     transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.splash__btn:hover {
+.splash__course:hover,
+.splash__course:focus-visible {
     color: #fff;
     background: #2563a8;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    outline: none;
 }
 
 /* Декор справа — логотип колледжа, только на широком экране */
@@ -257,142 +234,137 @@
     border-bottom-color: rgba(148, 163, 184, 0.5);
 }
 
-.splash__courses {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 8px;
-}
+@media (max-width: 900px) {
+    .splash__decor-logo {
+        width: clamp(140px, 28vw, 200px);
+        opacity: 0.55;
+    }
 
-.splash__course {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 100%;
-    padding: 22px 20px 20px;
-    text-decoration: none;
-    color: inherit;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    transition: border-color 0.2s, background 0.2s, transform 0.15s;
-}
-
-.splash__course:hover,
-.splash__course:focus-visible {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(56, 189, 248, 0.45);
-    transform: translateY(-2px);
-    outline: none;
-}
-
-.splash__course--next {
-    border-color: rgba(56, 189, 248, 0.28);
-    background: rgba(56, 189, 248, 0.06);
-}
-
-.splash__course-year {
-    margin-bottom: 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #38bdf8;
-}
-
-.splash__course-title {
-    margin: 0 0 8px;
-    font-size: clamp(1.15rem, 2vw, 1.35rem);
-    font-weight: 700;
-    line-height: 1.25;
-    color: #f8fafc;
-}
-
-.splash__course-meta {
-    margin-bottom: 8px;
-    font-size: 0.92rem;
-    color: #7dd3fc;
-}
-
-.splash__course-list {
-    margin-bottom: 18px;
-    font-size: 0.9rem;
-    line-height: 1.45;
-    color: #94a3b8;
-}
-
-.splash__course-go {
-    margin-top: auto;
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: #e2e8f0;
+    .splash__inner {
+        max-width: min(920px, 68%);
+    }
 }
 
 @media (max-width: 640px) {
     .splash__hero {
-        padding: 24px 16px 28px;
+        padding: 28px 18px 32px;
         align-items: flex-start;
     }
 
     .splash__inner {
         border-left-width: 2px;
-        padding-left: 12px;
+        padding-left: 14px;
         max-width: 100%;
     }
 
     .splash__brand {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
-        gap: 16px;
+        gap: 14px;
+        margin-bottom: 24px;
     }
 
     .splash__logo {
-        width: 96px;
-        height: 96px;
+        width: 72px;
+        height: 72px;
+    }
+
+    .splash__intro {
+        padding-top: 0;
+    }
+
+    .splash__eyebrow {
+        margin-bottom: 6px;
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+    }
+
+    .splash__by {
+        margin-bottom: 6px;
+        font-size: 0.84rem;
     }
 
     .splash h1 {
-        font-size: 1.65rem;
+        font-size: clamp(1.45rem, 7vw, 1.75rem);
         line-height: 1.2;
     }
 
-    .splash__lead {
-        font-size: 1rem;
-    }
-
-    .splash__courses {
-        grid-template-columns: 1fr;
+    .splash__points {
+        gap: 8px;
+        max-width: 100%;
+        margin-bottom: 18px;
     }
 
     .splash__points li {
-        padding: 14px 14px 14px 16px;
+        padding: 12px 14px;
+        font-size: 0.98rem;
         gap: 12px;
     }
 
-    .splash__actions {
-        text-align: center;
+    .splash__courses {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        max-width: 100%;
     }
 
-    .splash__btn {
-        width: 100%;
-        max-width: 100%;
-        padding: 15px 24px;
-        box-sizing: border-box;
+    .splash__course {
+        min-height: 52px;
+        padding: 14px 12px;
+        font-size: 1rem;
+        touch-action: manipulation;
+    }
+
+    .splash__course:hover,
+    .splash__course:focus-visible {
+        transform: none;
+        box-shadow: none;
+        background: #2563a8;
+    }
+
+    .splash__course:active {
+        background: #1e4d8c;
     }
 
     .splash__decor {
         display: none;
     }
 
-    .splash__bar-logo {
-        display: block;
+    .splash__bar {
+        padding: 16px 18px 20px;
     }
 
-    .splash__bar {
-        padding: 18px 16px 22px;
+    .splash__bar-logo {
+        display: block;
+        width: 56px;
+        height: 56px;
     }
 
     .splash__bar-inner {
         max-width: 100%;
+        gap: 6px;
+    }
+
+    .splash__bar-copy {
+        font-size: 0.82rem;
+    }
+
+    .splash__bar-college {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .splash__logo {
+        width: 64px;
+        height: 64px;
+    }
+
+    .splash h1 {
+        font-size: 1.35rem;
+    }
+
+    .splash__course {
+        font-size: 0.95rem;
+        padding: 13px 10px;
     }
 }

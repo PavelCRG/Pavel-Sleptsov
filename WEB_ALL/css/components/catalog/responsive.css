@@ -31,7 +31,9 @@
 
     .material-viewer__panel,
     .material-viewer__frame-wrap,
-    .lab-viewer__frame-wrap {
+    .lab-viewer__frame-wrap,
+    .work-frame,
+    .work-frame__page {
         min-height: 50vh;
     }
 
@@ -92,7 +94,9 @@
 
     .material-viewer__panel,
     .material-viewer__frame-wrap,
-    .lab-viewer__frame-wrap {
+    .lab-viewer__frame-wrap,
+    .work-frame,
+    .work-frame__page {
         min-height: 55vh;
     }
 

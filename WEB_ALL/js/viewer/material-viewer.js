@@ -435,8 +435,27 @@
         disconnectMediaObserver();
         contentEl.innerHTML = "";
         contentEl.hidden = true;
-        contentEl.classList.remove("is-active");
+        contentEl.classList.remove("is-active", "is-original");
         setPlaceholderVisible(true);
+        updateBackButton();
+    }
+
+    function embedOriginalPage() {
+        return document.body.getAttribute("data-embed") === "original";
+    }
+
+    function showOriginalPage(resolvedSrc, label) {
+        clearContent();
+        currentBase = resolvedSrc;
+        var frame = document.createElement("iframe");
+        frame.className = "material-viewer__page";
+        frame.setAttribute("title", label || "Работа");
+        frame.src = resolvedSrc;
+        contentEl.classList.add("is-original");
+        contentEl.appendChild(frame);
+        setPlaceholderVisible(false);
+        contentEl.hidden = false;
+        contentEl.classList.add("is-active");
         updateBackButton();
     }
 
@@ -607,6 +626,12 @@
         if (viewer && viewer.scrollIntoView) {
             var isMobile = window.matchMedia("(max-width: 900px)").matches;
             viewer.scrollIntoView({ behavior: "smooth", block: isMobile ? "start" : "nearest" });
+        }
+
+        if (embedOriginalPage()) {
+            showLoading(false);
+            showOriginalPage(resolvedSrc, label || fileName(resolvedSrc));
+            return;
         }
 
         var base = scopeApi.baseUrlFrom(resolvedSrc);

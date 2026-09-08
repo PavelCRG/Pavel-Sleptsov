@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Объект Global</title>
+</head>
+
+<body>
+    <h3>1. Свойства объекта Global:</h3>
+    <script>
+        document.write("Деление 10 на 0 = " + (10 / 0) + " (это свойство Infinity)<br>");
+        document.write("Умножение текста на число = " + ("текст" * 5) + " (это свойство NaN)<br>");
+    </script>
+
+    <h3>2. Методы объекта Global (parseInt и isNaN):</h3>
+    <input type="text" id="pole" placeholder="Введите число или текст">
+    <button onclick="check()">Проверить</button>
+
+    <div id="result"></div>
+
+    <script>
+        function check() {
+            var str = document.getElementById("pole").value; // Берем текст из поля
+            var num = parseInt(str); // Метод parseInt пытается сделать число
+
+            var text = "<br>Вы ввели: " + str;
+            text += "<br>Метод parseInt() вернул: " + num;
+            text += "<br>Метод isNaN() вернул: " + isNaN(num) + " (true = это НЕ число, false = это число)";
+
+            document.getElementById("result").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>

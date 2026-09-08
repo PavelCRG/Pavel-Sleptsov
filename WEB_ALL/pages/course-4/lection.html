@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лекции — 4 курс JS · PHP · Node</title>
+    <title>Лекции — JS · PHP · Node</title>
     <link rel="stylesheet" href="../../css/main.css">
 </head>
-<body class="site-app">
+<body class="site-app" data-catalog="lection" data-embed="original">
     <div class="site-grid">
         <header class="site-header">
-            <a class="site-header__logo site-header__logo--personal" href="../../course-4.html" title="На главную 4 курса">
+            <a class="site-header__logo site-header__logo--personal" href="../../course-4.html" title="На главную">
                 <img src="../../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
             </a>
             <h1 class="site-header__title">
@@ -28,14 +28,13 @@
                 <path class="nav-toggle__path nav-toggle__path--3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
             </svg>
         </button>
-
         <nav class="site-sidebar" aria-label="Меню">
             <h2>Разделы</h2>
             <ul class="site-nav">
                 <li><a href="../../course-4.html">Главная</a></li>
+                <li><a href="lab.html">Лабораторные</a></li>
                 <li><a href="lection.html" class="is-active">Лекции</a></li>
-                <li><a href="lab.html">ЛР</a></li>
-                <li><a href="okr.html">ОКР</a></li>
+                <li><a href="okr.html">Контроль</a></li>
             </ul>
             <div class="site-nav__section">
                 <p class="site-nav__label">Быстрый доступ</p>
@@ -44,21 +43,75 @@
                 </ul>
             </div>
         </nav>
-
-        <main class="site-main page">
+        <main class="site-main page page--catalog">
             <h1>Лекции</h1>
-            <p class="page__lead">Пока две папки — как на схеме занятий. Остальные добавим позже.</p>
-            <p class="page-note">Файлы кладём в <code>COURSE_4/JS_PHP_NODE/LECTION/1</code> и <code>…/2</code>.</p>
+            <p class="page__lead">Лекционные материалы и примеры с занятий по JS, PHP и Node.</p>
 
-            <div class="page-cards">
-                <article class="page-card page-card--soon">
-                    <strong>Лекция 1</strong>
-                    <span>Папка готова. Материалы появятся после занятия.</span>
-                </article>
-                <article class="page-card page-card--soon">
-                    <strong>Лекция 2</strong>
-                    <span>Папка готова. Материалы появятся после занятия.</span>
-                </article>
+            <div class="lab-layout">
+                <div class="lab-layout__catalog">
+                    <div class="lab-catalog">
+                        <div class="lab-catalog__head">
+                            <p class="lab-catalog__title">Список лекций</p>
+                        </div>
+                        <details class="lab-group">
+<summary><span class="lab-group__num">01</span><span class="lab-group__name">Лекция 01 — объекты браузера</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Материалы лекции</h4>
+<ul class="lab-files">
+    <li><a href="../../materials/course-4/lection/1/Материалы/1_lection_js_object_brouzer_global.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">1_lection_js_object_brouzer_global</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
+<ul class="lab-files">
+    <li><a href="../../materials/course-4/lection/1/window.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/1/window.html">window.html</a></li>
+    <li><a href="../../materials/course-4/lection/1/document.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/1/document.html">document.html</a></li>
+    <li><a href="../../materials/course-4/lection/1/navigator.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/1/navigator.html">navigator.html</a></li>
+    <li><a href="../../materials/course-4/lection/1/history.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/1/history.html">history.html</a></li>
+    <li><a href="../../materials/course-4/lection/1/location.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/1/location.html">location.html</a></li>
+    <li><a href="../../materials/course-4/lection/1/global.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/1/global.html">global.html</a></li>
+</ul>
+</section>
+</div></div>
+</details>
+                        <details class="lab-group">
+<summary><span class="lab-group__num">02</span><span class="lab-group__name">Лекция 02 — DOM, стили и события</span><span class="lab-group__chevron" aria-hidden="true"></span></summary>
+<div class="lab-group__body"><div class="lab-group__tree">
+<section class="lab-section">
+<h4 class="lab-section__title">Материалы лекции</h4>
+<ul class="lab-files">
+    <li><a href="../../materials/course-4/lection/2/Материалы/2_lection_js_DOM.pdf" class="lab-files__link lab-files__link--pdf" target="_blank" rel="noopener noreferrer">2_lection_js_DOM</a></li>
+</ul>
+</section>
+<section class="lab-section lab-section--works">
+<h4 class="lab-section__title">Выполненное задание</h4>
+<ul class="lab-files">
+    <li><a href="../../materials/course-4/lection/2/pos1.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/2/pos1.html">pos1.html</a></li>
+    <li><a href="../../materials/course-4/lection/2/pos2.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/2/pos2.html">pos2.html</a></li>
+    <li><a href="../../materials/course-4/lection/2/pos3.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/2/pos3.html">pos3.html</a></li>
+    <li><a href="../../materials/course-4/lection/2/pos4.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/2/pos4.html">pos4.html</a></li>
+    <li><a href="../../materials/course-4/lection/2/pos5.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/2/pos5.html">pos5.html</a></li>
+    <li><a href="../../materials/course-4/lection/2/pos6.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/2/pos6.html">pos6.html</a></li>
+    <li><a href="../../materials/course-4/lection/2/pos7.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/2/pos7.html">pos7.html</a></li>
+    <li><a href="../../materials/course-4/lection/2/pos8.html" class="lab-files__link lab-files__link--html" data-material-src="../../materials/course-4/lection/2/pos8.html">pos8.html</a></li>
+</ul>
+</section>
+</div></div>
+</details>
+                    </div>
+                </div>
+                <div class="lab-layout__viewer material-viewer" aria-label="Просмотр материала">
+                    <div class="material-viewer__bar">
+                        <p class="material-viewer__title" id="material-viewer-title"></p>
+                        <a class="material-viewer__open" id="material-open-new" href="#" target="_blank" rel="noopener noreferrer" hidden title="Открыть в новой вкладке">Открыть полностью</a>
+                    </div>
+                    <div class="material-viewer__panel" id="material-panel">
+                        <p class="material-viewer__placeholder" id="material-placeholder">Выберите работу из списка</p>
+                        <p class="material-viewer__loading" id="material-loading" hidden>Загрузка…</p>
+                        <div class="material-viewer__content" id="material-content" hidden></div>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -72,6 +125,14 @@
                 <p class="ad-card__text">Профиль разработчика. Здесь есть задания по курсу, но также можно посмотреть другие репозитории и проекты автора.</p>
                 <span class="ad-card__url">github.com/PavelCRG</span>
             </a>
+            <a class="ad-card" href="https://voxivaai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../../assets/images/voxiva-logo.svg" alt="Voxiva" width="56" height="56">
+                    <strong class="ad-card__brand">Voxiva</strong>
+                </div>
+                <p class="ad-card__text">Voxiva — экосистема, где голос, задачи, текст и автоматизация связаны в одном потоке.</p>
+                <span class="ad-card__url">voxivaai.vercel.app</span>
+            </a>
         </aside>
 
         <footer class="site-footer">
@@ -81,5 +142,7 @@
         </footer>
     </div>
     <script src="../../js/nav/mobile-nav.js"></script>
+    <script src="../../js/viewer/material-viewer-scope.js?v=17"></script>
+    <script src="../../js/viewer/material-viewer.js?v=17"></script>
 </body>
 </html>

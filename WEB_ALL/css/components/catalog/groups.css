@@ -202,6 +202,14 @@
     border-color: #b8cfe8;
 }
 
+.lab-files a[target="work-view"]:focus,
+.lab-files a[target="work-view"]:focus-visible {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+    outline: none;
+}
+
 .lab-files a.is-active {
     color: #fff;
     background: var(--accent);
