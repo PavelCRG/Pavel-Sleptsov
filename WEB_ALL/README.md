@@ -1,6 +1,6 @@
 # WEB_ALL
 
-Сайт-портал по двум курсам: **3 курс** («Средства создания приложений») и **4 курс** (JS · PHP · Node).
+Сайт-портал по двум курсам: **3 курс** и **4 курс** («Средства создания приложений»).
 
 Стек: HTML, CSS, JavaScript. Без сборщиков, фреймворков и автогенерации.
 
@@ -15,7 +15,7 @@ index.html              выбор курса (3 или 4)
     ├── portal.html     3 курс: карточки разделов
     │       ↓
     │   pages/lab.html  каталог (лабораторные, лекции, контроль, практика)
-    └── course-4.html   4 курс: Лекции, ЛР, ОКР
+    └── course-4.html   4 курс: лабораторные, лекции, контроль
 ```
 
 Работы и описания открываются **в панели справа** — без iframe, через `fetch` и вставку HTML.
@@ -115,7 +115,7 @@ pages/
 
 ### materials/
 
-Копии для сайта. Исходники 3 курса: `COURSE_3/LAB/`, `COURSE_3/LECTION/`, `COURSE_3/CONTROL/`, `COURSE_3/PRACTICE/`. Исходники 4 курса: `COURSE_4/JS_PHP_NODE/`.
+Копии для сайта. Исходники 3 курса: `COURSE_3/LAB/`, `COURSE_3/LECTION/`, `COURSE_3/CONTROL/`, `COURSE_3/PRACTICE/`. Исходники 4 курса: `COURSE_4/LECTION/`, `COURSE_4/LAB/`, `COURSE_4/CONTROL/`.
 
 ```
 materials/
@@ -172,7 +172,7 @@ npx --yes serve .
 ```
 Pavel-Sleptsov/
 ├── COURSE_3/         материалы 3 курса (LAB, LECTION, CONTROL, PRACTICE, WEB_PRACTICE)
-├── COURSE_4/         JS_PHP_NODE (LECTION, LAB, OKR)
+├── COURSE_4/         материалы 4 курса (LECTION, LAB, CONTROL)
 └── WEB_ALL/          этот портал → Netlify
 ```
 
