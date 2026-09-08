@@ -9,12 +9,17 @@
 <body class="splash">
     <main class="splash__main">
     <section class="splash__hero" aria-labelledby="splash-title">
-        <div class="splash__inner">
+        <div class="splash__panel">
             <header class="splash__brand">
                 <img class="splash__logo" src="assets/images/Logo.png" alt="Слепцов Павел Леонидович" width="140" height="140">
                 <div class="splash__intro">
-                    <p class="splash__eyebrow">Учебный портал <span aria-hidden="true">·</span> по предмету</p>
+                    <p class="splash__eyebrow">Учебный портал</p>
+                    <p class="splash__by">по предмету</p>
                     <h1 id="splash-title">Средства создания приложений</h1>
+                    <p class="splash__lead">
+                        Здесь собраны лабораторные, лекции и практика по курсу.
+                        Выберите год обучения и откройте нужный раздел.
+                    </p>
                 </div>
             </header>
 
@@ -22,28 +27,45 @@
                 <ul class="splash__points">
                     <li>
                         <span class="splash__point-num">01</span>
-                        <span class="splash__point-text">Лабораторные</span>
+                        <div class="splash__point-copy">
+                            <strong class="splash__point-text">Лабораторные</strong>
+                            <span class="splash__point-desc">Условия, описание занятий и выполненные задания</span>
+                        </div>
                     </li>
                     <li>
                         <span class="splash__point-num">02</span>
-                        <span class="splash__point-text">Лекции</span>
+                        <div class="splash__point-copy">
+                            <strong class="splash__point-text">Лекции</strong>
+                            <span class="splash__point-desc">Материалы и примеры с занятий по вёрстке</span>
+                        </div>
                     </li>
                     <li>
                         <span class="splash__point-num">03</span>
-                        <span class="splash__point-text">Практика</span>
+                        <div class="splash__point-copy">
+                            <strong class="splash__point-text">Практика</strong>
+                            <span class="splash__point-desc">Работы после лабораторных и WEB-практика</span>
+                        </div>
                     </li>
                 </ul>
 
-                <p class="splash__pick">Выберите курс</p>
-                <nav class="splash__courses" aria-label="Выбор курса">
-                    <a class="splash__course" href="portal.html">3 курс</a>
-                    <a class="splash__course" href="course-4.html">4 курс</a>
-                </nav>
+                <div class="splash__actions">
+                    <p class="splash__pick">Выберите курс</p>
+                    <nav class="splash__courses" aria-label="Выбор курса">
+                        <a class="splash__course" href="portal.html">
+                            <span class="splash__course-year">3 курс</span>
+                            <span class="splash__course-meta">Лабораторные, лекции, практика</span>
+                        </a>
+                        <a class="splash__course" href="course-4.html">
+                            <span class="splash__course-year">4 курс</span>
+                            <span class="splash__course-meta">Лекции, лабораторные, контроль</span>
+                        </a>
+                    </nav>
+                </div>
             </div>
         </div>
 
         <div class="splash__decor" aria-hidden="true">
-            <img class="splash__decor-logo" src="assets/images/college-logo.png" alt="" width="280" height="280">
+            <img class="splash__decor-logo" src="assets/images/college-logo.png" alt="" width="300" height="300">
         </div>
     </section>
     </main>
