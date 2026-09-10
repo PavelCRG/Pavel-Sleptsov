@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 3</title>
+    <script>
+        function swapTexts() {
+            var temp = document.getElementById("tp1").innerHTML;
+            document.getElementById("tp1").innerHTML = document.getElementById("tp2").innerHTML;
+            document.getElementById("tp2").innerHTML = temp;
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p id="tp1" onclick="swapTexts()" style="color:yellow; width: 8cm; cursor: pointer;">Первый text для обмена</p>
+    <p id="tp2" onclick="swapTexts()" style="color:orange; width: 8cm; cursor: pointer;">Второй text для обмена</p>
+</body>
+
+</html>

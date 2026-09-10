@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 6</title>
+    <script>
+        function func1() {
+            let top = document.getElementById("tp_top");
+            let bottom = document.getElementById("tp1");
+            bottom.value = top.value;
+            top.value = "";
+        }
+        function func2() { }
+        function func3() { }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color:yellow">Пример использования формы с кнопками</p>
+    <form>
+        <input id="tp_top" type="text" size="32" placeholder="Введите текст сюда"><br>
+        <input id="tp1" type="text" size="32"><br>
+        <input type="button" value="Первая" onclick="func1()" style="background-color: pink;">
+        <input type="button" value="Вторая" onclick="func2()" style="background-color: lightblue;">
+        <input type="button" value="Третья" onclick="func3()" style="background-color: lightgreen;">
+    </form>
+</body>
+
+</html>

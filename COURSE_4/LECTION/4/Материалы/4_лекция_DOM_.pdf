@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Пример 18</title>
+    <script>
+       
+        function func1() {
+            document.body.style.backgroundColor = "red";
+        };
+
+
+        function func2() {
+            document.body.style.backgroundColor = "white";
+        };
+
+        
+        function func3() {
+            document.body.style.backgroundColor = "green";
+        };
+    </script>
+
+</head>
+
+<body style="background-color: green;">
+    <p style="color:yellow;">
+        Пример использования формы с кнопками (Пример 18)
+    </p>
+    <form>
+        <input type="button" value="Первая (Красный)" onclick="func1()">
+        <input type="button" value="Вторая (Белый)" onclick="func2()">
+        <input type="button" value="Третья (Зеленый)" onclick="func3()">
+    </form>
+</body>
+
+</html>

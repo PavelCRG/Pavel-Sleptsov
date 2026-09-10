@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 20</title>
+    <script>
+        function func1() {
+            document.getElementById("tp1").style.backgroundColor = "pink";
+            document.getElementById("tp1").value = "Вы нажали первую кнопку";
+        }
+        function func2() {
+            document.getElementById("tp1").style.backgroundColor = "lightblue";
+            document.getElementById("tp1").value = "Вы нажали вторую кнопку";
+        }
+        function func3() {
+            document.getElementById("tp1").style.backgroundColor = "lightgreen";
+            document.getElementById("tp1").value = "Вы нажали третью кнопку";
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color:yellow">Пример использования формы с кнопками</p>
+    <form>
+        <input id="tp1" type="text" size="32" value=""><br>
+        <input type="button" value="Первая" onclick="func1()" style="background-color: pink;">
+        <input type="button" value="Вторая" onclick="func2()" style="background-color: lightblue;">
+        <input type="button" value="Третья" onclick="func3()" style="background-color: lightgreen;">
+    </form>
+</body>
+
+</html>

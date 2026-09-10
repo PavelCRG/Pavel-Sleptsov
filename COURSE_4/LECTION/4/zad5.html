@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5</title>
+    <script>
+        let mode = 0;
+
+        document.onmousemove = function(event) {
+            let field = document.getElementById("tp1");
+            if (mode === 1) {
+                field.value = "Экран: X=" + event.screenX + ", Y=" + event.screenY;
+            } else if (mode === 2) {
+                field.value = "Браузер: X=" + event.clientX + ", Y=" + event.clientY;
+            }
+        };
+
+        function func1() { mode = 1; }
+        function func2() { mode = 2; }
+        function func3() { 
+            mode = 0; 
+            document.getElementById("tp1").value = ""; 
+        }
+    </script>
+</head>
+<body style="background-color: green;">
+    <p style="color:yellow">Пример использования формы с кнопками</p>
+    <form>
+        <input id="tp1" type="text" size="32" style="text-align: center;"><br>
+        <input type="button" value="Первая" onclick="func1()" style="background-color: pink;">
+        <input type="button" value="Вторая" onclick="func2()" style="background-color: lightblue;">
+        <input type="button" value="Третья" onclick="func3()" style="background-color: lightgreen;">
+    </form>
+</body>
+</html>
