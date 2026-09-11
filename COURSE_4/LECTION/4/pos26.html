@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 26</title>
+    <script>
+        var ob;
+        function fover(e) {
+            e = e || event;
+            ob = e.target || e.srcElement;
+            document.title = ob.tagName;
+        }
+    </script>
+</head>
+
+<body style="background: brown; padding: 20px; font-family: Arial; color: white;" onmouseover="fover(event)">
+
+    <p style="text-align: center;">Попробуйте поводить мышкой по разным элементам страницы и смотрите на её заголовок
+        (вкладку)!</p>
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="image/moon.png" style="height: 150px;" alt="Тестовая картинка">
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <form>
+            <input type="button" value="Тестовая кнопка" style="padding: 10px 20px;">
+        </form>
+    </div>
+
+</body>
+
+</html>

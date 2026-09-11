@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 6</title>
+    <script>
+        var n = 0; 
+        var NN = ["150px", "180px", "210px", "240px", "270px", "300px"]; 
+
+        function func2() {
+            if (n < 5) { // Блокировка на 5 шаге (максимум)
+                n++;
+                document.getElementById("rr1").style.height = NN[n];
+            }
+        }
+    </script>
+</head>
+<body style="background-color: blue; text-align: center;">
+    <img id="rr1" src="image/sun.png" style="height:150px" onclick="func2()">
+</body>
+</html>
