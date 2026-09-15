@@ -144,7 +144,7 @@
     font-weight: 500;
 }
 
-/* В панели просмотра */
+/* В панели просмотра — только текст описания, без оболочки сайта */
 .material-viewer__content .day-overview--embedded {
     max-width: 720px;
     margin: 0 auto;
@@ -158,4 +158,8 @@
 .material-viewer__content .day-overview--embedded .site-frame {
     margin-bottom: 12px;
     padding: 14px 16px;
+}
+
+.material-viewer__content .overview-back {
+    display: none;
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймеры</title>
+    <script type = 'text/javaScript'>
+        let ptime = setInterval("timer()", 1000);
+        function timer(){
+            ++document.all.time.innerText;
+        }
+        function stop(){
+            clearInterval(ptime);
+        }
+    </script>
+</head>
+<body>
+    <div id = "time">0</div>
+    <input type = "button" value = "Stop" onClick = "stop();">
+</body>
+</html>

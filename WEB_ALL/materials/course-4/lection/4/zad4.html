@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задания к Примеру 20</title>
+    <script>
+        // Задание 2: Использование одной функции с двумя аргументами (текст и цвет)
+        // Дополнительно передаем 'this' (саму нажатую кнопку) для Задания 4
+        function handleButtonClick(button, message, color) {
+            var inputField = document.getElementById("tp1");
+
+            // Изменяем фон и текст в поле
+            inputField.style.backgroundColor = color;
+            inputField.value = message;
+
+            // Задание 3: Изменение длины текстового поля под длину текста
+            inputField.size = message.length;
+
+            // Задание 4: Сброс названий у всех кнопок формы до исходных
+            var buttons = document.querySelectorAll('input[type="button"]');
+            buttons[0].value = "Первая";
+            buttons[1].value = "Вторая";
+            buttons[2].value = "Третья";
+
+            // Устанавливаем текущей кнопке название "Нажата"
+            button.value = "Нажата";
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color:yellow">Пример использования формы с кнопками</p>
+    <form>
+        <!-- Задание 1: Свойство text-align: center выравнивает надпись посередине -->
+        <input id="tp1" type="text" size="32" value="" style="text-align: center;"><br>
+
+        <!-- Кнопки с передачей параметров в одну общую функцию -->
+        <input type="button" value="Первая" onclick="handleButtonClick(this, 'Вы нажали первую кнопку', 'pink')"
+            style="background-color: pink;">
+        <input type="button" value="Вторая" onclick="handleButtonClick(this, 'Вы нажали вторую кнопку', 'lightblue')"
+            style="background-color: lightblue;">
+        <input type="button" value="Третья" onclick="handleButtonClick(this, 'Вы нажали третью кнопку', 'lightgreen')"
+            style="background-color: lightgreen;">
+    </form>
+</body>
+
+</html>

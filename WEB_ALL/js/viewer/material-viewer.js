@@ -533,6 +533,15 @@
             wrap.className += " " + doc.body.className;
         }
 
+        var bgColor = doc.body.getAttribute("bgcolor") || doc.body.getAttribute("bgColor");
+        if (bgColor) {
+            wrap.style.backgroundColor = bgColor;
+        }
+        var textColor = doc.body.getAttribute("text") || doc.body.fgColor;
+        if (textColor && typeof textColor === "string") {
+            wrap.style.color = textColor;
+        }
+
         wrap.innerHTML = doc.body.innerHTML;
         fixRelativeUrls(wrap, documentBase);
         cleanupBrokenTargets(wrap);
@@ -628,7 +637,8 @@
             viewer.scrollIntoView({ behavior: "smooth", block: isMobile ? "start" : "nearest" });
         }
 
-        if (embedOriginalPage()) {
+        /* Примеры с JS — в iframe; описания занятий — как на 3 курсе: только article без оболочки сайта */
+        if (embedOriginalPage() && !isOverview) {
             showLoading(false);
             showOriginalPage(resolvedSrc, label || fileName(resolvedSrc));
             return;

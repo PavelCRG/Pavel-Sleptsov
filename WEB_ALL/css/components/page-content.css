@@ -97,6 +97,18 @@
     color: var(--text-muted);
 }
 
+.page-card:not(:has(span)) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 4.5rem;
+}
+
+.page-card:not(:has(span)) strong {
+    margin-bottom: 0;
+}
+
 .page-card--soon {
     cursor: default;
 }

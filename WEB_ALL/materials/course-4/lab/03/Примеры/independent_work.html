@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа</title>
+    <script type="text/javascript">
+        function checkAndAddLink() {
+            let infoText = document.getElementById('info');
+            let actionBtn = document.getElementById('btn');
+            
+            // Проверяем, есть ли уже атрибут title у элемента
+            if (!infoText.hasAttribute('title')) {
+                // Если нет, добавляем его универсальным методом setAttribute
+                infoText.setAttribute('title', 'Это подсказка, добавленная через JavaScript!');
+                // Меняем цвет текста через объект style
+                infoText.style.color = 'darkgreen';
+                // Меняем текст на кнопке через её атрибут value
+                actionBtn.setAttribute('value', 'Атрибут title добавлен успешно');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Задание для самостоятельной работы</h3>
+    <p id="info" style="cursor: pointer; font-size: 16px; transition: color 0.3s;">
+        Наведите на этот текст курсор (до нажатия кнопки всплывающей подсказки не будет).
+    </p>
+    <input type="button" id="btn" onclick="checkAndAddLink();" value="Проверить и добавить атрибут title">
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Щелкни по картинке</title>
+    <script>
+        var bcw, bch, doc;
+        
+        function init() {
+            bcw = document.body.clientWidth - 40;
+            bch = document.body.clientHeight - 40;
+            doc = document.getElementById('rr').style;
+        }
+        
+        function go(e){
+            e = e || event;
+            var xm = e.clientX;
+            var ym = e.clientY;
+            var xs = parseInt(doc.left) + 20;
+            var ys = parseInt(doc.top) + 20;
+            var sq = (xs - xm) * (xs - xm) + (ys - ym) * (ys - ym);
+            
+            if (sq < 2500) {
+                doc.left = Math.floor(bcw * Math.random()) + "px";
+                doc.top = Math.floor(bch * Math.random()) + "px";
+            }
+        }
+    </script>
+</head>
+
+
+<body style="background:brown;" onload="init();" onmousemove="go(event)" onresize="init()">
+    <p style="text-align: center; font-family: Arial; color:white">Попробуй щелкнуть по картинке</p>
+    <img id="rr" src="image/moon.png" style="height: 40px; position: absolute; top: 200px; left: 200px;">
+</body>
+
+</html>

@@ -3,16 +3,32 @@
 @media (max-width: 900px) {
     .lab-layout {
         grid-template-columns: 1fr;
+        height: auto;
         min-height: 0;
         border: none;
         border-radius: 0;
+        overflow: visible;
     }
 
     .lab-layout__catalog {
+        height: auto;
         max-height: none;
         border-right: none;
         border-bottom: 2px solid var(--border);
         padding: 14px 12px 18px;
+    }
+
+    .lab-layout__viewer {
+        height: auto;
+        min-height: 55vh;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .lab-layout__viewer .material-viewer,
+    .lab-layout__viewer .lab-viewer {
+        height: auto;
+        min-height: 55vh;
     }
 
     .page--catalog .page__lead {
@@ -43,6 +59,11 @@
 
     .material-viewer__content {
         padding: 12px 14px 18px;
+    }
+
+    .material-viewer__content.is-original,
+    .material-viewer__page {
+        min-height: 55vh;
     }
 }
 
@@ -96,7 +117,9 @@
     .material-viewer__frame-wrap,
     .lab-viewer__frame-wrap,
     .work-frame,
-    .work-frame__page {
+    .work-frame__page,
+    .material-viewer__content.is-original,
+    .material-viewer__page {
         min-height: 55vh;
     }
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Удаляющееся изображение</title>
+    <script>
+        var h = 200 //начальная высота 
+        // эффект уменьшения изображения 
+        var d = document
+        function succpict() {
+            if (h > 100) {
+                h = h - 10
+                d.images[0].height = h
+                setTimeout("succpict()", 500)
+            }
+        } 
+    </script>
+</head>
+
+<body>
+    <H4>При наведении курсора мыши на рисунок<br>
+        изображение начинает удаляться от зрителя </H4>
+    <img src="image/brest_zhazhda.jpg" onMouseOver="succpict()">
+</body>
+
+</html>

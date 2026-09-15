@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Смена изображений</title>
+    <script>
+        // Короткая форма создания массива с путями в папку image
+        const images = [
+            "image/pojaspersidski.jpg", "image/_1.jpg", "image/_2.jpg", "image/146_3.jpg",
+            "image/153_p.jpg", "image/160_p.jpg", "image/163_p.jpg", "image/154_p.jpg",
+            "image/159_p.jpg", "image/149_p.jpg", "image/146_4.jpg", "image/146_p_orn.jpg",
+            "image/pojasvasilek.jpg"
+        ];
+
+        let numimg = 0;
+
+        function demoslides() {
+            // Меняем картинку (используем первый рисунок на странице, как в лабе)
+            document.images[0].src = images[numimg];
+
+            // Сокращенная форма инкремента и сброса счетчика
+            numimg = (numimg + 1) % images.length;
+
+            // Корректный вызов таймера
+            setTimeout(demoslides, 1000);
+        } 
+    </script>
+</head>
+
+<body bgcolor="#FFFFFF">
+    <!-- Путь к стартовой картинке также изменен на паку image -->
+    <p><img src="image/155_p.jpg" width="420" height="500" alt="Слуцкий пояс"></p>
+
+    <!-- Кнопка исправлена: атрибут value находится строго внутри тега -->
+    <input type="button" value="Демонстрация слуцких поясов" onclick="demoslides()" />
+</body>
+
+</html>

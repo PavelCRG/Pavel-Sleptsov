@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2</title>
+    <script>
+        function func1(e) {
+            e = e || event;
+            document.title = "(" + e.screenX + "," + e.screenY + ")";
+        }
+    </script>
+</head>
+
+<body style="background-color: green; height: 100vh; margin: 0;" onmousedown="func1(event)">
+    <p style="color:yellow; padding: 20px;">Задание 1: Кликните мышкой в любом месте для вывода screenX и screenY</p>
+</body>
+
+</html>

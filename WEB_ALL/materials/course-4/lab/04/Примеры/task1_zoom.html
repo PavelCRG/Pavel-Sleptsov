@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Приближающееся изображение</title>
+    <script>
+        var h = 100; // Начальная (маленькая) высота 
+        var d = document;
+
+        function succpict() {
+            // Эффект увеличения изображения до максимальной высоты 200
+            if (h < 200) {
+                h = h + 10;
+                d.images[0].height = h;
+                setTimeout(succpict, 500); // Рекомендуется передавать имя функции без кавычек
+            }
+        } 
+    </script>
+</head>
+<body>
+    <h4>При наведении курсора мыши на рисунок<br>
+        изображение начинает приближаться к зрителю</h4>
+    
+    <img src="image/brest_zhazhda.jpg" height="100" onMouseOver="succpict()">
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Вариант 5 — Легкий код</title>
+    <script type="text/javascript">
+        var stop = 100;
+        var n; // Номер текущего кадра
+        var d = document;
+
+        // Предварительная загрузка ваших картинок из папки image
+        imgempty = new Image();
+        imgempty.src = "image/7_l.jpg"; // Пустой фон
+        imganim = new Image();
+        imganim.src = "image/P.jpg";    // Ваша картинка
+
+        // Функция движения
+        function anim5() {
+            var len = d.images.length;
+            if (n != stop) {
+                n = n + 1;
+
+                if (n > len) {
+                    n = 1; // Возврат в начало (в правый верхний угол)
+                    d.images[0].src = imganim.src;
+                    d.images[len - 1].src = imgempty.src;
+                } else {
+                    d.images[n - 2].src = imgempty.src; // Гасим прошлый кадр
+                    d.images[n - 1].src = imganim.src;   // Зажигаем текущий кадр
+                }
+                setTimeout("anim5()", 500);
+            }
+        }
+
+        // Сброс в начальную позицию (Правый верхний угол — это 1-я картинка)
+        function st() {
+            d.images[0].src = imganim.src;
+            for (var i = 1; i <= d.images.length - 1; i++) {
+                d.images[i].src = imgempty.src;
+            }
+        } 
+    </script>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+    <h4>Вариант 5: Движение сверху-справа вниз-влево</h4>
+    <hr>
+
+    <!-- Таблица-сетка, которая создает движение по диагонали -->
+    <table border="0" align="right">
+        <tr>
+            <td></td>
+            <td></td>
+            <td><img src="image/P.jpg"></td> <!-- Старт тут -->
+        </tr>
+        <tr>
+            <td></td>
+            <td><img src="image/7_l.jpg"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><img src="image/7_l.jpg"></td>
+            <td></td>
+            <td></td> <!-- Финиш тут -->
+        </tr>
+    </table>
+
+    <br style="clear:both;">
+    <hr>
+
+    <form name="form1">
+        <input type="button" value="Начало" onClick="n = stop; st()">
+        <input type="button" value="Запустить" onClick="n = 1; anim5()">
+    </form>
+
+</body>
+
+</html>

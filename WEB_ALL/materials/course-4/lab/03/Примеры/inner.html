@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с innerHTML</title>
+    <script type="text/javascript">
+        function readContent() {
+            let content = document.getElementById('info-block').innerHTML;
+            alert("Текущее содержимое:\n" + content.trim());
+        }
+
+        function changeContent() {
+            document.getElementById('info-block').innerHTML = "<strong>Новое содержимое!</strong> Данные успешно перезаписаны через innerHTML.";
+        }
+    </script>
+</head>
+<body>
+    <div id="info-block" style="padding: 15px; border: 1px solid #ccc; margin-bottom: 10px; width: 300px;">
+        Исходный текст внутри элемента.
+    </div>
+    <button onclick="readContent();">Прочитать содержимое</button>
+    <button onclick="changeContent();">Установить новое содержимое</button>
+</body>
+</html>

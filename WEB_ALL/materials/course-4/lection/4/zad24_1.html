@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1</title>
+</head>
+
+<body style="background-color: blue;">
+    <img id="rr1" src="image/sun.png" style="height:150px">
+
+    <!-- Сюда с помощью innerHTML будет выводиться текст -->
+    <p id="text1" style="color:yellow">Картинка 1</p>
+
+    <form>
+        <input type="button" value="Первая"
+            onclick="document.getElementById('rr1').src = 'image/sun.png'; document.getElementById('text1').innerHTML = 'Картинка 1';">
+        <input type="button" value="Вторая"
+            onclick="document.getElementById('rr1').src = 'image/moon.png'; document.getElementById('text1').innerHTML = 'Картинка 2';">
+    </form>
+</body>
+
+</html>

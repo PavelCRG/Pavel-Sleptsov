@@ -6,7 +6,9 @@
     flex-direction: column;
     min-width: 0;
     min-height: 360px;
+    height: 100%;
     padding: 16px 18px 18px;
+    box-sizing: border-box;
 }
 
 .material-viewer__bar,
@@ -121,6 +123,12 @@
     overflow: auto;
 }
 
+.material-viewer__panel:has(.material-viewer__content.is-original) {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 .material-viewer__content {
     display: none;
     padding: 16px 18px 24px;
@@ -137,12 +145,15 @@
     height: 100%;
     min-height: min(60vh, 560px);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .material-viewer__page {
     display: block;
     width: 100%;
-    height: min(70vh, 720px);
+    flex: 1 1 auto;
+    height: 100%;
     min-height: min(60vh, 560px);
     border: 0;
     background: #fff;
@@ -177,8 +188,8 @@
     max-width: 100%;
     overflow-x: auto;
     box-sizing: border-box;
-    color: revert;
-    background-color: transparent;
+    color: initial;
+    background-color: #fff;
 }
 
 .material-viewer__content .material-viewer__injected a,

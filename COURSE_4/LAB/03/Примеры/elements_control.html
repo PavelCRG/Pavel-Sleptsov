@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление свойствами элемента</title>
+    <script type="text/javascript">
+        function resizeElement() {
+            let box = document.getElementById('b');
+            box.style.width = "150px";
+            box.style.height = "150px";
+            box.style.fontSize = "20px";
+        }
+
+        function resetElement() {
+            let box = document.getElementById('b');
+            box.style.width = "100px";
+            box.style.height = "100px";
+            box.style.fontSize = "14px";
+        }
+    </script>
+</head>
+<body>
+    <div id="b" 
+         style="background: red; width: 100px; height: 100px; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: all 0.2s; margin-bottom: 15px;" 
+         onmouseover="this.style.backgroundColor='blue'" 
+         onmouseout="this.style.backgroundColor='red'">
+        Блок
+    </div>
+    <button onclick="resizeElement();">Увеличить размер и шрифт</button>
+    <button onclick="resetElement();">Сбросить</button>
+</body>
+</html>

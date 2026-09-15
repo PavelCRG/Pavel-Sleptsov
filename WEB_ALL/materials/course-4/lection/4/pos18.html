@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 17</title>
+    <script>
+       
+        function func1() {
+            alert(document.body.style.backgroundColor);
+        };
+
+        function func2() { alert('Вы нажали вторую кнопку') };
+        function func3() { alert('Вы нажали третью кнопку') };
+    </script>
+
+</head>
+
+
+
+<body style="background-color: green;">
+    <p style="color:yellow">Пример использования формы с кнопками (Пример 17)</p>
+    <form>
+        <input type="button" value="Первая" onclick="func1()">
+        <input type="button" value="Вторая" onclick="func2()">
+        <input type="button" value="Третья" onclick="func3()">
+    </form>
+</body>
+
+</html>

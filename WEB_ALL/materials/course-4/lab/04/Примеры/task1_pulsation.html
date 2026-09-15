@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пульсирующее изображение</title>
+    <script>
+        var h = 100;      // Начальная высота
+        var maxH = 200;   // Максимальный размер
+        var minH = 100;   // Минимальный размер
+        var step = 10;    // Шаг изменения размера
+        var d = document;
+
+        function pulse() {
+            h = h + step;
+            d.images[0].height = h;
+
+            // Если достигли верхней или нижней границы, меняем знак шага
+            if (h >= maxH || h <= minH) {
+                step = -step;
+            }
+
+            // Повторяем каждые 150 миллисекунд для плавной пульсации
+            setTimeout(pulse, 150);
+        } 
+    </script>
+</head>
+<!-- Запуск анимации сразу при загрузке страницы -->
+<body onLoad="pulse()">
+    <h4>Эффект пульсирующего изображения</h4>
+    <img src="image/serde4ko.gif" height="100">
+</body>
+</html>

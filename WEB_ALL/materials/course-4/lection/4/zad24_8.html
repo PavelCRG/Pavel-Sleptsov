@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 8</title>
+    <script>
+        var n = 0; 
+        var NN = ["150px", "180px", "210px", "240px", "270px", "300px"]; 
+
+        function sizeUp() {
+            if (n < 5) {
+                n++;
+                document.getElementById("rr1").style.height = NN[n];
+            }
+        }
+
+        function sizeDown() {
+            if (n > 0) {
+                n--;
+                document.getElementById("rr1").style.height = NN[n];
+            }
+        }
+    </script>
+</head>
+<body style="background-color: blue; text-align: center;">
+    <img id="rr1" src="image/sun.png" style="height:150px;"><br><br>
+    <input type="button" value="Меньше" onclick="sizeDown()">
+    <input type="button" value="Больше" onclick="sizeUp()">
+</body>
+</html>

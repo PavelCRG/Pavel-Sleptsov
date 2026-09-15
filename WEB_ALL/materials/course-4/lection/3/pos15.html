@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 14</title>
+    <script>
+        function func1(e) {
+            e = e || event;
+            document.title = e.type;
+        }
+    </script>
+</head>
+
+<body style="background-color: green;" onmousedown="func1(event)" onkeypress="func1(event)">
+    <p style="color:yellow">Пример использования формы с кнопками (Пример 14)</p>
+    <form>
+        <input type="button" value="Первая" onclick="func1(event)">
+        <input type="button" value="Вторая" onmouseover="func1(event)">
+        <input type="button" value="Третья" onclick="func1(event)">
+    </form>
+</body>
+</html>

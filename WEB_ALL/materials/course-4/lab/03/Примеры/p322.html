@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Объект style</title>
+    <script type="text/javascript">
+        function displ() {
+            let md = document.getElementById('md');
+            let al = document.getElementById('al');
+            
+            if (md.style.display === "none" || md.style.display === "") {
+                md.style.display = "block";
+                al.style.paddingLeft = "130px";
+            } else {
+                md.style.display = "none";
+                al.style.paddingLeft = "0px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="#" id="al" onclick="displ();" style="transition: padding 0.2s; display: inline-block;">test</a>
+    <div id="md" style="display: none; margin-top: 10px;">
+        <img src="image/5-2.jpg" alt="Изображение" onclick="displ();" style="cursor: pointer; max-width: 150px;">
+    </div>
+</body>
+</html>

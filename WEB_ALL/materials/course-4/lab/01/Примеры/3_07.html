@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language = 'javascript' type = 'text/javascript'>
+        function Win() {
+            let wind = prompt('Введите адрес документа для открытия', '3_05.html');
+            let myWin = open(wind, "", "resizeable=no, location=yes");
+            if(confirm('Желаете переместить фокус на новое окно?'))myWin.focus();
+            else myWin.blur();
+        }
+        function Res() {
+            let x = prompt('Введите размер в пикселях для измерения ширины окна \n (знак минус уменьшит окно)', '200');
+            let y = prompt('Введите размер в пикселях для измерения ширины окна \n (знак минус уменьшит окно)', '-100');
+            window.resizeBy(x, y);
+        }
+    </script>
+</head>
+<body>
+    Если желаете открыть другой документ в новом окне, нажмите на кнопку "Открыть"
+    <input type = 'button' value = 'Открыть' onClick = 'Win();'>
+    <br><br>
+    Если желаете изменить размеры текущего окна, нажмите на кнопку "Изменить"
+    <input type = 'button' value = 'Изменить' onClick = "Res();">
+</body>
+</html>

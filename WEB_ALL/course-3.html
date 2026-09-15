@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 курс — Программные средства создания интернет-приложений</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="site-app">
+    <div class="site-grid">
+        <header class="site-header">
+            <a class="site-header__logo site-header__logo--personal" href="course-3.html" title="На главную">
+                <img src="assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
+            </a>
+            <h1 class="site-header__title">
+                <span class="site-header__title-top">3 курс</span>
+                <span class="site-header__title-sub">Программные средства создания интернет-приложений</span>
+            </h1>
+            <span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
+                <img src="assets/images/college-logo.png" alt="Логотип колледжа">
+            </span>
+        </header>
+        <div class="nav-backdrop"></div>
+        <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+            <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path class="nav-toggle__path nav-toggle__path--1" d="M4 7h16" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--2" d="M4 12h16" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" fill="none"></path>
+                <path class="nav-toggle__path nav-toggle__path--3" d="M4 17h16" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" fill="none"></path>
+            </svg>
+        </button>
+
+        <nav class="site-sidebar" aria-label="Меню">
+            <h2>Разделы</h2>
+            <ul class="site-nav">
+                <li><a href="course-3.html" class="is-active">Главная</a></li>
+                <li><a href="pages/lab.html">Лабораторные</a></li>
+                <li><a href="pages/lection.html">Лекции</a></li>
+                <li><a href="pages/control.html">Контроль</a></li>
+                <li><a href="pages/practice.html">Практика</a></li>
+                <li><a href="pages/web-practice.html">WEB-практика</a></li>
+                <li><a href="pages/about.html">Обо мне</a></li>
+                <li><a href="index.html">Курсы</a></li>
+            </ul>
+        </nav>
+
+        <main class="site-main page page--home">
+            <h1>3 курс</h1>
+            <p class="page__lead">
+                Лабораторные, лекции и практика по HTML, CSS и JavaScript.
+            </p>
+
+            <div class="page-cards">
+                <a class="page-card" href="pages/lab.html">
+                    <strong>Лабораторные</strong>
+                    <span>HTML, CSS, JavaScript — выполненные работы</span>
+                </a>
+                <a class="page-card" href="pages/lection.html">
+                    <strong>Лекции</strong>
+                    <span>HTML, CSS, JavaScript — материалы и примеры</span>
+                </a>
+                <a class="page-card" href="pages/control.html">
+                    <strong>Контроль</strong>
+                    <span>HTML, CSS — ОКР и контрольные</span>
+                </a>
+                <a class="page-card" href="pages/practice.html">
+                    <strong>Практика</strong>
+                    <span>HTML, CSS — практические работы</span>
+                </a>
+                <a class="page-card" href="pages/web-practice.html">
+                    <strong>WEB-практика</strong>
+                    <span>HTML, CSS, JavaScript — портал по дням</span>
+                </a>
+                <a class="page-card" href="pages/about.html">
+                    <strong>Обо мне</strong>
+                    <span>Автор и контакты</span>
+                </a>
+            </div>
+        </main>
+
+        <aside class="site-aside" aria-label="Реклама">
+            <p class="site-aside__title">Реклама</p>
+            <a class="ad-card" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="assets/images/github.svg" alt="GitHub" width="56" height="56">
+                    <strong class="ad-card__brand">GitHub</strong>
+                </div>
+                <p class="ad-card__text">Профиль разработчика. Здесь есть задания по курсу, а также другие репозитории и проекты автора.</p>
+                <span class="ad-card__url">github.com/PavelCRG</span>
+            </a>
+            <a class="ad-card" href="https://voxivaai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="assets/images/voxiva-logo.svg" alt="Voxiva" width="56" height="56">
+                    <strong class="ad-card__brand">Voxiva</strong>
+                </div>
+                <p class="ad-card__text">Личный проект автора. Voxiva Space — рабочее место с живыми терминалами и агентами. Voxiva Voice — диктовка в любое текстовое поле.</p>
+                <span class="ad-card__url">voxivaai.vercel.app</span>
+            </a>
+        </aside>
+
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал
+                    БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
+    </div>
+    <script src="js/nav/mobile-nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4</title>
+    <script>
+        var n = 0; // Текущий индекс картинки (0, 1 или 2)
+        var pics = ["image/pic1.png", "image/pic2.png", "image/pic3.png"];
+
+        function nextPic() {
+            if (n < 2) { // Если не дошли до конца
+                n++;
+                document.getElementById("rr1").src = pics[n];
+            }
+        }
+
+        function prevPic() {
+            if (n > 0) { // Если не в самом начале
+                n--;
+                document.getElementById("rr1").src = pics[n];
+            }
+        }
+    </script>
+</head>
+<body style="background-color: blue; text-align: center;">
+    <img id="rr1" src="image/pic1.png" style="height:150px;"><br><br>
+    <input type="button" value="Назад" onclick="prevPic()">
+    <input type="button" value="Вперед" onclick="nextPic()">
+</body>
+</html>

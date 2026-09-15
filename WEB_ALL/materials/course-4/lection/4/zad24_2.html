@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2</title>
+    <script>
+        var n = 0;
+        var pic = ["image/sun.png", "image/moon.png"];
+        // Массив с текстом подписей
+        var texts = ["Картинка 1", "Картинка 2"];
+
+        function func2() {
+            n = (n + 1) % 2;
+            document.getElementById("rr1").src = pic[n];
+            document.getElementById("text1").innerHTML = texts[n]; // Меняем текст
+        }
+    </script>
+</head>
+<body style="background-color: blue;">
+    <img id="rr1" src="image/sun.png" style="height:150px" onclick="func2()">
+    <p id="text1" style="color:yellow">Картинка 1</p>
+</body>
+</html>
