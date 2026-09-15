@@ -1,34 +1,9 @@
 /* Каталог и просмотрщик — планшет и телефон */
 
 @media (max-width: 900px) {
-    .lab-layout {
-        grid-template-columns: 1fr;
-        height: auto;
-        min-height: 0;
-        border: none;
-        border-radius: 0;
-        overflow: visible;
-    }
-
-    .lab-layout__catalog {
-        height: auto;
-        max-height: none;
-        border-right: none;
-        border-bottom: 2px solid var(--border);
-        padding: 14px 12px 18px;
-    }
-
-    .lab-layout__viewer {
-        height: auto;
-        min-height: 55vh;
-        max-height: none;
-        overflow: visible;
-    }
-
-    .lab-layout__viewer .material-viewer,
-    .lab-layout__viewer .lab-viewer {
-        height: auto;
-        min-height: 55vh;
+    .page--catalog > h1 {
+        margin-bottom: 6px;
+        font-size: 1.35rem;
     }
 
     .page--catalog .page__lead {
@@ -36,13 +11,82 @@
         margin-bottom: 12px;
     }
 
+    .lab-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+    }
+
+    /* Список работ: на телефоне сначала только каталог */
+    .lab-layout:not(.lab-layout--viewing) .lab-layout__viewer {
+        display: none;
+    }
+
+    .lab-layout__catalog {
+        height: auto;
+        max-height: none;
+        border-right: none;
+        border-bottom: none;
+        padding: 12px 10px 14px;
+    }
+
+    .lab-layout__viewer {
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    /* Режим просмотра: только работа на весь экран */
+    .lab-layout--viewing {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100dvh - 160px);
+        height: auto;
+        border-radius: var(--radius);
+    }
+
+    .lab-layout--viewing .lab-layout__catalog {
+        display: none;
+    }
+
+    .lab-layout--viewing .lab-layout__viewer {
+        display: flex;
+        flex: 1;
+        min-height: calc(100dvh - 170px);
+    }
+
+    .lab-layout__viewer .material-viewer,
+    .lab-layout__viewer .lab-viewer {
+        height: auto;
+        min-height: 0;
+        flex: 1;
+    }
+
+    .lab-layout--viewing .material-viewer,
+    .lab-layout--viewing .lab-viewer {
+        min-height: calc(100dvh - 170px);
+        padding: 10px 10px 14px;
+    }
+
     .lab-catalog {
-        gap: 10px;
+        gap: 8px;
+    }
+
+    .lab-catalog__head {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    .lab-catalog__title {
+        font-size: 0.9rem;
     }
 
     .material-viewer,
     .lab-viewer {
-        padding: 14px 12px 18px;
+        padding: 12px 10px 14px;
     }
 
     .material-viewer__panel,
@@ -53,8 +97,15 @@
         min-height: 50vh;
     }
 
+    .lab-layout--viewing .material-viewer__panel,
+    .lab-layout--viewing .material-viewer__content.is-original,
+    .lab-layout--viewing .material-viewer__page {
+        flex: 1;
+        min-height: calc(100dvh - 230px);
+    }
+
     .material-viewer__panel:not(:has(.material-viewer__content.is-active)) {
-        min-height: 140px;
+        min-height: 120px;
     }
 
     .material-viewer__content {
@@ -65,39 +116,98 @@
     .material-viewer__page {
         min-height: 55vh;
     }
+
+    body.catalog-mobile-viewing .site-aside {
+        display: none;
+    }
+
+    body.catalog-mobile-viewing .site-main {
+        padding-bottom: 16px;
+    }
+
+    body.catalog-mobile-viewing .page--catalog > h1,
+    body.catalog-mobile-viewing .page--catalog > .page__lead {
+        display: none;
+    }
 }
 
 @media (max-width: 560px) {
+    .page--catalog > h1 {
+        font-size: 1.2rem;
+    }
+
+    .lab-layout {
+        border-radius: 10px;
+    }
+
     .lab-layout__catalog {
-        padding: 12px 10px 16px;
+        padding: 10px 8px 12px;
     }
 
     .lab-group > summary {
-        padding: 13px 12px;
+        padding: 12px 12px;
         gap: 8px;
-        font-size: 0.88rem;
+        font-size: 0.86rem;
+        min-height: 48px;
+    }
+
+    .lab-group__num {
+        min-width: 2em;
+        padding: 5px 7px;
+        font-size: 0.7rem;
     }
 
     .lab-group__body {
-        padding: 10px 12px 12px;
+        padding: 8px 10px 10px;
     }
 
     .lab-section {
-        padding: 9px 0;
+        padding: 8px 0;
+        gap: 5px;
     }
 
     .lab-section__title {
-        font-size: 0.66rem;
+        font-size: 0.64rem;
+        letter-spacing: 0.06em;
+    }
+
+    .lab-files {
+        gap: 6px;
     }
 
     .lab-files a {
-        padding: 10px 12px;
-        font-size: 0.8rem;
+        padding: 11px 12px;
+        font-size: 0.82rem;
+        border-radius: 10px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
 
     .material-viewer,
     .lab-viewer {
-        padding: 12px 10px 16px;
+        padding: 10px 8px 12px;
+        min-height: 0;
+    }
+
+    .lab-layout--viewing .material-viewer,
+    .lab-layout--viewing .lab-viewer {
+        min-height: calc(100dvh - 150px);
+        padding: 8px 8px 12px;
+    }
+
+    .lab-layout--viewing {
+        min-height: calc(100dvh - 140px);
+    }
+
+    .lab-layout--viewing .lab-layout__viewer {
+        min-height: calc(100dvh - 150px);
+    }
+
+    .lab-layout--viewing .material-viewer__panel,
+    .lab-layout--viewing .material-viewer__content.is-original,
+    .lab-layout--viewing .material-viewer__page {
+        min-height: calc(100dvh - 210px);
     }
 
     .material-viewer__bar,
@@ -105,12 +215,28 @@
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+    }
+
+    .material-viewer__back-catalog {
+        margin-bottom: 2px;
+        padding: 11px 14px;
+        font-size: 0.84rem;
+        border-radius: 10px;
+    }
+
+    .material-viewer__title {
+        font-size: 0.84rem;
+        text-align: center;
     }
 
     .material-viewer__open {
         width: 100%;
         text-align: center;
         box-sizing: border-box;
+        padding: 10px 14px;
+        border-radius: 10px;
     }
 
     .material-viewer__panel,
@@ -121,10 +247,12 @@
     .material-viewer__content.is-original,
     .material-viewer__page {
         min-height: 55vh;
+        border-radius: 10px;
     }
 
     .material-viewer__placeholder {
-        padding: 32px 16px;
-        font-size: 0.88rem;
+        padding: 28px 14px;
+        font-size: 0.86rem;
+        min-height: 120px;
     }
 }

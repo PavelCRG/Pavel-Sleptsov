@@ -27,6 +27,7 @@
     var currentActiveLink = null;
     var mediaObserver = null;
     var catalogEl = document.querySelector(".lab-layout__catalog");
+    var layoutEl = document.querySelector(".lab-layout");
     var mobileMq = window.matchMedia("(max-width: 900px)");
     var backBtn = null;
 
@@ -255,23 +256,41 @@
         return document.querySelector(".lab-catalog .lab-group[open]");
     }
 
+    function setMobileViewing(on) {
+        if (!layoutEl) {
+            return;
+        }
+        var viewing = !!on && mobileMq.matches;
+        layoutEl.classList.toggle("lab-layout--viewing", viewing);
+        document.body.classList.toggle("catalog-mobile-viewing", viewing);
+        updateBackButton();
+        if (viewing && layoutEl.scrollIntoView) {
+            window.setTimeout(function () {
+                layoutEl.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 40);
+        }
+    }
+
     function updateBackButton() {
         if (!backBtn) {
             return;
         }
+        var viewing = layoutEl && layoutEl.classList.contains("lab-layout--viewing");
         var hasContent = contentEl && contentEl.classList.contains("is-active");
         var group = getOpenLabGroup();
-        var show = mobileMq.matches && hasContent && !!group;
+        var show = mobileMq.matches && viewing && hasContent;
         backBtn.hidden = !show;
         if (show) {
-            var nameEl = group.querySelector(".lab-group__name");
+            var nameEl = group && group.querySelector(".lab-group__name");
             backBtn.textContent = nameEl
-                ? "↑ " + nameEl.textContent.trim()
-                : "↑ К условию";
+                ? "← " + nameEl.textContent.trim()
+                : "← К списку";
         }
     }
 
     function scrollToCatalogGroup() {
+        setMobileViewing(false);
+
         var group = getOpenLabGroup();
         if (!group || !catalogEl) {
             return;
@@ -281,23 +300,16 @@
             group.open = true;
         }
 
-        var header = document.querySelector(".site-header");
-        var headerH = header ? header.offsetHeight : 0;
-        var catalogTop = catalogEl.getBoundingClientRect().top + window.scrollY - headerH - 10;
-
-        window.scrollTo({ top: Math.max(0, catalogTop), behavior: "smooth" });
-
         window.setTimeout(function () {
-            var groupTop = group.offsetTop - catalogEl.offsetTop;
-            catalogEl.scrollTo({
-                top: Math.max(0, groupTop - 8),
-                behavior: "smooth"
-            });
+            var header = document.querySelector(".site-header");
+            var headerH = header ? header.offsetHeight : 0;
+            var top = group.getBoundingClientRect().top + window.scrollY - headerH - 12;
+            window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
             group.classList.add("lab-group--flash");
             window.setTimeout(function () {
                 group.classList.remove("lab-group--flash");
             }, 1400);
-        }, 380);
+        }, 60);
     }
 
     function openParentDetails(el) {
@@ -631,11 +643,7 @@
             openParentDetails(activeLink);
         }
         updateHash(resolvedSrc);
-
-        if (viewer && viewer.scrollIntoView) {
-            var isMobile = window.matchMedia("(max-width: 900px)").matches;
-            viewer.scrollIntoView({ behavior: "smooth", block: isMobile ? "start" : "nearest" });
-        }
+        setMobileViewing(true);
 
         /* Примеры с JS — в iframe; описания занятий — как на 3 курсе: только article без оболочки сайта */
         if (embedOriginalPage() && !isOverview) {
@@ -818,9 +826,17 @@
         backBtn.type = "button";
         backBtn.className = "material-viewer__back-catalog";
         backBtn.hidden = true;
-        backBtn.setAttribute("aria-label", "Вернуться к условию в списке");
+        backBtn.setAttribute("aria-label", "Вернуться к списку");
         backBtn.addEventListener("click", scrollToCatalogGroup);
         barEl.insertBefore(backBtn, barEl.firstChild);
-        mobileMq.addEventListener("change", updateBackButton);
+        mobileMq.addEventListener("change", function () {
+            if (!mobileMq.matches) {
+                setMobileViewing(false);
+            } else if (contentEl && contentEl.classList.contains("is-active")) {
+                setMobileViewing(true);
+            } else {
+                updateBackButton();
+            }
+        });
     }
 })();
