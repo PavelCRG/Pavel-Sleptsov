@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Замена элемента</title>
+</head>
+<body>
+    <div id="article">
+        <p>Home Page</p>
+        <p>Text 1</p>
+        <p>Text 2</p>
+    </div>
+    <script>
+        const article = document.getElementById("article");
+        const oldNode = article.firstElementChild;
+        const newNode = document.createElement("h2");
+        newNode.textContent="Hello World";
+        article.removeChild(newNode, oldNode);
+    </script>
+</body>
+</html>

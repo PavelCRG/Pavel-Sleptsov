@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Самостоятельная работа</title>
+</head>
+<body>
+
+    <div id="article">
+        <div>Элемент 1</div>
+        <div>Элемент 2</div>
+        <div>Элемент 3</div>
+        <div>Элемент 4</div>
+        <div>Элемент 5</div>
+        <div>Элемент 6</div>
+        <div>Элемент 7</div>
+        <div>Элемент 8</div>
+        <div>Элемент 9</div>
+        <div>Элемент 10</div>
+        <div>Элемент 11</div>
+        <div>Элемент 12</div>
+        <div>Элемент 13</div>
+        <div>Элемент 14</div>
+        <div>Элемент 15</div>
+    </div>
+
+    <script>
+        
+        const article = document.getElementById("article");
+
+        
+        const targetNumber = 5; 
+
+       
+        let oldNode = article.firstElementChild;
+        
+      
+        let count = 1;
+        while (oldNode && count < targetNumber) {
+            oldNode = oldNode.nextSibling;
+           
+            if (oldNode && oldNode.nodeType === 1) {
+                count++;
+            }
+        }
+
+       
+        if (oldNode) {
+            
+            let nextNode = oldNode.nextSibling;
+            while (nextNode && nextNode.nodeType !== 1) {
+                nextNode = nextNode.nextSibling;
+            }
+
+            
+            article.removeChild(oldNode);
+
+            
+            const pNode = document.createElement("p");
+            pNode.textContent = "Слепцов Павел";
+
+            
+            if (nextNode) {
+                article.insertBefore(pNode, nextNode);
+            } else {
+                article.appendChild(pNode);
+            }
+
+            
+            const h3Node = document.createElement("h3");
+            h3Node.textContent = "Павел Слепцов";
+
+            
+            article.replaceChild(h3Node, pNode);
+
+            
+            const clonedNode = h3Node.cloneNode(true);
+            article.insertBefore(clonedNode, article.firstElementChild);
+        }
+    </script>
+</body>
+</html>

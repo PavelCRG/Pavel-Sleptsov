@@ -71,6 +71,29 @@
     color: var(--accent-dark);
 }
 
+.ad-card__sub {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.ad-card--text .ad-card__head {
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.ad-card--text .ad-card__brand {
+    font-size: 1.15rem;
+}
+
+.ad-card--text .ad-card__text {
+    margin-bottom: 0;
+}
+
 .ad-card__text {
     margin: 0 0 10px;
     font-size: 0.82rem;

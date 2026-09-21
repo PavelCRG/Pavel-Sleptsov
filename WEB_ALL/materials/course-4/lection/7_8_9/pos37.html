@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 37</title>
+    <script>
+        function func1() {
+            var data = new Date();
+            
+            document.getElementById("tp1").value = data;
+        }
+        function func2() {
+            
+            document.getElementById("tp1").value = "";
+        }
+        function func3() {
+            var data = new Date();
+            
+            var tn = document.getElementById("tp1").value;
+            
+            tn = parseInt(tn);
+            
+            data.setTime(data.getTime() + tn * 1000 * 60 * 60 * 24);
+            
+            document.getElementById("tp1").value = data;
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color:yellow">Пример использования формы с кнопками (Работа с датами)</p>
+    <form>
+        <input id="tp1" type="text" size="80" value=""><br>
+        <input type="button" value="Первая" onclick="func1()" style="background-color: pink;">
+        <input type="button" value="Вторая" onclick="func2()" style="background-color: lightblue;">
+        <input type="button" value="Третья" onclick="func3()" style="background-color: lightgreen;">
+    </form>
+</body>
+
+</html>

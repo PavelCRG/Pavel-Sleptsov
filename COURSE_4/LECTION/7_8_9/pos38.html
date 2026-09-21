@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 38</title>
+    <script>
+        function func1() {
+
+            var text = document.getElementById("pp1").value;
+            var date = text.split(" ")[0];
+            var mon = text.split(" ")[1] - 1;
+            var year = text.split(" ")[2];
+            var dat1 = new Date(year, mon, date);
+            document.getElementById("pp1").value = dat1.toDateString();
+            text = document.getElementById("pp2").value;
+            date = text.split(" ")[0];
+            mon = text.split(" ")[1] - 1;
+            year = text.split(" ")[2];
+            var dat2 = new Date(year, mon, date);
+            document.getElementById("pp2").value = dat2.toDateString();
+            var nn = Math.abs(dat1.getTime() - dat2.getTime());
+            nn = Math.floor(nn / (1000 * 60 * 60 * 24));
+            document.getElementById("pp3").value = nn;
+
+
+        }
+        function func2() {
+            document.getElementById("pp1").value = " ";
+            document.getElementById("pp2").value = " ";
+            document.getElementById("pp3").value = " ";
+        }
+
+    </script>
+</head>
+
+<body style="background-color: green">
+    <p style="color:yellow"> Пример использования формы с кнопками</p>
+    <form>
+        <input id="pp1" type="text" size=80 value="">
+        <br>
+        <input id="pp2" type="text" size=80 value="">
+        <br>
+        <input id="pp3" type="text" size=80 value="">
+        <br>
+        <input type="button" value="Вычислить" onclick="func1()" style="background-color: pink;">
+        <input type="button" value="Очистить" onclick="func2()" style="background-color: lightblue">
+    </form>
+
+</body>
+
+</html>

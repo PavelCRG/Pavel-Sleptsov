@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление элемента (insertBefore)</title>
+</head>
+<body>
+    <p>Text 1</p>
+    <p>Text 2</p>
+    <script>
+        const header = document.createElement("h1");
+        header.textContent = "Page Header";
+        const firstP = document.body.firstElementChild;
+        document.body.insertBefore(header,firstP);
+    </script>
+</body>
+</html>

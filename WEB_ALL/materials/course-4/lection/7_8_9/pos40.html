@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Пример 40</title>
+  </head>
+
+  <body style="background-color: green" onload="setInterval('clock()', 500)">
+    <script>
+      for (i = 1; i < 13; i++) {
+        document.write(
+          '<div id="digs' +
+            i +
+            '" style="position:absolute; width:19px; font-family:Arial Black; font-size:14px; color:blue; text-align:center;">' +
+            i +
+            "</div>",
+        );
+      }
+
+      for (i = 1; i < 36; i++) {
+        document.write(
+          '<img id="hrs' +
+            i +
+            '" src="image/darkblue.png" style="position: absolute; width: 3px; height: 3px;">',
+        );
+      }
+
+      for (i = 1; i < 61; i++) {
+        document.write(
+          '<img id="mins' +
+            i +
+            '" src="image/darkblue.png" style="position: absolute; width: 3px; height: 3px;">',
+        );
+      }
+
+      for (i = 1; i < 61; i++) {
+        document.write(
+          '<img id="secs' +
+            i +
+            '" src="image/red.png" style="position: absolute; width: 1px; height: 1px;">',
+        );
+      }
+
+      const Xc = 500;
+      const Yc = 400;
+      const K = Math.PI / 30;
+
+      for (i = 1; i < 13; i++) {
+        document.getElementById("digs" + i).style.top = Yc - 8 - 60 * Math.cos(5 * K * i) + "px";
+        document.getElementById("digs" + i).style.left = Xc - 8 + 60 * Math.sin(5 * K * i) + "px";
+      }
+
+      function clock() {
+        var data = new Date();
+        var sec = data.getSeconds();
+        var min = data.getMinutes();
+        var h = data.getHours();
+
+        for (i = 1; i < 61; i++) {
+          document.getElementById("secs" + i).style.top = Yc + 1 - (i - 1) * Math.cos(K * sec) + "px";
+          document.getElementById("secs" + i).style.left = Xc + 1 + (i - 1) * Math.sin(K * sec) + "px";
+          
+          document.getElementById("mins" + i).style.top = Yc - (i - 1) * Math.cos(K * min) + "px";
+          document.getElementById("mins" + i).style.left = Xc + (i - 1) * Math.sin(K * min) + "px";
+
+          if (i < 36) {
+            document.getElementById("hrs" + i).style.top = Yc - (i - 1) * Math.cos(5 * K * h + (K * min) / 12) + "px";
+            document.getElementById("hrs" + i).style.left = Xc + (i - 1) * Math.sin(5 * K * h + (K * min) / 12) + "px";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

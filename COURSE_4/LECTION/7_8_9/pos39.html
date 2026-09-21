@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 39</title>
+    <script>
+        var dd = ":";
+        function clock() {
+            var data = new Date();
+            var h = data.getHours();
+            var min = data.getMinutes();
+            if (parseInt(h) < 10) h = "0" + h;
+            if (parseInt(min) < 10) min = "0" + min;
+            document.getElementById("cl").innerHTML = h + dd + min;
+            if (dd == ":") dd = " ";
+            else dd = ":";
+        }
+
+    </script>
+</head>
+
+<body style="background-color: green;" onload="setInterval('clock()', 500);">
+    <div id="cl"
+        style="font-size: 28px; font-family: Arial; background: white; height: 30px; width: 100px; border: 7px double black; text-align: center;">
+        23:45</div>
+</body>
+
+</html>

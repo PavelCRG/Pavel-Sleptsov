@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="article">
+        <h1>Home Page</h1>
+        <p>Text 1</p>
+        <p>Text 2</p>
+    </div>
+    <script>
+        const article = document.getElementById("article");
+        const lastP = article.lastElementChild;
+        const newLastP = lastP.cloneNode(true);
+        newLastP.textContent = "Publication Date: 19/09/2026";
+        article.appendChild(newLastP);
+    </script>
+</body>
+</html>
