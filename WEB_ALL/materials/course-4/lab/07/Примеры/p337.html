@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type='text/javascript'>
+        function f_1() {
+            let a1 = document.forms[0].elements[0].value;
+            let a2 = document.forms[0].elements[1].value;
+            alert('Привет,' + a1 + '\n Ваш e-mail:' + a2 + 'принят');
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        Имя: <input type=text> <br>
+        e-mail:<input type=text> <br>
+        <input type=submit value=Жми onclick=f_1();">
+    </form>
+</body>
+
+</html>

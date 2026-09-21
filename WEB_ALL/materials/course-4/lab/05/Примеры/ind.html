@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа: Свойства Event</title>
+</head>
+
+<body>
+
+    <h2>Интерактивная зона проверки объекта Event</h2>
+    <p>Нажмите на любое место этой страницы левой, правой или средней кнопкой мыши.</p>
+
+    <hr>
+
+    <!-- Блоки для вывода информации из объекта event -->
+    <p>Тип пойманного события (event.type): <b id="outType">-</b></p>
+    <p>Координата клика X (event.clientX): <b id="outX">-</b></p>
+    <p>Координата клика Y (event.clientY): <b id="outY">-</b></p>
+    <p>Какая числовая кнопка нажата (event.button): <b id="outButton">-</b></p>
+
+    <script>
+        // Функция обработки кликов мыши
+        function trackMouse(event) {
+            // 1. Считываем тип зафиксированного события
+            document.getElementById('outType').textContent = event.type;
+
+            // 2. Считываем точные экранные координаты курсора
+            document.getElementById('outX').textContent = event.clientX + ' px';
+            document.getElementById('outY').textContent = event.clientY + ' px';
+
+            // 3. Определяем, какая именно кнопка мыши была нажата
+            let buttonText = event.button;
+            if (event.button === 0) {
+                buttonText += ' (Левая кнопка)';
+            } else if (event.button === 1) {
+                buttonText += ' (Колесико)';
+            } else if (event.button === 2) {
+                buttonText += ' (Правая кнопка)';
+            }
+
+            document.getElementById('outButton').textContent = buttonText;
+        }
+
+        // Назначаем обработчик на нажатие любой кнопки мыши по всему документу
+        document.addEventListener('mousedown', trackMouse);
+    </script>
+
+</body>
+
+</html>

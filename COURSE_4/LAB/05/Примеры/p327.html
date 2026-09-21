@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница 327: addEventListener и removeEventListener</title>
+</head>
+<body>
+
+    <!-- Пример добавления двух обработчиков на один клик -->
+    <input type="button" id="elem" value="Нажми меня">
+    <script>
+    function handler1() {
+        alert('Событие 1 произошло!');
+    }
+    function handler2() {
+        alert('Событие 2 произошло!');
+    }
+
+    elem.addEventListener("click", handler1);
+    elem.addEventListener("click", handler2);
+    </script>
+
+    <hr>
+
+    <!-- Пример удаления назначенного метода -->
+    <p id="elem1">Если выделить этот текст, кнопка ниже перестанет реагировать на клики</p>
+    <input type="button" id="elem2" value="Нажми меня">
+    
+    <script>
+    function handler1() {
+        this.style.color = "blue";
+        elem2.style.textDecoration = "line-through";
+        elem2.removeEventListener("click", handler2);
+    }
+    function handler2() {
+        alert('Событие 1 произошло!');
+    }
+
+    elem1.addEventListener("selectstart", handler1);
+    elem2.addEventListener("click", handler2);
+    </script>
+
+</body>
+</html>

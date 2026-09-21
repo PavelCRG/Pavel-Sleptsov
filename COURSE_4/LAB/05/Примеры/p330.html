@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница 330: Отмена действий по умолчанию</title>
+</head>
+<body>
+
+    <p>Никакой текст этой страницы ... </p>
+    <p>... не должен копироваться! </p>
+
+    <script>
+    function noCopy1(event) {
+        alert('копирование через контекстное меню невозможно');
+        event.preventDefault();
+    }
+    document.addEventListener("contextmenu", noCopy1);
+
+    document.onkeydown = function noCopy2(event) {
+        if(event.code == 'KeyC' && event.ctrlKey) {
+            alert('копирование через Ctrl+C невозможно');
+        }
+        return false;
+    };
+    </script>
+
+</body>
+</html>

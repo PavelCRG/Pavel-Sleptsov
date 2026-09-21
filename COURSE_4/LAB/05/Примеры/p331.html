@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница 331-332: Всплытие и погружение</title>
+    <style>
+        body * {
+            padding: 10px;
+            border: 3px dotted blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div>DIV
+        <p>P</p>
+    </div>
+
+    <script>
+        for(let elem of document.querySelectorAll('*')) {
+            // Фаза погружения (третий аргумент true)
+            elem.addEventListener("click", e => alert(`Погружение: ${elem.tagName}`), true);
+            
+            // Фаза всплытия (по умолчанию)
+            elem.addEventListener("click", e => alert(`Всплытие: ${elem.tagName}`));
+        }
+    </script>
+</body>
+</html>

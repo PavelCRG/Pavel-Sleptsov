@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Страница 342 - Проверка ввода</title>
+</head>
+<body>
+
+<label>Имя:</label> <input id="nik"><br><br>
+<label>Ваш e-mail:</label> <input type="email" id="email">
+
+<script>
+nik.onblur = function() {
+    let str = this.value.trim();
+    this.value = str;
+    if(this.value.length == 0) {
+        document.getElementsByTagName('label')[0].innerHTML = 
+        "Введите имя (не должно начинаться или заканчиваться пробелом), пожалуйста!";
+        nik.focus(); 
+    }
+    else {
+        document.getElementsByTagName('label')[0].innerHTML = "Имя:";
+    }
+};
+
+email.onblur = function() {
+    if (this.value.length < 6 || !this.value.includes("@")) {
+        this.style.background = 'red';
+        email.focus(); 
+    }
+    else {
+        this.style.background = 'white';
+    }
+};
+</script>
+
+</body>
+</html>

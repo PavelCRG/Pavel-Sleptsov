@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>коллекции forms и elements</title>
+</head>
+
+<body>
+    <form>
+        Имя: <input type=text> <br>
+        e-mail: <input type=email> <br>
+        <input type=reset>
+        <input type=submit>
+    </form>
+    <input type=hidden id='hid'>
+    Комментарий: <textarea form='secondForm' name='ta'></textarea>
+    <form id='secondForm' name='secondForm'>
+        Пол: <input type=radio name='sex' value="m"> мужской
+        <input type=button value='жми' onClick="f1();">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Коллекции</title>
+    <script type="text/javascript">
+        function _image() {
+            let a = document.f1.m.selectedIndex;
+            switch (a) {
+                case 0 : a="image/banan.png"; break;
+                case 1 : a="image/klybnik.png"; break;
+                case 2 : a="image/lemon.png"; break;
+                case 3 : a="image/orange.png"; break;
+            }
+            document.images[0].src=a;
+        }
+    </script>
+</head>
+<body>
+<center>
+    <img src="image/klybnik.png" height="200"> <br><br>
+    <form name="f1">
+        <select name="m" onChange="_image()" size="3">
+            <option> бананы </option>
+            <option selected> клубника </option>
+            <option> лимоны </option>
+            <option> апельсины </option>
+        </select>
+    </form>
+</center>
+</body>
+</html>

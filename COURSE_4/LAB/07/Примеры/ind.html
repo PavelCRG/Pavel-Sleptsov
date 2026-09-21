@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Самостоятельная работа</title>
+</head>
+<body>
+
+    <!-- Первая форма: Выбор курса/товара радиокнопками (как на стр. 338) -->
+    <form name="productForm">
+        Я хочу заказать:<br>
+        <input type="radio" name="product" value="Смартфон" checked> Смартфон<br>
+        <input type="radio" name="product" value="Ноутбук"> Ноутбук<br>
+        <input type="radio" name="product" value="Планшет"> Планшет<br>
+        Количество: <input type="text" name="count" value="1"><br>
+        <input type="button" value="Проверить товар" onclick="checkProduct()">
+    </form>
+
+    <hr>
+
+    <!-- Вторая форма: Ввод и проверка личных данных при потере фокуса (как на стр. 342) -->
+    <form name="userForm">
+        <label id="label_name">Имя:</label> 
+        <input id="client_name" type="text"><br><br>
+        
+        <label id="label_mail">Ваш e-mail:</label> 
+        <input id="client_mail" type="email">
+    </form>
+
+    <hr>
+
+    <!-- Третья форма: Выпадающий список (как на стр. 340) -->
+    <form name="deliveryForm">
+        Способ получения:<br>
+        <select name="delivery" size="3">
+            <option selected>Самовывоз</option>
+            <option>Доставка курьером</option>
+            <option>Почта</option>
+        </select><br><br>
+        <input type="button" value="Отправить заказ" onclick="submitOrder()">
+    </form>
+
+    <script>
+        // Функция для первой формы (работа с радиокнопками)
+        function checkProduct() {
+            let goods = document.productForm.elements["product"];
+            let selectedProduct = "";
+            for (let item of goods) {
+                if (item.checked) selectedProduct = item.value;
+            }
+            let count = document.productForm.elements["count"].value;
+            alert("Выбрано: " + selectedProduct + " (" + count + " шт.)");
+        }
+
+        // Валидация имени при потере фокуса
+        document.getElementById('client_name').onblur = function() {
+            let str = this.value.trim();
+            this.value = str;
+            if (this.value.length == 0) {
+                document.getElementById('label_name').innerHTML = "Введите имя, пожалуйста!";
+                this.focus();
+            } else {
+                document.getElementById('label_name').innerHTML = "Имя:";
+            }
+        };
+
+        // Валидация email при потере фокуса
+        document.getElementById('client_mail').onblur = function() {
+            if (this.value.length < 6 || !this.value.includes("@")) {
+                this.style.background = 'red';
+                this.focus();
+            } else {
+                this.style.background = 'white';
+            }
+        };
+
+        // Финальная отправка заказа
+        function submitOrder() {
+            let delivery = document.deliveryForm.elements["delivery"].value;
+            alert("Заказ принят! Способ доставки: " + delivery);
+        }
+    </script>
+
+</body>
+</html>

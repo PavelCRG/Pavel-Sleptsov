@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Страница 324-325: Способы назначения обработчиков</title>
+</head>
+
+<body>
+
+    <!-- Способ 1: В виде атрибута html-элемента -->
+    <input type="button" value="Нажми меня" onClick="alert('Событие произошло!');">
+
+    <hr>
+
+    <!-- Пример с вызовом функции из атрибута и передачей параметров -->
+    <script>
+        function F1(element, color) {
+            element.style.backgroundColor = color;
+        }
+    </script>
+
+    <p onClick="F1(this, 'pink')">Кликни здесь, и этот абзац станет розовым.</p>
+    <p onSelectStart="F1(this, 'lime')">Выдели этот текст, и его фон станет зеленым.</p>
+
+    <hr>
+
+    <!-- Способ 2: С использованием свойства объекта DOM -->
+    <input type="button" id="elem" value="Нажми меня">
+    <script>
+        // Скрипт находится ниже элемента, поэтому elem успешно находится по id автоматически
+        elem.onclick = function () {
+            alert('Событие произошло!');
+        };
+    </script>
+
+</body>
+
+</html>
