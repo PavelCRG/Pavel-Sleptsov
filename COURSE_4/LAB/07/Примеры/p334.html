@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>коллекции forms и elements</title>
+    <script type='text/javascript'>
+        function f1() {
+            alert('Количество форм: ' + document.forms.length);
+            alert('Элементов во 2-й форме: ' + document.forms['secondForm'].elements.length);
+            document.getElementById('hid').value = document.forms.length;
+        }
+    </script>
 </head>
 
 <body>

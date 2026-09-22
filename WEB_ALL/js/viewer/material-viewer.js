@@ -627,7 +627,7 @@
         currentSrc = resolvedSrc;
 
         setBarVisible(true, label || fileName(resolvedSrc));
-        var isOverview = /\/overviews\//i.test(resolvedSrc);
+        var isOverview = /\/(overviews|guides)\//i.test(resolvedSrc);
         if (isOverview) {
             if (openNew) {
                 openNew.hidden = true;

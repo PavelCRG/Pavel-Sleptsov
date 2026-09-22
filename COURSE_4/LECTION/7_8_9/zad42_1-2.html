@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 42 - Задания</title>
+    <script>
+        // Первая кнопка: Очистка поля ввода
+        function func1() {
+            document.getElementById("pp1").value = "";
+        }
+
+        // Вторая кнопка: Запись в LocalStorage
+        function func2() {
+            text = document.getElementById("pp1").value;
+            name = text.split("=")[0];
+            value = text.split("=")[1];
+            localStorage.setItem(name, value);
+            document.getElementById("pp1").value = "";
+        }
+
+        // Третья кнопка: Вывод (Чтение) записи по имени
+        function func3() {
+            name = document.getElementById("pp1").value;
+            document.getElementById("pp1").value = name + '=' + localStorage.getItem(name);
+        }
+
+        // Четвертая кнопка: Удалить запись из хранилища по ее имени
+        function func4() {
+            name = document.getElementById("pp1").value;
+            localStorage.removeItem(name); // Удаляем конкретный ключ
+            document.getElementById("pp1").value = "Запись '" + name + "' удалена";
+        }
+
+        // Пятая кнопка: Удалить все (Полная очистка хранилища)
+        function func5() {
+            localStorage.clear(); // Полностью очищаем память LocalStorage
+            document.getElementById("pp1").value = "Хранилище полностью очищено";
+        }
+
+        // Шестая кнопка: Сумма чисел из записи
+        function func6() {
+            name = document.getElementById("pp1").value;
+            value = localStorage.getItem(name); // Получаем строку чисел, например: "2,3,-1,11,-4"
+            
+            if (value) {
+                var arr = value.split(","); // Разбиваем строку по запятым в массив
+                var sum = 0;
+                
+                // Считаем сумму всех элементов массива
+                for (var i = 0; i < arr.length; i++) {
+                    sum += Number(arr[i]);
+                }
+                
+                // Выводим результат в формате: mm=2,3,-1,11,-4=11
+                document.getElementById("pp1").value = name + '=' + value + '=' + sum;
+            } else {
+                document.getElementById("pp1").value = "Запись не найдена";
+            }
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color:yellow; font-family: sans-serif; font-weight: bold;">
+        Пример использования формы с кнопками (Работа с LocalStorage и массивами)
+    </p>
+    <form onsubmit="return false;">
+        <input id="tp1" type="text" size="80" value=""><br><br>
+        <input id="pp1" type="text" size="80" value=""><br><br>
+        <input type="button" value="Первая" onclick="func1()" style="background-color: pink; padding: 5px 10px;">
+        <input type="button" value="Вторая" onclick="func2()" style="background-color: lightblue; padding: 5px 10px;">
+        <input type="button" value="Третья" onclick="func3()" style="background-color: lightgreen; padding: 5px 10px;">
+        <input type="button" value="Четвертая" onclick="func4()" style="background-color: orange; padding: 5px 10px;">
+        <input type="button" value="Пятая" onclick="func5()" style="background-color: lightcoral; padding: 5px 10px;">
+        <input type="button" value="Шестая (Сумма)" onclick="func6()" style="background-color: lightgoldenrodyellow; padding: 5px 10px;">
+    </form>
+</body>
+
+</html>

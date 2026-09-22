@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 02 — объект document — 4 курс</title>
+<title>Лаб 01 — полная инструкция — 4 курс</title>
 <link rel="stylesheet" href="../../../css/main.css">
 </head>
 <body class="site-app">
@@ -39,23 +39,47 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 02 — объект document</h2>
-<p class="day-overview__date">Из файла: 19_lab_object_document.pdf</p>
+<span class="day-overview__badge">Инструкция</span>
+<h2 class="day-overview__title">Лаб 01 — полная инструкция</h2>
 </header>
+<p class="day-overview__summary">Открывай файлы из списка лабораторной по очереди. Ниже — что нажимать и что писать в каждом.</p>
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Разбирал объект document: смотрел свойства страницы, менял фон и цвет, выводил инфу прямо на экран. Стало понятнее: страница — это объект, и скрипт может с ней общаться.</p>
+<h3>3_05.html — модальные окна</h3>
+<p class="day-overview__story">На странице три кнопки: alert, confirm, prompt.</p>
+<ol class="day-overview__steps">
+<li>Нажми <code>alert</code> — появится окошко «Сообщение для вас». Жми OK.</li>
+<li>Нажми <code>confirm</code> — вопрос про закрытие окна. <code>OK</code> попытается закрыть вкладку, <code>Отмена</code> — оставит как есть.</li>
+<li>Нажми <code>prompt</code> — попросит имя. Введи, например, <code>Павел</code> и OK. Имя уйдёт в строку статуса окна (внизу браузера, если она включена).</li>
+</ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">Из условия: DOM — это дерево элементов страницы. document хранит свойства документа (цвета, формы, ссылки) и даёт доступ к коллекциям элементов. Через него можно читать страницу и менять её из скрипта, не перезагружая всё целиком.</p>
+<h3>3_06.html — новое окно</h3>
+<p class="day-overview__story">Поля ввода нет.</p>
+<ol class="day-overview__steps">
+<li>Нажми <code>Открыть новое окно</code>.</li>
+<li>Должно открыться маленькое окно с тем же 3_05.html. Если браузер блокирует всплывающие окна — разреши для сайта.</li>
+</ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Подсказка по демо</h3>
-<p class="day-overview__story"><a href="../guides/lab-02.html">Что нажимать и что вводить</a></p>
+<h3>3_07.html — открыть и изменить размер</h3>
+<p class="day-overview__story">Две кнопки: Открыть и Изменить. Обе задают вопросы через prompt.</p>
+<ol class="day-overview__steps">
+<li>Нажми <code>Открыть</code>. В первом окошке адрес — оставь <code>3_05.html</code> (или впиши другой html из этой папки) и OK.</li>
+<li>Второе окошко спросит, перенести ли фокус на новое окно: OK — да, Отмена — окно уйдёт на задний план.</li>
+<li>Нажми <code>Изменить</code>. Первое число — ширина, по умолчанию <code>200</code>. Второе — высота, по умолчанию <code>-100</code> (минус уменьшает).</li>
+<li>Можно оставить как есть и жать OK-OK, либо поставить свои числа, например 300 и 150.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>3_08.html — таймер</h3>
+<p class="day-overview__story">Сверху счётчик, снизу кнопка Stop.</p>
+<ol class="day-overview__steps">
+<li>Открой файл — счётчик сам начнёт тикать каждую секунду.</li>
+<li>Нажми <code>Stop</code> — счётчик остановится. Больше ничего вводить не нужно.</li>
+</ol>
 </section>
 </article>
 </main>

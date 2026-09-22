@@ -1,4 +1,4 @@
-/* Обзор занятия — карточка описания */
+/* Обзор занятия — простой текст, без карточек */
 
 .day-overview {
     max-width: 100%;
@@ -6,54 +6,46 @@
 }
 
 .day-overview__header {
-    margin-bottom: 20px;
-    padding: 18px 20px;
-    border-radius: var(--radius);
-    background: linear-gradient(135deg, #f0f7ff 0%, #fff 100%);
-    border: 1px solid #c5d9f0;
+    margin: 0 0 1.25rem;
+    padding: 0 0 0.85rem;
+    border-bottom: 1px solid #e4ebf3;
 }
 
 .day-overview__badge {
     display: inline-block;
-    margin: 0 0 10px;
-    padding: 5px 12px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    margin: 0 0 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #fff;
-    background: var(--accent);
-    border-radius: 20px;
+    color: var(--accent);
 }
 
 .day-overview__title {
-    margin: 0 0 8px;
-    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    margin: 0;
+    font-size: clamp(1.2rem, 3.2vw, 1.55rem);
     font-weight: 700;
     color: var(--accent-dark);
-    line-height: 1.25;
+    line-height: 1.3;
 }
 
 .day-overview__date {
-    margin: 0;
+    margin: 0.35rem 0 0;
     font-size: 0.88rem;
     color: var(--text-muted);
 }
 
 .day-overview__topics {
-    margin: 0 0 18px;
-    padding: 14px 16px 14px 36px;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--text);
-    background: #f8fafc;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
+    margin: 0 0 1.35rem;
+    padding: 0 0 0 1.15rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-muted);
     list-style: disc;
 }
 
 .day-overview__topics li {
-    margin-bottom: 4px;
+    margin-bottom: 0.2rem;
 }
 
 .day-overview__topics li:last-child {
@@ -61,49 +53,81 @@
 }
 
 .day-overview__summary {
-    margin: 0 0 20px;
-    padding: 14px 16px;
-    font-size: 0.95rem;
-    line-height: 1.65;
-    color: var(--text);
-    background: #fff;
-    border-left: 4px solid var(--accent);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    box-shadow: 0 1px 3px rgba(30, 77, 140, 0.06);
-}
-
-.day-overview__story {
-    margin: 0;
-    font-size: 0.92rem;
+    margin: 0 0 1.35rem;
+    padding: 0;
+    font-size: 0.98rem;
     line-height: 1.7;
     color: var(--text);
 }
 
-/* Блоки на странице обзора */
+.day-overview__story {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--text);
+}
+
+.day-overview__story a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.day-overview__story a:hover {
+    color: var(--accent-dark);
+}
+
+.day-overview__steps {
+    margin: 0.35rem 0 0;
+    padding: 0 0 0 1.2rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: var(--text);
+}
+
+.day-overview__steps li {
+    margin-bottom: 0.45rem;
+}
+
+.day-overview__steps li:last-child {
+    margin-bottom: 0;
+}
+
+.day-overview__steps code {
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size: 0.9em;
+    padding: 0.08em 0.28em;
+    background: #f0f4f8;
+    border-radius: 4px;
+    word-break: break-word;
+}
+
+/* Секции без рамок — только отступы и заголовок */
 .day-overview .site-frame,
 .overview-frame {
-    margin: 0 0 16px;
-    padding: 16px 18px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: #fff;
-    box-shadow: 0 1px 4px rgba(30, 77, 140, 0.05);
+    margin: 0 0 1.5rem;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .day-overview .site-frame h3,
 .overview-frame h3 {
-    margin: 0 0 12px;
-    padding-bottom: 8px;
-    font-size: 0.95rem;
+    margin: 0 0 0.55rem;
+    padding: 0;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--accent-dark);
-    border-bottom: 1px solid #e8eef5;
+    border: none;
 }
 
 .day-overview .site-frame--story,
 .overview-frame--story {
-    background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
-    border-color: #b8cfe8;
+    background: transparent;
+    border: none;
 }
 
 .day-overview .day-files,
@@ -113,29 +137,30 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.4rem;
 }
 
 .day-overview .day-files a,
 .overview-frame__list a {
-    display: block;
-    padding: 10px 14px;
-    font-size: 0.88rem;
+    display: inline;
+    padding: 0;
+    font-size: 0.92rem;
     font-weight: 500;
-    line-height: 1.4;
-    color: var(--accent-dark);
-    text-decoration: none;
-    background: #f8fafc;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    transition: background 0.15s, border-color 0.15s;
+    line-height: 1.45;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+    background: none;
+    border: none;
+    border-radius: 0;
     word-break: break-word;
+    transition: color 0.15s;
 }
 
 .day-overview .day-files a:hover,
 .overview-frame__list a:hover {
-    background: #f0f7ff;
-    border-color: var(--accent);
+    background: none;
+    border: none;
     color: var(--accent-dark);
 }
 
@@ -144,22 +169,44 @@
     font-weight: 500;
 }
 
-/* В панели просмотра — только текст описания, без оболочки сайта */
+.day-overview .day-files li,
+.overview-frame__list li {
+    padding: 0.15rem 0;
+}
+
+/* В панели просмотра */
 .material-viewer__content .day-overview--embedded {
-    max-width: 720px;
+    max-width: 40rem;
     margin: 0 auto;
-    padding: 4px 0 12px;
+    padding: 0.25rem 0.5rem 1rem;
 }
 
 .material-viewer__content .day-overview--embedded .day-overview__header {
-    padding: 14px 16px;
+    padding: 0 0 0.75rem;
 }
 
 .material-viewer__content .day-overview--embedded .site-frame {
-    margin-bottom: 12px;
-    padding: 14px 16px;
+    margin-bottom: 1.25rem;
+    padding: 0;
 }
 
 .material-viewer__content .overview-back {
     display: none;
+}
+
+@media (max-width: 560px) {
+    .day-overview__topics {
+        font-size: 0.88rem;
+        padding-left: 1rem;
+    }
+
+    .day-overview__story,
+    .day-overview__summary {
+        font-size: 0.94rem;
+        line-height: 1.7;
+    }
+
+    .material-viewer__content .day-overview--embedded {
+        padding: 0.15rem 0.15rem 0.85rem;
+    }
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 02 — объект document — 4 курс</title>
+<title>Лаб 02 — полная инструкция — 4 курс</title>
 <link rel="stylesheet" href="../../../css/main.css">
 </head>
 <body class="site-app">
@@ -39,23 +39,48 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 02 — объект document</h2>
-<p class="day-overview__date">Из файла: 19_lab_object_document.pdf</p>
+<span class="day-overview__badge">Инструкция</span>
+<h2 class="day-overview__title">Лаб 02 — полная инструкция</h2>
 </header>
+<p class="day-overview__summary">Тут в основном кнопки. Где есть поля — ниже написано, что именно писать.</p>
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Разбирал объект document: смотрел свойства страницы, менял фон и цвет, выводил инфу прямо на экран. Стало понятнее: страница — это объект, и скрипт может с ней общаться.</p>
+<h3>3_09.html — цвета страницы</h3>
+
+<ol class="day-overview__steps">
+<li>Нажми <code>желтый</code> — фон станет жёлтым.</li>
+<li>Нажми <code>синий</code> — фон синий, текст белый.</li>
+<li>Нажми <code>менять</code> — цвета снова сменятся по скрипту.</li>
+</ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">Из условия: DOM — это дерево элементов страницы. document хранит свойства документа (цвета, формы, ссылки) и даёт доступ к коллекциям элементов. Через него можно читать страницу и менять её из скрипта, не перезагружая всё целиком.</p>
+<h3>3_10.html — новое окно с документом</h3>
+
+<ol class="day-overview__steps">
+<li>Нажми <code>открыть окно и создать в нем документ</code>.</li>
+<li>Откроется окно, скрипт сам напишет туда текст и дату. Вводить ничего не нужно.</li>
+</ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Подсказка по демо</h3>
-<p class="day-overview__story"><a href="../guides/lab-02.html">Что нажимать и что вводить</a></p>
+<h3>3_11.html — имя и почта</h3>
+<p class="day-overview__story">Простая форма без проверки.</p>
+<ol class="day-overview__steps">
+<li>В поле «Имя» введи <code>Павел</code>.</li>
+<li>В поле «e-mail» введи <code>test@mail.ru</code>.</li>
+<li>Нажми <code>жми</code> — на этой странице кнопка может ничего не показывать, это демо иерархии. Главное — поля заполнены.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>6.html — сумма двух чисел</h3>
+<p class="day-overview__story">Два числа и кнопки суммы.</p>
+<ol class="day-overview__steps">
+<li>В «Первое число» введи <code>12</code>.</li>
+<li>В «Второе число» введи <code>8</code>.</li>
+<li>Нажми <code>Вычислить сумму</code> или <code>Вычислить сумму(индекс)</code> — в поле «Сумма» должно стать <code>20</code>.</li>
+<li>Можно снова нажать <code>Вычислить сумму(имя)</code> — ответ тот же, просто другой способ доступа к полям.</li>
+</ol>
 </section>
 </article>
 </main>

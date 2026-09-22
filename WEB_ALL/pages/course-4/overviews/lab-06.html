@@ -1,75 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обзор — Лаб 06 — Программные средства создания интернет-приложений</title>
-    <link rel="stylesheet" href="../../../css/main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лаб 06 — меняем дерево страницы — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css">
 </head>
 <body class="site-app">
-    <div class="site-grid">
-        <header class="site-header">
-            <a class="site-header__logo site-header__logo--personal" href="../../../course-4.html" title="На главную">
-                <img src="../../../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
-            </a>
-            <h1 class="site-header__title">
-                <span class="site-header__title-top">4 курс</span>
-                <span class="site-header__title-sub">Программные средства создания интернет-приложений</span>
-            </h1>
-            <span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
-                <img src="../../../assets/images/college-logo.png" alt="Логотип колледжа">
-            </span>
-        </header>
-        <div class="nav-backdrop"></div>
-        <button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
-            <svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path class="nav-toggle__path nav-toggle__path--1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
-                <path class="nav-toggle__path nav-toggle__path--2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
-                <path class="nav-toggle__path nav-toggle__path--3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
-            </svg>
-        </button>
-        <nav class="site-sidebar" aria-label="Меню">
-            <h2>Разделы</h2>
-            <ul class="site-nav">
-                <li><a href="../../../course-4.html">Главная</a></li>
-                <li><a href="../lab.html" class="is-active">Лабораторные</a></li>
-                <li><a href="../lection.html">Лекции</a></li>
-                <li><a href="../okr.html">Контроль</a></li>
-                <li><a href="../../../index.html">Курсы</a></li>
-            </ul>
-        </nav>
-        <main class="site-main page page--overview">
-            <p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
-            <article class="day-overview">
-        <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 06 — изменение структуры DOM</h2>
+<div class="site-grid">
+<header class="site-header">
+<a class="site-header__logo site-header__logo--personal" href="../../../course-4.html" title="На главную">
+<img src="../../../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
+</a>
+<h1 class="site-header__title">
+<span class="site-header__title-top">4 курс</span>
+<span class="site-header__title-sub">Программные средства создания интернет-приложений</span>
+</h1>
+<span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
+<img src="../../../assets/images/college-logo.png" alt="Логотип колледжа">
+</span>
 </header>
-        <ul class="day-overview__topics">
-        <li>appendChild / insertBefore</li>
-        <li>removeChild / replaceChild</li>
-        <li>cloneNode</li>
-        <li>самостоятельная работа</li>
-        </ul>
-        <p class="day-overview__summary">Создание, вставка, клонирование и удаление узлов в дереве документа.</p>
-        <section class="site-frame site-frame--story">
-            <h3>Что я сделал</h3>
-            <p class="day-overview__story">В appendChild, insertBefore, cloneNode, replaceChild, removeChild и removeallchild — операции над дочерними узлами. В ind.html — самостоятельная работа со списком элементов.</p>
-        </section>
-        <section class="site-frame site-frame--works">
-        <h3>Выполненные работы</h3>
-        <ul class="day-files">
-            <li><a href="../../../materials/course-4/lab/06/Примеры/appendChild.html">Примеры / appendChild.html</a></li>
-            <li><a href="../../../materials/course-4/lab/06/Примеры/cloneNode.html">Примеры / cloneNode.html</a></li>
-            <li><a href="../../../materials/course-4/lab/06/Примеры/ind.html">Примеры / ind.html</a></li>
-            <li><a href="../../../materials/course-4/lab/06/Примеры/insertBefore.html">Примеры / insertBefore.html</a></li>
-            <li><a href="../../../materials/course-4/lab/06/Примеры/removeallchild.html">Примеры / removeallchild.html</a></li>
-            <li><a href="../../../materials/course-4/lab/06/Примеры/removeChild.html">Примеры / removeChild.html</a></li>
-            <li><a href="../../../materials/course-4/lab/06/Примеры/replaceChild.html">Примеры / replaceChild.html</a></li>
-        </ul>
-    </section>
+<div class="nav-backdrop"></div>
+<button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+<svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path class="nav-toggle__path nav-toggle__path--1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+<path class="nav-toggle__path nav-toggle__path--2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+<path class="nav-toggle__path nav-toggle__path--3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+</svg>
+</button>
+<nav class="site-sidebar" aria-label="Меню">
+<h2>Разделы</h2>
+<ul class="site-nav">
+<li><a href="../../../course-4.html">Главная</a></li>
+<li><a href="../lab.html">Лабораторные</a></li>
+<li><a href="../lection.html">Лекции</a></li>
+<li><a href="../okr.html">Контроль</a></li>
+<li><a href="../../../index.html">Курсы</a></li>
+</ul>
+</nav>
+<main class="site-main page page--overview">
+<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<article class="day-overview">
+<header class="day-overview__header">
+<h2 class="day-overview__title">Лаб 06 — меняем дерево страницы</h2>
+<p class="day-overview__date">Из файла: 23_lab_изменение_добавление_удаление_HTML_элементов_свойств.pdf</p>
+</header>
+<section class="site-frame site-frame--story">
+<h3>Что я делал</h3>
+<p class="day-overview__story">Уже не просто текст менял — добавлял и удалял целые куски страницы. append, insertBefore, clone, remove. В самостоятельной работе потренировался на списке, пока не привык к этим методам.</p>
+</section>
+<section class="site-frame site-frame--story">
+<h3>Чуть теории</h3>
+<p class="day-overview__story">Из файла: сначала createElement / createTextNode, потом вставить через appendChild или insertBefore. Удаление — removeChild, замена — replaceChild, копия — cloneNode. textContent можно задать сразу, без отдельного текстового узла.</p>
+</section>
+
 </article>
-        </main>
-                        <aside class="site-aside" aria-label="Реклама">
+</main>
+        <aside class="site-aside" aria-label="Реклама">
             <p class="site-aside__title">Реклама</p>
             <a class="ad-card" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
                 <div class="ad-card__head">
@@ -95,12 +82,12 @@
                 <p class="ad-card__text">Работы, проекты и учебные материалы автора.</p>
             </a>
         </aside>
-        <footer class="site-footer">
-            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-        </footer>
-    </div>
-    <script src="../../../js/nav/mobile-nav.js"></script>
+<footer class="site-footer">
+<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+</footer>
+</div>
+<script src="../../../js/nav/mobile-nav.js"></script>
 </body>
 </html>

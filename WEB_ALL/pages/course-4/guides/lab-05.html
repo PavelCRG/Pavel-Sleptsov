@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 02 — объект document — 4 курс</title>
+<title>Лаб 05 — полная инструкция — 4 курс</title>
 <link rel="stylesheet" href="../../../css/main.css">
 </head>
 <body class="site-app">
@@ -39,23 +39,56 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 02 — объект document</h2>
-<p class="day-overview__date">Из файла: 19_lab_object_document.pdf</p>
+<span class="day-overview__badge">Инструкция</span>
+<h2 class="day-overview__title">Лаб 05 — полная инструкция</h2>
 </header>
+<p class="day-overview__summary">Тут почти нет полей. Важно, куда кликать и что делать мышкой или клавиатурой.</p>
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Разбирал объект document: смотрел свойства страницы, менял фон и цвет, выводил инфу прямо на экран. Стало понятнее: страница — это объект, и скрипт может с ней общаться.</p>
+<h3>p324.html — обработчики</h3>
+
+<ol class="day-overview__steps">
+<li>Нажми кнопку <code>Нажми меня</code> сверху — alert «Событие произошло!».</li>
+<li>Кликни по абзацу про розовый цвет — абзац должен стать розовым.</li>
+<li>Выдели мышью текст про зелёный фон — фон выделенного куска станет зелёным.</li>
+<li>Нижнюю кнопку <code>Нажми меня</code> тоже покликай — там другой способ назначения обработчика.</li>
+</ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">Из условия: DOM — это дерево элементов страницы. document хранит свойства документа (цвета, формы, ссылки) и даёт доступ к коллекциям элементов. Через него можно читать страницу и менять её из скрипта, не перезагружая всё целиком.</p>
+<h3>p326.html / p327.html</h3>
+
+<ol class="day-overview__steps">
+<li>В p326 жми <code>Нажми меня</code> и смотри, как меняются свойства элемента.</li>
+<li>В p327 две кнопки <code>Нажми меня</code>. Покликай обе.</li>
+<li>Выдели текст про «перестанет реагировать» — после этого одна из кнопок может перестать отвечать на клики. Это нормально: так показывают removeEventListener.</li>
+</ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Подсказка по демо</h3>
-<p class="day-overview__story"><a href="../guides/lab-02.html">Что нажимать и что вводить</a></p>
+<h3>p330.html — нельзя копировать</h3>
+
+<ol class="day-overview__steps">
+<li>Попробуй выделить текст и скопировать (Ctrl+C) — скрипт отменяет действие по умолчанию.</li>
+<li>Ничего вводить не нужно, просто проверь, что копирование блокируется.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>p331.html — всплытие</h3>
+
+<ol class="day-overview__steps">
+<li>Кликай по вложенным блокам (внутренний и внешний).</li>
+<li>Смотри alert’ы: сначала одно событие, потом другое — так видно всплытие/погружение.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>ind.html — самостоятельная работа</h3>
+<p class="day-overview__story">Большая зона под клики.</p>
+<ol class="day-overview__steps">
+<li>Кликни левой кнопкой мыши в любом месте страницы.</li>
+<li>Потом правой, потом средней (колёсико), если есть.</li>
+<li>Справа/внизу появятся: тип события, X, Y и номер кнопки мыши. Это и есть свойства event.</li>
+</ol>
 </section>
 </article>
 </main>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лекции 07–09 — полная инструкция — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css">
+</head>
+<body class="site-app">
+<div class="site-grid">
+<header class="site-header">
+<a class="site-header__logo site-header__logo--personal" href="../../../course-4.html" title="На главную">
+<img src="../../../assets/images/Logo.png" alt="Логотип — Слепцов П.Л.">
+</a>
+<h1 class="site-header__title">
+<span class="site-header__title-top">4 курс</span>
+<span class="site-header__title-sub">Программные средства создания интернет-приложений</span>
+</h1>
+<span class="site-header__logo site-header__logo--college" title="БТЭУ ПК">
+<img src="../../../assets/images/college-logo.png" alt="Логотип колледжа">
+</span>
+</header>
+<div class="nav-backdrop"></div>
+<button type="button" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+<svg class="nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path class="nav-toggle__path nav-toggle__path--1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+<path class="nav-toggle__path nav-toggle__path--2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+<path class="nav-toggle__path nav-toggle__path--3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
+</svg>
+</button>
+<nav class="site-sidebar" aria-label="Меню">
+<h2>Разделы</h2>
+<ul class="site-nav">
+<li><a href="../../../course-4.html">Главная</a></li>
+<li><a href="../lab.html">Лабораторные</a></li>
+<li><a href="../lection.html">Лекции</a></li>
+<li><a href="../okr.html">Контроль</a></li>
+<li><a href="../../../index.html">Курсы</a></li>
+</ul>
+</nav>
+<main class="site-main page page--overview">
+<p class="overview-back"><a href="../lection.html">← Назад</a></p>
+<article class="day-overview">
+<header class="day-overview__header">
+<span class="day-overview__badge">Инструкция</span>
+<h2 class="day-overview__title">Лекции 07–09 — полная инструкция</h2>
+</header>
+<p class="day-overview__summary">Самое важное: куда писать и какую кнопку жать. Рабочее поле почти везде — нижнее (второе). Верхнее часто не используется.</p>
+<section class="site-frame site-frame--story">
+<h3>pos35.html — дата (кнопки сами пишут)</h3>
+<p class="day-overview__story">Одно поле. Вводить ничего не нужно — только кнопки.</p>
+<ol class="day-overview__steps">
+<li>Нажми розовую <code>Первая</code> — в поле текущая дата и время.</li>
+<li>Нажми голубую <code>Вторая</code> — timestamp (длинное число).</li>
+<li>Нажми зелёную <code>Третья</code> — фиксированная дата 7 октября 2013, 11:23:34.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>pos36.html — часы</h3>
+
+<ol class="day-overview__steps">
+<li><code>Первая</code> — текущий час (локальный).</li>
+<li><code>Вторая</code> — час по UTC.</li>
+<li><code>Третья</code> — дата с часом, выставленным на 23.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>pos37.html — сдвиг даты на N дней</h3>
+
+<ol class="day-overview__steps">
+<li>Нажми <code>Первая</code> — в поле текущая дата (можно и сразу вписать число дней).</li>
+<li>Сотри и впиши число дней, например <code>5</code>.</li>
+<li>Нажми <code>Третья</code> — дата сдвинется на 5 дней вперёд.</li>
+<li><code>Вторая</code> просто очищает поле.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>pos38.html — разница между двумя датами</h3>
+<p class="day-overview__story">Три поля: дата 1, дата 2, результат. Формат: день месяц год через пробел.</p>
+<ol class="day-overview__steps">
+<li>В первое поле: <code>7 10 2013</code> (7 октября 2013).</li>
+<li>Во второе поле: <code>15 10 2013</code>.</li>
+<li>Нажми <code>Вычислить</code> — в третьем поле число дней между датами (здесь 8).</li>
+<li><code>Очистить</code> — трёт все три поля.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>pos39.html / pos40.html — часы</h3>
+
+<ol class="day-overview__steps">
+<li>Открыл — часы сами тикают. Кнопок нет, ничего вводить не нужно.</li>
+<li>pos40 — графические часы с картинками; просто посмотри, как идут стрелки/точки.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>pos41.html — cookie</h3>
+<p class="day-overview__story">Работает нижнее поле (pp1). Формат записи: имя;значение;дней</p>
+<ol class="day-overview__steps">
+<li>Впиши во второе (нижнее) поле: <code>user;Pavel;7</code>.</li>
+<li>Нажми <code>Вторая</code> — cookie записалась, поле очистится.</li>
+<li>Впиши только ключ: <code>user</code>.</li>
+<li>Нажми <code>Третья</code> — в поле появится что-то вроде <code>user=Pavel</code>.</li>
+<li><code>Первая</code> очищает поле ввода.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>pos42.html — LocalStorage (3 кнопки)</h3>
+<p class="day-overview__story">Пиши во второе (нижнее) поле. Формат: ключ=значение</p>
+<ol class="day-overview__steps">
+<li>Впиши <code>name=Pavel</code>.</li>
+<li>Нажми голубую <code>Вторая</code> — записалось в LocalStorage, поле очистится.</li>
+<li>Впиши только <code>name</code>.</li>
+<li>Нажми зелёную <code>Третья</code> — увидишь <code>name=Pavel</code>.</li>
+<li>Розовая <code>Первая</code> — очистить поле.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>zad42_1-2.html — LocalStorage (6 кнопок)</h3>
+<p class="day-overview__story">То же нижнее поле. Это главный тренажёр блока.</p>
+<ol class="day-overview__steps">
+<li>Запись: впиши <code>name=Pavel</code> → кнопка <code>Вторая</code>.</li>
+<li>Чтение: впиши <code>name</code> → <code>Третья</code> → получишь <code>name=Pavel</code>.</li>
+<li>Удалить один ключ: впиши <code>name</code> → <code>Четвертая</code> → текст «Запись 'name' удалена».</li>
+<li>Сумма чисел: сначала запиши <code>mm=2,3,-1,11,-4</code> кнопкой <code>Вторая</code>.</li>
+<li>Потом впиши <code>mm</code> и нажми <code>Шестая (Сумма)</code> → получишь строку с суммой (здесь 11).</li>
+<li><code>Пятая</code> — полная очистка LocalStorage. После неё старые ключи пропадут.</li>
+<li><code>Первая</code> — просто очистить поле на экране.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>zad41_1-2.hta — cookie в Windows</h3>
+<p class="day-overview__story">Открывай двойным кликом в проводнике, не через сайт.</p>
+<ol class="day-overview__steps">
+<li>Запись cookie: во второе поле <code>user;Pavel;7</code> → <code>Вторая</code>.</li>
+<li>Чтение: <code>user</code> → <code>Третья</code>.</li>
+<li>Удалить cookie: <code>user</code> → <code>Четвертая</code>.</li>
+<li><code>Пятая</code> — показать все cookie в alert.</li>
+<li><code>Первая</code> — очистить поле.</li>
+</ol>
+</section>
+</article>
+</main>
+        <aside class="site-aside" aria-label="Реклама">
+            <p class="site-aside__title">Реклама</p>
+            <a class="ad-card" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../../../assets/images/github.svg" alt="GitHub" width="56" height="56">
+                    <strong class="ad-card__brand">PavelCRG</strong>
+                </div>
+                <p class="ad-card__text">Репозиторий автора: учебные работы по курсу и другие проекты.</p>
+                <span class="ad-card__url">github.com/PavelCRG</span>
+            </a>
+            <a class="ad-card" href="https://voxivaai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <img class="ad-card__logo" src="../../../assets/images/voxiva-logo.svg" alt="Voxiva" width="56" height="56">
+                    <strong class="ad-card__brand">Voxiva</strong>
+                </div>
+                <p class="ad-card__text">Личный проект. Voxiva Space — терминалы и агенты. Voxiva Voice — диктовка в любое поле.</p>
+                <span class="ad-card__url">voxivaai.vercel.app</span>
+            </a>
+            <a class="ad-card ad-card--text" href="https://github.com/PavelCRG" target="_blank" rel="noopener noreferrer">
+                <div class="ad-card__head">
+                    <strong class="ad-card__brand">Павел CRG</strong>
+                    <span class="ad-card__sub">Портфолио</span>
+                </div>
+                <p class="ad-card__text">Работы, проекты и учебные материалы автора.</p>
+            </a>
+        </aside>
+<footer class="site-footer">
+<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+</footer>
+</div>
+<script src="../../../js/nav/mobile-nav.js"></script>
+</body>
+</html>
