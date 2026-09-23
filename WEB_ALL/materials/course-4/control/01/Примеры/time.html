@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подсчет секунд</title>
+</head>
+<body>
+
+    <h2>Подсчет секунд</h2>
+    <p>Секунд в 1 часе: <span id="hour"></span></p>
+    <p>Секунд в 1 сутках: <span id="day"></span></p>
+    <p>Секунд в 1 месяце (30 дней): <span id="month"></span></p>
+
+    <script>
+        document.getElementById('hour').textContent = 60 * 60;
+        document.getElementById('day').textContent = 60 * 60 * 24;
+        document.getElementById('month').textContent = 60 * 60 * 24 * 30;
+    </script>
+
+</body>
+</html>
