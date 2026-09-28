@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 01 — полная инструкция — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лабораторная 09 — JSON — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,48 +39,53 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← Назад</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад к лабораторным</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<span class="day-overview__badge">Инструкция</span>
-<h2 class="day-overview__title">Лаб 01 — полная инструкция</h2>
+<h2 class="day-overview__title">Лабораторная 09 — JSON</h2>
+<p class="day-overview__date">По материалам: 26_lab_JSON.pdf</p>
 </header>
-<p class="day-overview__summary">Открывай файлы из списка лабораторной по очереди. Ниже — что нажимать и что писать в каждом.</p>
+<div class="overview-tabs">
+<input class="overview-tabs__radio overview-tabs__radio--theory" type="radio" name="lab09" id="lab09-theory" checked>
+<input class="overview-tabs__radio overview-tabs__radio--howto" type="radio" name="lab09" id="lab09-howto">
+<div class="overview-tabs__nav" role="tablist">
+<label for="lab09-theory">Теория</label>
+<label for="lab09-howto">Как пользоваться</label>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--theory">
 <section class="site-frame site-frame--story">
-<h3>3_05.html — модальные окна</h3>
-<p class="day-overview__story">На странице три кнопки: alert, confirm, prompt.</p>
-<ol class="day-overview__steps">
-<li>Нажми <code>alert</code> — появится окошко «Сообщение для вас». Жми OK.</li>
-<li>Нажми <code>confirm</code> — вопрос про закрытие окна. <code>OK</code> попытается закрыть вкладку, <code>Отмена</code> — оставит как есть.</li>
-<li>Нажми <code>prompt</code> — попросит имя. Введи, например, <code>Павел</code> и OK. Имя уйдёт в строку статуса окна (внизу браузера, если она включена).</li>
-</ol>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Сериализация и разбор JSON: stringify / parse, особенности кавычек, типичные ошибки, задача с объектом user.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> изучить структуру JSON; конвертировать объект JS в строку JSON и обратно (<code>JSON.stringify</code>, <code>JSON.parse</code>).</p>
+<section class="site-frame site-frame--story">
+<h3>Темы из пособия</h3>
+<ul class="day-overview__theory"><li>Формат JSON и его структура [1, 349–350]</li>
+<li>Конвертация объекта JavaScript в строку JSON [1, 350–351]</li>
+<li>Парсинг строки JSON в объект JavaScript [1, 351]</li></ul>
 </section>
 <section class="site-frame site-frame--story">
-<h3>3_06.html — новое окно</h3>
-<p class="day-overview__story">Поля ввода нет.</p>
-<ol class="day-overview__steps">
-<li>Нажми <code>Открыть новое окно</code>.</li>
-<li>Должно открыться маленькое окно с тем же 3_05.html. Если браузер блокирует всплывающие окна — разреши для сайта.</li>
-</ol>
+<h3>Теория по пунктам</h3>
+<ol class="day-overview__theory"><li>JSON — текстовый формат обмена данными. Часто сравнивают с XML: JSON обычно короче и удобнее для JS.</li>
+<li><strong>Сериализация</strong> — объект → строка; <strong>десериализация</strong> — строка → объект.</li>
+<li><code>JSON.stringify(obj)</code> даёт строку; её можно отправить по сети или сохранить.</li>
+<li>Отличия от литерала объекта:<ul><li>строки только в двойных кавычках;</li><li>имена свойств тоже в двойных кавычках.</li></ul></li>
+<li>Поддерживаются: объекты, массивы, строки, числа, true/false, null. Нет функций, Date как конструктора, комментариев.</li>
+<li><code>JSON.parse(str)</code> — обратно в значение; опционально reviver для каждой пары ключ/значение.</li>
+<li>Типичные ошибки: ключ без кавычек, одинарные кавычки, <code>new Date</code>, лишняя запятая, комментарии.</li>
+<li>Задача из PDF: <code>user = {'{'} name, age {'}'}</code> → stringify → parse в другую переменную.</li></ol>
 </section>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--howto">
 <section class="site-frame site-frame--story">
-<h3>3_07.html — открыть и изменить размер</h3>
-<p class="day-overview__story">Две кнопки: Открыть и Изменить. Обе задают вопросы через prompt.</p>
+<h3>1.html–5.html</h3>
 <ol class="day-overview__steps">
-<li>Нажми <code>Открыть</code>. В первом окошке адрес — оставь <code>3_05.html</code> (или впиши другой html из этой папки) и OK.</li>
-<li>Второе окошко спросит, перенести ли фокус на новое окно: OK — да, Отмена — окно уйдёт на задний план.</li>
-<li>Нажми <code>Изменить</code>. Первое число — ширина, по умолчанию <code>200</code>. Второе — высота, по умолчанию <code>-100</code> (минус уменьшает).</li>
-<li>Можно оставить как есть и жать OK-OK, либо поставить свои числа, например 300 и 150.</li>
+<li>Открывай примеры по порядку: сначала stringify, потом parse.</li>
+<li>Смотри alert / вывод на странице — там видно строку JSON и поля объекта после разбора.</li>
 </ol>
 </section>
-<section class="site-frame site-frame--story">
-<h3>3_08.html — таймер</h3>
-<p class="day-overview__story">Сверху счётчик, снизу кнопка Stop.</p>
-<ol class="day-overview__steps">
-<li>Открой файл — счётчик сам начнёт тикать каждую секунду.</li>
-<li>Нажми <code>Stop</code> — счётчик остановится. Больше ничего вводить не нужно.</li>
-</ol>
-</section>
+</div>
+</div>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -110,11 +115,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

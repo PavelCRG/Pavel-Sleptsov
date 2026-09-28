@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 05 — полная инструкция — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лекция 13 — Canvas — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,55 +39,25 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← Назад</a></p>
+<p class="overview-back"><a href="../lection.html">← Назад к лекциям</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<span class="day-overview__badge">Инструкция</span>
-<h2 class="day-overview__title">Лаб 05 — полная инструкция</h2>
+<h2 class="day-overview__title">Лекция 13 — Canvas</h2>
+<p class="day-overview__date">По материалам: Canvas_Primer_1.pdf</p>
 </header>
-<p class="day-overview__summary">Тут почти нет полей. Важно, куда кликать и что делать мышкой или клавиатурой.</p>
 <section class="site-frame site-frame--story">
-<h3>p324.html — обработчики</h3>
-
-<ol class="day-overview__steps">
-<li>Нажми кнопку <code>Нажми меня</code> сверху — alert «Событие произошло!».</li>
-<li>Кликни по абзацу про розовый цвет — абзац должен стать розовым.</li>
-<li>Выдели мышью текст про зелёный фон — фон выделенного куска станет зелёным.</li>
-<li>Нижнюю кнопку <code>Нажми меня</code> тоже покликай — там другой способ назначения обработчика.</li>
-</ol>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Материал-праймер по HTML5 Canvas.</p>
 </section>
+<p class="day-overview__goal"><strong>Цель:</strong> познакомиться с рисованием на <code>&lt;canvas&gt;</code> через JavaScript.</p>
 <section class="site-frame site-frame--story">
-<h3>p326.html / p327.html</h3>
-
-<ol class="day-overview__steps">
-<li>В p326 жми <code>Нажми меня</code> и смотри, как меняются свойства элемента.</li>
-<li>В p327 две кнопки <code>Нажми меня</code>. Покликай обе.</li>
-<li>Выдели текст про «перестанет реагировать» — после этого одна из кнопок может перестать отвечать на клики. Это нормально: так показывают removeEventListener.</li>
-</ol>
-</section>
-<section class="site-frame site-frame--story">
-<h3>p330.html — нельзя копировать</h3>
-
-<ol class="day-overview__steps">
-<li>Попробуй выделить текст и скопировать (Ctrl+C) — скрипт отменяет действие по умолчанию.</li>
-<li>Ничего вводить не нужно, просто проверь, что копирование блокируется.</li>
-</ol>
-</section>
-<section class="site-frame site-frame--story">
-<h3>p331.html — всплытие</h3>
-
-<ol class="day-overview__steps">
-<li>Кликай по вложенным блокам (внутренний и внешний).</li>
-<li>Смотри alert’ы: сначала одно событие, потом другое — так видно всплытие/погружение.</li>
-</ol>
-</section>
-<section class="site-frame site-frame--story">
-<h3>ind.html — самостоятельная работа</h3>
-<p class="day-overview__story">Большая зона под клики.</p>
-<ol class="day-overview__steps">
-<li>Кликни левой кнопкой мыши в любом месте страницы.</li>
-<li>Потом правой, потом средней (колёсико), если есть.</li>
-<li>Справа/внизу появятся: тип события, X, Y и номер кнопки мыши. Это и есть свойства event.</li>
+<h3>Теория по пунктам</h3>
+<ol class="day-overview__theory">
+<li><code>&lt;canvas&gt;</code> — область для растровой графики в браузере.</li>
+<li>Контекст: <code>canvas.getContext('2d')</code>.</li>
+<li>Базовые операции: линии, прямоугольники, дуги, заливка, текст, изображения.</li>
+<li>Координаты: (0,0) — левый верхний угол холста.</li>
+<li>Подробности и примеры — в PDF <code>Canvas_Primer_1.pdf</code>.</li>
 </ol>
 </section>
 </article>
@@ -119,11 +89,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

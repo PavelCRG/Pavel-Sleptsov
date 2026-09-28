@@ -1,0 +1,108 @@
+<!DOCTYPE HTML
+     PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML>
+
+<HEAD>
+     <TITLE>test</TITLE>
+     <META http-equiv=Content-Type content="text/html; charset=utf-8">
+
+     <SCRIPT>
+          function res() {
+               var N = 0;
+               if (document.test.q1_.value == document.test.q1.value) N = N + 1;
+
+               if (document.test.q21.options[3].selected) N = N + 1;
+               if (document.test.q22.options[1].selected) N = N + 1;
+               if (document.test.q23.options[2].selected) N = N + 1;
+
+
+               if (document.test.q3_.value == document.test.q3.value) N = N + 1;
+
+               if (document.test.q42.checked) N = N + 1;
+               if (document.test.q43.checked) N = N + 1;
+               if (document.test.q44.checked) N = N + 1;
+
+               if (document.test.q53.checked) N = N + 1;
+
+               document.test.result.value = " Вы набрали " + N + " баллов"
+          }
+
+     </SCRIPT>
+</HEAD>
+
+<BODY>
+
+     <FORM name=test>
+          <p>1. Какой английский термин обозначает программное обеспечение?
+          <p>
+               <input type=hidden name=q1_ value=software width=200>Ответ:&nbsp;
+               <input type=text name=q1 onclick=this.value='' value="Введите строку">
+          </p>
+          <P>
+          <table>
+               <tr>
+                    <td colspan=2>2. Установите соответствие между категориями людей,<br> использующих компьютеры, и
+                         типами программного обеспечения.</P>
+               <tr>
+                    <td>пользователи
+                    <td><SELECT name=q21>
+                              <option disabled=disabled selected=selected>Выберите вариант</option>
+                              <OPTION>системное обеспечение</OPTION>
+                              <OPTION>системы программирования</OPTION>
+                              <OPTION>прикладное обеспечение</OPTION>
+                         </SELECT>
+               <tr>
+                    <td>системные администраторы
+                    <td><SELECT name=q22>
+                              <option disabled=disabled selected=selected>Выберите вариант</option>
+                              <option>системное обеспечение</option>
+                              <option>прикладное обеспечение</option>
+                              <option>системы программирования</option>
+                         </SELECT>
+               <tr>
+                    <td>программисты
+                    <td><SELECT name=q23>
+                              <option disabled=disabled selected=selected>Выберите вариант</option>
+                              <OPTION>прикладное обеспечение</OPTION>
+                              <OPTION>системы программирования</OPTION>
+                              <OPTION>системное обеспечение</OPTION>
+                         </SELECT>
+          </table>
+          </p>
+          <p>3. Каким термином называют способ обмена данными между двумя объектами, <br>в том числе между пользователем
+               и компьютерной программой?
+          <p>
+               <input type=hidden name=q3_ value=интерфейс width=200>Ответ:&nbsp;
+               <input type=text name=q3 onclick=this.value='' value="Введите строку">
+          </p>
+          <p>4. Отметьте все прикладные программы.
+          <p>
+               <INPUT id=q41 type=checkbox value=q41 name=q4> операционная система <BR>
+               <INPUT id=q42 type=checkbox value=q42 name=q4> системы управления базами данных<BR>
+               <INPUT id=q43 type=checkbox value=q43 name=q4> электронные таблицы <BR>
+               <INPUT id=q44 type=checkbox value=q44 name=q4> графические редакторы <BR>
+               <INPUT id=q45 type=checkbox value=q45 name=q4> утилиты <BR>
+               <!-- ответ1= +1 
+     ответ2= +1
+     ответ3= +1
+-->
+          </p>
+          <P>5. Как называется программа, которая позволяет оформлять текст разными стилями<br> и добавлять в документ
+               рисунки и таблицы?</P>
+          <INPUT id=q51 type=radio value=q51 name=q5> текстовый редактор<BR>
+          <INPUT id=q52 type=radio value=q52 name=q5> графический редактор <BR>
+          <INPUT id=q53 type=radio value=q53 name=q5> текстовый процессор<BR>
+          <INPUT id=q54 type=radio value=q54 name=q5> браузер <BR>
+          <INPUT id=q55 type=radio value=q55 name=q5> почтовый клиент<BR>
+          <!--  
+     ответ3= +1
+-->
+
+          <p>
+               <INPUT onclick=res() type=button value=РЕЗУЛЬТАТ><BR>
+               <TEXTAREA name=result rows=5 cols=60></TEXTAREA>
+          </P>
+     </FORM>
+</BODY>
+
+</HTML>

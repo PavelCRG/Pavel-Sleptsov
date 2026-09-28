@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 04 — картинки в движении — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лабораторная 04 — визуальные эффекты — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,21 +39,42 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад к лабораторным</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 04 — картинки в движении</h2>
-<p class="day-overview__date">Из файла: 21_Визуальные_эффекты.pdf</p>
+<h2 class="day-overview__title">Лабораторная 04 — визуальные эффекты</h2>
+<p class="day-overview__date">По материалам: 21_Визуальные_эффекты.pdf</p>
 </header>
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Картинки ездят, слайдер листается, флаги можно таскать мышкой. Ещё делал эффекты при наведении — увеличить, отдалить, пульсация. Часто всё крутится на таймере: меняется картинка или координаты.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Эффекты с картинками: удаление/приближение, пульсация, слайдер со сменой кадров, перетаскивание флагов.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> рассмотреть сценарии с объектами, связанными с тегами HTML; создать анимационные изображения.</p>
+<section class="site-frame site-frame--story">
+<h3>Объекты и изображения</h3>
+<ol class="day-overview__theory"><li>Многие объекты JS соответствуют HTML-тегам и входят в иерархию с корнем <code>window</code>.</li>
+<li>Коллекция <code>document.images</code> — все картинки на странице: <code>document.images[0]</code>, <code>images[1]</code>…</li>
+<li>Доступ по имени: тег <code>&lt;img name="…"&gt;</code> → обращение через имя.</li>
+<li>Для анимации меняют <code>height</code> / <code>width</code> или <code>src</code> по таймеру <code>setTimeout</code>.</li></ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">Из большого файла по визуальным эффектам: картинки — это document.images или Image по имени. Меняешь height/src по таймеру — получается удаление, приближение, пульсация или слайд-шоу. Для плавности картинки иногда заранее грузят в массив new Image().</p>
+<h3>1.1 Удаление, приближение, пульсация</h3>
+<ol class="day-overview__theory"><li>Удаление: уменьшаем <code>height</code> на каждом шаге таймера, пока не достигнем предела.</li>
+<li>Приближение: наоборот — увеличиваем размер.</li>
+<li>Пульсация: чередуем увеличение и уменьшение (например, для <code>serde4ko.gif</code>).</li>
+<li>Запуск часто вешают на <code>onMouseOver</code>.</li></ol>
 </section>
-
+<section class="site-frame site-frame--story">
+<h3>1.2 Чередование с предзагрузкой</h3>
+<ol class="day-overview__theory"><li>Создаём массив: <code>imgslide = new Array()</code>.</li>
+<li>Каждый элемент — <code>new Image()</code>, задаём <code>.src</code> заранее.</li>
+<li>На таймере подставляем в <code>document.images[0].src</code> уже загруженный адрес — смена кадров без рывков.</li></ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>Дополнительно</h3>
+<ul class="day-overview__theory"><li>Слайдер и drag-and-drop флагов — те же идеи: таймер / события мыши + смена позиции или src.</li>
+<li>Самостоятельная работа: свой эффект на базе height/src и setTimeout.</li></ul>
+</section>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -83,11 +104,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

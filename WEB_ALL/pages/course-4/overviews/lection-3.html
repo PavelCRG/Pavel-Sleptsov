@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лекция 03 — BOM и события — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лекция 03 — BOM — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,23 +39,23 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lection.html">← К списку лекций</a></p>
+<p class="overview-back"><a href="../lection.html">← Назад к лекциям</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лекция 03 — BOM и события</h2>
-
+<h2 class="day-overview__title">Лекция 03 — BOM</h2>
+<p class="day-overview__date">По материалам: 3_лекция_BOM.html / .pdf</p>
 </header>
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Больше практики с событиями: pos9–pos15 и zad1–zad3. Клики, мышь, клавиши. HTA-файл лучше открывать отдельно в Windows — в обычной вкладке он часто капризничает.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">BOM: объекты окружения браузера, демо bom_demo и задания zad1–zad3, позиции pos9–pos15.</p>
 </section>
+<p class="day-overview__goal"><strong>Цель:</strong> закрепить Browser Object Model — объекты окружения вне самого документа.</p>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">BOM — объекты браузера вокруг страницы (окно, история, адрес). Событие — реакция на действие пользователя. В демо важно не столько текст в полях, сколько клик, движение мыши и клавиша: скрипт ловит это и отвечает.</p>
-</section>
-<section class="site-frame site-frame--story">
-<h3>Подсказка по демо</h3>
-<p class="day-overview__story"><a href="../guides/lection-03.html">Что нажимать и что вводить</a></p>
+<h3>Теория по пунктам</h3>
+<ol class="day-overview__theory"><li>BOM — модель объектов браузера: window и связанные location, navigator, history, screen и др.</li>
+<li>В отличие от DOM (дерево документа), BOM описывает «оболочку» — окно, адрес, историю, сведения о браузере.</li>
+<li>Практика: открытие окон, чтение location/navigator, работа с history.</li>
+<li>Материал лекции — файл <code>3_лекция_BOM</code>; рядом демо и задания для отладки.</li></ol>
 </section>
 </article>
 </main>
@@ -86,11 +86,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Регулярные выражения 1</title>
+</head>
+
+<body>
+    <script>
+        var reg = /vc./;
+
+        var s1 = "asdfghjkmnbxz";
+        var s2 = "asdfgvcxhjkmnvcbxz";
+
+        document.write(reg.test(s1) + '<br>' + reg.test(s2));
+
+        document.write('<br>' + reg.exec(s1) + '<br>' + reg.exec(s2));
+    </script>
+</body>
+
+</html>

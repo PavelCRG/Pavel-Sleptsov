@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2 - Автомобильный номер РБ</title>
+    <script>
+        function func1() {
+            document.getElementById("t1").value = "";
+        }
+
+        function func2() {
+            var str = document.getElementById("t1").value;
+            var reg = /^\d{4}[ABEIKMHOPCTXАВЕІКМНОРСКТХ]{2}-[0-7]$/;
+
+            if (reg.test(str)) {
+                alert("Верно");
+            } else {
+                alert("Неверно");
+            }
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color: yellow;">Проверка автономера РБ (например, 0235KH-5)</p>
+    <form>
+        <input id="t1" type="text" size="30" value=""><br><br>
+        <input style="background-color: pink;" type="button" value="Очистить" onclick="func1()">
+        <input style="background-color: lightgreen;" type="button" value="Проверить" onclick="func2()">
+    </form>
+</body>
+
+</html>

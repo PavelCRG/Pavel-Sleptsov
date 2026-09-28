@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4 - Точная проверка даты</title>
+    <script>
+        function func1() {
+            document.getElementById("t1").value = "";
+        }
+
+        function func2() {
+            var str = document.getElementById("t1").value;
+            var regFormat = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+
+            if (!regFormat.test(str)) {
+                alert("Неверно");
+                return;
+            }
+            var parts = str.split("-");
+            var year = parseInt(parts[0], 10);
+            var month = parseInt(parts[1], 10);
+            var day = parseInt(parts[2], 10);
+            var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            var isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            if (isLeap) {
+                daysInMonth[1] = 29;
+            }
+
+            if (day <= daysInMonth[month - 1]) {
+                alert("Верно");
+            } else {
+                alert("Неверно");
+            }
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color: yellow;">Точная проверка даты рождения (гггг-мм-дд)</p>
+    <form>
+        <input id="t1" type="text" size="30" value=""><br><br>
+        <input style="background-color: pink;" type="button" value="Очистить" onclick="func1()">
+        <input style="background-color: lightgreen;" type="button" value="Проверить" onclick="func2()">
+    </form>
+</body>
+
+</html>

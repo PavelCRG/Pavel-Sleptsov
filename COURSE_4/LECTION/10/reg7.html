@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Регулярные выражения 7</title>
+    <script>
+        function func1() {
+            document.getElementById("t1").value = "";
+        }
+        function func2() {
+            var str = document.getElementById("t1").value;
+            var reg = /^(19\d\d|200\d|201[0-5])-(0[1-9]|1[0-2])-(0[1-9]|[1-2]\d|3[0-1])$/;
+
+            if (reg.test(str)) {
+                alert("Верно");
+            } else {
+                alert("Неверно");
+            }
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color: yellow;">Проверка корректности ввода даты (гггг-мм-дд)</p>
+    <form>
+        <input id="t1" type="text" size="30" value=""><br><br>
+        <input style="background-color: pink;" type="button" value="Очистить" onclick="func1()">
+        <input style="background-color: lightgreen;" type="button" value="Проверить" onclick="func2()">
+    </form>
+</body>
+
+</html>

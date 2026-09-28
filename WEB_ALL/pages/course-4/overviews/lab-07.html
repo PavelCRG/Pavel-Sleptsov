@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 07 — формы — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лабораторная 07 — проверка данных формы — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,24 +39,54 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад к лабораторным</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 07 — формы</h2>
-<p class="day-overview__date">Из файла: 24_lab_form_проверка_информации.pdf</p>
+<h2 class="day-overview__title">Лабораторная 07 — проверка данных формы</h2>
+<p class="day-overview__date">По материалам: 24_lab_form (проверка данных).pdf</p>
 </header>
+<div class="overview-tabs">
+<input class="overview-tabs__radio overview-tabs__radio--theory" type="radio" name="lab07" id="lab07-theory" checked>
+<input class="overview-tabs__radio overview-tabs__radio--howto" type="radio" name="lab07" id="lab07-howto">
+<div class="overview-tabs__nav" role="tablist">
+<label for="lab07-theory">Теория</label>
+<label for="lab07-howto">Как пользоваться</label>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--theory">
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Собрал форму: имя, email, товар, количество, доставка. Скрипт читает поля и показывает, что вышло. В самостоятельной работе сделал мини-заказ и проверку, чтобы пустые или кривые данные не проходили.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Формы: доступ к elements, запись значений, переключатели, fieldset/legend, проверка имени и email перед отправкой.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> изучить обращение к элементам формы и уметь проверять введённую пользователем информацию.</p>
+<section class="site-frame site-frame--story">
+<h3>Темы из пособия</h3>
+<ul class="day-overview__theory"><li>Объектная модель документа с формами [1, 334–336]</li>
+<li>Свойства объектов коллекции elements [1, 336–340]</li>
+<li>Подчинённые коллекции [1, 340–341]</li>
+<li>Проверка данных перед отправкой на сервер [1, 341–343]</li></ul>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">По PDF про проверку форм: форма — это объект, поля лежат в elements (или по name). Перед отправкой скрипт смотрит значения: пустое имя, кривой email — и ругается. Радиокнопки и списки читаются так же, только значение берёшь у выбранного пункта.</p>
+<h3>Теория по пунктам</h3>
+<ol class="day-overview__theory"><li>Формы — коллекция <code>document.forms</code>; элементы формы — <code>form.elements</code>.</li>
+<li>Обращение: по индексу в массиве и по атрибуту <code>name</code>.</li>
+<li>Можно читать и записывать <code>value</code> полей из скрипта (приветствие по кнопке, подстановка значений).</li>
+<li>Группа переключателей (radio): проверяют, какой выбран.</li>
+<li><code>fieldset</code> / <code>legend</code> / <code>label</code> — часто доступны через document, а не только через elements.</li>
+<li>Перед отправкой: проверить имя и email; при ошибке — сообщение и отмена отправки.</li>
+<li>Самостоятельная работа: несколько форм + своя проверка + схема объектной модели.</li></ol>
 </section>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--howto">
 <section class="site-frame site-frame--story">
-<h3>Подсказка по демо</h3>
-<p class="day-overview__story"><a href="../guides/lab-07.html">Что нажимать и что вводить</a></p>
+<h3>Примеры p334 … p342</h3>
+<ol class="day-overview__steps">
+<li>Открывай по порядку: сначала доступ к полям, потом запись значений, потом radio и fieldset.</li>
+<li>В примере с проверкой: введи имя и email, нажми отправку — при ошибке увидишь предупреждение.</li>
+<li>Попробуй пустые поля и некорректный email.</li>
+</ol>
 </section>
+</div>
+</div>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -86,11 +116,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

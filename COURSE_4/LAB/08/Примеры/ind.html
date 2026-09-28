@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Тест</title>
+</head>
+
+<body>
+    <h2>Тест по регулярным выражениям</h2>
+    <p>1. Какой флаг ищет все совпадения?</p>
+
+    <label><input type="radio" name="q1" value="a"> i</label><br>
+    <label><input type="radio" name="q1" value="b"> g</label><br>
+    <label><input type="radio" name="q1" value="c"> m</label>
+    <p>2. Методы объекта RegExp:</p>
+    <label><input type="checkbox" name="q2" value="a"> test()</label><br>
+    <label><input type="checkbox" name="q2" value="b"> match()</label><br>
+    <label><input type="checkbox" name="q2" value="c"> exec()</label>
+    <p>3. Что означает \d?</p>
+    <select name="q3">
+        <option value="">-- выбери --</option>
+        <option value="a">буква</option>
+        <option value="b">пробел</option>
+        <option value="c">цифра</option>
+    </select>
+    <p>4. Введите e-mail:</p>
+    <input type="text" name="q4" placeholder="user@mail.ru">
+    <p>5. Соответствие:</p>
+    <p>\d —
+        <select name="q5_1">
+            <option value="">--</option>
+            <option value="a">цифра</option>
+            <option value="b">буква</option>
+        </select>
+    </p>
+    <p>\w —
+        <select name="q5_2">
+            <option value="">--</option>
+            <option value="a">цифра</option>
+            <option value="b">буква</option>
+        </select>
+    </p>
+    <button onclick="check()">Проверить</button>
+    <p id="result"></p>
+    <script>
+        function calculateMark(score, max) {
+            let percent = score / max * 100;
+            if (percent >= 90) return 10;
+            if (percent >= 70) return 8;
+            if (percent >= 50) return 6;
+            if (percent >= 30) return 4;
+            return 2;
+        }
+        function check() {
+            let score = 0;
+            const f = document;
+            let q1 = f.querySelector('input[name="q1"]:checked');
+            if (q1 && q1.value === 'b') score++;
+            let q2 = [...f.querySelectorAll('input[name="q2"]:checked')]
+                .map(x => x.value).sort().join(',');
+            if (q2 === 'a,c') score++;
+            if (f.querySelector('select[name="q3"]').value === 'c') score++;
+            let q4 = f.querySelector('input[name="q4"]').value.trim();
+            if (/^\w+@\w+\.\w{2,3}$/.test(q4)) score++;
+            if (f.querySelector('select[name="q5_1"]').value === 'a' &&
+                f.querySelector('select[name="q5_2"]').value === 'b') score++;
+            let mark = calculateMark(score, 5);
+            f.getElementById('result').innerHTML = 'Баллов: ' + score + ' из 5. Отметка: ' + mark;
+        }
+    </script>
+</body>
+
+</html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 03 — найти элемент на странице — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лабораторная 03 — доступ к HTML-элементам — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,21 +39,57 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад к лабораторным</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 03 — найти элемент на странице</h2>
-<p class="day-overview__date">Из файла: 20_lab_dostup_HTML_element.pdf</p>
+<h2 class="day-overview__title">Лабораторная 03 — доступ к HTML-элементам</h2>
+<p class="day-overview__date">По материалам: 20_lab_dostup_HTML_element.pdf</p>
 </header>
+<div class="overview-tabs">
+<input class="overview-tabs__radio overview-tabs__radio--theory" type="radio" name="lab03" id="lab03-theory" checked>
+<input class="overview-tabs__radio overview-tabs__radio--howto" type="radio" name="lab03" id="lab03-howto">
+<div class="overview-tabs__nav" role="tablist">
+<label for="lab03-theory">Теория</label>
+<label for="lab03-howto">Как пользоваться</label>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--theory">
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Учился находить куски HTML по id и менять их через innerHTML. Делал примеры, где крутятся сразу несколько элементов. В самостоятельной работе собрал своё маленькое управление блоками.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Универсальные свойства узлов, поиск по id/классу/тегу, innerHTML, смена цвета при наведении и изменение стилей элемента.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> изучить универсальные методы и свойства объектов и уметь использовать иерархию для доступа к содержимому и свойствам HTML-элементов.</p>
+<section class="site-frame site-frame--story">
+<h3>Темы из пособия</h3>
+<ul class="day-overview__theory"><li>Универсальные свойства объектов [1, 316–317]</li>
+<li>Универсальные методы объектов [1, 317–319]</li>
+<li>Свойства элементов для работы с содержимым и стилями [1, 320]</li></ul>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">В PDF про доступ к HTML: элемент ищут по id (getElementById), по классу или по тегу. Потом меняют содержимое через innerHTML или трогают style — цвет, размер, положение. Это уже не «вся страница», а конкретный кусок.</p>
+<h3>Теория по пунктам</h3>
+<ol class="day-overview__theory"><li>У каждого узла есть связи с соседями: parent, childNodes, firstChild, nextSibling и т.п. — по ним ходят по дереву.</li>
+<li>Поиск в дереве:<ul><li><code>document.getElementById(id)</code></li><li><code>document.getElementsByClassName(класс)</code></li><li><code>document.getElementsByTagName(тег)</code></li></ul></li>
+<li><code>innerHTML</code> — прочитать или заменить HTML внутри элемента.</li>
+<li>Стили через <code>element.style</code>: <code>backgroundColor</code>, <code>left</code>, <code>top</code>, <code>width</code>, <code>height</code>, <code>fontSize</code>.</li>
+<li>Пример из PDF: смена цвета фона при <code>onmouseover</code> / <code>onmouseout</code>.</li>
+<li>Задание: скрипт управления содержимым через innerHTML; скрипт изменения положения/размера/шрифта.</li></ol>
 </section>
-
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--howto">
+<section class="site-frame site-frame--story">
+<h3>elements_control.html / inner.html / p319.html / p322.html</h3>
+<ol class="day-overview__steps">
+<li>Открой файлы по очереди — в каждом свой приём доступа к элементу.</li>
+<li>Наводи курсор, жми кнопки, смотри, как меняется текст или стиль.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>independent_work.html</h3>
+<ol class="day-overview__steps">
+<li>Самостоятельная работа: попробуй изменить содержимое или стиль элемента по кнопке / наведению.</li>
+</ol>
+</section>
+</div>
+</div>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -83,11 +119,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

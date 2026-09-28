@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 06 — меняем дерево страницы — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лабораторная 06 — создание и удаление элементов — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,21 +39,40 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад к лабораторным</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 06 — меняем дерево страницы</h2>
-<p class="day-overview__date">Из файла: 23_lab_изменение_добавление_удаление_HTML_элементов_свойств.pdf</p>
+<h2 class="day-overview__title">Лабораторная 06 — создание и удаление элементов</h2>
+<p class="day-overview__date">По материалам: 23_lab (изменение HTML-элементов).pdf</p>
 </header>
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Уже не просто текст менял — добавлял и удалял целые куски страницы. append, insertBefore, clone, remove. В самостоятельной работе потренировался на списке, пока не привык к этим методам.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Создавал узлы через createElement / createTextNode, добавлял appendChild / insertBefore, заменял и удалял элементы.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> научиться создавать, добавлять, изменять и удалять HTML-элементы и их свойства сценариями JavaScript.</p>
+<section class="site-frame site-frame--story">
+<h3>Создание элементов</h3>
+<ol class="day-overview__theory"><li><code>document.createElement(имяТега)</code> — создаёт элемент (например, <code>h1</code>).</li>
+<li><code>document.createTextNode(текст)</code> — создаёт текстовый узел.</li>
+<li>Текст можно задать и через <code>element.textContent = "…"</code> — текстовый узел создастся сам.</li></ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">Из файла: сначала createElement / createTextNode, потом вставить через appendChild или insertBefore. Удаление — removeChild, замена — replaceChild, копия — cloneNode. textContent можно задать сразу, без отдельного текстового узла.</p>
+<h3>Добавление на страницу</h3>
+<ol class="day-overview__theory"><li><code>parent.appendChild(newNode)</code> — в конец дочерних узлов.</li>
+<li><code>parent.insertBefore(newNode, referenceNode)</code> — перед указанным узлом.</li>
+<li>Сначала собираем элемент «в памяти», потом вставляем в уже существующий узел (<code>document.body</code> и т.д.).</li></ol>
 </section>
-
+<section class="site-frame site-frame--story">
+<h3>Замена и удаление</h3>
+<ol class="day-overview__theory"><li><code>replaceChild(newNode, oldNode)</code> — заменить узел.</li>
+<li><code>removeChild(node)</code> — удалить дочерний узел.</li>
+<li>Можно менять атрибуты и классы у уже существующих элементов.</li></ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>Практика</h3>
+<ul class="day-overview__theory"><li>В примерах лабы: кнопки добавляют / убирают блоки, меняют содержимое списка.</li>
+<li>Самостоятельно: свой маленький сценарий create → append → remove.</li></ul>
+</section>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -83,11 +102,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

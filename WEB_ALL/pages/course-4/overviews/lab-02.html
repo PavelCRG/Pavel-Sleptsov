@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 02 — объект document — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лабораторная 02 — объект document — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,24 +39,65 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад к лабораторным</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 02 — объект document</h2>
-<p class="day-overview__date">Из файла: 19_lab_object_document.pdf</p>
+<h2 class="day-overview__title">Лабораторная 02 — объект document</h2>
+<p class="day-overview__date">По материалам: 19_lab_object_document.pdf</p>
 </header>
+<div class="overview-tabs">
+<input class="overview-tabs__radio overview-tabs__radio--theory" type="radio" name="lab02" id="lab02-theory" checked>
+<input class="overview-tabs__radio overview-tabs__radio--howto" type="radio" name="lab02" id="lab02-howto">
+<div class="overview-tabs__nav" role="tablist">
+<label for="lab02-theory">Теория</label>
+<label for="lab02-howto">Как пользоваться</label>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--theory">
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Разбирал объект document: смотрел свойства страницы, менял фон и цвет, выводил инфу прямо на экран. Стало понятнее: страница — это объект, и скрипт может с ней общаться.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Работал с document: свойства документа, динамическое создание страницы, иерархия элементов и форма со сложением двух чисел.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> изучить методы и свойства объекта document, уметь искать элементы в дереве DOM.</p>
+<section class="site-frame site-frame--story">
+<h3>Темы из пособия</h3>
+<ul class="day-overview__theory"><li>Свойства объекта document [1, 309–310]</li>
+<li>Методы объекта document [1, 310–311]</li>
+<li>Иерархия основных элементов документа [1, 315]</li></ul>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">Из условия: DOM — это дерево элементов страницы. document хранит свойства документа (цвета, формы, ссылки) и даёт доступ к коллекциям элементов. Через него можно читать страницу и менять её из скрипта, не перезагружая всё целиком.</p>
+<h3>Теория по пунктам</h3>
+<ol class="day-overview__theory"><li><strong>DOM</strong> — Document Object Model: документ представлен деревом узлов, к которым можно обращаться из скрипта.</li>
+<li><strong>DHTML</strong> — динамический HTML: изменение содержимого и оформления страницы без полной перезагрузки.</li>
+<li>Через <code>document</code> читают заголовок, URL, цвета, коллекции форм, изображений, ссылок.</li>
+<li>Динамическое создание документа: <code>document.write</code> / открытие потока записи; удобно показать дату последнего изменения страницы.</li>
+<li><strong>Коллекция</strong> — набор однотипных объектов (forms, images, links, anchors). У document есть подчинённые коллекции.</li>
+<li>Доступ к элементу формы: по индексу в коллекции (<code>document.forms[0].elements[0]</code>) и по имени (<code>document.имяФормы.имяПоля</code>).</li>
+<li>Практическое задание из PDF: форма суммы двух чисел — оба способа доступа; затем построить объектную модель этого документа.</li></ol>
+</section>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--howto">
+<section class="site-frame site-frame--story">
+<h3>3_09.html — свойства document</h3>
+<ol class="day-overview__steps">
+<li>Открой файл и посмотри, какие свойства документа выводятся на страницу.</li>
+</ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Подсказка по демо</h3>
-<p class="day-overview__story"><a href="../guides/lab-02.html">Что нажимать и что вводить</a></p>
+<h3>3_10.html / 3_11.html</h3>
+<ol class="day-overview__steps">
+<li>Открой по очереди. Смотри, как скрипт строит или меняет документ.</li>
+</ol>
 </section>
+<section class="site-frame site-frame--story">
+<h3>6.html — сумма двух чисел</h3>
+<ol class="day-overview__steps">
+<li>Введи два числа в поля формы.</li>
+<li>Нажми кнопку расчёта — сумма появится в результате.</li>
+<li>В коде доступ к полям идёт и через коллекцию, и через имя.</li>
+</ol>
+</section>
+</div>
+</div>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -86,11 +127,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

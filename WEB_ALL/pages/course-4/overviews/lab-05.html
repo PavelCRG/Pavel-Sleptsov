@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 05 — события — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лабораторная 05 — обработчики событий — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,24 +39,52 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад к лабораторным</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 05 — события</h2>
-<p class="day-overview__date">Из файла: 22_lab_eventt.pdf</p>
+<h2 class="day-overview__title">Лабораторная 05 — обработчики событий</h2>
+<p class="day-overview__date">По материалам: 22_lab_eventt.pdf</p>
 </header>
+<div class="overview-tabs">
+<input class="overview-tabs__radio overview-tabs__radio--theory" type="radio" name="lab05" id="lab05-theory" checked>
+<input class="overview-tabs__radio overview-tabs__radio--howto" type="radio" name="lab05" id="lab05-howto">
+<div class="overview-tabs__nav" role="tablist">
+<label for="lab05-theory">Теория</label>
+<label for="lab05-howto">Как пользоваться</label>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--theory">
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Цеплял обработчики к кнопкам и к странице. Смотрел, что лежит в объекте event. Пробовал addEventListener и removeEventListener. В самостоятельной работе понажимал всё сам и проверил реакцию.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Типы событий, разные способы назначения обработчиков, объект event, всплытие и addEventListener.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> ознакомиться с типами событий, уметь назначать обработчик разными способами, рассмотреть свойства и методы объекта event.</p>
+<section class="site-frame site-frame--story">
+<h3>Темы из пособия</h3>
+<ul class="day-overview__theory"><li>Типы событий [1, 324]</li>
+<li>Способы назначения обработчика [1, 324–328]</li>
+<li>Свойства и методы объекта event [1, 328–330]</li></ul>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">В PDF по событиям: клик, мышь, клавиша — это event. Обработчик можно повесить в HTML, через свойство DOM или через addEventListener. В самом event лежат координаты, клавиша, цель клика; оттуда же можно отменить действие по умолчанию.</p>
+<h3>Теория по пунктам</h3>
+<ol class="day-overview__theory"><li>Событие — реакция на действие пользователя или браузера (клик, ввод, загрузка, касание).</li>
+<li>Способы назначения обработчика:<ul><li>атрибут в HTML: <code>onclick="…"</code>;</li><li>свойство DOM: <code>el.onclick = function(){…}</code>;</li><li>несколько обработчиков: <code>addEventListener</code>.</li></ul></li>
+<li>Объект <code>event</code>: тип, цель, координаты; можно отменить действие по умолчанию (<code>preventDefault</code>).</li>
+<li>Всплытие и погружение: событие идёт по дереву; <code>addEventListener(тип, fn, useCapture)</code>.</li>
+<li>События касания / указателя — для сенсорных экранов [1, 333].</li>
+<li>По PDF: отладить скрипты из пособия, разобрать всплытие, ответить на контрольные вопросы.</li></ol>
 </section>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--howto">
 <section class="site-frame site-frame--story">
-<h3>Подсказка по демо</h3>
-<p class="day-overview__story"><a href="../guides/lab-05.html">Что нажимать и что вводить</a></p>
+<h3>p324.html … p334.html</h3>
+<ol class="day-overview__steps">
+<li>Открывай файлы по порядку номеров — в каждом свой способ назначения обработчика.</li>
+<li>Кликай по элементам и смотри сообщение / изменение на странице.</li>
+<li>Где несколько обработчиков на одно событие — проверь, что срабатывают все.</li>
+</ol>
 </section>
+</div>
+</div>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -86,11 +114,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

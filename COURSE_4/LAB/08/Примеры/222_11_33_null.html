@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regulyr</title>
+</head>
+
+<body>
+    <h1>Регулярные выражения</h1>
+    5. Пусть дан текст, записанный в виде строки:<br>
+    str="11 aaa bbb "+"ccc 222 ddd "+"eee ggg 33";<br>
+    Разберите посимвольно шаблоны и запишите результат поиска по шаблону<br>
+    a) /\d\d\d/m <br>
+    b) /^\d\d/m <br>
+    c) /\d\d$/m <br>
+    d) /^\d\d\d/m
+    <script>
+        //let str="11 aaa bbb"+ "ccc 222 ddd"+"eee ggg 33"
+        //let str='11 aaa bbb\ccc 222 ddd\eee ggg 33';
+        //let str='11 aaa bbb\
+        //ccc 222 ddd\
+        //eee ggg 33';
+        str = `11 aaa bbb
+ccc 222 ddd
+eee ggg 33`;
+        let regexp5_a = /\d\d\d/m
+        alert(regexp5_a.exec(str))
+        let regexp5_b = /^\d\d/m
+        alert(regexp5_b.exec(str))
+        let regexp5_c = /\d\d$/m
+        alert(regexp5_c.exec(str))
+        let regexp5_d = /^\d\d\d/m
+        alert(regexp5_d.exec(str))
+    </script>
+</body>
+
+</html>

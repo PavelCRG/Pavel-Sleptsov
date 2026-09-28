@@ -78,6 +78,48 @@
     color: var(--accent-dark);
 }
 
+.day-overview__theory {
+    margin: 0.25rem 0 0;
+    padding: 0 0 0 1.2rem;
+    font-size: 0.96rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.day-overview__theory > li {
+    margin-bottom: 0.55rem;
+}
+
+.day-overview__theory > li:last-child {
+    margin-bottom: 0;
+}
+
+.day-overview__theory ul,
+.day-overview__theory ol {
+    margin: 0.35rem 0 0.15rem;
+    padding-left: 1.15rem;
+}
+
+.day-overview__theory li li {
+    margin-bottom: 0.25rem;
+}
+
+.day-overview__theory code {
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size: 0.9em;
+    padding: 0.08em 0.28em;
+    background: #f0f4f8;
+    border-radius: 4px;
+    word-break: break-word;
+}
+
+.day-overview__goal {
+    margin: 0 0 0.85rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: var(--text);
+}
+
 .day-overview__steps {
     margin: 0.35rem 0 0;
     padding: 0 0 0 1.2rem;

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лекция 03 — полная инструкция — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лекция 10 — регулярные выражения — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,45 +39,53 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lection.html">← Назад</a></p>
+<p class="overview-back"><a href="../lection.html">← Назад к лекциям</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<span class="day-overview__badge">Инструкция</span>
-<h2 class="day-overview__title">Лекция 03 — полная инструкция</h2>
+<h2 class="day-overview__title">Лекция 10 — регулярные выражения</h2>
+<p class="day-overview__date">По материалам: 10_лекция_регулярные_выражения.pdf</p>
 </header>
-<p class="day-overview__summary">Почти везде события. Данные в поля почти не нужны — важны клики, мышь и клавиши.</p>
+<div class="overview-tabs">
+<input class="overview-tabs__radio overview-tabs__radio--theory" type="radio" name="lection-10" id="lection-10-theory" checked>
+<input class="overview-tabs__radio overview-tabs__radio--howto" type="radio" name="lection-10" id="lection-10-howto">
+<div class="overview-tabs__nav" role="tablist">
+<label for="lection-10-theory">Теория</label>
+<label for="lection-10-howto">Как пользоваться</label>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--theory">
 <section class="site-frame site-frame--story">
-<h3>pos9–pos15</h3>
-<p class="day-overview__story">Открывай по порядку из списка лекции.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Повторил регулярные выражения: примеры reg1–reg8 и задания zadanie_1–4.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> закрепить флаги и шаблоны RegExp; уметь проверять строки методами test/exec/match/replace/search.</p>
+<section class="site-frame site-frame--story">
+<h3>Теория по пунктам</h3>
+<ol class="day-overview__theory">
+<li>Регулярное выражение — шаблон для поиска и проверки текста.</li>
+<li>Создание: литерал <code>/шаблон/флаги</code> или <code>new RegExp(...)</code>.</li>
+<li>Флаги: <code>g</code> (все совпадения), <code>i</code> (без регистра), <code>m</code> (многострочный режим).</li>
+<li>Методы RegExp: <code>test()</code>, <code>exec()</code>; у String: <code>match()</code>, <code>replace()</code>, <code>search()</code>.</li>
+<li>Спецсимволы: <code>\d</code>, <code>\w</code>, <code>^</code>, <code>$</code>, квантификаторы <code>+</code>, <code>*</code>, <code>{n}</code>.</li>
+<li>Практика: файлы <code>reg1.html</code>–<code>reg8.html</code>, задания <code>zadanie_1.html</code>–<code>zadanie_4.html</code>.</li>
+</ol>
+</section>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--howto">
+<section class="site-frame site-frame--story">
+<h3>reg1.html–reg8.html</h3>
 <ol class="day-overview__steps">
-<li>На каждой странице покликай кнопки и элементы, которые видишь.</li>
-<li>Если есть поле — можно вписать коротко: тест или 123.</li>
-<li>Смотри, что меняется на странице или что пишет alert.</li>
+<li>Открывай по порядку — в каждом свой шаблон и проверка строки.</li>
+<li>Смотри результат на странице или в alert.</li>
 </ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>zad1–zad3</h3>
-
+<h3>zadanie_1.html–zadanie_4.html</h3>
 <ol class="day-overview__steps">
-<li>Те же правила: открой файл, выполни то, что просят кнопки/поля на экране.</li>
-<li>Если просят имя — пиши Павел. Если число — 5 или 10.</li>
+<li>Выполни задания: ввод / проверка по шаблону из условия.</li>
 </ol>
 </section>
-<section class="site-frame site-frame--story">
-<h3>bom_demo.html</h3>
-
-<ol class="day-overview__steps">
-<li>Жми все кнопки по очереди и читай, что показывает страница про объекты браузера.</li>
-</ol>
-</section>
-<section class="site-frame site-frame--story">
-<h3>HTA (если есть в папке)</h3>
-
-<ol class="day-overview__steps">
-<li>Файл .hta в обычной вкладке браузера часто не работает.</li>
-<li>Открой его двойным кликом в проводнике Windows.</li>
-</ol>
-</section>
+</div>
+</div>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -107,11 +115,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

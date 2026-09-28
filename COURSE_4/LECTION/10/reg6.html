@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Регулярные выражения 6</title>
+    <script>
+        function writeCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function readCookie(name) {
+            var reg = new RegExp("(?:^| )" + name + "=([^;]*)");
+            var exec = reg.exec(document.cookie);
+            return exec ? unescape(exec[2] || exec[1]) : undefined;
+        }
+
+        function func1() {
+            document.getElementById("pp1").value = "";
+        }
+
+        function func2() {
+            var text = document.getElementById("pp1").value;
+            var parts = text.split(";");
+            var name = parts[0];
+            var value = parts[1];
+            var ds = parts[2];
+
+            writeCookie(name, value, ds);
+            document.getElementById("pp1").value = "";
+        }
+
+        function func3() {
+            var name = document.getElementById("pp1").value;
+            document.getElementById("pp1").value = name + '=' + readCookie(name);
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color: yellow;">Пример использования cookie с RegExp</p>
+    <form>
+        <input id="pp1" type="text" size="80" value=""><br>
+        <input style="background-color: pink;" type="button" value="Очистить" onclick="func1()">
+        <input style="background-color: lightblue;" type="button" value="Записать" onclick="func2()">
+        <input style="background-color: lightgreen;" type="button" value="Вывести" onclick="func3()">
+    </form>
+</body>
+
+</html>

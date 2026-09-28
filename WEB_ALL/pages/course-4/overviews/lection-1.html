@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Лекция 01 — объекты браузера — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,21 +39,38 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lection.html">← К списку лекций</a></p>
+<p class="overview-back"><a href="../lection.html">← Назад к лекциям</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
 <h2 class="day-overview__title">Лекция 01 — объекты браузера</h2>
-<p class="day-overview__date">Из файла: 1_lection_js_object_brouzer_global.pdf</p>
+<p class="day-overview__date">По материалам: 1_lection_js_object_brouzer_global.pdf</p>
 </header>
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Разбирали объект window и всё вокруг него. Я сделал короткие страницы со свойствами navigator, history, location, document и global — открыл и посмотрел, что выдаёт браузер.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Разобрал объекты браузера: window, document, location, navigator, history — короткие демо-страницы к каждому.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> понять, что такое объект, свойство и метод; изучить объекты браузера верхнего уровня.</p>
+<section class="site-frame site-frame--story">
+<h3>Объект, свойство, метод</h3>
+<ol class="day-overview__theory"><li>Объект — набор данных (свойства) и функций (методы).</li>
+<li>Обращение: <code>объект.свойство</code>, <code>объект.метод()</code>. Пример: <code>document.write()</code>.</li>
+<li>Три группы объектов: объекты браузера; встроенные объекты JS; объекты, связанные с HTML-тегами.</li></ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">В лекции: объект = свойства + методы, обращение через точку (document.write). Объекты браузера создаются сами при загрузке: window сверху, дальше document, location, navigator, history. Window — главное окно; document — текущая страница; location — адрес; navigator — про браузер; history — куда ходили в сессии.</p>
+<h3>Объекты браузера (создаются при загрузке)</h3>
+<ul class="day-overview__theory"><li><code>window</code> — верхний уровень; окно браузера (и фреймы).</li>
+<li><code>document</code> — текущий HTML-документ (формы, цвета, теги как свойства).</li>
+<li><code>location</code> — адрес документа (URL).</li>
+<li><code>navigator</code> — сведения о браузере (часто только чтение).</li>
+<li><code>history</code> — история переходов в сеансе.</li></ul>
 </section>
-
+<section class="site-frame site-frame--story">
+<h3>Объект window</h3>
+<ol class="day-overview__theory"><li>Главное окно; во фреймах — через <code>parent.frames[i]</code>.</li>
+<li>Обращение: <code>window.</code>, <code>self.</code>, <code>top.</code>, <code>parent.</code> или коротко без префикса (в with / как глобал).</li>
+<li>Свойства: defaultStatus, frames, length, name, parent, self, status, top, window.</li>
+<li>Демо: window.html, navigator.html, history.html, location.html, document.html, global.html.</li></ol>
+</section>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -83,11 +100,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

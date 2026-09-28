@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лекции 04–06 — полная инструкция — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лекция 11 — AJAX — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,38 +39,25 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lection.html">← Назад</a></p>
+<p class="overview-back"><a href="../lection.html">← Назад к лекциям</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<span class="day-overview__badge">Инструкция</span>
-<h2 class="day-overview__title">Лекции 04–06 — полная инструкция</h2>
+<h2 class="day-overview__title">Лекция 11 — AJAX</h2>
+<p class="day-overview__date">По материалам: 13_AJAX.pdf</p>
 </header>
-<p class="day-overview__summary">Много коротких демо DOM. Ниже общий сценарий и что писать, если есть поле.</p>
 <section class="site-frame site-frame--story">
-<h3>Как проходить pos и zad</h3>
-
-<ol class="day-overview__steps">
-<li>Открывай файлы из каталога по порядку.</li>
-<li>На каждой странице нажми все кнопки сверху вниз.</li>
-<li>Смотри: появился новый блок, текст сменился, элемент исчез — значит демо сработало.</li>
-</ol>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Материал по AJAX и пример ajax.php.</p>
 </section>
+<p class="day-overview__goal"><strong>Цель:</strong> понять асинхронные запросы к серверу без полной перезагрузки страницы.</p>
 <section class="site-frame site-frame--story">
-<h3>Если есть поле ввода</h3>
-
-<ol class="day-overview__steps">
-<li>Текст: <code>тест</code> или <code>Павел</code>.</li>
-<li>Число: <code>3</code> или <code>10</code>.</li>
-<li>После ввода обязательно нажми кнопку рядом (Добавить / Создать / OK и т.п.) — иначе скрипт не стартует.</li>
-</ol>
-</section>
-<section class="site-frame site-frame--story">
-<h3>Если «ничего не происходит»</h3>
-
-<ol class="day-overview__steps">
-<li>Обнови страницу и попробуй ещё раз.</li>
-<li>Проверь, что кликаешь именно по кнопке, а не по пустому месту.</li>
-<li>Часть примеров ждёт клик по самому элементу (абзац, квадрат), не по кнопке.</li>
+<h3>Теория по пунктам</h3>
+<ol class="day-overview__theory">
+<li>AJAX — обмен данными с сервером в фоне (страница не перезагружается целиком).</li>
+<li>Классика: объект <code>XMLHttpRequest</code>; сейчас часто <code>fetch()</code>.</li>
+<li>Запрос уходит на URL (например PHP-скрипт), ответ приходит текстом/JSON/HTML.</li>
+<li>На клиенте ответ вставляют в DOM или обрабатывают как данные.</li>
+<li>Файл <code>ajax.php</code> нужно открывать через локальный сервер с PHP (не просто как статичный файл).</li>
 </ol>
 </section>
 </article>
@@ -102,11 +89,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

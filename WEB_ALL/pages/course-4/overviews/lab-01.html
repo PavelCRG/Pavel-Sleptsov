@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лаб 01 — окошки браузера — 4 курс</title>
-<link rel="stylesheet" href="../../../css/main.css">
+<title>Лабораторная 01 — объект window — 4 курс</title>
+<link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
 <div class="site-grid">
@@ -39,24 +39,74 @@
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lab.html">← К списку лабораторных</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад к лабораторным</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лаб 01 — окошки браузера</h2>
-<p class="day-overview__date">Из файла: 18_lab_object_window.pdf</p>
+<h2 class="day-overview__title">Лабораторная 01 — объект window</h2>
+<p class="day-overview__date">По материалам: 18_lab_object_window.pdf</p>
 </header>
+<div class="overview-tabs">
+<input class="overview-tabs__radio overview-tabs__radio--theory" type="radio" name="lab01" id="lab01-theory" checked>
+<input class="overview-tabs__radio overview-tabs__radio--howto" type="radio" name="lab01" id="lab01-howto">
+<div class="overview-tabs__nav" role="tablist">
+<label for="lab01-theory">Теория</label>
+<label for="lab01-howto">Как пользоваться</label>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--theory">
 <section class="site-frame site-frame--story">
-<h3>Что я делал</h3>
-<p class="day-overview__story">Тут я впервые потрогал окна браузера через JavaScript. Сделал кнопки: простое сообщение, вопрос да/нет и окошко, куда вводишь имя. Потом открывал отдельное окно, двигал фокус и менял размер. В конце собрал счётчик на таймере.</p>
+<h3>Что сделал</h3>
+<p class="day-overview__story">Разобрал объект window: диалоги, открытие окон, фокус, размер и таймер со счётчиком.</p>
+</section>
+<p class="day-overview__goal"><strong>Цель:</strong> изучить методы и свойства объекта window и уметь применять их при написании скриптов.</p>
+<section class="site-frame site-frame--story">
+<h3>Темы из пособия</h3>
+<ul class="day-overview__theory"><li>Иерархия основных объектов браузера [1, 294]</li>
+<li>Свойства объекта window [1, 295–296]</li>
+<li>Методы объекта window [1, 296–298]</li></ul>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Чуть теории</h3>
-<p class="day-overview__story">В PDF по объекту window: это верхний объект браузера. Через него открывают окна (open), показывают alert/confirm/prompt и ставят таймеры setTimeout / setInterval. Свойства окна (размер, фокус) тоже живут здесь. Короче, почти всё «про окошко» идёт через window.</p>
+<h3>Что важно понять</h3>
+<ol class="day-overview__theory"><li>window — объект верхнего уровня в BOM: почти всё, что связано с окном браузера, идёт через него.</li>
+<li>Модальные окна: <code>alert()</code> — сообщение, <code>confirm()</code> — да/нет, <code>prompt()</code> — ввод строки.</li>
+<li>Метод <code>open()</code> открывает новое окно; вторым аргументом задаётся имя, третьим — параметры (размер, панели).</li>
+<li>Фокус и размер: <code>focus()</code>, <code>blur()</code>, <code>resizeTo()</code>, <code>moveTo()</code> / <code>moveBy()</code>.</li>
+<li>Таймеры: <code>setTimeout</code> — один раз через N мс, <code>setInterval</code> — повтор; сброс — <code>clearTimeout</code> / <code>clearInterval</code>.</li>
+<li>По заданию: начертить иерархию объектов браузера, отладить скрипты с диалогами, open(), свойствами окна и таймерами, ответить на контрольные вопросы.</li></ol>
+</section>
+</div>
+<div class="overview-tabs__panel overview-tabs__panel--howto">
+<section class="site-frame site-frame--story">
+<h3>3_05.html — диалоги</h3>
+<ol class="day-overview__steps">
+<li>Нажми <code>alert</code> → появится сообщение → OK.</li>
+<li>Нажми <code>confirm</code> → OK пытается закрыть окно, Отмена оставляет.</li>
+<li>Нажми <code>prompt</code> → введи имя → OK.</li>
+</ol>
 </section>
 <section class="site-frame site-frame--story">
-<h3>Подсказка по демо</h3>
-<p class="day-overview__story"><a href="../guides/lab-01.html">Что нажимать и что вводить</a></p>
+<h3>3_06.html — новое окно</h3>
+<ol class="day-overview__steps">
+<li>Нажми кнопку открытия нового окна.</li>
+<li>Если браузер блокирует всплывающие окна — разреши для этой страницы.</li>
+</ol>
 </section>
+<section class="site-frame site-frame--story">
+<h3>3_07.html — открыть и изменить</h3>
+<ol class="day-overview__steps">
+<li>Нажми <code>Открыть</code>. В prompt оставь <code>3_05.html</code> или укажи другой HTML из папки.</li>
+<li>Второй prompt — про фокус: OK = передать фокус новому окну.</li>
+<li>Нажми <code>Изменить</code>. Можно оставить значения по умолчанию или задать свои.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>3_08.html — таймер</h3>
+<ol class="day-overview__steps">
+<li>Счётчик запускается сам.</li>
+<li>Нажми <code>Stop</code>, чтобы остановить. Вводить ничего не нужно.</li>
+</ol>
+</section>
+</div>
+</div>
 </article>
 </main>
         <aside class="site-aside" aria-label="Реклама">
@@ -86,11 +136,11 @@
                 <span class="ad-card__url">pavelcrg.vercel.app</span>
             </a>
         </aside>
-<footer class="site-footer">
-<p class="site-footer__brand">Программные средства создания интернет-приложений</p>
-<p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
-<p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
-</footer>
+        <footer class="site-footer">
+            <p class="site-footer__brand">Программные средства создания интернет-приложений</p>
+            <p class="site-footer__college"><a href="https://mtk-bks.by/" target="_blank" rel="noopener">Минский филиал БТЭУ ПК</a></p>
+            <p class="site-footer__copy">&copy; Слепцов Павел Леонидович</p>
+        </footer>
 </div>
 <script src="../../../js/nav/mobile-nav.js"></script>
 </body>

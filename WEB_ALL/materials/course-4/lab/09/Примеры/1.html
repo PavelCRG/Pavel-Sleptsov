@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример из учебника</title>
+</head>
+<body>
+    <script>
+        let jsonStudent = '{"name":"Саша", "age":25, "isAdmin":false, "courses":["html","css","js"],"curator":{"surname":"Иванова","name":"Ольга Петровна"},"excellent student":null}';
+        let student = {
+            name: 'Саша',
+            age: 25,
+            isAdmin: false,
+            courses: ['html', 'css', 'js'],
+            curator: {
+                surname: "Иванова",
+                name: "Ольга Петровна"
+            },
+            "excellent student": null
+        };
+        let strJson = JSON.stringify(student);
+        let objStudent = JSON.parse(jsonStudent);
+        alert(objStudent.name);
+        alert(objStudent.courses[2]);
+        alert(objStudent.curator.surname);
+        
+    </script>
+</body>
+</html>

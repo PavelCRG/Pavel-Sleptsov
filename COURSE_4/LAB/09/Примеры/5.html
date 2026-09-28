@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <script>
+        let numbers = "[0, 1, 2, 3]";
+        numbers = JSON.parse(numbers);
+        alert( numbers[1] ); 
+        let user = '{ "name": "John", "age": 35, "isAdmin": false, "friends":[0,1,2,3] }';
+        user = JSON.parse(user);
+        alert( user.friends[1] );
+    </script>
+</body>
+</html>
