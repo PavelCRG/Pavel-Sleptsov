@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 29. Перетаскивание</title>
+    <script>
+        // Глобальная переменная для хранения перетаскиваемого объекта
+        var ob;
+
+        // Функция срабатывает при нажатии кнопки мыши (захват объекта)
+        function dn(e) {
+            e = e || event;
+            ob = e.target || e.srcElement; // Определяется объект под курсором
+            
+            document.onmousemove = mv;     // Включается отслеживание движения
+            document.onmouseup = up;       // Включается отслеживание отпускания
+            return false;                  // Отключает стандартную реакцию браузера
+        }
+
+        // Функция срабатывает при перемещении мыши (перетаскивание объекта)
+        function mv(e) {
+            e = e || event;
+            if (ob) { // Если объект определен (захвачен)
+                ob.style.left = e.clientX - 50 + 'px'; // Центрирование по X относительно курсора
+                ob.style.top = e.clientY - 50 + 'px';  // Центрирование по Y относительно курсора
+            }
+            return false;
+        }
+
+        // Функция срабатывает при отпускании кнопки мыши (сброс объекта)
+        function up() {
+            ob = null;                    // Обнуляется переменная объекта
+            document.onmousemove = null;  // Выключается отслеживание движения
+            document.onmouseup = null;    // Выключается отслеживание отпускания
+        }
+    </script>
+</head>
+
+<!-- Добавлены параметры для отключения стандартного выделения текста и картинок браузером -->
+<body style="background:brown;" ondragstart="return false" onselectstart="return false" onmousedown="dn(event)">
+
+    <!-- Текстовый абзац -->
+    <p style="width:100px; position:absolute; top:100px; left:500px; font-family: Arial; color:white;">Перетаскивай!!!</p>
+
+    <!-- Первая картинка -->
+    <img src="image/banan.png" style="height:150px; position:absolute; top:200px; left:200px;" alt="Картинка 1">
+
+    <!-- Вторая картинка -->
+    <img src="image/lemon.png" style="height:150px; position:absolute; top:30px; left:30px;" alt="Картинка 2">
+
+    <!-- Зеленый прямоугольник -->
+    <div style="position:absolute; top:350px; left:450px; width:280px; height:70px; background-color:green;"></div>
+
+</body>
+
+</html>

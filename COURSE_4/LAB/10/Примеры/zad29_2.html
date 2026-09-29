@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2. Плавное перемещение</title>
+    <script>
+        var ob;
+        // Новые глобальные переменные для хранения первоначального сдвига курсора
+        var deltaX = 0;
+        var deltaY = 0;
+
+        function dn(e) {
+            e = e || event;
+            ob = e.target || e.srcElement;
+            
+            // Вычисляем сдвиг: координата клика минус текущая позиция элемента на экране
+            deltaX = e.clientX - parseInt(ob.style.left || ob.offsetLeft);
+            deltaY = e.clientY - parseInt(ob.style.top || ob.offsetTop);
+
+            document.onmousemove = mv;
+            document.onmouseup = up;
+            return false;
+        }
+
+        function mv(e) {
+            e = e || event;
+            if (ob) {
+                // Объект больше не прыгает в центр (50px), а удерживает точную точку захвата
+                ob.style.left = (e.clientX - deltaX) + 'px';
+                ob.style.top = (e.clientY - deltaY) + 'px';
+            }
+            return false;
+        }
+
+        function up() {
+            ob = null;
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    </script>
+</head>
+<!-- Возвращено на body, чтобы можно было перетаскивать любой элемент, но теперь плавно -->
+<body style="background:brown;" ondragstart="return false" onselectstart="return false" onmousedown="dn(event)">
+
+    <p style="width:100px; position:absolute; top:100px; left:500px; font-family: Arial; color:white;">Перетаскивай!!!</p>
+
+    <img src="image/banan.png" style="height:150px; position:absolute; top:200px; left:200px;" alt="Картинка 1">
+
+    <img src="image/lemon.png" style="height:150px; position:absolute; top:30px; left:30px;" alt="Картинка 2">
+
+    <div style="position:absolute; top:350px; left:450px; width:280px; height:70px; background-color:green;"></div>
+
+</body>
+</html>

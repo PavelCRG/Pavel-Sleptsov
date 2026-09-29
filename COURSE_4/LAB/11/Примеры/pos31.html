@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 31. Увеличенный объект</title>
+    <script>
+        var dx = 10;     
+        var sf3;         
+        var flag = true; 
+
+        function func1() {
+            if (flag) {
+                sf3 = setInterval(func3, 20); 
+                flag = false;                 
+            }
+        }
+
+        function func2() {
+            clearInterval(sf3); 
+            flag = true;        
+        }
+
+        function func3() {
+            var nleft = parseInt(document.getElementById('ball').style.left) + dx;
+            document.getElementById('ball').style.left = nleft + 'px';
+            
+            // Новое условие: 400px (div) - 80px (мяч) = 320px
+            if (nleft >= 320) dx = -dx; // Отскок у правого края
+            if (nleft <= 0) dx = -dx;   // Отскок у левого края
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color:yellow">Пример использования формы с кнопками</p>
+    
+    <form>
+        <input type="button" value="Пуск" onclick="func1()">
+        <input type="button" value="Стоп" onclick="func2()">
+    </form>
+
+    <div style="background-color:lightblue; position:absolute; top:150px; left:50px; width:400px; height:300px;">
+        
+        <!-- Размеры картинки увеличены до 80px, координаты центра пересчитаны -->
+        <img id="ball" src="image/ball.gif" style="position:absolute; top:110px; left:160px; height:80px; width:80px;" alt="Мяч">
+        
+    </div>
+</body>
+
+</html>
