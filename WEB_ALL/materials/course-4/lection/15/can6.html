@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Пример 6</title>
+</head>
+
+<body>
+    <canvas id="can" width="400" height="200" style="border: 1px solid maroon;" onclick="func(event);"></canvas>
+    <script>
+        var canvas = document.getElementById('can');
+        var paint = canvas.getContext("2d");
+        var flag = true;
+
+        paint.fillStyle = "red";
+        paint.fillRect(50, 50, 100, 50);
+        paint.fillStyle = "green";
+        paint.fillRect(140, 90, 100, 50);
+        paint.strokeStyle = "white";
+        paint.font = 'italic 18px arial';
+        paint.strokeText('false', 80, 80);
+        paint.strokeText('true', 170, 120);
+
+        function func(e) {
+            e = e || event;
+            var mouseX = e.clientX - canvas.offsetLeft;
+            var mouseY = e.clientY - canvas.offsetTop;
+
+            var mouseXin = ((mouseX > 50) && (mouseX < 150));
+            var mouseYin = ((mouseY > 50) && (mouseY < 100));
+
+            if (mouseXin && mouseYin) {
+                flag = !flag;
+                canvas.width = canvas.width;
+
+                if (flag) paint.fillStyle = "red";
+                else paint.fillStyle = "brown";
+
+                paint.fillRect(50, 50, 100, 50);
+                paint.fillStyle = "green";
+                paint.fillRect(140, 90, 100, 50);
+                paint.strokeStyle = "white";
+                paint.font = 'italic 18px arial';
+                paint.strokeText('false', 80, 80);
+                paint.strokeText('true', 170, 120);
+            }
+        }
+    </script>
+</body>
+
+</html>

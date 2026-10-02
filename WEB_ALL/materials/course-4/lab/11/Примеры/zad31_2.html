@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2. Движение под 45 градусов</title>
+    <script>
+        var dx = 10; // Шаг по горизонтали
+        var dy = 10; // Шаг по вертикали (dx = dy)
+        var sf3;         
+        var flag = true; 
+
+        function func1() {
+            if (flag) {
+                sf3 = setInterval(func3, 20); 
+                flag = false;                 
+            }
+        }
+
+        function func2() {
+            clearInterval(sf3); 
+            flag = true;        
+        }
+
+        function func3() {
+            // Движение по оси X (влево-вправо)
+            var nleft = parseInt(document.getElementById('ball').style.left) + dx;
+            document.getElementById('ball').style.left = nleft + 'px';
+            if (nleft >= 320) dx = -dx; 
+            if (nleft <= 0) dx = -dx;   
+
+            // Движение по оси Y (вверх-вниз)
+            var ntop = parseInt(document.getElementById('ball').style.top) + dy;
+            document.getElementById('ball').style.top = ntop + 'px';
+            if (ntop >= 220) dy = -dy; 
+            if (ntop <= 0) dy = -dy;   
+        }
+    </script>
+</head>
+<body style="background-color: green;">
+    <p style="color:yellow">Задание 2: Угол падения равен углу отражения (dx = dy)</p>
+    <form>
+        <input type="button" value="Пуск" onclick="func1()">
+        <input type="button" value="Стоп" onclick="func2()">
+    </form>
+    <div style="background-color:lightblue; position:absolute; top:150px; left:50px; width:400px; height:300px;">
+        <!-- Начальное положение сдвинуто к левому верхнему углу, чтобы красивее летел -->
+        <img id="ball" src="image/ball.gif" style="position:absolute; top:10px; left:10px; height:80px; width:80px;" alt="Мяч">
+    </div>
+</body>
+</html>

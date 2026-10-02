@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 28</title>
+    <script>
+        var ob;
+        // Запоминаем исходный заголовок страницы
+        var oldTitle = "Пример 28"; 
+
+        // Функция, которая срабатывает при движении мыши
+        function fover(e) {
+            e = e || event;
+            ob = e.target || e.srcElement;
+            document.title = ob.tagName;
+        }
+
+        // Функция для Первой кнопки: включает прослушивание события
+        function func1() {
+            document.onmouseover = fover;
+        }
+
+        // Функция для Третьей кнопки: выключает прослушивание и возвращает старый заголовок
+        function func3() {
+            document.onmouseover = null;
+            document.title = oldTitle;
+        }
+    </script>
+</head>
+<body style="background: brown; padding: 20px; font-family: Arial; color: white;">
+
+    <p style="text-align: center;">
+        Нажмите первую кнопку, чтобы включить отслеживание тегов во вкладке.<br>
+        Нажмите третью кнопку, чтобы выключить и вернуть исходный заголовок.
+    </p>
+
+    <!-- Форма с тремя кнопками согласно условию -->
+    <div style="text-align: center; margin-top: 20px;">
+        <form>
+            <input type="button" value="Включить (Кнопка 1)" onclick="func1()" style="padding: 10px 20px; margin: 5px;">
+            <input type="button" value="Кнопка 2 (Заглушка)" style="padding: 10px 20px; margin: 5px;">
+            <input type="button" value="Выключить (Кнопка 3)" onclick="func3()" style="padding: 10px 20px; margin: 5px;">
+        </form>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="image/banan.png" style="height: 150px;" alt="Тестовая картинка">
+    </div>
+
+</body>
+</html>

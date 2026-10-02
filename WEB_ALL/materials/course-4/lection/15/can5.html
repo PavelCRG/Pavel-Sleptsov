@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример 5</title>
+</head>
+<body>
+    <canvas id="can" width="400" height="300" style="border: 1px solid maroon;"></canvas>
+    <script>
+        var canvas = document.getElementById('can');
+        var paint = canvas.getContext("2d");
+
+        paint.beginPath();
+        
+        paint.strokeStyle = "red";
+        paint.fillStyle = "yellow";
+
+        paint.arc(200, 160, 30, -Math.PI / 4, -3 * Math.PI / 4);
+        paint.arc(140, 100, 30, Math.PI / 4, -Math.PI / 4);
+        paint.arc(200, 40, 30, 3 * Math.PI / 4, Math.PI / 4);
+        paint.arc(260, 100, 30, -3 * Math.PI / 4, 3 * Math.PI / 4);
+
+        paint.closePath();
+        
+        paint.fill();
+        paint.stroke();
+    </script>
+</body>
+</html>

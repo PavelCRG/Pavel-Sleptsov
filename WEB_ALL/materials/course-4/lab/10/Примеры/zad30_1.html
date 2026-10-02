@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание к Примеру 30</title>
+    <script>
+        var ob;
+
+        function dn(e) {
+            e = e || event;
+            ob = e.target || e.srcElement; 
+            
+            if (ob.parentNode.tagName == 'DIV') ob = ob.parentNode;
+            
+            document.onmousemove = mv;     
+            document.onmouseup = up;       
+            return false;                  
+        }
+
+        function mv(e) {
+            e = e || event;
+            if (ob) { 
+                ob.style.left = e.clientX - 50 + 'px'; 
+                ob.style.top = e.clientY - 50 + 'px';  
+            }
+            return false;
+        }
+
+        function up() {
+            ob = null;                    
+            document.onmousemove = null;  
+            document.onmouseup = null;    
+        }
+    </script>
+</head>
+<body style="background:brown;" ondragstart="return false" onselectstart="return false" onmousedown="dn(event)">
+
+    <p style="width:100px; position:absolute; top:100px; left:500px; font-family: Arial; color:white;">Перетаскивай!!!</p>
+
+    <!-- Вертикальный размер (height) увеличен вдвое до 400px -->
+    <div style="position:absolute; top:150px; left:450px; width:350px; height:400px; background-color:green;">
+        
+        <!-- Первая картинка -->
+        <img src="image/banan.png" style="height:150px; position:absolute; top:10px; left:10px;" alt="Картинка 1">
+
+        <!-- Вторая картинка прижата к правому нижнему углу (bottom:0; right:0;) -->
+        <img src="image/lemon.png" style="height:150px; position:absolute; bottom:0; right:0;" alt="Картинка 2">
+
+    </div>
+
+</body>
+</html>

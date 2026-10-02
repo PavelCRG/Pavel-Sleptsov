@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Пример 3</title>
+</head>
+
+<body>
+    <canvas id="can" width="400" height="200" style="border: 1px solid maroon;"></canvas>
+    <script>
+        var canvas = document.getElementById('can');
+        var paint = canvas.getContext("2d");
+        
+       
+        paint.fillStyle = "red";
+        paint.fillRect(50, 50, 100, 50);
+        paint.fillStyle = "green"; 
+        paint.fillRect(140, 90, 100, 50);
+        paint.strokeStyle = "white";
+        paint.font = 'italic 18px arial';
+        paint.strokeText('false', 80, 80);
+        paint.strokeText('true', 170, 120);
+
+        
+        paint.strokeStyle = "red";
+        paint.moveTo(300, 50);
+        paint.lineTo(300, 20);
+        paint.lineTo(340, 20);
+        paint.arc(320, 100, 50, 0, Math.PI);
+        
+        
+        paint.closePath(); 
+        paint.stroke();    
+        paint.fill();      
+    </script>
+</body>
+
+</html>

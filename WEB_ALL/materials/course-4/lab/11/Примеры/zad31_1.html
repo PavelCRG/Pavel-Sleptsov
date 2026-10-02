@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1. Вертикальное движение</title>
+    <script>
+        // var dx = 10; // закомментировано по заданию
+        var dy = 10;    // шаг по вертикали
+        var sf3;         
+        var flag = true; 
+
+        function func1() {
+            if (flag) {
+                sf3 = setInterval(func3, 20); 
+                flag = false;                 
+            }
+        }
+
+        function func2() {
+            clearInterval(sf3); 
+            flag = true;        
+        }
+
+        function func3() {
+            // Команды для nleft переведены в комментарии:
+            // var nleft = parseInt(document.getElementById('ball').style.left) + dx;
+            // document.getElementById('ball').style.left = nleft + 'px';
+            // if (nleft >= 320) dx = -dx; 
+            // if (nleft <= 0) dx = -dx;   
+
+            // Аналогичные команды для ntop и style.top:
+            var ntop = parseInt(document.getElementById('ball').style.top) + dy;
+            document.getElementById('ball').style.top = ntop + 'px';
+
+            if (ntop >= 220) dy = -dy; // Отскок у нижнего края (300 - 80)
+            if (ntop <= 0) dy = -dy;   // Отскок у верхнего края
+        }
+    </script>
+</head>
+<body style="background-color: green;">
+    <p style="color:yellow">Задание 1: Движение по вертикали</p>
+    <form>
+        <input type="button" value="Пуск" onclick="func1()">
+        <input type="button" value="Стоп" onclick="func2()">
+    </form>
+    <div style="background-color:lightblue; position:absolute; top:150px; left:50px; width:400px; height:300px;">
+        <img id="ball" src="image/ball.gif" style="position:absolute; top:110px; left:160px; height:80px; width:80px;" alt="Мяч">
+    </div>
+</body>
+</html>

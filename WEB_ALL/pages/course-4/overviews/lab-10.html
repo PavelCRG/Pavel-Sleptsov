@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лекция 13 — Canvas (начало) — 4 курс</title>
+<title>Лабораторная 10 — перетаскивание объектов — 4 курс</title>
 <link rel="stylesheet" href="../../../css/main.css?v=23">
 </head>
 <body class="site-app">
@@ -32,48 +32,56 @@
 <h2>Разделы</h2>
 <ul class="site-nav">
 <li><a href="../../../course-4.html">Главная</a></li>
-<li><a href="../lection.html">Лабораторные</a></li>
-<li><a href="../lection.html">Лекции</a></li>
+<li><a href="../lab.html">Лабораторные</a></li>
+<li><a href="../lab.html">Лекции</a></li>
 <li><a href="../okr.html">Контроль</a></li>
 <li><a href="../../../index.html">Курсы</a></li>
 </ul>
 </nav>
 <main class="site-main page page--overview">
-<p class="overview-back"><a href="../lection.html">← Назад к лекциям</a></p>
+<p class="overview-back"><a href="../lab.html">← Назад к лабораторным</a></p>
 <article class="day-overview">
 <header class="day-overview__header">
-<h2 class="day-overview__title">Лекция 13 — Canvas (начало)</h2>
-<p class="day-overview__date">По материалам: Canvas_Primer_1.pdf</p>
+<h2 class="day-overview__title">Лабораторная 10 — перетаскивание объектов</h2>
+<p class="day-overview__date">По материалам: lab_27_перетаскивание_объектов.pdf</p>
 </header>
 <div class="overview-tabs">
-<input class="overview-tabs__radio overview-tabs__radio--theory" type="radio" name="lection13" id="lection13-theory" checked>
-<input class="overview-tabs__radio overview-tabs__radio--howto" type="radio" name="lection13" id="lection13-howto">
+<input class="overview-tabs__radio overview-tabs__radio--theory" type="radio" name="lab10" id="lab10-theory" checked>
+<input class="overview-tabs__radio overview-tabs__radio--howto" type="radio" name="lab10" id="lab10-howto">
 <div class="overview-tabs__nav" role="tablist">
-<label for="lection13-theory">Теория</label>
-<label for="lection13-howto">Как пользоваться</label>
+<label for="lab10-theory">Теория</label>
+<label for="lab10-howto">Как пользоваться</label>
 </div>
 <div class="overview-tabs__panel overview-tabs__panel--theory">
 <section class="site-frame site-frame--story">
 <h3>Что сделал</h3>
-<p class="day-overview__story">Праймер по Canvas и первый пример can1.html.</p>
+<p class="day-overview__story">Сделал примеры и задания по Drag and Drop: pos28–pos30, zad29, zad30.</p>
 </section>
-<p class="day-overview__goal"><strong>Цель:</strong> познакомиться с рисованием на <code>&lt;canvas&gt;</code> через JavaScript.</p>
+<p class="day-overview__goal"><strong>Цель:</strong> научиться связывать объект с событием и составлять скрипты перетаскивания объектов по окну браузера с использованием DOM.</p>
 <section class="site-frame site-frame--story">
 <h3>Теория по пунктам</h3>
 <ol class="day-overview__theory">
-<li><code>&lt;canvas&gt;</code> — область для растровой графики в браузере.</li>
-<li>Контекст: <code>const ctx = canvas.getContext("2d")</code>.</li>
-<li>База: линии, прямоугольники, дуги, заливка, текст, изображения.</li>
-<li>Координаты: (0,0) — левый верхний угол холста.</li>
-<li>Практика: <code>can1.html</code> + PDF <code>Canvas_Primer_1.pdf</code>.</li>
+<li>Перетаскивание (drag-and-drop) — объект следует за курсором при зажатой кнопке мыши.</li>
+<li>Обычно вешают обработчики: <code>onmousedown</code> (старт), <code>onmousemove</code> (движение), <code>onmouseup</code> (отпускание).</li>
+<li>Позицию задают через CSS: <code>position: absolute</code> и свойства <code>style.left</code> / <code>style.top</code> (или transform).</li>
+<li>Координаты берут из объекта события: <code>clientX</code>, <code>clientY</code> (с учётом смещения курсора внутри элемента).</li>
+<li>Важно снимать движение при <code>mouseup</code> (и иногда при уходе курсора за пределы окна), иначе объект «залипнет».</li>
+<li>Практика: <code>pos28.html</code>–<code>pos30.html</code>, задания <code>zad29_1</code>, <code>zad29_2</code>, <code>zad30_1</code>.</li>
 </ol>
 </section>
 </div>
 <div class="overview-tabs__panel overview-tabs__panel--howto">
 <section class="site-frame site-frame--story">
-<h3>can1.html</h3>
+<h3>pos28.html–pos30.html</h3>
 <ol class="day-overview__steps">
-<li>Открой файл — на холсте должен появиться рисунок из скрипта.</li>
+<li>Открой файл — зажми объект мышью и перетащи по странице.</li>
+<li>Отпусти кнопку — объект должен остаться на новом месте.</li>
+</ol>
+</section>
+<section class="site-frame site-frame--story">
+<h3>zad29_1.html, zad29_2.html, zad30_1.html</h3>
+<ol class="day-overview__steps">
+<li>Выполни задание из условия: перетащи нужные объекты (есть картинки banana/lemon).</li>
 </ol>
 </section>
 </div>
