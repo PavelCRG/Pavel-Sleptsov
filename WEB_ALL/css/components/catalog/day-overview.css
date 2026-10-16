@@ -1,4 +1,4 @@
-/* Обзор занятия — простой текст, без карточек */
+/* Обзор занятия */
 
 .day-overview {
     max-width: 100%;
@@ -229,7 +229,7 @@
 
 .material-viewer__content .day-overview--embedded .site-frame {
     margin-bottom: 1.25rem;
-    padding: 0;
+    padding: 1rem 1.15rem;
 }
 
 .material-viewer__content .overview-back {
@@ -251,4 +251,77 @@
     .material-viewer__content .day-overview--embedded {
         padding: 0.15rem 0.15rem 0.85rem;
     }
+
+    .day-overview .site-frame,
+    .overview-frame {
+        padding: 0.85rem 0.9rem;
+    }
+
+    .material-viewer__content .day-overview--embedded .site-frame {
+        padding: 0.85rem 0.9rem;
+    }
+}
+
+/* Общий ритм текста и материалов в описаниях */
+.day-overview {
+    max-width: 68ch;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.day-overview__header {
+    margin-bottom: 1.15rem;
+    padding-bottom: 1rem;
+    border-bottom-color: var(--border);
+}
+
+.day-overview__title {
+    font-size: 1.55rem;
+    font-size: clamp(1.2rem, 3.2vw, 1.55rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.day-overview .site-frame,
+.overview-frame {
+    margin-bottom: 1.1rem;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    background: var(--bg-sidebar);
+}
+
+.day-overview .site-frame h3,
+.overview-frame h3 {
+    margin-bottom: 0.65rem;
+}
+
+.day-overview .day-files,
+.overview-frame__list {
+    gap: 0.5rem;
+}
+
+.day-overview .day-files a,
+.overview-frame__list a {
+    display: block;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-panel);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.day-overview .day-files a:hover,
+.overview-frame__list a:hover {
+    border-color: var(--accent);
+    background: #f5f9ff;
+}
+
+.day-overview a:focus-visible,
+.overview-frame a:focus-visible {
+    outline: 3px solid #f4b942;
+    outline-offset: 2px;
 }

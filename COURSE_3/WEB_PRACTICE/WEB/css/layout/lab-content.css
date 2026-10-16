@@ -16,6 +16,8 @@
     margin-left: auto !important;
     margin-right: auto !important;
     float: none !important;
+    width: 100%;
+    max-width: 960px;
     max-width: min(100%, 960px);
 }
 

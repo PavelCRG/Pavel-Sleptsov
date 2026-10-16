@@ -45,6 +45,12 @@
     background: rgba(255, 255, 255, 0.55);
 }
 
+.overview-tabs > input.overview-tabs__radio--theory:focus ~ .overview-tabs__nav label[for$="-theory"],
+.overview-tabs > input.overview-tabs__radio--howto:focus ~ .overview-tabs__nav label[for$="-howto"] {
+    outline: 2px solid #f4b942;
+    outline-offset: 2px;
+}
+
 .overview-tabs__panel {
     display: none;
     animation: overview-tab-in 0.22s ease;

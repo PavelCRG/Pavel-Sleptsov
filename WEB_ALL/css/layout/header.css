@@ -36,6 +36,7 @@
     font-weight: 500;
     letter-spacing: 0.02em;
     color: #cbd5e1;
+    max-width: 42em;
     max-width: min(42em, 100%);
     text-wrap: balance;
 }

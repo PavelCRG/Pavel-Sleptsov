@@ -9,7 +9,7 @@
         width: 100%;
         max-width: none;
         min-width: 0;
-        max-height: 42vh;
+        max-height: 32vh;
         border-right: none;
         border-bottom: 1px solid #e2e8f0;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
@@ -145,6 +145,17 @@
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 @media (max-width: 480px) {
     body {
         font-size: 15px;
@@ -155,7 +166,7 @@
     }
 
     #sidebar {
-        max-height: 38vh;
+        max-height: 30vh;
         padding: 12px 10px 16px;
     }
 

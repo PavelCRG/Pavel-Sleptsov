@@ -2,10 +2,13 @@
 
 .site-frame {
     margin: 0 0 20px;
-    padding: 14px 16px;
-    border: 2px solid #2d3748;
+    padding: 18px 20px;
+    border: 1px solid #d9e2ec;
+    border-left: 3px solid #1e4d8c;
+    border-radius: 12px;
     background: #fff;
     box-sizing: border-box;
+    box-shadow: 0 4px 14px rgba(26, 54, 93, 0.06);
 }
 
 .site-frame h2,
